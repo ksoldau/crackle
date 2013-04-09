@@ -1,3 +1,4 @@
+// Camel
 class Africa1 {
   int state;
   boolean isSleeping;

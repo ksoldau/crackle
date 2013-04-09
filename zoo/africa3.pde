@@ -1,3 +1,4 @@
+// Lion
 class Africa3 {
   int state;
   boolean isSleeping;
