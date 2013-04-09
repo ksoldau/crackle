@@ -4,10 +4,9 @@ class Africa2 {
   boolean isSleeping;
   PImage background;
   
-  Africa1(int state, boolean isSleeping) {
-    this.state = state;
-    this.isSleeping = isSleeping;
-    this.background = loadImage("bs.jpg");
+  Africa2(int st, boolean isS) {
+    state = st;
+    isSleeping = isS;
   }
   
   // display the scene
