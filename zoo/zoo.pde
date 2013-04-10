@@ -4,8 +4,21 @@ Jungle1 jungle;
 
 int WIDTH = 960;
 int HEIGHT = 650;
-boolean WELCOME_SCREEN = true;
-// int HABITAT_HEIGHT = 540; 
+int HABITAT_HEIGHT = 540;
+
+boolean WELCOME_SCREEN = true; // is it on the welcome screen
+
+//coordinates for start button on welcome page
+int STARTXi = 400;
+int STARTXf = 560;
+int STARTYi = 500;
+int STARTYf = 550;
+
+//coordinates for map
+int MAPXi = 780;
+int MAPXf = 960;
+int MAPYi = 550;
+int MAPYf = 690;
 
 //setup runs once
 void setup() {
@@ -23,7 +36,7 @@ void setup() {
 // called automatically, don't mess with it
 void draw() {
   // changes the cursor to show it's over the start button
-  if (WELCOME_SCREEN && cursor_over_start()) {
+  if (WELCOME_SCREEN && cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
       cursor(HAND);
   }
   // changes cursor to be the general arrow to show there's nothing to click there
@@ -39,21 +52,24 @@ void mousePressed() {
   if (WELCOME_SCREEN) { // decides what to do with mouse if pressed when on welcoem screen
     mousePressedWelcomeScreen(); 
   }
+  if (cursor_over(MAPXi, MAPXf, MAPYi, MAPYf)) {
+  }
 }
 
 // assume: on welcome screen
 // determines what actions to perform if mouse pressed 
 void mousePressedWelcomeScreen() {
-  if (cursor_over_start() && mousePressed == true) {
+  if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf) && mousePressed == true) {
   doIntro();
   WELCOME_SCREEN = false;
   }
 }
 
-// determines if on the welcome screen with the cursor over the start button
-boolean cursor_over_start() {
-  return 400 < mouseX && mouseX < 560 && 500 < mouseY && mouseY < 550;
+// determines if cursor in a certain box
+boolean cursor_over(int xmin, int xmax, int ymin, int ymax) {
+  return xmin < mouseX && mouseX < xmax && ymin < mouseY && mouseY < ymax;
 }
+
 
   
   
