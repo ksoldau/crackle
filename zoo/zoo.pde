@@ -36,9 +36,15 @@ void setup() {
 // called automatically, don't mess with it
 void draw() {
   // changes the cursor to show it's over the start button
-  if (WELCOME_SCREEN && cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
-      cursor(HAND);
+  if (WELCOME_SCREEN) {
+    if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
+      cursor(HAND); 
+    }
+    else { cursor(ARROW); }
   }
+  else if (cursor_over_map()) {
+  }
+
   // changes cursor to be the general arrow to show there's nothing to click there
   else { cursor(ARROW); }
 }
@@ -52,7 +58,7 @@ void mousePressed() {
   if (WELCOME_SCREEN) { // decides what to do with mouse if pressed when on welcoem screen
     mousePressedWelcomeScreen(); 
   }
-  if (cursor_over(MAPXi, MAPXf, MAPYi, MAPYf)) {
+  if (cursor_over_map()) {
   }
 }
 
@@ -68,6 +74,10 @@ void mousePressedWelcomeScreen() {
 // determines if cursor in a certain box
 boolean cursor_over(int xmin, int xmax, int ymin, int ymax) {
   return xmin < mouseX && mouseX < xmax && ymin < mouseY && mouseY < ymax;
+}
+// determines if cursor over map 
+boolean cursor_over_map() {
+  return cursor_over(MAPXi, MAPXf, MAPYi, MAPYf);
 }
 
 
