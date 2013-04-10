@@ -7,7 +7,7 @@ class Jungle1 {
   Jungle1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.background = loadImage("bs.jpg");
+    this.background = loadImage("jungle_1.jpg");
   }
   
   // display the scene
