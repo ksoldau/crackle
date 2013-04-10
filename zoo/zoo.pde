@@ -4,6 +4,7 @@ Jungle1 jungle;
 
 int WIDTH = 960;
 int HEIGHT = 650;
+// int HABITAT_HEIGHT = 540; 
 
 //setup runs once
 void setup() {
@@ -11,11 +12,10 @@ void setup() {
   size(WIDTH,HEIGHT);
   
   // load image that says "Zoo guess who click here to start"
-  img = loadImage("data/frosty_1.png");
+  img = loadImage("data/fdsaf");// obvs a wrong link
   image(img, 0, 0);
   
   intro = new Intro();
-  jungle = new Jungle1(2, false);
 }
 
 // draw is called directly after setup
@@ -27,21 +27,10 @@ void doIntro() {
   intro.display();
 }
 
-void doJungle() {
-  jungle.display();
-}
-
-void keyPressed() {
-  if (key==ENTER) {
-    //doIntro();
-  }
-}
-
+// if mouse is pressed, do this stuff 
 void mousePressed() {
-if (mouseX < 20 && mouseY > 0 && mousePressed == true) {
-  doIntro();}
-  else if (mouseX > 500 && mouseY > 0 && mousePressed == true) {
-   doJungle();
+if (400 < mouseX && mouseX < 560 && 500 < mouseY && mouseY < 550 && mousePressed == true) {
+  doIntro();
   }
 }
 
