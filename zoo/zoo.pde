@@ -51,6 +51,11 @@ void draw() {
 
 void doIntro() {
   intro.display();
+  displayBar();
+}
+void displayBar() {
+  PImage nav = loadImage("data/nav.png");
+  image(nav, 0, 0);
 }
 
 // if mouse is pressed, do this stuff 
