@@ -6,7 +6,7 @@ class Intro {
   
 PImage img;
   void display() {
-    img = loadImage("data/youwin.png"); //note: not the correct graphic
+    img = loadImage("data/box.png"); 
     image(img, 0, 0);
   }
 }
