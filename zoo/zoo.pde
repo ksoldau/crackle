@@ -5,6 +5,6 @@ void setup() {
   size(960,650);
   
   // load image that says "Zoo guess who click here to start"
-  img = loadImage("data/frosty_1.png");
+  img = loadImage("data/not_real.png");
   image(img, 0, 0);
 }
