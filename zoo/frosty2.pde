@@ -7,7 +7,7 @@ class Frosty2 {
   Frosty2(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.background = loadImage("bs.jpg");
+    this.background = loadImage("data/frosty_2.jpg");
   }
   
   // display the scene
