@@ -1,4 +1,4 @@
-// Sloth
+// Elephant
 class Jungle2 {
   int state;
   boolean isSleeping;
@@ -14,5 +14,3 @@ class Jungle2 {
   void display() {
   }
 }
-    
-  
