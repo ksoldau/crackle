@@ -1,3 +1,8 @@
 Thu Apr 11 15:06:11 EDT 2013
 
+Use "shape" -  make everything an svg. There is a method .isvisible()
+that toggles visibility so there's no making a shitload of those fuckers
+
+fuck make the "new" operators outside of the reference type (idiot)
+
 probably use different reference types?

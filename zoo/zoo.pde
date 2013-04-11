@@ -1,7 +1,20 @@
 PImage img;
-Intro intro;
-Jungle1 jungle;
 
+// declaring variables outside of setup so they can be used anywhere
+// a la "public" in standard java
+//
+// Background images
+Intro intro;
+Jungle1 jungle1;
+Frosty1 frosty1;
+Asia1 asia1;
+
+// Navigation and arrows
+Nav nav;
+Arrows arrows;
+
+
+// Static variables
 int WIDTH = 960;
 int HEIGHT = 650;
 int HABITAT_HEIGHT = 540;
@@ -41,13 +54,25 @@ int RIGHTYf = 301;
 //setup runs once
 void setup() {
   background(255);
-  size(WIDTH,HEIGHT);
+  size(WIDTH, HEIGHT);
   
   // load image that says "Zoo guess who click here to start"
   img = loadImage("data/welcome.png");// obvs a wrong link
   image(img, 0, 0);
   
   intro = new Intro();
+  
+  
+  // making all the background objects
+  jungle1 = new Jungle1(4, false);
+  frosty1 = new Frosty1(4, false);
+  asia1 = new Asia1(4, false);
+  
+  nav = new Nav();
+  arrows = new Arrows();  
+  //PImage nav = loadImage("data/nav.png");
+  //PImage arrows = loadImage("data/arrows.png");
+
 }
 
 // draw is called directly after setup
@@ -59,7 +84,7 @@ void draw() {
       cursor(HAND); 
     }
     else { cursor(ARROW); }
-  }
+  } 
   else if 
   (cursor_over_map() || 
   cursor_over_help() || 
@@ -73,36 +98,57 @@ void draw() {
   else { cursor(ARROW); }
 }
 
-void doIntro() {
-  intro.display();
-  displayArrows();
-  displayBar();
-
-}
-void doFrosty() {
-  Frosty1 frosty1 = new Frosty1(4, false);
-  frosty1.display();
-  displayArrows();  
-  displayBar();
-
-}
-void doAsia() {
-  Asia1 asia1 = new Asia1(4, false);
-  asia1.display();
-  displayArrows();
-}
+//---------------------------------------
 
 // display the bar at bottom of screen
 void displayBar() {
-  PImage nav = loadImage("data/nav.png");
-  image(nav, 0, 0);
+  nav.display();
 }
 
 // display arrows to go between habitats
 void displayArrows() {
-  PImage arrows = loadImage("data/arrows.png"); // note: does not exist yet;
-  image(arrows, 0, 0);
+  arrows.display();
 }
+
+//---------------------------------------
+// "do" functions 
+// these call the display methods in the corresponding classes
+// so we can view them in zoo.pde
+
+void doIntro() {
+  intro.display();
+  arrows.display();
+  nav.display();
+  //displayArrows();
+  //displayBar();
+}
+
+void doFrosty() {
+  frosty1.display();
+  arrows.display();
+  nav.display();
+  //displayArrows();
+  //displayBar();
+}
+
+void doAsia() {
+  asia1.display();
+  arrows.display();
+  nav.display();
+  //displayArrows();
+  //displayBar();
+}
+
+void doJungle() {
+  jungle1.display();
+  arrows.display();
+  nav.display();
+  //displayArrows();
+  //displayBar();
+}
+
+//-----------------------------------------
+
 
 // if mouse is pressed, do this stuff 
 void mousePressed() {
