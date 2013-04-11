@@ -5,14 +5,25 @@ PImage img;
 //
 // Background images
 Intro intro;
-Jungle1 jungle1;
-Frosty1 frosty1;
+
+Africa1 africa1;
+Africa2 africa2;
+Africa3 africa3;
+
 Asia1 asia1;
+Asia2 asia2;
+
+Frosty1 frosty1;
+Frosty2 frosty2;
+
+Jungle1 jungle1;
+Jungle2 jungle2;
 
 // Navigation and arrows
 Nav nav;
 Arrows arrows;
 
+//--------------------------------------
 
 // Static variables
 int WIDTH = 960;
@@ -59,20 +70,26 @@ void setup() {
   // load image that says "Zoo guess who click here to start"
   img = loadImage("data/welcome.png");// obvs a wrong link
   image(img, 0, 0);
-  
-  intro = new Intro();
-  
+
   
   // making all the background objects
-  jungle1 = new Jungle1(4, false);
-  frosty1 = new Frosty1(4, false);
+  intro = new Intro();
+  
+  africa1 = new Africa1(4, false);
+  africa2 = new Africa2(4, false);
+  africa3 = new Africa3(4, false);
+  
   asia1 = new Asia1(4, false);
+  asia2 = new Asia2(4, false);
+ 
+  frosty1 = new Frosty1(4, false);
+  frosty2 = new Frosty2(4, false);
+  
+  jungle1 = new Jungle1(4, false);
+  jungle2 = new Jungle2(4, false);
   
   nav = new Nav();
   arrows = new Arrows();  
-  //PImage nav = loadImage("data/nav.png");
-  //PImage arrows = loadImage("data/arrows.png");
-
 }
 
 // draw is called directly after setup
@@ -99,18 +116,6 @@ void draw() {
 }
 
 //---------------------------------------
-
-// display the bar at bottom of screen
-void displayBar() {
-  nav.display();
-}
-
-// display arrows to go between habitats
-void displayArrows() {
-  arrows.display();
-}
-
-//---------------------------------------
 // "do" functions 
 // these call the display methods in the corresponding classes
 // so we can view them in zoo.pde
@@ -119,32 +124,24 @@ void doIntro() {
   intro.display();
   arrows.display();
   nav.display();
-  //displayArrows();
-  //displayBar();
 }
 
 void doFrosty() {
   frosty1.display();
   arrows.display();
   nav.display();
-  //displayArrows();
-  //displayBar();
 }
 
 void doAsia() {
   asia1.display();
   arrows.display();
   nav.display();
-  //displayArrows();
-  //displayBar();
 }
 
 void doJungle() {
   jungle1.display();
   arrows.display();
   nav.display();
-  //displayArrows();
-  //displayBar();
 }
 
 //-----------------------------------------
