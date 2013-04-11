@@ -12,6 +12,8 @@ class Asia2 {
   
   // display the scene
   void display() {
+    img = background;
+    image(img, 0, 0);
   }
 }
     

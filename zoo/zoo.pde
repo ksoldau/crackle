@@ -62,6 +62,9 @@ int RIGHTXf = 942;
 int RIGHTYi = 226;
 int RIGHTYf = 301;
 
+//--------------------------------------
+int scene_number;
+
 //setup runs once
 void setup() {
   background(255);
@@ -89,7 +92,10 @@ void setup() {
   jungle2 = new Jungle2(4, false);
   
   nav = new Nav();
-  arrows = new Arrows();  
+  arrows = new Arrows();
+  
+  // chooses which animal habitat to start on
+  scene_number = 0;
 }
 
 // draw is called directly after setup
@@ -120,31 +126,92 @@ void draw() {
 // these call the display methods in the corresponding classes
 // so we can view them in zoo.pde
 
+//chooses what scene to do next based on int argument
+void doScene(int i) {
+  if (i == 0) {
+    doAfrica1();
+  }
+  else if (i == 1) {
+    doAfrica2();
+  } 
+  else if (i == 2) {
+    doAfrica3();
+  }
+  else if (i == 3) {
+    doAsia1();
+  }
+  else if (i == 4) {
+    doAsia2();
+  }
+  else if (i == 5) {
+    //doFrosty1();
+  }
+  else if (i == 6) {
+    doFrosty2();
+  }
+  else if (i == 7) {
+    doJungle1();
+  }
+  else if (i == 8) {
+    doJungle2();
+  }
+}
+  
+// intro of the box screen
 void doIntro() {
   intro.display();
   arrows.display();
   nav.display();
 }
 
-void doFrosty() {
-  frosty1.display();
+void doAfrica1() {
+  africa1.display();
   arrows.display();
-  nav.display();
+}
+void doAfrica2() {
+  africa2.display();
+  arrows.display();
 }
 
-void doAsia() {
+void doAfrica3() {
+  africa3.display();
+  arrows.display();
+}
+
+void doAsia1() {
   asia1.display();
   arrows.display();
-  nav.display();
 }
 
-void doJungle() {
+void doAsia2() {
+  asia2.display();
+  arrows.display();
+}
+
+void doFrosty1() {
+  frosty1.display();
+  arrows.display();
+}
+
+void doFrosty2() {
+  frosty2.display();
+  arrows.display();
+}
+
+void doJungle1() {
   jungle1.display();
   arrows.display();
-  nav.display();
 }
 
-//-----------------------------------------
+void doJungle2() {
+  jungle2.display();
+  arrows.display();
+}
+
+
+
+//---------------------------------------------
+// what to do when mouse is pressed
 
 
 // if mouse is pressed, do this stuff 
@@ -155,10 +222,11 @@ void mousePressed() {
   if (cursor_over_map()) {
   }
   if (cursor_over_left()) {
-    doFrosty();
+    doScene(updateSceneNumber("left"));
   }
   if (cursor_over_right()) {
-    doAsia();
+    doScene(updateSceneNumber("right"));
+
   }
 }
 
@@ -170,6 +238,29 @@ void mousePressedWelcomeScreen() {
   WELCOME_SCREEN = false;
   }
 }
+
+// to update the scene the user is on
+// when they click on an arrow key as specified by query
+int updateSceneNumber(String query) {
+  if (query.equals("left") && scene_number == 0) {
+    scene_number = 8;
+  }
+  else if (query.equals("right") && scene_number == 8) {
+    scene_number = 0;
+  }
+  else if (query.equals("left")) {
+    scene_number--;
+  }
+  else { // assume query == "right" 
+    scene_number++;
+  }
+  return scene_number;
+}
+
+
+//---------------------------------------------
+// determine if cursor is over a certain area 
+
 
 // determines if cursor in a certain box
 boolean cursor_over(int xmin, int xmax, int ymin, int ymax) {

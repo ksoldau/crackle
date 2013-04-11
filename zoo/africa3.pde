@@ -7,11 +7,13 @@ class Africa3 {
   Africa3(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.background = loadImage("bs.jpg");
+    this.background = loadImage("data/africa_3.png");
   }
   
   // display the scene
   void display() {
+    img = background; 
+    image(img, 0, 0);
   }
 }
     
