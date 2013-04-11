@@ -144,7 +144,7 @@ void doScene(int i) {
     doAsia2();
   }
   else if (i == 5) {
-    //doFrosty1();
+    doFrosty1();
   }
   else if (i == 6) {
     doFrosty2();
