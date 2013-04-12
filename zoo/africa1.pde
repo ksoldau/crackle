@@ -19,7 +19,7 @@ class Africa1 {
   void displayCamel() {
     img = loadImage("data/calvin_camel.gif");
     // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-    image(img, 600, 100);
+    image(img, 500, 100);
   }
 }
     
