@@ -41,11 +41,12 @@ AudioSample baron;
 
 //--------------------------------------
 
-// Static variables
+//Static variables
 int WIDTH = 960;
 int HEIGHT = 650;
 int HABITAT_HEIGHT = 540;
 
+//Dynamic variables
 boolean WELCOME_SCREEN = true; // is it on the welcome screen
 boolean ON_MAP = false; // is true if on the map
 
@@ -88,8 +89,16 @@ String USER; // which animal the user is can be
 // "polarbearA", or "polarbearB"
 
 
-//------
-Gif animal_animation; 
+//Talking animals gifs
+Gif GIF_CAMEL_TALKING; //Africa1
+Gif GIF_GIRAFFE_TALKING; //Africa2
+Gif GIF_LION_TALKING; //Africa3
+Gif GIF_TIGER_TALKING; //Asia1
+Gif GIF_PANDA_TALKING; //Asia2
+Gif GIF_PENGUIN_TALKING; //Frosty1
+Gif GIF_SEAL_TALKING; //Frosty2
+Gif GIF_ELEPHANT_TALKING; //Jungle1
+Gif GIF_SLOTH_TALKING; //Jungle2
 
 //setup runs once
 void setup() {
@@ -147,7 +156,7 @@ void setup() {
                                 512      // buffer size
   );
   
-  animal_animation = new Gif(this, "data/calvin_camel_motion.gif");
+  // GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk.gif"); //new slower? talking one
 }
 
 //randomly chooses which animal the user is 
@@ -178,7 +187,7 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically, don't mess with it
 void draw() {
-  image(animal_animation, 10, 10);
+  //image(GIF_CAMEL_TALKING, 10, 10);
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
     if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
@@ -336,7 +345,7 @@ void mousePressed() {
   else if (cursor_over_right()) {
     doScene(updateSceneNumber("right"));
   }
-  else if (LIST_OF_HABITATS[scene_number].mousePressedAnimal()) {
+  else if (!ON_MAP && LIST_OF_HABITATS[scene_number].mousePressedAnimal()) {
     africa1.asd();
   }
   
