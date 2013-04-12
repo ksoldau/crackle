@@ -1,5 +1,5 @@
 // Stanley Sloth
-class Jungle2 {
+class Jungle2 implements Habitat {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -20,5 +20,9 @@ class Jungle2 {
   void displayAnimal() {
   // img.resize(0,1); how we will resize, it's kind of cheating, but it works
   image(animal_static_image, 500, 100);
+  }
+  
+  
+  boolean mousePressedAnimal() {
   }
 }

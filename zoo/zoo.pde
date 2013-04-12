@@ -297,6 +297,7 @@ void mousePressed() {
   else if (cursor_over_right()) {
     doScene(updateSceneNumber("right"));
   }
+  
 }
 
 // assume: on welcome screen

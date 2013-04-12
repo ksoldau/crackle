@@ -1,5 +1,5 @@
 // Gerry Giraffe
-class Africa2 {
+class Africa2 implements Animal {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -22,6 +22,10 @@ class Africa2 {
     // img.resize(0,1); how we will resize, it's kind of cheating, but it works
     image(animal_static_image, 500, 100);
   }
+  
+  boolean mousePressedAnimal() {
+  }
+  
 }
     
   
