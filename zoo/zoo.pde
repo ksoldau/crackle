@@ -332,6 +332,36 @@ boolean cursor_over_right() {
   return cursor_over(RIGHTXi, RIGHTXf, RIGHTYi, RIGHTYf);
 }
 
+// assuming in the map
+boolean cursor_over_africa1() {
+  return cursor_over(473, 562, 96, 160);
+}
+boolean cursor_over_africa2() {
+  return cursor_over(564, 654, 171, 237);
+}
+boolean cursor_over_africa3() {
+  return cursor_over(581, 670 ,270, 336);
+}
+boolean cursor_over_asia1() {
+  return cursor_over(527,616,370, 435);
+}
+boolean cursor_over_asia2() {
+  return cursor_over(423,513, 409,474);
+}
+boolean cursor_over_frosty1() {
+  return cursor_over(318,407,369, 433);
+}
+boolean cursor_over_frosty2() {
+  return cursor_over(267, 356, 272, 336);
+}
+boolean cursor_over_jungle1() {
+  return cursor_over(283, 372, 171, 235);
+}
+boolean cursor_over_jungle2() {
+  return cursor_over(373, 461, 95, 159);
+}
+
+
 
   
   
