@@ -1,14 +1,15 @@
 // Nav
 class Nav {
-  PImage background;
+  
+  PImage navbar;
   
   Nav() {
-    this.background = loadImage("data/nav.png");
+    this.navbar = loadImage("data/nav.png");
   }
   
   // display the scene
   void display() {
-    img = this.background;
+    img = this.navbar;
     image(img, 0, 0);
   }
 }

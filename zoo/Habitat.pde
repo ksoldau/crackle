@@ -1,4 +1,10 @@
 interface Habitat { 
-  //was the animal in the scene clicked on
+  //displays the background of the scene
+  void display();
+  
+  //displays the animal
+  void displayAnimal();
+  
+  //determines if the animal in the habitat was clicked on
   boolean mousePressedAnimal();
 }
