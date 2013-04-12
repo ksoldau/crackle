@@ -1,4 +1,4 @@
-// Penguin
+// Peter Penguin
 class Frosty1 {
   int state;
   boolean isSleeping;

@@ -1,4 +1,4 @@
-// Giraffe
+// Gerry Giraffe
 class Africa2 {
   int state;
   boolean isSleeping;

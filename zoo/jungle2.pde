@@ -1,4 +1,4 @@
-// Elephant
+// Stanley Sloth
 class Jungle2 {
   int state;
   boolean isSleeping;

@@ -1,4 +1,4 @@
-// Elephant
+// Eliza Elephant
 class Jungle1 {
   int state;
   boolean isSleeping;

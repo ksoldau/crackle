@@ -2,7 +2,7 @@ PImage img;
 
 // declaring variables outside of setup so they can be used anywhere
 // a la "public" in standard java
-//
+
 // Background images
 Intro intro;
 
@@ -102,6 +102,8 @@ void setup() {
   // chooses which animal habitat to start on
   scene_number = 0;
   
+  // randomly chooses which animal and which 
+  // iteration of that animal the user will play
   chooseUserAnimal();
 
 }
@@ -131,8 +133,6 @@ void chooseUserAnimal() {
   println(USER);
 }
   
-  
-  
 // draw is called directly after setup
 // called automatically, don't mess with it
 void draw() {
@@ -151,7 +151,6 @@ void draw() {
   {
     cursor(HAND);
   }
-
   // changes cursor to be the general arrow to show there's nothing to click there
   else { cursor(ARROW); }
 }
@@ -199,6 +198,10 @@ void doIntro() {
   nav.display();
 }
 
+//---------------------
+// all of the do methods display the habitat for each 
+// specified habitat
+
 void doAfrica1() {
   africa1.display();
   arrows.display();
@@ -242,8 +245,6 @@ void doJungle2() {
   jungle2.display();
   arrows.display();
 }
-
-
 
 //---------------------------------------------
 // what to do when mouse is pressed

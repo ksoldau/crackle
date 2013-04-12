@@ -1,4 +1,4 @@
-// Seal
+// Sam Seal
 class Frosty2 {
   int state;
   boolean isSleeping;

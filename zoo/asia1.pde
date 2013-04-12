@@ -1,4 +1,4 @@
-// Tiger
+// Tina Tiger
 class Asia1 {
   int state;
   boolean isSleeping;

@@ -1,4 +1,4 @@
-// Panda
+// Patty Panda
 class Asia2 {
   int state;
   boolean isSleeping;
