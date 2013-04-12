@@ -149,7 +149,16 @@ void draw() {
   (cursor_over_map() || 
   cursor_over_help() || 
   cursor_over_left() ||
-  cursor_over_right()) 
+  cursor_over_right() ||
+  cursor_over_africa1() ||
+  cursor_over_africa2() ||
+  cursor_over_africa3() ||
+  cursor_over_asia1() ||
+  cursor_over_asia2() ||
+  cursor_over_frosty1() ||
+  cursor_over_frosty2() ||
+  cursor_over_jungle1() ||
+  cursor_over_jungle2() )  
   {
     cursor(HAND);
   }
@@ -264,15 +273,44 @@ void mousePressed() {
   if (WELCOME_SCREEN) { // decides what to do with mouse if pressed when on welcoem screen
     mousePressedWelcomeScreen(); 
   }
-  if (cursor_over_map()) {
+  else if (cursor_over_map()) {
     doMap();
   }
-  if (cursor_over_left()) {
+  else if (cursor_over_left()) {
     doScene(updateSceneNumber("left"));
   }
-  if (cursor_over_right()) {
+  else if (cursor_over_right()) {
     doScene(updateSceneNumber("right"));
-
+  }
+  else if (cursor_over_africa1()) {
+    doAfrica1();
+  }
+  else if (cursor_over_africa2()) {
+    doAfrica2();
+  }
+  else if (cursor_over_africa2()) {
+    doAfrica2();
+  }
+  else if (cursor_over_africa3()) {
+    doAfrica3();
+  }
+  else if (cursor_over_asia1()) {
+    doAsia1();
+  }
+  else if (cursor_over_asia2()) {
+    doAsia2();
+  }
+  else if (cursor_over_frosty1()) {
+    doFrosty1();
+  }
+  else if (cursor_over_frosty2()) {
+    doFrosty2();
+  }
+  else if (cursor_over_jungle1()) {
+    doJungle1();
+  }
+  else if (cursor_over_jungle2()) {
+    doJungle2();
   }
 }
 
