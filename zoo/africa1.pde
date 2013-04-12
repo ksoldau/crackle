@@ -16,7 +16,7 @@ class Africa1 implements Habitat {
   Africa1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.background = loadImage("data/africa_1.png");
+    this.background = loadImage("data/africa_1.png"); //background of habitat
   }
   
   // display the scene
@@ -28,17 +28,20 @@ class Africa1 implements Habitat {
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
     // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-    image(animal_static_image, animalLeft, animalTop);
-  }
-  
-  void displayAnimalMoving() {
     image(animal_dynamic_image, animalLeft, animalTop);
   }
   
+  void displayAnimalMoving() {
+    //image(animal_dynamic_image, animalLeft, animalTop);
+      animal_animation.play();
+  }
+  
+  //determines if the mouse get pressed on the Camel
   boolean mousePressedAnimal() {
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
   }
+  
   void asd() {
     if (mousePressedAnimal()) {
       baron.trigger(); //sound

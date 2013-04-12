@@ -5,6 +5,8 @@ import ddf.minim.analysis.*;
 import ddf.minim.ugens.*;
 import ddf.minim.effects.*;
 
+import gifAnimation.*;
+
 PImage img;
 
 // declaring variables outside of setup so they can be used anywhere
@@ -85,6 +87,10 @@ String USER; // which animal the user is can be
 // "gorillaA", "gorillaB", "cobraA", "cobraB", 
 // "polarbearA", or "polarbearB"
 
+
+//------
+Gif animal_animation; 
+
 //setup runs once
 void setup() {
   background(255);
@@ -140,7 +146,8 @@ void setup() {
   baron = minim.loadSample( "baron.mp3", // filename
                                 512      // buffer size
   );
-
+  
+  animal_animation = new Gif(this, "data/calvin_camel_motion.gif");
 }
 
 //randomly chooses which animal the user is 
@@ -171,6 +178,7 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically, don't mess with it
 void draw() {
+  image(animal_animation, 10, 10);
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
     if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
