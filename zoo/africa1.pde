@@ -32,9 +32,23 @@ class Africa1 implements Habitat {
   }
   
   void displayAnimalMoving() {
-    //image(animal_dynamic_image, animalLeft, animalTop);
-     //GIF_CAMEL_TALKING.play();
+    image(animal_dynamic_image, animalLeft, animalTop);
+     animal_animation.play();
   }
+  
+  //displays GIF of the animal talking
+  void displayAnimalTalking() {
+      image(animal_animation, animalLeft, animalTop);
+      animal_animation.play();
+  }
+  
+  void mousePressedInHabitat() {
+    if (mousePressedAnimal()) {
+      displayAnimalMoving();
+      baron.trigger(); //sound
+    }
+  }
+      
   
   //determines if the mouse get pressed on the Camel
   boolean mousePressedAnimal() {

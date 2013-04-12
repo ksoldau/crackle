@@ -88,9 +88,9 @@ String USER; // which animal the user is can be
 // "gorillaA", "gorillaB", "cobraA", "cobraB", 
 // "polarbearA", or "polarbearB"
 
-
+Gif animal_animation;
 //Talking animals gifs
-Gif GIF_CAMEL_TALKING; //Africa1
+/*Gif GIF_CAMEL_TALKING; //Africa1
 Gif GIF_GIRAFFE_TALKING; //Africa2
 Gif GIF_LION_TALKING; //Africa3
 Gif GIF_TIGER_TALKING; //Asia1
@@ -99,6 +99,7 @@ Gif GIF_PENGUIN_TALKING; //Frosty1
 Gif GIF_SEAL_TALKING; //Frosty2
 Gif GIF_ELEPHANT_TALKING; //Jungle1
 Gif GIF_SLOTH_TALKING; //Jungle2
+*/
 
 //setup runs once
 void setup() {
@@ -156,8 +157,11 @@ void setup() {
                                 512      // buffer size
   );
   
-  /*GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk.gif"); //new slower? talking one
-    GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
+  
+   animal_animation = new Gif(this, "data/calvin_camel_motion.gif");
+  // initializing GIFs for talking animals
+  //GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk.gif");
+  /* GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
   Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
   Gif GIF_TIGER_TALKING = new Gif(this, xxxx); //Asia1
   Gif GIF_PANDA_TALKING = new Gif(this, xxxx); //Asia2
@@ -196,7 +200,7 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically, don't mess with it
 void draw() {
-  //image(GIF_CAMEL_TALKING, 10, 10);
+  image(animal_animation, 10, 10);
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
     if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
@@ -354,11 +358,19 @@ void mousePressed() {
   else if (cursor_over_right()) {
     doScene(updateSceneNumber("right"));
   }
-  else if (!ON_MAP && LIST_OF_HABITATS[scene_number].mousePressedAnimal()) {
+  // if the mouse was pressed in current habitat
+  else if (!ON_MAP && cursorOverHabitat()) { 
     africa1.asd();
   }
-  
 }
+
+//assume: not on welcome screen, not on map
+// determines if mouse pressed in a habitat
+boolean cursorOverHabitat() {
+  return cursor_over(0, 960, 0, 540);
+}
+  
+
 
 // assume: on welcome screen
 // determines what actions to perform if mouse pressed 
