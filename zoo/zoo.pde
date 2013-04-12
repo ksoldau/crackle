@@ -156,7 +156,16 @@ void setup() {
                                 512      // buffer size
   );
   
-  // GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk.gif"); //new slower? talking one
+  /*GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk.gif"); //new slower? talking one
+    GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
+  Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
+  Gif GIF_TIGER_TALKING = new Gif(this, xxxx); //Asia1
+  Gif GIF_PANDA_TALKING = new Gif(this, xxxx); //Asia2
+  Gif GIF_PENGUIN_TALKING = new Gif(this, xxxx); //Frosty1
+  Gif GIF_SEAL_TALKING = new Gif(this, xxxx); //Frosty2
+  Gif GIF_ELEPHANT_TALKING = new Gif(this, xxxx); //Jungle1
+  Gif GIF_SLOTH_TALKING = new Gif(this, xxxx); //Jungle2
+  */
 }
 
 //randomly chooses which animal the user is 
