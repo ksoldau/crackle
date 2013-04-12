@@ -15,6 +15,12 @@ class Asia1 {
     img = background;
     image(img, 0, 0);
   }
+  
+  void displayAnimal() {
+  img = loadImage("data/tina_tiger.gif");
+  // img.resize(0,1); how we will resize, it's kind of cheating, but it works
+  image(img, 500, 100);
+  }
 }
     
   

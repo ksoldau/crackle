@@ -16,7 +16,7 @@ class Africa1 {
     image(img, 0, 0);
   }
   
-  void displayCamel() {
+  void displayAnimal() {
     img = loadImage("data/calvin_camel.gif");
     // img.resize(0,1); how we will resize, it's kind of cheating, but it works
     image(img, 500, 100);

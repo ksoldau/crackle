@@ -221,46 +221,54 @@ void doMap() {
 
 void doAfrica1() {
   africa1.display();
-  africa1.displayCamel();
+  africa1.displayAnimal();
   arrows.display();
 }
 void doAfrica2() {
   africa2.display();
+  africa2.displayAnimal();
   arrows.display();
 }
 
 void doAfrica3() {
   africa3.display();
+  africa3.displayAnimal();
   arrows.display();
 }
 
 void doAsia1() {
   asia1.display();
+  asia1.displayAnimal();
   arrows.display();
 }
 
 void doAsia2() {
   asia2.display();
+  asia2.displayAnimal();
   arrows.display();
 }
 
 void doFrosty1() {
   frosty1.display();
+  frosty1.displayAnimal();
   arrows.display();
 }
 
 void doFrosty2() {
   frosty2.display();
+  frosty2.displayAnimal();
   arrows.display();
 }
 
 void doJungle1() {
   jungle1.display();
+  jungle1.displayAnimal();
   arrows.display();
 }
 
 void doJungle2() {
   jungle2.display();
+  jungle2.displayAnimal();
   arrows.display();
 }
 
