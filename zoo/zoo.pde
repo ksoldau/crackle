@@ -22,6 +22,7 @@ Jungle2 jungle2;
 // Navigation and arrows
 Nav nav;
 Arrows arrows;
+Map map;
 
 //--------------------------------------
 
@@ -98,7 +99,8 @@ void setup() {
   
   nav = new Nav();
   arrows = new Arrows();
-  
+  map = new Map();
+
   // chooses which animal habitat to start on
   scene_number = 0;
   
@@ -198,6 +200,12 @@ void doIntro() {
   nav.display();
 }
 
+// map screen
+void doMap() {
+  map.display();
+  arrows.display(); // because currently we cant get out of the map
+}
+
 //---------------------
 // all of the do methods display the habitat for each 
 // specified habitat
@@ -257,6 +265,7 @@ void mousePressed() {
     mousePressedWelcomeScreen(); 
   }
   if (cursor_over_map()) {
+    doMap();
   }
   if (cursor_over_left()) {
     doScene(updateSceneNumber("left"));
