@@ -24,6 +24,7 @@ Nav nav;
 Arrows arrows;
 Map map;
 
+
 //--------------------------------------
 
 // Static variables
@@ -32,6 +33,7 @@ int HEIGHT = 650;
 int HABITAT_HEIGHT = 540;
 
 boolean WELCOME_SCREEN = true; // is it on the welcome screen
+boolean ON_MAP = false; // is true if on the map
 
 //coordinates for start button on welcome page
 int STARTXi = 400;
@@ -150,6 +152,7 @@ void draw() {
   cursor_over_help() || 
   cursor_over_left() ||
   cursor_over_right() ||
+  (ON_MAP && (
   cursor_over_africa1() ||
   cursor_over_africa2() ||
   cursor_over_africa3() ||
@@ -158,7 +161,7 @@ void draw() {
   cursor_over_frosty1() ||
   cursor_over_frosty2() ||
   cursor_over_jungle1() ||
-  cursor_over_jungle2() )  
+  cursor_over_jungle2() ))) 
   {
     cursor(HAND);
   }
@@ -281,8 +284,12 @@ void mousePressed() {
   if (WELCOME_SCREEN) { // decides what to do with mouse if pressed when on welcoem screen
     mousePressedWelcomeScreen(); 
   }
+  if (ON_MAP) {
+    mousePressedOnMap();
+  }
   else if (cursor_over_map()) {
     doMap();
+    ON_MAP = true;
   }
   else if (cursor_over_left()) {
     doScene(updateSceneNumber("left"));
@@ -290,7 +297,21 @@ void mousePressed() {
   else if (cursor_over_right()) {
     doScene(updateSceneNumber("right"));
   }
-  else if (cursor_over_africa1()) {
+}
+
+// assume: on welcome screen
+// determines what actions to perform if mouse pressed 
+void mousePressedWelcomeScreen() {
+  if (cursor_over_start() && mousePressed == true) {
+  doIntro();
+  WELCOME_SCREEN = false;
+  }
+}
+
+// assume: on map
+// determines what actiosn to perform if on map
+void mousePressedOnMap() {
+  if (cursor_over_africa1()) {
     doAfrica1();
   }
   else if (cursor_over_africa2()) {
@@ -320,15 +341,7 @@ void mousePressed() {
   else if (cursor_over_jungle2()) {
     doJungle2();
   }
-}
-
-// assume: on welcome screen
-// determines what actions to perform if mouse pressed 
-void mousePressedWelcomeScreen() {
-  if (cursor_over_start() && mousePressed == true) {
-  doIntro();
-  WELCOME_SCREEN = false;
-  }
+  ON_MAP = false;
 }
 
 // to update the scene the user is on
