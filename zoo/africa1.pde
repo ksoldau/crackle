@@ -10,6 +10,8 @@ class Africa1 implements Habitat {
   int animalTop = 100;
   
   PImage animal_static_image = loadImage("data/calvin_camel.gif");
+  PImage animal_dynamic_image = loadImage("data/calvin_camel_motion.gif");
+
   
   Africa1(int state, boolean isSleeping) {
     this.state = state;
@@ -28,12 +30,18 @@ class Africa1 implements Habitat {
     image(animal_static_image, animalLeft, animalTop);
   }
   
+  void displayAnimalMoving() {
+    image(animal_dynamic_image, animalLeft, animalTop);
+  }
+  
   boolean mousePressedAnimal() {
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
   }
   void asd() {
     if (mousePressedAnimal()) {
+      baron.trigger(); //sound
+      displayAnimalMoving();   
       println("PRESSED DA CAMEL!");
     }
   }

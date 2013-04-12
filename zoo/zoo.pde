@@ -1,3 +1,10 @@
+import ddf.minim.spi.*;
+import ddf.minim.signals.*;
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.ugens.*;
+import ddf.minim.effects.*;
+
 PImage img;
 
 // declaring variables outside of setup so they can be used anywhere
@@ -26,6 +33,9 @@ Nav nav;
 Arrows arrows;
 Map map;
 
+// Audio Setup
+Minim minim;
+AudioSample baron;
 
 //--------------------------------------
 
@@ -124,6 +134,12 @@ void setup() {
   chooseUserAnimal();
   
   println(LIST_OF_HABITATS[0]);
+
+  // Setting up sound engine
+  minim = new Minim(this);
+  baron = minim.loadSample( "baron.mp3", // filename
+                                512      // buffer size
+  );
 
 }
 
