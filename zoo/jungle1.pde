@@ -23,7 +23,8 @@ class Jungle1 implements Habitat {
   image(animal_static_image, 500, 100);
   }
   
-  boolean mousePressedAnimal() {
+  boolean mousePressedAnimal() {    return false;
+
   }
 }
     

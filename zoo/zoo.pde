@@ -19,6 +19,8 @@ Frosty2 frosty2;
 Jungle1 jungle1;
 Jungle2 jungle2;
 
+Habitat[] LIST_OF_HABITATS = new Habitat[9];
+
 // Navigation and arrows
 Nav nav;
 Arrows arrows;
@@ -66,7 +68,7 @@ int RIGHTYi = 226;
 int RIGHTYf = 301;
 
 //--------------------------------------
-int scene_number;
+int scene_number = 0;
 
 //--------------------------------------
 String USER; // which animal the user is can be 
@@ -99,6 +101,17 @@ void setup() {
   jungle1 = new Jungle1(4, false);
   jungle2 = new Jungle2(4, false);
   
+  LIST_OF_HABITATS[0] = africa1;
+  LIST_OF_HABITATS[1] = africa2;
+  LIST_OF_HABITATS[2] = africa3;
+  LIST_OF_HABITATS[3] = asia1;
+  LIST_OF_HABITATS[4] = asia2;
+  LIST_OF_HABITATS[5] = frosty1;
+  LIST_OF_HABITATS[6] = frosty2;
+  LIST_OF_HABITATS[7] = jungle1;
+  LIST_OF_HABITATS[8] = jungle2;
+
+  
   nav = new Nav();
   arrows = new Arrows();
   map = new Map();
@@ -109,6 +122,8 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   chooseUserAnimal();
+  
+  println(LIST_OF_HABITATS[0]);
 
 }
 
@@ -296,6 +311,9 @@ void mousePressed() {
   }
   else if (cursor_over_right()) {
     doScene(updateSceneNumber("right"));
+  }
+  else if (LIST_OF_HABITATS[scene_number].mousePressedAnimal()) {
+    africa1.asd();
   }
   
 }

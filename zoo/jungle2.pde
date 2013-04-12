@@ -23,6 +23,7 @@ class Jungle2 implements Habitat {
   }
   
   
-  boolean mousePressedAnimal() {
+  boolean mousePressedAnimal() {    return false;
+
   }
 }

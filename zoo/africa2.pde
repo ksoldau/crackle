@@ -1,5 +1,5 @@
 // Gerry Giraffe
-class Africa2 implements Animal {
+class Africa2 implements Habitat {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -24,6 +24,7 @@ class Africa2 implements Animal {
   }
   
   boolean mousePressedAnimal() {
+    return false;
   }
   
 }

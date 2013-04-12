@@ -29,8 +29,13 @@ class Africa1 implements Habitat {
   }
   
   boolean mousePressedAnimal() {
-    (animalLeft < mouseX && mouseX < 700) && 
-    (animalTop < mouseY  && mouseY < (animalTop + 200));
+    return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
+    && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
+  }
+  void asd() {
+    if (mousePressedAnimal()) {
+      println("PRESSED DA CAMEL!");
+    }
   }
 }
      
