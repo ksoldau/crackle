@@ -1,6 +1,7 @@
 // Calvin Camel
 class Africa1 {
   int state;
+  boolean isTalking;
   boolean isSleeping;
   PImage background;
   PImage animal_static_image = loadImage("data/calvin_camel.gif");

@@ -1,8 +1,10 @@
 // Peter Penguin
 class Frosty1 {
   int state;
+  boolean isTalking;
   boolean isSleeping;
   PImage background;
+  PImage animal_static_image = loadImage("data/peter_penguin.gif");
   
   Frosty1(int state, boolean isSleeping) {
     this.state = state;
@@ -16,9 +18,8 @@ class Frosty1 {
     image(img, 0, 0);
   }
   void displayAnimal() {
-  img = loadImage("data/peter_penguin.gif");
   // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-  image(img, 500, 100);
+  image(animal_static_image, 500, 100);
   }
 }
     

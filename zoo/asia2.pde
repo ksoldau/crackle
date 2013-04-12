@@ -1,8 +1,10 @@
 // Patty Panda
 class Asia2 {
   int state;
+  boolean isTalking;
   boolean isSleeping;
   PImage background;
+  PImage animal_static_image = loadImage("data/patty_pandabear.gif");
   
   Asia2(int state, boolean isSleeping) {
     this.state = state;
@@ -16,9 +18,8 @@ class Asia2 {
     image(img, 0, 0);
   }
   void displayAnimal() {
-  img = loadImage("data/patty_pandabear.gif");
   // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-  image(img, 500, 100);
+  image(animal_static_image, 500, 100);
   }
 }
     

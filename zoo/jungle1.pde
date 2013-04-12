@@ -1,8 +1,10 @@
 // Eliza Elephant
 class Jungle1 {
   int state;
+  boolean isTalking;
   boolean isSleeping;
-  PImage background;
+  PImage background; 
+  PImage animal_static_image = loadImage("data/eliza_elephant.gif");
   
   Jungle1(int state, boolean isSleeping) {
     this.state = state;
@@ -17,9 +19,8 @@ class Jungle1 {
   }
   
   void displayAnimal() {
-  img = loadImage("data/eliza_elephant.gif");
   // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-  image(img, 500, 100);
+  image(animal_static_image, 500, 100);
   }
 }
     
