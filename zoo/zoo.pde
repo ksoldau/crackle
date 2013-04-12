@@ -65,6 +65,11 @@ int RIGHTYf = 301;
 //--------------------------------------
 int scene_number;
 
+//--------------------------------------
+String USER; // which animal the user is can be 
+// "gorillaA", "gorillaB", "cobraA", "cobraB", 
+// "polarbearA", or "polarbearB"
+
 //setup runs once
 void setup() {
   background(255);
@@ -96,8 +101,38 @@ void setup() {
   
   // chooses which animal habitat to start on
   scene_number = 0;
+  
+  chooseUserAnimal();
+
 }
 
+//randomly chooses which animal the user is 
+// and which group of 6 animal interacts with
+void chooseUserAnimal() {
+  float random_number = random(0, 6);
+  if (random_number < 1) {
+    USER = "gorillaA";
+  }
+  else if (random_number < 2) {
+    USER = "gorillaB";
+  }
+  else if (random_number < 3){
+    USER = "polarbearA";   
+  }
+  else if (random_number < 4){
+    USER = "polarbearB";   
+  }
+  else if (random_number < 5){
+    USER = "cobraA";   
+  }
+  else if (random_number < 6){
+    USER = "cobraB";   
+  }
+  println(USER);
+}
+  
+  
+  
 // draw is called directly after setup
 // called automatically, don't mess with it
 void draw() {
