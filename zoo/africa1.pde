@@ -15,6 +15,12 @@ class Africa1 {
     img = background;
     image(img, 0, 0);
   }
+  
+  void displayCamel() {
+    img = loadImage("data/calvin_camel.gif");
+    // img.resize(0,1); how we will resize, it's kind of cheating, but it works
+    image(img, 100, 100);
+  }
 }
     
   

@@ -204,6 +204,7 @@ void doIntro() {
 
 void doAfrica1() {
   africa1.display();
+  africa1.displayCamel();
   arrows.display();
 }
 void doAfrica2() {
