@@ -1,5 +1,5 @@
 // Tina Tiger
-class Asia1 implements Habitat {
+class Asia1 extends Habitat {
   int state;
   boolean isSleeping;
   PImage background;
@@ -24,8 +24,9 @@ class Asia1 implements Habitat {
   }
   
   boolean mousePressedAnimal() {    return false;
-
   }
+  
+  void mousePressedInHabitat() {}
 }
     
   

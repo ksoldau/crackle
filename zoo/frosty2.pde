@@ -1,5 +1,5 @@
 // Sam Seal
-class Frosty2 implements Habitat {
+class Frosty2 extends Habitat {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -29,6 +29,8 @@ class Frosty2 implements Habitat {
   boolean mousePressedAnimal() {    return false;
 
   }
+
+  void mousePressedInHabitat() {}
 }
     
   

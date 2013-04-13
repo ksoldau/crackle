@@ -1,5 +1,5 @@
 // Patty Panda
-class Asia2 implements Habitat {
+class Asia2 extends Habitat {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -26,8 +26,9 @@ class Asia2 implements Habitat {
   }
   
   boolean mousePressedAnimal() {    return false;
-
   }
+  
+  void mousePressedInHabitat() {}
 }
     
   

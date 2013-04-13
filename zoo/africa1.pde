@@ -1,5 +1,5 @@
 // Calvin Camel
-class Africa1 implements Habitat {
+class Africa1 extends Habitat {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -19,7 +19,11 @@ class Africa1 implements Habitat {
     this.background = loadImage("data/africa_1.png"); //background of habitat
   }
   
-  // display the scene
+  void talkingCamelTest() {
+  image(animal_animation, 10, 10);
+  }
+  
+  // display the background
   void display() {
     img = background;
     image(img, 0, 0);
@@ -55,15 +59,15 @@ class Africa1 implements Habitat {
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
   }
-  
-  void asd() {
+    
+ /* void mousePressedInHabitat() {
     if (mousePressedAnimal()) {
       baron.trigger(); //sound
       displayAnimalMoving();   
       println("PRESSED DA CAMEL!");
       println(HABITAT_NUMBER);
     }
-  }
+  }*/
 }
      
   

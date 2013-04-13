@@ -1,5 +1,5 @@
 // Leonard Lion
-class Africa3 implements Habitat {
+class Africa3 extends Habitat {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -27,8 +27,9 @@ class Africa3 implements Habitat {
   // determines if 
   boolean mousePressedAnimal() {   
     return false;
-
   }
+  
+  void mousePressedInHabitat() {}
 }
     
   

@@ -1,5 +1,5 @@
 // Peter Penguin
-class Frosty1 implements Habitat {
+class Frosty1 extends Habitat {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -27,6 +27,7 @@ class Frosty1 implements Habitat {
   boolean mousePressedAnimal() {    return false;
 
   }
+  void mousePressedInHabitat() {}
 }
     
   

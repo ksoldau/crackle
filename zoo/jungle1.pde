@@ -1,5 +1,5 @@
 // Eliza Elephant
-class Jungle1 implements Habitat {
+class Jungle1 extends Habitat {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -27,6 +27,7 @@ class Jungle1 implements Habitat {
   boolean mousePressedAnimal() {    return false;
 
   }
+  void mousePressedInHabitat() {}
 }
     
   

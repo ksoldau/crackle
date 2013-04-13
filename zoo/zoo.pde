@@ -205,8 +205,8 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically
 void draw() {
-  if (!WELCOME_SCREEN && HABITAT_NUMBER == 0) {
-  image(animal_animation, 10, 10);
+  if (HABITAT_NUMBER == 0) {
+  africa1.talkingCamelTest();
   }
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
@@ -367,8 +367,8 @@ void mousePressed() {
     doScene(updateSceneNumber("right"));
   }
   // if the mouse was pressed in current habitat
-  else if (!ON_MAP && cursorOverHabitat()) { 
-    africa1.asd();
+  else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 0)) {
+   africa1.mousePressedInHabitat();//println(LIST_OF_HABITATS[HABITAT_NUMBER]); //.mousePressedInHabitat(); 
   }
 }
 

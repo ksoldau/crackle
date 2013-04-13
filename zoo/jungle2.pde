@@ -1,5 +1,5 @@
 // Stanley Sloth
-class Jungle2 implements Habitat {
+class Jungle2 extends Habitat {
   int state;
   boolean isTalking;
   boolean isSleeping;
@@ -28,4 +28,5 @@ class Jungle2 implements Habitat {
   boolean mousePressedAnimal() {    return false;
 
   }
+  void mousePressedInHabitat() {}
 }

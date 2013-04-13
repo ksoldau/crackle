@@ -1,10 +1,13 @@
-interface Habitat { 
+public abstract class Habitat { 
+  
   //displays the background of the scene
-  void display();
+  public abstract void display();
   
   //displays the animal
-  void displayAnimal();
+  public abstract void displayAnimal();
   
   //determines if the animal in the habitat was clicked on
-  boolean mousePressedAnimal();
-}
+  public abstract boolean mousePressedAnimal();
+  
+  public abstract void mousePressedInHabitat();
+  }
