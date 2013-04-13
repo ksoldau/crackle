@@ -82,10 +82,14 @@ int RIGHTYf = 301;
 // if a certain screen is up
 boolean WELCOME_SCREEN = true; // is it on the welcome screen
 boolean INTRO_SCREEN = false; // is it on the intro screen
-boolean ON_MAP = false; // is true if on the map
+boolean ON_MAP = false; 
+boolean ON_HABITAT = !WELCOME_SCREEN && !ON_MAP;
 
-//habitat number
+//current habitat number
 int HABITAT_NUMBER = 8;
+
+//is the current animal talking
+boolean ANIMAL_TALKING = false;
 
 //------------------------------------------
 //setting up who the user is
@@ -166,7 +170,6 @@ void setup() {
   
    GIF_CAMEL_TALKING = new Gif(this, "data/calvin_camel_motion.gif");
   // initializing GIFs for talking animals
-  //GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk.gif");
   /* GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
   Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
   Gif GIF_TIGER_TALKING = new Gif(this, xxxx); //Asia1
@@ -206,8 +209,11 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically
 void draw() {
-  if (HABITAT_NUMBER == 0) {
+  if (!ON_MAP && HABITAT_NUMBER == 0 && ANIMAL_TALKING) {
   africa1.talkingCamelTest();
+  }
+  if (!ON_MAP && HABITAT_NUMBER == 0 && !ANIMAL_TALKING) {
+    africa1.nottalkingCamelTest();
   }
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
@@ -217,7 +223,7 @@ void draw() {
     else { cursor(ARROW); }
   } 
   else if 
-  (cursor_over_map() || 
+  (cursorOverMap() || 
   cursor_over_help() || 
   cursor_over_left() ||
   cursor_over_right() ||
@@ -294,7 +300,6 @@ void doMap() {
 
 void doAfrica1() {
   africa1.display();
-  africa1.displayAnimal();
   arrows.display();
 }
 void doAfrica2() {
@@ -357,9 +362,10 @@ void mousePressed() {
   if (ON_MAP) {
     mousePressedOnMap();
   }
-  else if (cursor_over_map()) {
+  else if (cursorOverMap()) {
     doMap();
     ON_MAP = true;
+    println("in mouse pressed" + ON_MAP);
   }
   else if (cursor_over_left()) {
     doScene(updateSceneNumber("left"));
@@ -396,6 +402,8 @@ void mousePressedOnMap() {
   if (cursor_over_africa1()) {
     doAfrica1();
     HABITAT_NUMBER = 0;
+    ON_MAP = false;
+    println(ON_MAP);
   }
   else if (cursor_over_africa2()) {
     doAfrica2();
@@ -433,7 +441,6 @@ void mousePressedOnMap() {
     doJungle2();
     HABITAT_NUMBER = 7;
   }
-  ON_MAP = false;
 }
 
 // to update the scene the user is on
@@ -470,7 +477,7 @@ boolean cursor_over_start() {
   return cursor_over(STARTXi, STARTXf, STARTYi, STARTYf);
 }
 // determines if cursor over map 
-boolean cursor_over_map() {
+boolean cursorOverMap() {
   return cursor_over(MAPXi, MAPXf, MAPYi, MAPYf);
 }
 boolean cursor_over_help() {

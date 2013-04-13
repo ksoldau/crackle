@@ -9,7 +9,7 @@ class Africa1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   
-  PImage animal_static_image = loadImage("data/calvin_camel.gif");
+  PImage animal_static_image = loadImage("data/sam_sealion.gif");
   PImage animal_dynamic_image = loadImage("data/calvin_camel_motion.gif");
 
   
@@ -20,7 +20,11 @@ class Africa1 extends Habitat {
   }
  
   void talkingCamelTest() {
-    image(GIF_CAMEL_TALKING, 10, 10);
+   image(GIF_CAMEL_TALKING, animalLeft, animalTop);
+  }
+  
+  void nottalkingCamelTest() {
+    image(animal_static_image, animalLeft, animalTop);
   }
   
   //displays the background for the habitat
@@ -32,24 +36,24 @@ class Africa1 extends Habitat {
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
     // img.resize(0,1); how we will resize, it's kind of cheating, but it works
+    //image(animal_dynamic_image, animalLeft, animalTop);
     image(animal_dynamic_image, animalLeft, animalTop);
-  }
-  
-  void displayAnimalMoving() {
-    image(animal_dynamic_image, animalLeft, animalTop);
-     GIF_CAMEL_TALKING.play();
+    animal_dynamic_image.resize(100, 50);
+
   }
   
   //displays GIF of the animal talking
   void displayAnimalTalking() {
-      image(GIF_CAMEL_TALKING, animalLeft, animalTop);
       GIF_CAMEL_TALKING.play();
   }
   
   //decides which actions to take if mouse was pressed 
   void mousePressedInHabitat() {
-    if (mousePressedAnimal()) {
-      displayAnimalMoving();
+    if (!ANIMAL_TALKING && mousePressedAnimal()) { //later might not need not animal talking 
+    // because won't let mouse presses happen if it is
+      ANIMAL_TALKING = true;
+      doAfrica1();
+      displayAnimalTalking();
       baron.trigger(); //sound
     }
   }
