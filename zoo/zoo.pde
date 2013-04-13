@@ -95,7 +95,8 @@ String USER; // which animal the user is can be
 
 //------------------------------------------
 //Gifs of talking animals
-Gif animal_animation;
+
+Gif GIF_CAMEL_TALKING;
 //Talking animals gifs
 /*Gif GIF_CAMEL_TALKING; //Africa1
 Gif GIF_GIRAFFE_TALKING; //Africa2
@@ -163,7 +164,7 @@ void setup() {
   );
   
   
-   animal_animation = new Gif(this, "data/calvin_camel_motion.gif");
+   GIF_CAMEL_TALKING = new Gif(this, "data/calvin_camel_motion.gif");
   // initializing GIFs for talking animals
   //GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk.gif");
   /* GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2

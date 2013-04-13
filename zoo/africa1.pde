@@ -18,13 +18,13 @@ class Africa1 extends Habitat {
     this.isSleeping = isSleeping;
     this.background = loadImage("data/africa_1.png"); //background of habitat
   }
-  
+ 
   void talkingCamelTest() {
-  image(animal_animation, 10, 10);
+    image(GIF_CAMEL_TALKING, 10, 10);
   }
   
-  // display the background
-  void display() {
+  //displays the background for the habitat
+   public void display() {
     img = background;
     image(img, 0, 0);
   }
@@ -37,37 +37,28 @@ class Africa1 extends Habitat {
   
   void displayAnimalMoving() {
     image(animal_dynamic_image, animalLeft, animalTop);
-     animal_animation.play();
+     GIF_CAMEL_TALKING.play();
   }
   
   //displays GIF of the animal talking
   void displayAnimalTalking() {
-      image(animal_animation, animalLeft, animalTop);
-      animal_animation.play();
+      image(GIF_CAMEL_TALKING, animalLeft, animalTop);
+      GIF_CAMEL_TALKING.play();
   }
   
+  //decides which actions to take if mouse was pressed 
   void mousePressedInHabitat() {
     if (mousePressedAnimal()) {
       displayAnimalMoving();
       baron.trigger(); //sound
     }
   }
-      
   
   //determines if the mouse get pressed on the Camel
   boolean mousePressedAnimal() {
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
   }
-    
- /* void mousePressedInHabitat() {
-    if (mousePressedAnimal()) {
-      baron.trigger(); //sound
-      displayAnimalMoving();   
-      println("PRESSED DA CAMEL!");
-      println(HABITAT_NUMBER);
-    }
-  }*/
 }
      
   
