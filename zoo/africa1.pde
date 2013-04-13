@@ -61,6 +61,7 @@ class Africa1 implements Habitat {
       baron.trigger(); //sound
       displayAnimalMoving();   
       println("PRESSED DA CAMEL!");
+      println(HABITAT_NUMBER);
     }
   }
 }

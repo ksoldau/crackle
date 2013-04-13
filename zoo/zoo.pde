@@ -5,16 +5,14 @@ import ddf.minim.analysis.*;
 import ddf.minim.ugens.*;
 import ddf.minim.effects.*;
 
-import gifAnimation.*;
-
-PImage img;
+import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 
 // declaring variables outside of setup so they can be used anywhere
 // a la "public" in standard java
-
-// Background images
+PImage img;
 Intro intro;
 
+// Habitat classes
 Africa1 africa1;
 Africa2 africa2;
 Africa3 africa3;
@@ -28,9 +26,10 @@ Frosty2 frosty2;
 Jungle1 jungle1;
 Jungle2 jungle2;
 
+// list of Habitats
 Habitat[] LIST_OF_HABITATS = new Habitat[9];
 
-// Navigation and arrows
+// Navigation and Arrows
 Nav nav;
 Arrows arrows;
 Map map;
@@ -39,16 +38,13 @@ Map map;
 Minim minim;
 AudioSample baron;
 
-//--------------------------------------
-
+//------------------------------------------------
 //Static variables
+
+//width and height of scenes and total height
 int WIDTH = 960;
 int HEIGHT = 650;
 int HABITAT_HEIGHT = 540;
-
-//Dynamic variables
-boolean WELCOME_SCREEN = true; // is it on the welcome screen
-boolean ON_MAP = false; // is true if on the map
 
 //coordinates for start button on welcome page
 int STARTXi = 400;
@@ -80,14 +76,25 @@ int RIGHTXf = 942;
 int RIGHTYi = 226;
 int RIGHTYf = 301;
 
-//--------------------------------------
-int scene_number = 0;
+//--------------------------------------------
+//Dynamic variables 
 
-//--------------------------------------
+// if a certain screen is up
+boolean WELCOME_SCREEN = true; // is it on the welcome screen
+boolean INTRO_SCREEN = false; // is it on the intro screen
+boolean ON_MAP = false; // is true if on the map
+
+//habitat number
+int HABITAT_NUMBER = 8;
+
+//------------------------------------------
+//setting up who the user is
 String USER; // which animal the user is can be 
 // "gorillaA", "gorillaB", "cobraA", "cobraB", 
 // "polarbearA", or "polarbearB"
 
+//------------------------------------------
+//Gifs of talking animals
 Gif animal_animation;
 //Talking animals gifs
 /*Gif GIF_CAMEL_TALKING; //Africa1
@@ -101,6 +108,7 @@ Gif GIF_ELEPHANT_TALKING; //Jungle1
 Gif GIF_SLOTH_TALKING; //Jungle2
 */
 
+//------------------------------------------
 //setup runs once
 void setup() {
   background(255);
@@ -141,9 +149,6 @@ void setup() {
   nav = new Nav();
   arrows = new Arrows();
   map = new Map();
-
-  // chooses which animal habitat to start on
-  scene_number = 0;
   
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
@@ -198,9 +203,11 @@ void chooseUserAnimal() {
 }
   
 // draw is called directly after setup
-// called automatically, don't mess with it
+// called automatically
 void draw() {
+  if (!WELCOME_SCREEN && HABITAT_NUMBER == 0) {
   image(animal_animation, 10, 10);
+  }
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
     if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
@@ -271,6 +278,7 @@ void doIntro() {
   intro.display();
   arrows.display();
   nav.display();
+  INTRO_SCREEN = true;
 }
 
 // map screen
@@ -386,33 +394,43 @@ void mousePressedWelcomeScreen() {
 void mousePressedOnMap() {
   if (cursor_over_africa1()) {
     doAfrica1();
+    HABITAT_NUMBER = 0;
   }
   else if (cursor_over_africa2()) {
     doAfrica2();
+    HABITAT_NUMBER = 1;
   }
   else if (cursor_over_africa2()) {
     doAfrica2();
+    HABITAT_NUMBER = 2;
   }
   else if (cursor_over_africa3()) {
     doAfrica3();
+    HABITAT_NUMBER = 3;
   }
   else if (cursor_over_asia1()) {
     doAsia1();
+    HABITAT_NUMBER = 4;
   }
   else if (cursor_over_asia2()) {
     doAsia2();
+    HABITAT_NUMBER = 5;
   }
   else if (cursor_over_frosty1()) {
     doFrosty1();
+    HABITAT_NUMBER = 6;
   }
   else if (cursor_over_frosty2()) {
     doFrosty2();
+    HABITAT_NUMBER = 7;
   }
   else if (cursor_over_jungle1()) {
     doJungle1();
+    HABITAT_NUMBER = 7;
   }
   else if (cursor_over_jungle2()) {
     doJungle2();
+    HABITAT_NUMBER = 7;
   }
   ON_MAP = false;
 }
@@ -420,19 +438,19 @@ void mousePressedOnMap() {
 // to update the scene the user is on
 // when they click on an arrow key as specified by query
 int updateSceneNumber(String query) {
-  if (query.equals("left") && scene_number == 0) {
-    scene_number = 8;
+  if (query.equals("left") && HABITAT_NUMBER == 0) {
+    HABITAT_NUMBER = 8;
   }
-  else if (query.equals("right") && scene_number == 8) {
-    scene_number = 0;
+  else if (query.equals("right") && HABITAT_NUMBER == 8) {
+    HABITAT_NUMBER = 0;
   }
   else if (query.equals("left")) {
-    scene_number--;
+    HABITAT_NUMBER--;
   }
   else { // assume query == "right" 
-    scene_number++;
+    HABITAT_NUMBER++;
   }
-  return scene_number;
+  return HABITAT_NUMBER;
 }
 
 
