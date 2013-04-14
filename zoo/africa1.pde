@@ -62,6 +62,10 @@ class Africa1 extends Habitat {
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
   }
+  
+  int lengthCurrentTalk() {
+    return LENGTH_CAMEL_HOW_DOIN;
+  }
 }
      
   

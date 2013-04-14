@@ -211,10 +211,15 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically
 void draw() {
-  int current_time = millis();
+ /* int current_time = millis();
   if(HABITAT_NUMBER == 0 && ANIMAL_TALKING && (current_time - START_TIME >= LENGTH_CAMEL_HOW_DOIN)) {
     ANIMAL_TALKING = false;
     doAfrica1();
+  } */
+  int current_time = millis();
+  if(ANIMAL_TALKING && (current_time - START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].lengthCurrentTalk())) {
+    ANIMAL_TALKING = false;
+    doScene(HABITAT_NUMBER);
   }
   if (!ON_MAP && HABITAT_NUMBER == 0 && ANIMAL_TALKING) {
   africa1.talkingCamelTest();

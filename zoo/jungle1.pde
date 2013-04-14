@@ -30,6 +30,8 @@ class Jungle1 extends Habitat {
 
   }
   void mousePressedInHabitat() {}
-}
+  
+    
+int lengthCurrentTalk() { return 0; }}
     
   

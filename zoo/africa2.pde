@@ -33,7 +33,8 @@ class Africa2 extends Habitat {
   
   void mousePressedInHabitat() {
   }
-  
+    
+  int lengthCurrentTalk() { return 0; }
 }
     
   

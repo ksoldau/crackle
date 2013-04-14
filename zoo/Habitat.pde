@@ -16,4 +16,7 @@ public abstract class Habitat {
   
   //decides which actions to take if mouse was pressed in this habitat
   public abstract void mousePressedInHabitat();
+  
+  //determines length of current talk animal is on in milliseconds
+  abstract int lengthCurrentTalk();
 }
