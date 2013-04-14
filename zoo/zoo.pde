@@ -225,7 +225,7 @@ void draw() {
   }
   //to display the correct animal for current habitat
   if (!ON_MAP) { 
-    LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal();
+    //LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal();
   }
   
   drawCursor();
