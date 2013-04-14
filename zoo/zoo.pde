@@ -232,8 +232,13 @@ void draw() {
   if (!ON_MAP && HABITAT_NUMBER == 1) {
     africa2.displayAnimal();
   } */
+  
+  drawCursor();
+}
 
-  // changes the cursor to show it's over the start button
+//changes the cursor to way we want it when we want it
+void drawCursor() {
+    // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
     if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
       cursor(HAND); 
@@ -262,6 +267,7 @@ void draw() {
   // changes cursor to be the general arrow to show there's nothing to click there
   else { cursor(ARROW); }
 }
+
 
 //---------------------------------------
 // "do" functions 
