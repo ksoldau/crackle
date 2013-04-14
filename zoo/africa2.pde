@@ -41,13 +41,14 @@ class Africa2 extends Habitat {
   
   //determines if the mouse was pressed on an animal
   boolean cursorOverAnimal() {
-    return ((animalLeft < mouseX) && (mouseX < (animalLeft + 100)))
-    && ((animalTop < mouseY) && (mouseY < (animalTop + 100)));
+    boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
+    && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+    return ans;
   }
  
   
   void mousePressedInHabitat() {
-    if (true) {
+    if (cursorOverAnimal()) {
       doAfrica2();
       ANIMAL_TALKING = true;
       playAnimalTalking();

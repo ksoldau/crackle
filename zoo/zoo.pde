@@ -104,9 +104,11 @@ String USER; // which animal the user is can be
 
 Gif GIF_CAMEL_TALKING; //Africa1
 Gif GIF_GIRAFFE_TALKING; //Africa2
+
+Gif GIF_TIGER_TALKING; //Asia1
+
 //Talking animals gifs
 /*Gif GIF_LION_TALKING; //Africa3
-Gif GIF_TIGER_TALKING; //Asia1
 Gif GIF_PANDA_TALKING; //Asia2
 Gif GIF_PENGUIN_TALKING; //Frosty1
 Gif GIF_SEAL_TALKING; //Frosty2
@@ -170,7 +172,8 @@ void setup() {
   
   
    GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk_288.gif");
-   GIF_GIRAFFE_TALKING = new Gif(this, "data/test.gif");
+   GIF_GIRAFFE_TALKING = new Gif(this, "data/gerry_talk_288.gif");
+   GIF_TIGER_TALKING  = new Gif(this, "data/tina_talk_288.gif");
   // initializing GIFs for talking animals
   /* GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
   Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
@@ -324,43 +327,36 @@ void doAfrica2() {
 
 void doAfrica3() {
   africa3.display();
-  africa3.displayAnimal();
   arrows.display();
 }
 
 void doAsia1() {
   asia1.display();
-  asia1.displayAnimal();
   arrows.display();
 }
 
 void doAsia2() {
   asia2.display();
-  asia2.displayAnimal();
   arrows.display();
 }
 
 void doFrosty1() {
   frosty1.display();
-  frosty1.displayAnimal();
   arrows.display();
 }
 
 void doFrosty2() {
   frosty2.display();
-  frosty2.displayAnimal();
   arrows.display();
 }
 
 void doJungle1() {
   jungle1.display();
-  jungle1.displayAnimal();
   arrows.display();
 }
 
 void doJungle2() {
   jungle2.display();
-  jungle2.displayAnimal();
   arrows.display();
 }
 
@@ -396,6 +392,10 @@ void mousePressed() {
   else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 1)) {
     africa2.mousePressedInHabitat();
   }
+  else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 3)) {
+    asia1.mousePressedInHabitat();
+    println("gothere");
+  }
 }
 
 //assume: not on welcome screen, not on map
@@ -429,34 +429,29 @@ void mousePressedOnMap() {
     HABITAT_NUMBER = 1;
     ON_MAP = false;
   }
-  else if (cursor_over_africa2()) {
+  else if (cursor_over_africa3()) {
     doAfrica2();
     HABITAT_NUMBER = 2;
     ON_MAP = false;
   }
-  else if (cursor_over_africa3()) {
-    doAfrica3();
-    HABITAT_NUMBER = 3;
-    ON_MAP = false;
-  }
   else if (cursor_over_asia1()) {
     doAsia1();
-    HABITAT_NUMBER = 4;
+    HABITAT_NUMBER = 3;
     ON_MAP = false;
   }
   else if (cursor_over_asia2()) {
     doAsia2();
-    HABITAT_NUMBER = 5;
+    HABITAT_NUMBER = 4;
     ON_MAP = false;
   }
   else if (cursor_over_frosty1()) {
     doFrosty1();
-    HABITAT_NUMBER = 6;
+    HABITAT_NUMBER = 5;
     ON_MAP = false;
   }
   else if (cursor_over_frosty2()) {
     doFrosty2();
-    HABITAT_NUMBER = 7;
+    HABITAT_NUMBER = 6;
     ON_MAP = false;
   }
   else if (cursor_over_jungle1()) {
@@ -466,7 +461,7 @@ void mousePressedOnMap() {
   }
   else if (cursor_over_jungle2()) {
     doJungle2();
-    HABITAT_NUMBER = 7;
+    HABITAT_NUMBER = 8;
     ON_MAP = false;
   }
 }

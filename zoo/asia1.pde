@@ -3,7 +3,10 @@ class Asia1 extends Habitat {
   int state;
   boolean isSleeping;
   PImage background;
-  PImage animal_static_image = loadImage("data/tina_tiger.gif");
+  PImage animal_not_talking = loadImage("data/tina_tiger.gif");
+  
+  int animalLeft = 500;
+  int animalTop = 100;
   
   Asia1(int state, boolean isSleeping) {
     this.state = state;
@@ -13,26 +16,51 @@ class Asia1 extends Habitat {
   
     //displays this habitat's background
   public void display() {
-    /*PImage habitat_background;
-    habitat_background = this.background;*/
     image(this.background, 0, 0);
+  }
+  
+    void displayAnimalTalking() {
+   image(GIF_TIGER_TALKING, animalLeft, animalTop);
+  }
+  
+  void displayAnimalNotTalking() {
+    image(animal_not_talking, animalLeft, animalTop);
   }
   
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
-  // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-  image(animal_static_image, 500, 100);
+    if (ANIMAL_TALKING) {
+      displayAnimalTalking();
+    }
+    else { displayAnimalNotTalking(); }
   }
   
-  
-  void playAnimalTalking() {}
-  
-  boolean cursorOverAnimal() {    return false;
+  void playAnimalTalking() {
+    GIF_TIGER_TALKING.play();
   }
   
-  void mousePressedInHabitat() {}
+  boolean cursorOverAnimal() {
+    boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
+    && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+    return ans;
+  }
   
+  void mousePressedInHabitat() {
+    if (cursorOverAnimal()) {
+      doAsia1();
+      ANIMAL_TALKING = true;
+      playAnimalTalking();
+      ANIMAL_TALKING_START_TIME = millis();
+    }
+  }  
     
-int lengthCurrentTalk() { return 0; }}
+int lengthCurrentTalk() { return 5000; }
+}
     
+
+  
+ 
+ 
+ 
+  
   
