@@ -85,7 +85,6 @@ int RIGHTYf = 301;
 boolean WELCOME_SCREEN = true; // is it on the welcome screen
 boolean INTRO_SCREEN = false; // is it on the intro screen
 boolean ON_MAP = false; 
-boolean ON_HABITAT = !WELCOME_SCREEN && !ON_MAP;
 
 //current habitat number
 int HABITAT_NUMBER = 8;
@@ -214,6 +213,8 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically
 void draw() {
+  //println(ON_MAP);
+  //println(ANIMAL_TALKING);
   int current_time = millis();
   
   //to stop the animal from visibly speaking if audio over
@@ -240,7 +241,7 @@ void draw() {
     else { cursor(ARROW); }
   } 
   else if 
-  (cursorOverMap() || 
+  (cursorOverMapButton() || 
   cursor_over_help() || 
   cursor_over_left() ||
   cursor_over_right() ||
@@ -309,7 +310,7 @@ void doIntro() {
 // map screen
 void doMap() {
   map.display();
-  arrows.display(); // because currently we cant get out of the map
+  ON_MAP = true;
 }
 
 //---------------------
@@ -366,18 +367,21 @@ void doJungle2() {
 
 // if mouse is pressed, do this stuff 
 void mousePressed() {
-  println(ON_MAP);
-  if (WELCOME_SCREEN) { // decides what to do with mouse if pressed when on welcoem screen
+  //if welcome screen is up 
+  if (WELCOME_SCREEN) { 
     mousePressedWelcomeScreen(); 
   }
+  //if map is up
   if (ON_MAP) {
     mousePressedOnMap();
   }
+  //if an animal is talking
   else if (ANIMAL_TALKING) {} //stops user from clicking on things while animal talking
-  else if (cursorOverMap()) {
+  
+  //if over map 
+  else if (cursorOverMapButton()) {
     doMap();
     ON_MAP = true;
-    println("in mouse pressed" + ON_MAP);
   }
   else if (cursor_over_left()) {
     doScene(updateSceneNumber("left"));
@@ -386,7 +390,7 @@ void mousePressed() {
     doScene(updateSceneNumber("right"));
   }
   // if the mouse was pressed in current habitat
-  else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 0)) {
+  /*else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 0)) {
    africa1.mousePressedInHabitat();//println(LIST_OF_HABITATS[HABITAT_NUMBER]); //.mousePressedInHabitat(); 
   }
   else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 1)) {
@@ -395,6 +399,9 @@ void mousePressed() {
   else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 3)) {
     asia1.mousePressedInHabitat();
     println("gothere");
+  }*/
+  else if (!ON_MAP && cursorOverHabitat()) {//&& (HABITAT_NUMBER == 0)) {
+    LIST_OF_HABITATS[HABITAT_NUMBER].mousePressedInHabitat();
   }
 }
 
@@ -422,7 +429,6 @@ void mousePressedOnMap() {
     doAfrica1();
     HABITAT_NUMBER = 0;
     ON_MAP = false;
-    println(ON_MAP);
   }
   else if (cursor_over_africa2()) {
     doAfrica2();
@@ -500,7 +506,7 @@ boolean cursor_over_start() {
   return cursor_over(STARTXi, STARTXf, STARTYi, STARTYf);
 }
 // determines if cursor over map 
-boolean cursorOverMap() {
+boolean cursorOverMapButton() {
   return cursor_over(MAPXi, MAPXf, MAPYi, MAPYf);
 }
 boolean cursor_over_help() {

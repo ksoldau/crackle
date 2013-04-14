@@ -59,8 +59,12 @@ class Africa1 extends Habitat {
   
   //determines if the mouse over the Camel
   boolean cursorOverAnimal() {
-    return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
+  /*  boolean ans =  60 > mouseX;
+    println(ans);
+    return ans; */
+  return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
+    
   }
   
   int lengthCurrentTalk() {
