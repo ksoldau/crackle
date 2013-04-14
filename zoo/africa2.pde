@@ -24,6 +24,8 @@ class Africa2 extends Habitat {
     image(animal_static_image, 500, 100);
   }
   
+  void playAnimalTalking() {}
+  
   //determines if the mouse was pressed on an animal
   boolean cursorOverAnimal() {
     return false;

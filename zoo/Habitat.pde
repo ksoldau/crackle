@@ -8,7 +8,10 @@ public abstract class Habitat {
   //displays the animal
   public abstract void displayAnimal();
   
-  //determines if the animal in the habitat was clicked on
+  //play the animal talking
+  public abstract void playAnimalTalking();
+  
+  //determines if cursor over animal in the habitat
   public abstract boolean cursorOverAnimal();
   
   //decides which actions to take if mouse was pressed in this habitat

@@ -24,6 +24,8 @@ class Jungle1 extends Habitat {
   image(animal_static_image, 500, 100);
   }
   
+  void playAnimalTalking() {}
+  
   boolean cursorOverAnimal() {    return false;
 
   }

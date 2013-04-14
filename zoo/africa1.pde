@@ -10,7 +10,7 @@ class Africa1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   
-  PImage animal_not_talking = loadImage("data/calvin_camel_motion.gif");
+  PImage animal_not_talking = loadImage("data/sam_sealion.gif");
 
   
   Africa1(int state, boolean isSleeping) {
@@ -41,7 +41,7 @@ class Africa1 extends Habitat {
   }
   
   //displays GIF of the animal talking
-  void displayAnimalTalking() {
+  void playAnimalTalking() {
       GIF_CAMEL_TALKING.play();
   }
   
@@ -49,15 +49,11 @@ class Africa1 extends Habitat {
   void mousePressedInHabitat() {
     if (!ANIMAL_TALKING && cursorOverAnimal()) { //later might not need not animal talking 
     // because won't let mouse presses happen if it is
+      doAfrica1(); // cleans the scene (somehow)
       ANIMAL_TALKING = true;
-      doAfrica1();
-      displayAnimalTalking();
+      playAnimalTalking();
       baron.trigger(); //sound
-      START_TIME = millis();
-      //int s = second();
-      //while (s <= (second() + 5)) {
-       // baron.trigger();
-      //}
+      START_TIME = millis(); // saves time when pressed on animal
     }
   }
   

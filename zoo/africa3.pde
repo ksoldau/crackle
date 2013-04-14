@@ -24,6 +24,9 @@ class Africa3 extends Habitat {
   image(animal_static_image, 500, 100);
   }
   
+  
+  void playAnimalTalking() {}
+  
   // determines if 
   boolean cursorOverAnimal() {   
     return false;
