@@ -11,12 +11,7 @@ class Jungle1 extends Habitat {
     this.isSleeping = isSleeping;
     this.background = loadImage("data/jungle_1.png");
   }
-  
-  // display the scene
-  void display() {
-    img = this.background;
-    image(img, 0, 0);
-  }
+
   
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
@@ -31,7 +26,8 @@ class Jungle1 extends Habitat {
   }
   void mousePressedInHabitat() {}
   
+  int lengthCurrentTalk() {return 0;}
     
-int lengthCurrentTalk() { return 0; }}
+}
     
   

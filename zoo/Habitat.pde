@@ -3,7 +3,7 @@ public abstract class Habitat {
   PImage background =  loadImage("data/africa_1.png");  
   
   //displays the background of the scene
-  public abstract void display();
+  //public abstract void display();
   
   //displays the animal
   public abstract void displayAnimal();
@@ -19,4 +19,10 @@ public abstract class Habitat {
   
   //determines length of current talk animal is on in milliseconds
   abstract int lengthCurrentTalk();
+  
+  public void display() {
+    PImage habitat_background;
+    habitat_background = this.background;
+    image(habitat_background, 0, 0);
+  }
 }

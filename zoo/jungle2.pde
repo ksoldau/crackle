@@ -12,12 +12,6 @@ class Jungle2 extends Habitat {
     this.background = loadImage("data/jungle_2.png");
   }
   
-  // display the scene
-  void display() {
-    img = background;
-    image(img, 0, 0);
-  }
-  
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
   // img.resize(0,1); how we will resize, it's kind of cheating, but it works

@@ -9,8 +9,7 @@ class Nav {
   
   // display the scene
   void display() {
-    img = this.navbar;
-    image(img, 0, 0);
+    image(navbar, 0, 0);
   }
 }
     

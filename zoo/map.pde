@@ -8,8 +8,7 @@ class Map {
   
   // display the scene
   void display() {
-    img = this.background;
-    image(img, 0, 0);
+    image(background, 0, 0);
   }
 }
     

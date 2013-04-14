@@ -19,27 +19,27 @@ class Africa1 extends Habitat {
     this.background = loadImage("data/africa_1.png"); //background of habitat
   }
  
-  void talkingCamelTest() {
+ void displayAnimal() {
+   if (ANIMAL_TALKING) {
+     displayAnimalTalking();
+   }
+   else { displayAnimalNotTalking(); }
+ }
+ 
+  void displayAnimalTalking() {
    image(GIF_CAMEL_TALKING, animalLeft, animalTop);
   }
   
-  void nottalkingCamelTest() {
+  void displayAnimalNotTalking() {
     image(animal_not_talking, animalLeft, animalTop);
   }
   
   //displays the background for the habitat
-   public void display() {
+  /* public void display() {
     img = background;
     image(img, 0, 0);
-  }
-  
-  //determines if the animal in the habitat was clicked on
-  void displayAnimal() {
-    image(animal_not_talking, animalLeft, animalTop);
-    animal_not_talking.resize(100, 50);
+  } */
 
-  }
-  
   //displays GIF of the animal talking
   void playAnimalTalking() {
       GIF_CAMEL_TALKING.play();

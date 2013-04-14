@@ -12,12 +12,6 @@ class Asia2 extends Habitat {
     this.background = loadImage("data/asia_2.png");
   }
   
-  // display the scene
-  void display() {
-    img = background;
-    image(img, 0, 0);
-  }
-  
   
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {

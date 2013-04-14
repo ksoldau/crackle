@@ -11,7 +11,7 @@ import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 // a la "public" in standard java
 int START_TIME;
 
-PImage img;
+PImage BACKGROUND_IMG;
 Intro intro;
 
 // Habitat classes
@@ -122,8 +122,8 @@ void setup() {
   size(WIDTH, HEIGHT);
   
   // load image that says "Zoo guess who click here to start"
-  img = loadImage("data/welcome.png");// obvs a wrong link
-  image(img, 0, 0);
+  BACKGROUND_IMG = loadImage("data/welcome.png");// obvs a wrong link
+  image(BACKGROUND_IMG, 0, 0);
 
   
   // making all the background objects
@@ -211,22 +211,24 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically
 void draw() {
- /* int current_time = millis();
-  if(HABITAT_NUMBER == 0 && ANIMAL_TALKING && (current_time - START_TIME >= LENGTH_CAMEL_HOW_DOIN)) {
-    ANIMAL_TALKING = false;
-    doAfrica1();
-  } */
   int current_time = millis();
+  
+  //to stop the animal from visibly speaking if audio over
   if(ANIMAL_TALKING && (current_time - START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].lengthCurrentTalk())) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
   }
-  if (!ON_MAP && HABITAT_NUMBER == 0 && ANIMAL_TALKING) {
-  africa1.talkingCamelTest();
+  
+  if (!ON_MAP && HABITAT_NUMBER == 0) {
+    africa1.displayAnimal();
+  }
+
+ /* if (!ON_MAP && HABITAT_NUMBER == 0 && ANIMAL_TALKING) {
+  africa1.displayAnimalTalking();
   }
   if (!ON_MAP && HABITAT_NUMBER == 0 && !ANIMAL_TALKING) {
-    africa1.nottalkingCamelTest();
-  }
+    africa1.displayAnimalNotTalking();
+  } */
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
     if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
