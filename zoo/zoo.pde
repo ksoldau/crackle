@@ -9,7 +9,7 @@ import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 
 // declaring variables outside of setup so they can be used anywhere
 // a la "public" in standard java
-int START_TIME;
+int ANIMAL_TALKING_START_TIME;
 
 PImage BACKGROUND_IMG;
 Intro intro;
@@ -102,11 +102,10 @@ String USER; // which animal the user is can be
 //------------------------------------------
 //Gifs of talking animals
 
-Gif GIF_CAMEL_TALKING;
-//Talking animals gifs
-/*Gif GIF_CAMEL_TALKING; //Africa1
+Gif GIF_CAMEL_TALKING; //Africa1
 Gif GIF_GIRAFFE_TALKING; //Africa2
-Gif GIF_LION_TALKING; //Africa3
+//Talking animals gifs
+/*Gif GIF_LION_TALKING; //Africa3
 Gif GIF_TIGER_TALKING; //Asia1
 Gif GIF_PANDA_TALKING; //Asia2
 Gif GIF_PENGUIN_TALKING; //Frosty1
@@ -170,7 +169,8 @@ void setup() {
   );
   
   
-   GIF_CAMEL_TALKING = new Gif(this, "data/calvin_camel_motion.gif");
+   GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk_288.gif");
+   GIF_GIRAFFE_TALKING = new Gif(this, "data/gerry_talk.gif");
   // initializing GIFs for talking animals
   /* GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
   Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
@@ -214,21 +214,21 @@ void draw() {
   int current_time = millis();
   
   //to stop the animal from visibly speaking if audio over
-  if(ANIMAL_TALKING && (current_time - START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].lengthCurrentTalk())) {
+  if(ANIMAL_TALKING && 
+  (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].lengthCurrentTalk())) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
   }
   
-  if (!ON_MAP && HABITAT_NUMBER == 0) {
-    africa1.displayAnimal();
+  if (!ON_MAP) { //  && HABITAT_NUMBER == 0) { or any other habitat number
+  LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal();
   }
-
- /* if (!ON_MAP && HABITAT_NUMBER == 0 && ANIMAL_TALKING) {
-  africa1.displayAnimalTalking();
+   /* africa1.displayAnimal();
   }
-  if (!ON_MAP && HABITAT_NUMBER == 0 && !ANIMAL_TALKING) {
-    africa1.displayAnimalNotTalking();
+  if (!ON_MAP && HABITAT_NUMBER == 1) {
+    africa2.displayAnimal();
   } */
+
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
     if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
@@ -319,7 +319,6 @@ void doAfrica1() {
 }
 void doAfrica2() {
   africa2.display();
-  africa2.displayAnimal();
   arrows.display();
 }
 
@@ -371,6 +370,7 @@ void doJungle2() {
 
 // if mouse is pressed, do this stuff 
 void mousePressed() {
+  println(ON_MAP);
   if (WELCOME_SCREEN) { // decides what to do with mouse if pressed when on welcoem screen
     mousePressedWelcomeScreen(); 
   }
@@ -392,6 +392,9 @@ void mousePressed() {
   // if the mouse was pressed in current habitat
   else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 0)) {
    africa1.mousePressedInHabitat();//println(LIST_OF_HABITATS[HABITAT_NUMBER]); //.mousePressedInHabitat(); 
+  }
+  else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 1)) {
+    africa2.mousePressedInHabitat();
   }
 }
 
@@ -424,38 +427,47 @@ void mousePressedOnMap() {
   else if (cursor_over_africa2()) {
     doAfrica2();
     HABITAT_NUMBER = 1;
+    ON_MAP = false;
   }
   else if (cursor_over_africa2()) {
     doAfrica2();
     HABITAT_NUMBER = 2;
+    ON_MAP = false;
   }
   else if (cursor_over_africa3()) {
     doAfrica3();
     HABITAT_NUMBER = 3;
+    ON_MAP = false;
   }
   else if (cursor_over_asia1()) {
     doAsia1();
     HABITAT_NUMBER = 4;
+    ON_MAP = false;
   }
   else if (cursor_over_asia2()) {
     doAsia2();
     HABITAT_NUMBER = 5;
+    ON_MAP = false;
   }
   else if (cursor_over_frosty1()) {
     doFrosty1();
     HABITAT_NUMBER = 6;
+    ON_MAP = false;
   }
   else if (cursor_over_frosty2()) {
     doFrosty2();
     HABITAT_NUMBER = 7;
+    ON_MAP = false;
   }
   else if (cursor_over_jungle1()) {
     doJungle1();
     HABITAT_NUMBER = 7;
+    ON_MAP = false;
   }
   else if (cursor_over_jungle2()) {
     doJungle2();
     HABITAT_NUMBER = 7;
+    ON_MAP = false;
   }
 }
 

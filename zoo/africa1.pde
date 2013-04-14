@@ -1,3 +1,5 @@
+import gifAnimation.*;
+
 int LENGTH_CAMEL_HOW_DOIN = 5700;
 // Calvin Camel
 class Africa1 extends Habitat {
@@ -11,7 +13,6 @@ class Africa1 extends Habitat {
   int animalTop = 100;
   
   PImage animal_not_talking = loadImage("data/sam_sealion.gif");
-
   
   Africa1(int state, boolean isSleeping) {
     this.state = state;
@@ -35,10 +36,9 @@ class Africa1 extends Habitat {
   }
   
   //displays the background for the habitat
-  /* public void display() {
-    img = background;
-    image(img, 0, 0);
-  } */
+  public void display() {
+    image(this.background, 0, 0);
+  } 
 
   //displays GIF of the animal talking
   void playAnimalTalking() {
@@ -46,14 +46,14 @@ class Africa1 extends Habitat {
   }
   
   //decides which actions to take if mouse was pressed 
+  //assume/know: animal is not talking
   void mousePressedInHabitat() {
-    if (!ANIMAL_TALKING && cursorOverAnimal()) { //later might not need not animal talking 
-    // because won't let mouse presses happen if it is
+    if (cursorOverAnimal()) { 
       doAfrica1(); // cleans the scene (somehow)
       ANIMAL_TALKING = true;
       playAnimalTalking();
       baron.trigger(); //sound
-      START_TIME = millis(); // saves time when pressed on animal
+      ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
     }
   }
   

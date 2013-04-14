@@ -20,9 +20,9 @@ public abstract class Habitat {
   //determines length of current talk animal is on in milliseconds
   abstract int lengthCurrentTalk();
   
-  public void display() {
-    PImage habitat_background;
-    habitat_background = this.background;
-    image(habitat_background, 0, 0);
+  //displays this habitat's background
+  public void display() { //does not work right now!!!!!!
+    image(this.background, 0, 0);
+    println(this.background);
   }
 }

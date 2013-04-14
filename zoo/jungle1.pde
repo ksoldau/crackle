@@ -12,7 +12,11 @@ class Jungle1 extends Habitat {
     this.background = loadImage("data/jungle_1.png");
   }
 
-  
+    //displays this habitat's background
+  public void display() {
+    /*PImage habitat_background;
+    habitat_background = this.background;*/
+    image(this.background, 0, 0);}
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
   // img.resize(0,1); how we will resize, it's kind of cheating, but it works

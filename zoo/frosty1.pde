@@ -11,7 +11,11 @@ class Frosty1 extends Habitat {
     this.isSleeping = isSleeping;
     this.background = loadImage("data/frosty_1.png");
   }
-  
+    //displays this habitat's background
+  public void display() {
+    /*PImage habitat_background;
+    habitat_background = this.background;*/
+    image(this.background, 0, 0);}
   
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
