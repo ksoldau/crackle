@@ -118,6 +118,7 @@ Gif GIF_TIGER_TALKING; //Asia1
 //------------------------------------------
 //setup runs once
 void setup() {
+  frameRate(12);
   background(255);
   size(WIDTH, HEIGHT);
 
@@ -223,8 +224,9 @@ void draw() {
     doScene(HABITAT_NUMBER);
   }
   //to display the correct animal for current habitat
-  if (!ON_MAP) { 
-    //LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED, IF UNCOMMENT MEM PROBZ
+  if (!ON_MAP && !WELCOME_SCREEN) { 
+    doScene(HABITAT_NUMBER);
+    LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED, IF UNCOMMENT MEM PROBZ
   }
   
   drawCursor();

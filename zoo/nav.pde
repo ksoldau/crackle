@@ -21,9 +21,6 @@ class Nav {
   
   void displayClue2() {
   }
-  
-  void displayClue2() {
-  }
   void displayClue3() {
   }
   void displayClue4() {
