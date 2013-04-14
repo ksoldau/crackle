@@ -10,8 +10,7 @@ class Africa1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   
-  PImage animal_static_image = loadImage("data/calvin_camel_motion.gif");
-  PImage animal_dynamic_image = loadImage("data/calvin_camel_motion.gif");
+  PImage animal_not_talking = loadImage("data/calvin_camel_motion.gif");
 
   
   Africa1(int state, boolean isSleeping) {
@@ -25,7 +24,7 @@ class Africa1 extends Habitat {
   }
   
   void nottalkingCamelTest() {
-    image(animal_static_image, animalLeft, animalTop);
+    image(animal_not_talking, animalLeft, animalTop);
   }
   
   //displays the background for the habitat
@@ -36,10 +35,8 @@ class Africa1 extends Habitat {
   
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
-    // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-    //image(animal_dynamic_image, animalLeft, animalTop);
-    image(animal_dynamic_image, animalLeft, animalTop);
-    animal_dynamic_image.resize(100, 50);
+    image(animal_not_talking, animalLeft, animalTop);
+    animal_not_talking.resize(100, 50);
 
   }
   
