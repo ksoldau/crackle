@@ -25,7 +25,7 @@ class Africa3 extends Habitat {
   }
   
   // determines if 
-  boolean mousePressedAnimal() {   
+  boolean cursorOverAnimal() {   
     return false;
   }
   

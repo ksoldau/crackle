@@ -234,6 +234,7 @@ void draw() {
   cursor_over_help() || 
   cursor_over_left() ||
   cursor_over_right() ||
+  LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverAnimal() ||
   (ON_MAP && (
   cursor_over_africa1() ||
   cursor_over_africa2() ||

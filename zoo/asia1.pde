@@ -23,7 +23,7 @@ class Asia1 extends Habitat {
   image(animal_static_image, 500, 100);
   }
   
-  boolean mousePressedAnimal() {    return false;
+  boolean cursorOverAnimal() {    return false;
   }
   
   void mousePressedInHabitat() {}

@@ -25,7 +25,7 @@ class Africa2 extends Habitat {
   }
   
   //determines if the mouse was pressed on an animal
-  boolean mousePressedAnimal() {
+  boolean cursorOverAnimal() {
     return false;
   }
   

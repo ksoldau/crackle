@@ -47,7 +47,7 @@ class Africa1 extends Habitat {
   
   //decides which actions to take if mouse was pressed 
   void mousePressedInHabitat() {
-    if (!ANIMAL_TALKING && mousePressedAnimal()) { //later might not need not animal talking 
+    if (!ANIMAL_TALKING && cursorOverAnimal()) { //later might not need not animal talking 
     // because won't let mouse presses happen if it is
       ANIMAL_TALKING = true;
       doAfrica1();
@@ -61,8 +61,8 @@ class Africa1 extends Habitat {
     }
   }
   
-  //determines if the mouse get pressed on the Camel
-  boolean mousePressedAnimal() {
+  //determines if the mouse over the Camel
+  boolean cursorOverAnimal() {
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
   }

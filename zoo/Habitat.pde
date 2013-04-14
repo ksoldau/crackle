@@ -9,7 +9,7 @@ public abstract class Habitat {
   public abstract void displayAnimal();
   
   //determines if the animal in the habitat was clicked on
-  public abstract boolean mousePressedAnimal();
+  public abstract boolean cursorOverAnimal();
   
   //decides which actions to take if mouse was pressed in this habitat
   public abstract void mousePressedInHabitat();
