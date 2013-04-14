@@ -367,8 +367,18 @@ void doJungle2() {
   arrows.display();
 }
 
-//---------------------------------------------
-// what to do when mouse is pressed
+
+//------------------------------------
+//actions to take if mouse is pressed
+
+// assume: on welcome screen
+// determines what actions to perform if mouse pressed 
+void mousePressedWelcomeScreen() {
+  if (cursor_over_start() && mousePressed == true) {
+    doIntro();
+    WELCOME_SCREEN = false;
+  }
+}
 
 
 // if mouse is pressed, do this stuff 
@@ -398,23 +408,6 @@ void mousePressed() {
   }
   else if (!ON_MAP && cursorOverHabitat()) {//&& (HABITAT_NUMBER == 0)) {
     LIST_OF_HABITATS[HABITAT_NUMBER].mousePressedInHabitat();
-  }
-}
-
-//assume: not on welcome screen, not on map
-// determines if mouse pressed in a habitat
-boolean cursorOverHabitat() {
-  return cursor_over(0, 960, 0, 540);
-}
-
-
-
-// assume: on welcome screen
-// determines what actions to perform if mouse pressed 
-void mousePressedWelcomeScreen() {
-  if (cursor_over_start() && mousePressed == true) {
-    doIntro();
-    WELCOME_SCREEN = false;
   }
 }
 
@@ -468,6 +461,7 @@ void mousePressedOnMap() {
   }
 }
 
+
 // to update the scene the user is on
 // when they click on an arrow key as specified by query
 int updateSceneNumber(String query) {
@@ -490,7 +484,6 @@ int updateSceneNumber(String query) {
 //---------------------------------------------
 // determine if cursor is over a certain area 
 
-
 // determines if cursor in a certain box
 boolean cursor_over(int xmin, int xmax, int ymin, int ymax) {
   return xmin < mouseX && mouseX < xmax && ymin < mouseY && mouseY < ymax;
@@ -501,6 +494,15 @@ boolean cursor_over(int xmin, int xmax, int ymin, int ymax) {
 boolean cursor_over_start() {
   return cursor_over(STARTXi, STARTXf, STARTYi, STARTYf);
 }
+
+
+//assume: not on welcome screen, not on map
+// determines if mouse pressed in a habitat
+boolean cursorOverHabitat() {
+  return cursor_over(0, 960, 0, 540);
+}
+
+
 // determines if cursor over map 
 boolean cursorOverMapButton() {
   return cursor_over(MAPXi, MAPXf, MAPYi, MAPYf);
