@@ -170,7 +170,7 @@ void setup() {
   
   
    GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk_288.gif");
-   GIF_GIRAFFE_TALKING = new Gif(this, "data/gerry_talk.gif");
+   GIF_GIRAFFE_TALKING = new Gif(this, "data/test.gif");
   // initializing GIFs for talking animals
   /* GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
   Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
