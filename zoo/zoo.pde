@@ -214,7 +214,6 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically
 void draw() {
-  //println(WELCOME_SCREEN);
   int current_time = millis();
 
   //to stop the animal from visibly speaking if audio over
@@ -397,17 +396,6 @@ void mousePressed() {
   else if (cursor_over_right()) {
     doScene(updateSceneNumber("right"));
   }
-  // if the mouse was pressed in current habitat
-  /*else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 0)) {
-   africa1.mousePressedInHabitat();//println(LIST_OF_HABITATS[HABITAT_NUMBER]); //.mousePressedInHabitat(); 
-   }
-   else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 1)) {
-   africa2.mousePressedInHabitat();
-   }
-   else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 3)) {
-   asia1.mousePressedInHabitat();
-   println("gothere");
-   }*/
   else if (!ON_MAP && cursorOverHabitat()) {//&& (HABITAT_NUMBER == 0)) {
     LIST_OF_HABITATS[HABITAT_NUMBER].mousePressedInHabitat();
   }
@@ -444,7 +432,7 @@ void mousePressedOnMap() {
     ON_MAP = false;
   }
   else if (cursor_over_africa3()) {
-    doAfrica2();
+    doAfrica3();
     HABITAT_NUMBER = 2;
     ON_MAP = false;
   }
