@@ -10,7 +10,7 @@ class Africa3 extends Habitat {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_not_talking = loadImage("data/leonard_lion.gif");
-    //this.background = loadImage("data/africa_3.png");
+    this.background = loadImage("data/africa_3.png");
   }
   
   

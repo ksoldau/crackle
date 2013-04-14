@@ -10,7 +10,7 @@ class Jungle1 extends Habitat {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_static_image = loadImage("data/eliza_elephant.gif");
-   // this.background = loadImage("data/jungle_1.png");
+   this.background = loadImage("data/jungle_1.png");
   }
 
     //displays this habitat's background

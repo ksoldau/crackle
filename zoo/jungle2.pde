@@ -10,7 +10,7 @@ class Jungle2 extends Habitat {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_static_image = loadImage("data/stanley_sloth.gif");
-   // this.background = loadImage("data/jungle_2.png");
+   this.background = loadImage("data/jungle_2.png");
   }
   
   //displays this habitat's background
@@ -18,7 +18,7 @@ class Jungle2 extends Habitat {
     image(this.background, 0, 0);}
   
   void displayAnimal() {
-  image(animal_static_image, 500, 100);
+  //image(animal_static_image, 500, 100);
   }
   
   void playAnimalTalking() {}

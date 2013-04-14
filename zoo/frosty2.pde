@@ -12,7 +12,7 @@ class Frosty2 extends Habitat {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_static_image = loadImage("data/sam_sealion.gif");
-    //this.background = loadImage("data/frosty_2.png");
+    this.background = loadImage("data/frosty_2.png");
   }
   //displays this habitat's background
   public void display() {

@@ -12,7 +12,7 @@ class Asia1 extends Habitat {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_not_talking = loadImage("data/tina_tiger.gif");
-    //this.background = loadImage("data/asia_1.png");
+    this.background = loadImage("data/asia_1.png");
   }
   
     //displays this habitat's background

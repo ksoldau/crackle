@@ -18,7 +18,7 @@ class Africa1 extends Habitat {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_not_talking = loadImage("data/sam_sealion.gif");
-    //this.background = loadImage("data/africa_1.png"); //background of habitat
+    this.background = loadImage("data/africa_1.png"); //background of habitat
   }
  
  void displayAnimal() {

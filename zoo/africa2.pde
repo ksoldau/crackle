@@ -13,7 +13,7 @@ class Africa2 extends Habitat {
     this.state = state;
     this.isSleeping = isSleeping;
      this.animal_not_talking = loadImage("data/gerry_giraffe.gif");
-    //this.background = loadImage("data/africa_2.png");
+    this.background = loadImage("data/africa_2.png");
   }
   //displays the background for the habitat
   public void display() {
