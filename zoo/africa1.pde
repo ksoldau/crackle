@@ -20,6 +20,10 @@ class Africa1 extends Habitat {
     this.animal_not_talking = loadImage("data/sam_sealion.gif");
     this.background = loadImage("data/africa_1.png"); //background of habitat
   }
+  
+  public void display() {
+    image(this.background, 0, 0);
+  } 
  
  void displayAnimal() {
    if (ANIMAL_TALKING) {
@@ -35,11 +39,6 @@ class Africa1 extends Habitat {
   void displayAnimalNotTalking() {
     image(animal_not_talking, animalLeft, animalTop);
   }
-  
-  //displays the background for the habitat
-  public void display() {
-    image(this.background, 0, 0);
-  } 
 
   //displays GIF of the animal talking
   void playAnimalTalking() {
