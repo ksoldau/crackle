@@ -4,12 +4,13 @@ class Asia2 extends Habitat {
   boolean isTalking;
   boolean isSleeping;
   PImage background;
-  PImage animal_static_image = loadImage("data/patty_pandabear.gif");
+  PImage animal_not_talking;
   
   Asia2(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.background = loadImage("data/asia_2.png");
+    this.animal_not_talking = loadImage("data/patty_pandabear.gif");
+    //this.background = loadImage("data/asia_2.png");
   }
   
     //displays this habitat's background
@@ -21,7 +22,7 @@ class Asia2 extends Habitat {
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
   // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-  image(animal_static_image, 500, 100);
+  image(animal_not_talking, 500, 100);
   }
   
   void playAnimalTalking() {}

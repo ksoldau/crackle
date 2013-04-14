@@ -9,7 +9,8 @@ class Jungle1 extends Habitat {
   Jungle1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.background = loadImage("data/jungle_1.png");
+    this.animal_static_image = loadImage("data/eliza_elephant.gif");
+   // this.background = loadImage("data/jungle_1.png");
   }
 
     //displays this habitat's background
@@ -20,7 +21,7 @@ class Jungle1 extends Habitat {
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
   // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-  image(animal_static_image, 500, 100);
+  //image(animal_static_image, 500, 100);
   }
   
   void playAnimalTalking() {}

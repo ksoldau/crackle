@@ -3,7 +3,7 @@ class Asia1 extends Habitat {
   int state;
   boolean isSleeping;
   PImage background;
-  PImage animal_not_talking = loadImage("data/tina_tiger.gif");
+  PImage animal_not_talking;
   
   int animalLeft = 500;
   int animalTop = 100;
@@ -11,7 +11,8 @@ class Asia1 extends Habitat {
   Asia1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.background = loadImage("data/asia_1.png");
+    this.animal_not_talking = loadImage("data/tina_tiger.gif");
+    //this.background = loadImage("data/asia_1.png");
   }
   
     //displays this habitat's background

@@ -12,12 +12,13 @@ class Africa1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   
-  PImage animal_not_talking = loadImage("data/sam_sealion.gif");
+  PImage animal_not_talking;
   
   Africa1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.background = loadImage("data/africa_1.png"); //background of habitat
+    this.animal_not_talking = loadImage("data/sam_sealion.gif");
+    //this.background = loadImage("data/africa_1.png"); //background of habitat
   }
  
  void displayAnimal() {

@@ -129,18 +129,28 @@ void setup() {
   // making all the background objects
   intro = new Intro();
 
+  //loading all background first
   africa1 = new Africa1(4, false);
+  africa1.background = loadImage("data/africa_1.png");
   africa2 = new Africa2(4, false);
+  africa2.background = loadImage("data/africa_2.png");
   africa3 = new Africa3(4, false);
+  africa3.background = loadImage("data/africa_3.png");
 
   asia1 = new Asia1(4, false);
+  asia1.background = loadImage("data/asia_1.png");
   asia2 = new Asia2(4, false);
+  asia2.background = loadImage("data/asia_2.png");
 
   frosty1 = new Frosty1(4, false);
+  frosty1.background = loadImage("data/frosty_1.png");
   frosty2 = new Frosty2(4, false);
+  frosty2.background = loadImage("data/frosty_2.png");
 
   jungle1 = new Jungle1(4, false);
+  jungle1.background = loadImage("data/jungle_1.png");
   jungle2 = new Jungle2(4, false);
+  jungle2.background = loadImage("data/jungle_2.png");
 
   LIST_OF_HABITATS[0] = africa1;
   LIST_OF_HABITATS[1] = africa2;
@@ -217,7 +227,7 @@ void draw() {
   int current_time = millis();
 
   //to stop the animal from visibly speaking if audio over
-  if (ANIMAL_TALKING && 
+ if (ANIMAL_TALKING && 
     (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].lengthCurrentTalk())) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
@@ -240,7 +250,7 @@ void drawCursor() {
     }
     else {
       cursor(ARROW);
-    }
+    } 
   } 
 
   if (ANIMAL_TALKING) {
