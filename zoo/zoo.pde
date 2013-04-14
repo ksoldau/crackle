@@ -49,10 +49,10 @@ int HEIGHT = 650;
 int HABITAT_HEIGHT = 540;
 
 //coordinates for start button on welcome page
-int STARTXi = 400;
-int STARTXf = 560;
-int STARTYi = 500;
-int STARTYf = 550;
+int STARTXi = 400; //wrong
+int STARTXf = 560; //wrong
+int STARTYi = 500; //wrong
+int STARTYf = 550; //wrong
 
 //coordinates for map button
 int MAPXi = 780;
@@ -108,40 +108,40 @@ Gif GIF_TIGER_TALKING; //Asia1
 
 //Talking animals gifs
 /*Gif GIF_LION_TALKING; //Africa3
-Gif GIF_PANDA_TALKING; //Asia2
-Gif GIF_PENGUIN_TALKING; //Frosty1
-Gif GIF_SEAL_TALKING; //Frosty2
-Gif GIF_ELEPHANT_TALKING; //Jungle1
-Gif GIF_SLOTH_TALKING; //Jungle2
-*/
+ Gif GIF_PANDA_TALKING; //Asia2
+ Gif GIF_PENGUIN_TALKING; //Frosty1
+ Gif GIF_SEAL_TALKING; //Frosty2
+ Gif GIF_ELEPHANT_TALKING; //Jungle1
+ Gif GIF_SLOTH_TALKING; //Jungle2
+ */
 
 //------------------------------------------
 //setup runs once
 void setup() {
   background(255);
   size(WIDTH, HEIGHT);
-  
+
   // load image that says "Zoo guess who click here to start"
   BACKGROUND_IMG = loadImage("data/welcome.png");// obvs a wrong link
   image(BACKGROUND_IMG, 0, 0);
 
-  
+
   // making all the background objects
   intro = new Intro();
-  
+
   africa1 = new Africa1(4, false);
   africa2 = new Africa2(4, false);
   africa3 = new Africa3(4, false);
-  
+
   asia1 = new Asia1(4, false);
   asia2 = new Asia2(4, false);
- 
+
   frosty1 = new Frosty1(4, false);
   frosty2 = new Frosty2(4, false);
-  
+
   jungle1 = new Jungle1(4, false);
   jungle2 = new Jungle2(4, false);
-  
+
   LIST_OF_HABITATS[0] = africa1;
   LIST_OF_HABITATS[1] = africa2;
   LIST_OF_HABITATS[2] = africa3;
@@ -152,37 +152,37 @@ void setup() {
   LIST_OF_HABITATS[7] = jungle1;
   LIST_OF_HABITATS[8] = jungle2;
 
-  
+
   nav = new Nav();
   arrows = new Arrows();
   map = new Map();
-  
+
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   chooseUserAnimal();
-  
+
   println(LIST_OF_HABITATS[0]);
 
   // Setting up sound engine
   minim = new Minim(this);
   baron = minim.loadSample( "baron.mp3", // filename
-                                512      // buffer size
+  512      // buffer size
   );
-  
-  
-   GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk_288.gif");
-   GIF_GIRAFFE_TALKING = new Gif(this, "data/gerry_talk_288.gif");
-   GIF_TIGER_TALKING  = new Gif(this, "data/tina_talk_288.gif");
+
+
+  GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk_288.gif");
+  GIF_GIRAFFE_TALKING = new Gif(this, "data/gerry_talk_288.gif");
+  GIF_TIGER_TALKING  = new Gif(this, "data/tina_talk_288.gif");
   // initializing GIFs for talking animals
   /* GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
-  Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
-  Gif GIF_TIGER_TALKING = new Gif(this, xxxx); //Asia1
-  Gif GIF_PANDA_TALKING = new Gif(this, xxxx); //Asia2
-  Gif GIF_PENGUIN_TALKING = new Gif(this, xxxx); //Frosty1
-  Gif GIF_SEAL_TALKING = new Gif(this, xxxx); //Frosty2
-  Gif GIF_ELEPHANT_TALKING = new Gif(this, xxxx); //Jungle1
-  Gif GIF_SLOTH_TALKING = new Gif(this, xxxx); //Jungle2
-  */
+   Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
+   Gif GIF_TIGER_TALKING = new Gif(this, xxxx); //Asia1
+   Gif GIF_PANDA_TALKING = new Gif(this, xxxx); //Asia2
+   Gif GIF_PENGUIN_TALKING = new Gif(this, xxxx); //Frosty1
+   Gif GIF_SEAL_TALKING = new Gif(this, xxxx); //Frosty2
+   Gif GIF_ELEPHANT_TALKING = new Gif(this, xxxx); //Jungle1
+   Gif GIF_SLOTH_TALKING = new Gif(this, xxxx); //Jungle2
+   */
 }
 
 //randomly chooses which animal the user is 
@@ -195,77 +195,77 @@ void chooseUserAnimal() {
   else if (random_number < 2) {
     USER = "gorillaB";
   }
-  else if (random_number < 3){
-    USER = "polarbearA";   
+  else if (random_number < 3) {
+    USER = "polarbearA";
   }
-  else if (random_number < 4){
-    USER = "polarbearB";   
+  else if (random_number < 4) {
+    USER = "polarbearB";
   }
-  else if (random_number < 5){
-    USER = "cobraA";   
+  else if (random_number < 5) {
+    USER = "cobraA";
   }
-  else if (random_number < 6){
-    USER = "cobraB";   
+  else if (random_number < 6) {
+    USER = "cobraB";
   }
   println(USER);
 }
-  
+
 // draw is called directly after setup
 // called automatically
 void draw() {
-  //println(ON_MAP);
-  //println(ANIMAL_TALKING);
+  //println(WELCOME_SCREEN);
   int current_time = millis();
-  
+
   //to stop the animal from visibly speaking if audio over
-  if(ANIMAL_TALKING && 
-  (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].lengthCurrentTalk())) {
+  if (ANIMAL_TALKING && 
+    (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].lengthCurrentTalk())) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
   }
-  
-  if (!ON_MAP) { //  && HABITAT_NUMBER == 0) { or any other habitat number
-  LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal();
+  //to display the correct animal for current habitat
+  if (!ON_MAP) { 
+    LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal();
   }
-   /* africa1.displayAnimal();
-  }
-  if (!ON_MAP && HABITAT_NUMBER == 1) {
-    africa2.displayAnimal();
-  } */
   
   drawCursor();
 }
 
 //changes the cursor to way we want it when we want it
 void drawCursor() {
-    // changes the cursor to show it's over the start button
+  // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
+    
     if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
       cursor(HAND); 
     }
-    else { cursor(ARROW); }
+    else {
+      cursor(ARROW);
+    }
   } 
+
+  if (ANIMAL_TALKING) {
+    cursor(ARROW);
+  }
+
   else if 
-  (cursorOverMapButton() || 
-  cursor_over_help() || 
-  cursor_over_left() ||
-  cursor_over_right() ||
-  LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverAnimal() ||
-  (ON_MAP && (
+    (cursorOverMapButton() || 
+    cursor_over_help() || 
+    cursor_over_left() ||
+    cursor_over_right() ||
+    LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverAnimal() ||
+    (ON_MAP && (
   cursor_over_africa1() ||
-  cursor_over_africa2() ||
-  cursor_over_africa3() ||
-  cursor_over_asia1() ||
-  cursor_over_asia2() ||
-  cursor_over_frosty1() ||
-  cursor_over_frosty2() ||
-  cursor_over_jungle1() ||
-  cursor_over_jungle2() ))) 
+    cursor_over_africa2() ||
+    cursor_over_africa3() ||
+    cursor_over_asia1() ||
+    cursor_over_asia2() ||
+    cursor_over_frosty1() ||
+    cursor_over_frosty2() ||
+    cursor_over_jungle1() ||
+    cursor_over_jungle2() ))) 
   {
     cursor(HAND);
   }
-  // changes cursor to be the general arrow to show there's nothing to click there
-  else { cursor(ARROW); }
 }
 
 
@@ -304,7 +304,7 @@ void doScene(int i) {
     doJungle2();
   }
 }
-  
+
 // intro of the box screen
 void doIntro() {
   intro.display();
@@ -375,15 +375,16 @@ void doJungle2() {
 void mousePressed() {
   //if welcome screen is up 
   if (WELCOME_SCREEN) { 
-    mousePressedWelcomeScreen(); 
+    mousePressedWelcomeScreen();
   }
   //if map is up
   if (ON_MAP) {
     mousePressedOnMap();
   }
   //if an animal is talking
-  else if (ANIMAL_TALKING) {} //stops user from clicking on things while animal talking
-  
+  else if (ANIMAL_TALKING) {
+  } //stops user from clicking on things while animal talking
+
   //if over map 
   else if (cursorOverMapButton()) {
     doMap();
@@ -398,14 +399,14 @@ void mousePressed() {
   // if the mouse was pressed in current habitat
   /*else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 0)) {
    africa1.mousePressedInHabitat();//println(LIST_OF_HABITATS[HABITAT_NUMBER]); //.mousePressedInHabitat(); 
-  }
-  else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 1)) {
-    africa2.mousePressedInHabitat();
-  }
-  else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 3)) {
-    asia1.mousePressedInHabitat();
-    println("gothere");
-  }*/
+   }
+   else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 1)) {
+   africa2.mousePressedInHabitat();
+   }
+   else if ((!ON_MAP && cursorOverHabitat()) && (HABITAT_NUMBER == 3)) {
+   asia1.mousePressedInHabitat();
+   println("gothere");
+   }*/
   else if (!ON_MAP && cursorOverHabitat()) {//&& (HABITAT_NUMBER == 0)) {
     LIST_OF_HABITATS[HABITAT_NUMBER].mousePressedInHabitat();
   }
@@ -416,15 +417,15 @@ void mousePressed() {
 boolean cursorOverHabitat() {
   return cursor_over(0, 960, 0, 540);
 }
-  
+
 
 
 // assume: on welcome screen
 // determines what actions to perform if mouse pressed 
 void mousePressedWelcomeScreen() {
   if (cursor_over_start() && mousePressed == true) {
-  doIntro();
-  WELCOME_SCREEN = false;
+    doIntro();
+    WELCOME_SCREEN = false;
   }
 }
 
@@ -533,16 +534,16 @@ boolean cursor_over_africa2() {
   return cursor_over(564, 654, 171, 237);
 }
 boolean cursor_over_africa3() {
-  return cursor_over(581, 670 ,270, 336);
+  return cursor_over(581, 670, 270, 336);
 }
 boolean cursor_over_asia1() {
-  return cursor_over(527,616,370, 435);
+  return cursor_over(527, 616, 370, 435);
 }
 boolean cursor_over_asia2() {
-  return cursor_over(423,513, 409,474);
+  return cursor_over(423, 513, 409, 474);
 }
 boolean cursor_over_frosty1() {
-  return cursor_over(318,407,369, 433);
+  return cursor_over(318, 407, 369, 433);
 }
 boolean cursor_over_frosty2() {
   return cursor_over(267, 356, 272, 336);
@@ -556,8 +557,7 @@ boolean cursor_over_jungle2() {
 
 
 
-  
-  
+
 
 
 
