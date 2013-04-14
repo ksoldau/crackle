@@ -9,6 +9,8 @@ import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 
 // declaring variables outside of setup so they can be used anywhere
 // a la "public" in standard java
+int START_TIME;
+
 PImage img;
 Intro intro;
 
@@ -209,6 +211,11 @@ void chooseUserAnimal() {
 // draw is called directly after setup
 // called automatically
 void draw() {
+  int current_time = millis();
+  if(HABITAT_NUMBER == 0 && ANIMAL_TALKING && (current_time - START_TIME >= LENGTH_CAMEL_HOW_DOIN)) {
+    ANIMAL_TALKING = false;
+    doAfrica1();
+  }
   if (!ON_MAP && HABITAT_NUMBER == 0 && ANIMAL_TALKING) {
   africa1.talkingCamelTest();
   }
@@ -362,6 +369,7 @@ void mousePressed() {
   if (ON_MAP) {
     mousePressedOnMap();
   }
+  else if (ANIMAL_TALKING) {} //stops user from clicking on things while animal talking
   else if (cursorOverMap()) {
     doMap();
     ON_MAP = true;

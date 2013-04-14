@@ -1,3 +1,4 @@
+int LENGTH_CAMEL_HOW_DOIN = 5700;
 // Calvin Camel
 class Africa1 extends Habitat {
   int state;
@@ -9,7 +10,7 @@ class Africa1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   
-  PImage animal_static_image = loadImage("data/sam_sealion.gif");
+  PImage animal_static_image = loadImage("data/calvin_camel_motion.gif");
   PImage animal_dynamic_image = loadImage("data/calvin_camel_motion.gif");
 
   
@@ -55,6 +56,11 @@ class Africa1 extends Habitat {
       doAfrica1();
       displayAnimalTalking();
       baron.trigger(); //sound
+      START_TIME = millis();
+      //int s = second();
+      //while (s <= (second() + 5)) {
+       // baron.trigger();
+      //}
     }
   }
   
