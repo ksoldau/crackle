@@ -8,11 +8,15 @@ class Asia1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   
+  int frame;
+  int numTalkingFrames;
+  
   Asia1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_not_talking = loadImage("data/tina_tiger.gif");
     this.background = loadImage("data/asia_1.png");
+    this.numTalkingFrames = 8;
   }
   
     //displays this habitat's background
@@ -20,8 +24,9 @@ class Asia1 extends Habitat {
     image(this.background, 0, 0);
   }
   
-    void displayAnimalTalking() {
-   image(GIF_TIGER_TALKING, animalLeft, animalTop);
+  void displayAnimalTalking() {
+    frame = (frame+1) % numTalkingFrames;
+    image(GIFS_TIGER_TALKING[frame], animalLeft, animalTop);
   }
   
   void displayAnimalNotTalking() {
@@ -36,10 +41,6 @@ class Asia1 extends Habitat {
     else { displayAnimalNotTalking(); }
   }
   
-  void playAnimalTalking() {
-    GIF_TIGER_TALKING.play();
-  }
-  
   boolean cursorOverAnimal() {
     boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
@@ -50,7 +51,6 @@ class Asia1 extends Habitat {
     if (cursorOverAnimal()) {
       doAsia1();
       ANIMAL_TALKING = true;
-      playAnimalTalking();
       ANIMAL_TALKING_START_TIME = millis();
     }
   }  

@@ -4,6 +4,7 @@ import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.ugens.*;
 import ddf.minim.effects.*;
+import java.text.NumberFormat;
 
 import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 
@@ -101,10 +102,9 @@ String USER; // which animal the user is can be
 //------------------------------------------
 //Gifs of talking animals
 
-Gif GIF_CAMEL_TALKING; //Africa1
-Gif GIF_GIRAFFE_TALKING; //Africa2
-
-Gif GIF_TIGER_TALKING; //Asia1
+PImage[] GIFS_CAMEL_TALKING;
+PImage[] GIFS_GIRAFFE_TALKING;
+PImage[] GIFS_TIGER_TALKING;
 
 //Talking animals gifs
 /*Gif GIF_LION_TALKING; //Africa3
@@ -172,9 +172,9 @@ void setup() {
   );
 
 
-  GIF_CAMEL_TALKING = new Gif(this, "data/calvin_talk_288.gif");
-  GIF_GIRAFFE_TALKING = new Gif(this, "data/gerry_talk_288.gif");
-  GIF_TIGER_TALKING  = new Gif(this, "data/tina_talk_288.gif");
+  GIFS_CAMEL_TALKING = Gif.getPImages(this, "data/calvin_talk_288.gif");
+  GIFS_GIRAFFE_TALKING = Gif.getPImages(this, "data/gerry_talk_288.gif");
+  GIFS_TIGER_TALKING  = Gif.getPImages(this, "data/tina_talk_288.gif");
   // initializing GIFs for talking animals
   /* GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
    Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
@@ -218,7 +218,7 @@ void draw() {
   int current_time = millis();
 
   //to stop the animal from visibly speaking if audio over
- if (ANIMAL_TALKING && 
+  if (ANIMAL_TALKING && 
     (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].lengthCurrentTalk())) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
@@ -228,21 +228,41 @@ void draw() {
     doScene(HABITAT_NUMBER);
     LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED, IF UNCOMMENT MEM PROBZ
   }
-  
+
   drawCursor();
+  printMem();
+}
+
+void printMem() {
+  //try {
+  Runtime runtime = Runtime.getRuntime();
+  NumberFormat format = NumberFormat.getInstance();
+  StringBuilder sb = new StringBuilder();
+  long maxMemory = runtime.maxMemory();
+  long allocatedMemory = runtime.totalMemory();
+  long freeMemory = runtime.freeMemory();
+  sb.append("free memory: " + format.format(freeMemory / 1024) + "  ");
+  sb.append("allocated memory: " + format.format(allocatedMemory / 1024) + "  ");
+  sb.append("max memory: " + format.format(maxMemory / 1024) + "  ");
+  sb.append("total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "  ");
+  println(sb);
+  //Thread.sleep(2000);
+//}
+ // catch (InterruptedException e)
+  //{}
 }
 
 //changes the cursor to way we want it when we want it
 void drawCursor() {
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
-    
+
     if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
-      cursor(HAND); 
+      cursor(HAND);
     }
     else {
       cursor(ARROW);
-    } 
+    }
   } 
 
   if (ANIMAL_TALKING) {
@@ -547,7 +567,6 @@ boolean cursor_over_jungle1() {
 boolean cursor_over_jungle2() {
   return cursor_over(373, 461, 95, 159);
 }
-
 
 
 

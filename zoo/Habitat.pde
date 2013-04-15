@@ -8,9 +8,6 @@ public abstract class Habitat {
   //displays the animal
   public abstract void displayAnimal();
   
-  //play the animal talking
-  public abstract void playAnimalTalking();
-  
   //determines if cursor over animal in the habitat
   public abstract boolean cursorOverAnimal();
   

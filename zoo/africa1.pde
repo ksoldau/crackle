@@ -7,6 +7,8 @@ class Africa1 extends Habitat {
   boolean isTalking;
   boolean isSleeping;
   PImage background;
+  int frame;
+  int numTalkingFrames;
   
   // position of animal 
   int animalLeft = 500;
@@ -19,6 +21,7 @@ class Africa1 extends Habitat {
     this.isSleeping = isSleeping;
     this.animal_not_talking = loadImage("data/sam_sealion.gif");
     this.background = loadImage("data/africa_1.png"); //background of habitat
+    this.numTalkingFrames = 6;
   }
   
   public void display() {
@@ -33,16 +36,12 @@ class Africa1 extends Habitat {
  }
  
   void displayAnimalTalking() {
-   image(GIF_CAMEL_TALKING, animalLeft, animalTop);
+    frame = (frame+1) % numTalkingFrames;
+    image(GIFS_CAMEL_TALKING[frame], animalLeft, animalTop);
   }
   
   void displayAnimalNotTalking() {
     image(animal_not_talking, animalLeft, animalTop);
-  }
-
-  //displays GIF of the animal talking
-  void playAnimalTalking() {
-      GIF_CAMEL_TALKING.play();
   }
   
   //decides which actions to take if mouse was pressed 
@@ -51,7 +50,6 @@ class Africa1 extends Habitat {
     if (cursorOverAnimal()) { 
       doAfrica1(); // cleans the scene (somehow)
       ANIMAL_TALKING = true;
-      playAnimalTalking();
       baron.trigger(); //sound
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
     }
@@ -59,9 +57,6 @@ class Africa1 extends Habitat {
   
   //determines if the mouse over the Camel
   boolean cursorOverAnimal() {
-  /*  boolean ans =  60 > mouseX;
-    println(ans);
-    return ans; */
   return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
     

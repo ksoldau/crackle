@@ -6,6 +6,9 @@ class Africa3 extends Habitat {
   PImage background;
   PImage animal_not_talking;
   
+  int frame;
+  int numTalkingFrames;
+  
   Africa3(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
@@ -22,13 +25,9 @@ class Africa3 extends Habitat {
   
     //displays this habitat's background
   public void display() {
-    /*PImage habitat_background;
-    habitat_background = this.background;*/
     image(this.background, 0, 0);
   }
-  
-  void playAnimalTalking() {}
-  
+    
   // determines if 
   boolean cursorOverAnimal() {   
     return false;

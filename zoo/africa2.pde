@@ -6,14 +6,18 @@ class Africa2 extends Habitat {
   PImage background;
   PImage animal_not_talking;
   
+  int frame;
+  int numTalkingFrames;
+  
   int animalLeft = 500;
   int animalTop = 100;
   
   Africa2(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-     this.animal_not_talking = loadImage("data/gerry_giraffe.gif");
+    this.animal_not_talking = loadImage("data/gerry_giraffe.gif");
     this.background = loadImage("data/africa_2.png");
+    this.numTalkingFrames = 8;
   }
   //displays the background for the habitat
   public void display() {
@@ -29,15 +33,12 @@ class Africa2 extends Habitat {
   }
  
   void displayAnimalTalking() {
-   image(GIF_GIRAFFE_TALKING, animalLeft, animalTop);
+    frame = (frame+1) % numTalkingFrames;
+    image(GIFS_GIRAFFE_TALKING[frame], animalLeft, animalTop);
   }
   
   void displayAnimalNotTalking() {
     image(animal_not_talking, animalLeft, animalTop);
-  }
-  
-  void playAnimalTalking() {
-    GIF_GIRAFFE_TALKING.play();
   }
   
   //determines if the mouse was pressed on an animal
@@ -52,7 +53,6 @@ class Africa2 extends Habitat {
     if (cursorOverAnimal()) {
       doAfrica2();
       ANIMAL_TALKING = true;
-      playAnimalTalking();
       ANIMAL_TALKING_START_TIME = millis();
     }
   }
