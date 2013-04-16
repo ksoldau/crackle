@@ -5,18 +5,17 @@ class Asia1 extends Habitat {
   PImage background;
   PImage animal_not_talking;
   
+  int frame;
+  int numTalkingFrames = 8;
+  
   int animalLeft = 500;
   int animalTop = 100;
-  
-  int frame;
-  int numTalkingFrames;
   
   Asia1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_not_talking = loadImage("data/tina_tiger.gif");
     this.background = loadImage("data/asia_1.png");
-    this.numTalkingFrames = 8;
   }
   
     //displays this habitat's background
@@ -24,16 +23,7 @@ class Asia1 extends Habitat {
     image(this.background, 0, 0);
   }
   
-  void displayAnimalTalking() {
-    frame = (frame+1) % numTalkingFrames;
-    image(GIFS_TIGER_TALKING[frame], animalLeft, animalTop);
-  }
-  
-  void displayAnimalNotTalking() {
-    image(animal_not_talking, animalLeft, animalTop);
-  }
-  
-  //determines if the animal in the habitat was clicked on
+  //displays the correct animal
   void displayAnimal() {
     if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -41,6 +31,18 @@ class Asia1 extends Habitat {
     else { displayAnimalNotTalking(); }
   }
   
+  //displays the talking animal 
+  void displayAnimalTalking() {
+    frame = (frame+1) % numTalkingFrames;
+    image(GIFS_TIGER_TALKING[frame], animalLeft, animalTop);
+  }
+  
+  //displays the not talking animal
+  void displayAnimalNotTalking() {
+    image(animal_not_talking, animalLeft, animalTop);
+  }
+  
+  //determines if the animal in the habitat was clicked on
   boolean cursorOverAnimal() {
     boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
     && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));

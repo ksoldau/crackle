@@ -1,7 +1,7 @@
 // Leonard Lion
 class Africa3 extends Habitat {
   int state;
-  boolean isTalking;
+ // boolean isTalking;
   boolean isSleeping;
   PImage background;
   PImage animal_not_talking;
@@ -9,33 +9,58 @@ class Africa3 extends Habitat {
   int frame;
   int numTalkingFrames;
   
+  int animalLeft = 500;
+  int animalTop = 100;
+  
   Africa3(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_not_talking = loadImage("data/leonard_lion.gif");
     this.background = loadImage("data/africa_3.png");
+    this.numTalkingFrames = 6;
   }
   
   
-  //determines if the animal in the habitat was clicked on
+  //displays the correct animal
   void displayAnimal() {
-  // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-  image(animal_not_talking, 500, 100);
+   if (ANIMAL_TALKING) {
+     displayAnimalTalking();
+   }
+   else { displayAnimalNotTalking(); }
+   }
+   
+   //display the talking anial
+  void displayAnimalTalking() {
+    frame = (frame+1) % numTalkingFrames;
+    image(GIFS_LION_TALKING[frame], animalLeft, animalTop);
   }
   
-    //displays this habitat's background
+  //display the not talking animal
+  void displayAnimalNotTalking() {
+    image(animal_not_talking, animalLeft, animalTop);
+  }
+  
+   //displays this habitat's background
   public void display() {
     image(this.background, 0, 0);
   }
     
   // determines if 
   boolean cursorOverAnimal() {   
-    return false;
+    boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
+    && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+    return ans;
   }
   
-  void mousePressedInHabitat() {}
+  void mousePressedInHabitat() {
+      if (cursorOverAnimal()) {
+      doAfrica3();
+      ANIMAL_TALKING = true;
+      ANIMAL_TALKING_START_TIME = millis();
+    }
+  }
   
     
-int lengthCurrentTalk() { return 0; }}
+int lengthCurrentTalk() { return 3000; }}
     
   

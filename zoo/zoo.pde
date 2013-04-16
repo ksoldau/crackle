@@ -106,10 +106,10 @@ String USER; // which animal the user is can be
 PImage[] GIFS_CAMEL_TALKING;
 PImage[] GIFS_GIRAFFE_TALKING;
 PImage[] GIFS_TIGER_TALKING;
+PImage[] GIFS_LION_TALKING;
 
 //Talking animals gifs
-/*Gif GIF_LION_TALKING; //Africa3
- Gif GIF_PANDA_TALKING; //Asia2
+ /*Gif GIF_PANDA_TALKING; //Asia2
  Gif GIF_PENGUIN_TALKING; //Frosty1
  Gif GIF_SEAL_TALKING; //Frosty2
  Gif GIF_ELEPHANT_TALKING; //Jungle1
@@ -184,10 +184,9 @@ void setup() {
   GIFS_CAMEL_TALKING = Gif.getPImages(this, "data/calvin_talk_288.gif");
   GIFS_GIRAFFE_TALKING = Gif.getPImages(this, "data/gerry_talk_288.gif");
   GIFS_TIGER_TALKING  = Gif.getPImages(this, "data/tina_talk_288.gif");
+  GIFS_LION_TALKING = Gif.getPImages(this, "data/leonard_talk_288.gif");
   // initializing GIFs for talking animals
-  /* GIF_GIRAFFE_TALKING = new Gif(this, xxxx); //Africa2
-   Gif GIF_LION_TALKING = new Gif(this, xxxx); //Africa3
-   Gif GIF_TIGER_TALKING = new Gif(this, xxxx); //Asia1
+  /* Gif GIF_TIGER_TALKING = new Gif(this, xxxx); //Asia1
    Gif GIF_PANDA_TALKING = new Gif(this, xxxx); //Asia2
    Gif GIF_PENGUIN_TALKING = new Gif(this, xxxx); //Frosty1
    Gif GIF_SEAL_TALKING = new Gif(this, xxxx); //Frosty2

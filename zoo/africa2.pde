@@ -1,7 +1,7 @@
 // Gerry Giraffe
 class Africa2 extends Habitat {
   int state;
-  boolean isTalking;
+//  boolean isTalking;
   boolean isSleeping;
   PImage background;
   PImage animal_not_talking;
@@ -32,11 +32,13 @@ class Africa2 extends Habitat {
     else { displayAnimalNotTalking(); }
   }
  
+ //display the talking animal
   void displayAnimalTalking() {
     frame = (frame+1) % numTalkingFrames;
     image(GIFS_GIRAFFE_TALKING[frame], animalLeft, animalTop);
   }
   
+  //display the not talking animal
   void displayAnimalNotTalking() {
     image(animal_not_talking, animalLeft, animalTop);
   }
