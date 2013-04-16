@@ -30,7 +30,7 @@ Jungle1 jungle1;
 Jungle2 jungle2;
 
 // list of Habitats
-Habitat[] LIST_OF_HABITATS = new Habitat[9];
+Habitat[] LIST_OF_HABITATS = new Habitat[9]; //why nine
 
 // Navigation and Arrows
 Nav nav;
@@ -123,7 +123,7 @@ void setup() {
   size(WIDTH, HEIGHT);
 
   // load image that says "Zoo guess who click here to start"
-  BACKGROUND_IMG = loadImage("data/welcome.png");// obvs a wrong link
+  BACKGROUND_IMG = loadImage("data/welcome.png");
   image(BACKGROUND_IMG, 0, 0);
 
 
