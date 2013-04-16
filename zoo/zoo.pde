@@ -38,6 +38,7 @@ Arrows arrows;
 Map map;
 
 // Audio Setup
+// WE will have to initialize all the clips here. Just fyi cause memory leak and etc.
 Minim minim;
 AudioSample baron;
 
@@ -115,8 +116,16 @@ PImage[] GIFS_TIGER_TALKING;
  Gif GIF_SLOTH_TALKING; //Jungle2
  */
 
-//------------------------------------------
-//setup runs once
+////////////////////////////////////////////////////////////////////////////////
+//           _               
+//          | |              
+//  ___  ___| |_ _   _ _ __  
+// / __|/ _ \ __| | | | '_ \ 
+// \__ \  __/ |_| |_| | |_) |
+// |___/\___|\__|\__,_| .__/ 
+//                    | |    
+//                    |_|    
+////////////////////////////////////////////////////////////////////////////////
 void setup() {
   frameRate(12);
   background(255);
@@ -211,6 +220,16 @@ void chooseUserAnimal() {
   }
   println(USER);
 }
+
+////////////////////////////////////////////////////////////////////////////////
+//           _                    
+//          | |                   
+//        __| |_ __ __ ___      __
+//       / _` | '__/ _` \ \ /\ / /
+//      | (_| | | | (_| |\ V  V / 
+//       \__,_|_|  \__,_| \_/\_/  
+////////////////////////////////////////////////////////////////////////////////
+
 
 // draw is called directly after setup
 // called automatically
