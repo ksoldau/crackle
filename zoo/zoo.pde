@@ -363,6 +363,7 @@ void doMap() {
 //---------------------
 // all of the do methods display the habitat for each 
 // specified habitat
+// arrows are displayed because the backgrounds will hide them.
 
 void doAfrica1() {
   africa1.display();
@@ -420,7 +421,6 @@ void mousePressedWelcomeScreen() {
     WELCOME_SCREEN = false;
   }
 }
-
 
 // if mouse is pressed, do this stuff 
 void mousePressed() {
@@ -586,9 +586,3 @@ boolean cursor_over_jungle1() {
 boolean cursor_over_jungle2() {
   return cursor_over(373, 461, 95, 159);
 }
-
-
-
-
-
-

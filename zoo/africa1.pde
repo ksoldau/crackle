@@ -63,7 +63,7 @@ class Africa1 extends Habitat {
   }
   
   int lengthCurrentTalk() {
-    return LENGTH_CAMEL_HOW_DOIN;
+    return LENGTH_CAMEL_HOW_DOIN; //lol
   }
 }
      
