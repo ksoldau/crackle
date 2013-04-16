@@ -1,12 +1,11 @@
-animals
-the lion and panda don't really mesh with the other animals
+images/movies
+     fixed background habitats
+     intro scene
+     final scenes
+     if have to put clickable things in habitat
+     final choice game
+     record audio
 
-the habitat for the giraffe, lion have large objects in 
-habitats that should be changed
+code 
 
-the jungle background could be fixed and made to look 
-more like the rest of them
 
-also, REMEMBER to put things around in it's habitats
-especially the sloth because might have to click things to "clean up"
-in his habitat
