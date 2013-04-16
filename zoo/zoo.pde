@@ -249,11 +249,15 @@ void draw() {
   }
 
   drawCursor();
-  printMem();
+  printMem(); //DEBUG: To monitor memory usage
 }
 
+
+// DEBUG section
+// This is for memory concerns; it prints out the totals to the 
+// console if called in draw()
+
 void printMem() {
-  //try {
   Runtime runtime = Runtime.getRuntime();
   NumberFormat format = NumberFormat.getInstance();
   StringBuilder sb = new StringBuilder();
@@ -265,10 +269,6 @@ void printMem() {
   sb.append("max memory: " + format.format(maxMemory / 1024) + "  ");
   sb.append("total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "  ");
   println(sb);
-  //Thread.sleep(2000);
-//}
- // catch (InterruptedException e)
-  //{}
 }
 
 //changes the cursor to way we want it when we want it
