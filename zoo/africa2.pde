@@ -54,6 +54,7 @@ class Africa2 extends Habitat {
   void mousePressedInHabitat() {
     if (cursorOverAnimal()) {
       doAfrica2();
+      GERRY_GIRAFFE_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
     }

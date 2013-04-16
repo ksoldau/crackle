@@ -54,7 +54,7 @@ class Africa1 extends Habitat {
     if (cursorOverAnimal()) { 
       doAfrica1(); // cleans the scene (somehow)
       ANIMAL_TALKING = true;
-      baron.trigger(); //sound
+      CALVIN_CAMEL_TEST.trigger(); //sound
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
     }
   }
