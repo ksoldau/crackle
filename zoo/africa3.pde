@@ -4,64 +4,71 @@ class Africa3 extends Habitat {
   boolean isSleeping;
   PImage background;
   PImage animal_not_talking;
-  
+
   int frame;
   int numTalkingFrames = 10;
-  
+
   int animalLeft = 500;
   int animalTop = 100;
-  
+
   Africa3(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
     this.animal_not_talking = loadImage("data/leonard_lion.gif");
     this.background = loadImage("data/africa_3.png");
   }
-  
-  
+
+
   //displays the correct animal
- void displayAnimal() {
-   if (isSleeping) {
-     image(SLEEP_TEST, animalLeft, animalTop);
-   }
-   else if (ANIMAL_TALKING) {
-     displayAnimalTalking();
-   }
-   else { displayAnimalNotTalking(); }
- }
-   
-   //display the talking anial
+  void displayAnimal() {
+    if (isSleeping) {
+      image(SLEEP_TEST, animalLeft, animalTop);
+    }
+    else if (ANIMAL_TALKING) {
+      displayAnimalTalking();
+    }
+    else { 
+      displayAnimalNotTalking();
+    }
+  }
+
+  //display the talking anial
   void displayAnimalTalking() {
     frame = (frame+1) % numTalkingFrames;
     image(GIFS_LION_TALKING[frame], animalLeft, animalTop);
   }
-  
+
   //display the not talking animal
   void displayAnimalNotTalking() {
     image(animal_not_talking, animalLeft, animalTop);
   }
-  
-   //displays this habitat's background
+
+  //displays this habitat's background
   public void display() {
     image(this.background, 0, 0);
   }
-    
+
   // determines if 
   boolean cursorOverAnimal() {   
     boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
-    && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+      && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
     return ans;
   }
-  
+
   void mousePressedInHabitat() {
-      if (cursorOverAnimal()) {
+    if (isSleeping) {
+    }
+    else if (cursorOverAnimal()) {
       LEONARD_LION_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
     }
   }
-  
-    
-int lengthCurrentTalk() { return 3000; }}
-    
-  
+
+
+  int lengthCurrentTalk() { 
+    return 3000;
+  }
+}
+
+

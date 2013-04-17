@@ -47,7 +47,8 @@ class Jungle2 extends Habitat {
   //decides which actions to take if mouse was pressed 
   //assume/know: animal is not talking
   void mousePressedInHabitat() {
-    if (cursorOverAnimal()) { 
+    if (isSleeping) {}
+    else if (cursorOverAnimal()) { 
       STANLEY_SLOTH_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal

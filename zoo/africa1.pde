@@ -49,7 +49,8 @@ class Africa1 extends Habitat {
   //decides which actions to take if mouse was pressed 
   //assume/know: animal is not talking
   void mousePressedInHabitat() {
-    if (cursorOverAnimal()) { 
+    if (isSleeping) {}
+    else if (cursorOverAnimal()) { 
       ANIMAL_TALKING = true;
       CALVIN_CAMEL_TEST.trigger(); //sound
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal

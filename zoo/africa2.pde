@@ -50,9 +50,9 @@ class Africa2 extends Habitat {
     return ans;
   }
  
-  
   void mousePressedInHabitat() {
-    if (cursorOverAnimal()) {
+    if (isSleeping) {}
+    else if (cursorOverAnimal()) {
       GERRY_GIRAFFE_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();

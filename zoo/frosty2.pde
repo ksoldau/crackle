@@ -51,7 +51,8 @@ class Frosty2 extends Habitat {
   }
 
   void mousePressedInHabitat() {
-    if (cursorOverAnimal()) {
+    if (isSleeping) {}
+    else if (cursorOverAnimal()) {
       SAM_SEALION_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
