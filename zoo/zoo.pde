@@ -399,9 +399,40 @@ void pauseAll() {
 }
 
 void whenPlay() {
-  if (HABITAT_NUMBER != LAST_HABITAT_NUMBER) {
+  /*if (HABITAT_NUMBER != LAST_HABITAT_NUMBER) {
+    playBg();
+  }*/
+  if (((HABITAT_NUMBER==0) || (HABITAT_NUMBER==1) || (HABITAT_NUMBER==2))
+  && !(LAST_HABITAT_NUMBER <= 2)) {
     playBg();
   }
+  else if (((HABITAT_NUMBER ==3) || (HABITAT_NUMBER==4)) &&
+  ((LAST_HABITAT_NUMBER != 3) && (LAST_HABITAT_NUMBER != 4))) {
+    playBg();
+  }
+  else if (((HABITAT_NUMBER==5) || (HABITAT_NUMBER==6)) && 
+  ((LAST_HABITAT_NUMBER != 5) && (LAST_HABITAT_NUMBER != 6))) {
+    playBg();
+  }
+  else if (((HABITAT_NUMBER == 7) || (HABITAT_NUMBER == 8)) && !(LAST_HABITAT_NUMBER >= 7)) {
+    playBg();
+  }
+  /*if (((HABITAT_NUMBER == 0) || (HABITAT_NUMBER == 1) || (HABITAT_NUMBER == 2)) &&
+  !(LAST_HABITAT_NUMBER < 3)) {
+    playBg();
+  }
+  else if (((HABITAT_NUMBER == 3) || (HABITAT_NUMBER == 4)) &&
+  (!(HABITAT_NUMBER == 3) && !(HABITAT_NUMBER == 4))) {
+    playBg();
+  }
+  else if (((HABITAT_NUMBER == 5) || (HABITAT_NUMBER == 6)) &&
+  (!(HABITAT_NUMBER == 5) && !(HABITAT_NUMBER == 6))) {
+    playBg();
+  }
+  else if (((HABITAT_NUMBER == 7) || (HABITAT_NUMBER == 8)) &&
+  (!(HABITAT_NUMBER == 7) && !(HABITAT_NUMBER == 8))) {
+    playBg();
+  }*/
   LAST_HABITAT_NUMBER = HABITAT_NUMBER;
 }
 
