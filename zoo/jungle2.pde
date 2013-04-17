@@ -21,7 +21,8 @@ class Jungle2 extends Habitat {
   
   //displays this habitat's background
   public void display() {
-    image(this.background, 0, 0);}
+    image(this.background, 0, 0);
+  }
   
  //display the correct animal image
  void displayAnimal() {

@@ -49,6 +49,11 @@ AudioPlayer FROSTY_BG;
 AudioPlayer ASIA_BG;
 AudioPlayer JUNGLE_BG;
 
+AudioSample AFRICA;
+AudioSample FROSTY;
+AudioSample ASIA;
+AudioSample JUNGLE;
+
 AudioSample CALVIN_CAMEL_TEST;
 AudioSample ELIZA_ELEPHANT_TEST;
 AudioSample GERRY_GIRAFFE_TEST;
@@ -189,6 +194,11 @@ void setup() {
   FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
   ASIA_BG = minim.loadFile("asia_bg.mp3", 512);
   JUNGLE_BG = minim.loadFile("jungle_bg.mp3", 512);
+  
+  AFRICA = minim.loadSample("africa_bg.mp3", 512);
+  FROSTY = minim.loadSample("frosty_bg.mp3", 512);
+  ASIA = minim.loadSample("asia_bg.mp3", 512);
+  JUNGLE = minim.loadSample("jungle_bg.mp3", 512);
   
   CALVIN_CAMEL_TEST = minim.loadSample("calvin_camel_test.mp3", 512);
   ELIZA_ELEPHANT_TEST = minim.loadSample("eliza_elephant_test.mp3", 512);
@@ -457,7 +467,6 @@ void doMap() {
 void doAfrica1() {
   AFRICA1.display();
   arrows.display();
-  AFRICA_BG.play();
 }
 void doAfrica2() {
   AFRICA2.display();
