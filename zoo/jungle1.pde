@@ -2,21 +2,19 @@
 class Jungle1 extends Habitat {
   int state;
   boolean isSleeping;
-  PImage background; 
-  PImage animal_not_talking = loadImage("data/eliza_elephant.gif");
   
   int frame;
   int numTalkingFrames = 16;
 
   int animalLeft = 500;
   int animalTop = 100;
-
   
+  PImage background = loadImage("data/jungle_1.png"); 
+  PImage animal_not_talking = loadImage("data/eliza_elephant.gif");
+
   Jungle1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.animal_not_talking = loadImage("data/eliza_elephant.gif");
-   this.background = loadImage("data/jungle_1.png");
   }
 
     //displays this habitat's background

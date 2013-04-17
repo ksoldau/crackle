@@ -1,26 +1,22 @@
-import gifAnimation.*;
-
 int LENGTH_CAMEL_HOW_DOIN = 5700;
+
 // Calvin Camel
 class Africa1 extends Habitat {
   int state;
   boolean isSleeping;
-  PImage background;
-  int frame;
-  int numTalkingFrames;
   
-  // position of animal 
+  int frame;
+  int numTalkingFrames = 6;
+  
   int animalLeft = 500;
   int animalTop = 100;
   
-  PImage animal_not_talking;
+  PImage animal_not_talking = loadImage("data/sam_sealion.gif");
+  PImage background = loadImage("data/africa_1.png");
   
   Africa1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.animal_not_talking = loadImage("data/sam_sealion.gif");
-    this.background = loadImage("data/africa_1.png"); //background of habitat
-    this.numTalkingFrames = 6;
   }
   
   //display the background for this class

@@ -2,21 +2,19 @@
 class Africa2 extends Habitat {
   int state;
   boolean isSleeping;
-  PImage background;
-  PImage animal_not_talking;
   
   int frame;
-  int numTalkingFrames;
+  int numTalkingFrames = 8;
   
   int animalLeft = 500;
   int animalTop = 100;
   
+  PImage animal_not_talking = loadImage("data/gerry_giraffe.gif");
+  PImage background = loadImage("data/africa_2.png");
+  
   Africa2(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.animal_not_talking = loadImage("data/gerry_giraffe.gif");
-    this.background = loadImage("data/africa_2.png");
-    this.numTalkingFrames = 8;
   }
   //displays the background for the habitat
   public void display() {

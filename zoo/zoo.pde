@@ -93,7 +93,7 @@ int RIGHTYf = 301;
 
 // if a certain screen is up
 boolean WELCOME_SCREEN = true; // is it on the welcome screen
-boolean INTRO_SCREEN = false; // is it on the intro screen
+boolean ON_INTRO = false; // is it on the intro screen
 boolean ON_MAP = false; 
 
 //current habitat number
@@ -253,7 +253,7 @@ void draw() {
     doScene(HABITAT_NUMBER);
   }
   //to display the correct animal for current habitat
-  if (!ON_MAP && !WELCOME_SCREEN) { 
+  if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
     doScene(HABITAT_NUMBER);
     LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED, IF UNCOMMENT MEM PROBZ
   }
@@ -361,7 +361,7 @@ void doIntro() {
   intro.display();
   arrows.display();
   nav.display();
-  INTRO_SCREEN = true;
+  //ON_INTRO = true;
 }
 
 // map screen

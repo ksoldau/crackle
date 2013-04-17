@@ -3,20 +3,19 @@
 class Frosty2 extends Habitat {
   int state;
   boolean isSleeping;
-  PImage background;
-  PImage animal_not_talking = loadImage("data/sam_sealion.gif");
 
   int frame;
   int numTalkingFrames = 6;
 
   int animalLeft = 500;
   int animalTop = 100;
+  
+  PImage background = loadImage("data/frosty_2.png");
+  PImage animal_not_talking = loadImage("data/sam_sealion.gif");
 
   Frosty2(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.animal_not_talking = loadImage("data/sam_sealion.gif");
-    this.background = loadImage("data/frosty_2.png");
   }
   //displays this habitat's background
   public void display() {

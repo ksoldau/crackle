@@ -6,7 +6,7 @@ class Africa3 extends Habitat {
   PImage animal_not_talking;
   
   int frame;
-  int numTalkingFrames;
+  int numTalkingFrames = 10;
   
   int animalLeft = 500;
   int animalTop = 100;
@@ -16,7 +16,6 @@ class Africa3 extends Habitat {
     this.isSleeping = isSleeping;
     this.animal_not_talking = loadImage("data/leonard_lion.gif");
     this.background = loadImage("data/africa_3.png");
-    this.numTalkingFrames = 6;
   }
   
   

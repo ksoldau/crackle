@@ -2,8 +2,6 @@
 class Asia1 extends Habitat {
   int state;
   boolean isSleeping;
-  PImage background;
-  PImage animal_not_talking;
   
   int frame;
   int numTalkingFrames = 8;
@@ -11,11 +9,12 @@ class Asia1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   
+  PImage background = loadImage("data/asia_1.png");
+  PImage animal_not_talking = loadImage("data/tina_tiger.gif");
+  
   Asia1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.animal_not_talking = loadImage("data/tina_tiger.gif");
-    this.background = loadImage("data/asia_1.png");
   }
   
     //displays this habitat's background
