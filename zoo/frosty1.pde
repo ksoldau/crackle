@@ -4,34 +4,58 @@ class Frosty1 extends Habitat {
   boolean isTalking;
   boolean isSleeping;
   PImage background;
-  PImage animal_static_image;
+  PImage animal_not_talking;
+  
+  int frame;
+  int numTalkingFrames = 4;
+  
+  int animalLeft = 500;
+  int animalTop = 100;
   
   Frosty1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.animal_static_image = loadImage("data/peter_penguin.gif");
+    this.animal_not_talking = loadImage("data/peter_penguin.gif");
     this.background = loadImage("data/frosty_1.png");
   }
     //displays this habitat's background
   public void display() {
-    /*PImage habitat_background;
-    habitat_background = this.background;*/
     image(this.background, 0, 0);}
   
-  //determines if the animal in the habitat was clicked on
+  //displays the correct animal 
   void displayAnimal() {
-  // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-  image(animal_static_image, 500, 100);
+   if (ANIMAL_TALKING) {
+     displayAnimalTalking();
+   }
+   else { displayAnimalNotTalking(); }
+ }
+ 
+   //displays the talking animal 
+  void displayAnimalTalking() {
+    frame = (frame+1) % numTalkingFrames;
+    image(GIFS_PENGUIN_TALKING[frame], animalLeft, animalTop);
   }
   
-  void playAnimalTalking() {}
-  
-  boolean cursorOverAnimal() {    return false;
-
+  //displays the not talking animal
+  void displayAnimalNotTalking() {
+    image(animal_not_talking, animalLeft, animalTop);
   }
-  void mousePressedInHabitat() {}
+  
+  boolean cursorOverAnimal() { 
+    boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
+    && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+    return ans;
+  }
+  
+  void mousePressedInHabitat() {
+    if (cursorOverAnimal()) {
+      //doFrosty1();
+      ANIMAL_TALKING = true;
+      ANIMAL_TALKING_START_TIME = millis();
+    }
+  }  
   
     
-int lengthCurrentTalk() { return 0; }}
+int lengthCurrentTalk() { return 3000; }}
     
   

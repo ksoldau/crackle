@@ -40,15 +40,7 @@ Map map;
 // Audio Setup
 // WE will have to initialize all the clips here. Just fyi cause memory leak and etc.
 Minim minim;
-AudioSample CALVIN_CAMEL_TEST;
-AudioSample ELIZA_ELEPHANT_TEST;
-AudioSample GERRY_GIRAFFE_TEST;
-AudioSample LEONARD_LION_TEST;
-AudioSample PATTY_PANDABEAR_TEST;
-AudioSample PETER_PENGUIN_TEST;
-AudioSample SAM_SEALION_TEST;
-AudioSample STANLEY_SLOTH_TEST;
-AudioSample TINA_TIGER_TEST;
+AudioSample baron;
 
 //------------------------------------------------
 //Static variables
@@ -115,14 +107,12 @@ PImage[] GIFS_CAMEL_TALKING;
 PImage[] GIFS_GIRAFFE_TALKING;
 PImage[] GIFS_TIGER_TALKING;
 PImage[] GIFS_LION_TALKING;
+PImage[] GIFS_PANDA_TALKING;
+PImage[] GIFS_PENGUIN_TALKING;
+PImage[] GIFS_SEAL_TALKING;
+PImage[] GIFS_ELEPHANT_TALKING;
+PImage[] GIFS_SLOTH_TALKING;
 
-//Talking animals gifs
- /*Gif GIF_PANDA_TALKING; //Asia2
- Gif GIF_PENGUIN_TALKING; //Frosty1
- Gif GIF_SEAL_TALKING; //Frosty2
- Gif GIF_ELEPHANT_TALKING; //Jungle1
- Gif GIF_SLOTH_TALKING; //Jungle2
- */
 
 ////////////////////////////////////////////////////////////////////////////////
 //           _               
@@ -184,30 +174,20 @@ void setup() {
 
   // Setting up sound engine
   minim = new Minim(this);
+  baron = minim.loadSample( "baron.mp3", // filename
+  512      // buffer size
+  );
   
-  CALVIN_CAMEL_TEST = minim.loadSample("calvin_camel_test.mp3", 512);
-  ELIZA_ELEPHANT_TEST = minim.loadSample("eliza_elephant_test.mp3", 512);
-  GERRY_GIRAFFE_TEST = minim.loadSample("gerry_giraffe_test.mp3", 512);
-  LEONARD_LION_TEST = minim.loadSample("leonard_lion_test.mp3", 512);
-  PATTY_PANDABEAR_TEST = minim.loadSample("patty_pandabear_test.mp3", 512);
-  PETER_PENGUIN_TEST = minim.loadSample("peter_penguin_test.mp3", 512);
-  SAM_SEALION_TEST = minim.loadSample("sam_sealion_test.mp3", 512);
-  STANLEY_SLOTH_TEST = minim.loadSample("stanley_sloth_test.mp3", 512);
-  TINA_TIGER_TEST = minim.loadSample("tina_tiger_test.mp3", 512);
-
-  // Setting up gifs of animals talking
+  // initializing lists for GIFs for talking animals
   GIFS_CAMEL_TALKING = Gif.getPImages(this, "data/calvin_talk_288.gif");
   GIFS_GIRAFFE_TALKING = Gif.getPImages(this, "data/gerry_talk_288.gif");
   GIFS_TIGER_TALKING  = Gif.getPImages(this, "data/tina_talk_288.gif");
   GIFS_LION_TALKING = Gif.getPImages(this, "data/leonard_talk_288.gif");
-  // initializing GIFs for talking animals
-  /* Gif GIF_TIGER_TALKING = new Gif(this, xxxx); //Asia1
-   Gif GIF_PANDA_TALKING = new Gif(this, xxxx); //Asia2
-   Gif GIF_PENGUIN_TALKING = new Gif(this, xxxx); //Frosty1
-   Gif GIF_SEAL_TALKING = new Gif(this, xxxx); //Frosty2
-   Gif GIF_ELEPHANT_TALKING = new Gif(this, xxxx); //Jungle1
-   Gif GIF_SLOTH_TALKING = new Gif(this, xxxx); //Jungle2
-   */
+  GIFS_PANDA_TALKING = Gif.getPImages(this, "data/patty_talk_288.gif");
+  GIFS_PENGUIN_TALKING = Gif.getPImages(this, "data/peter_talk_288.gif");
+  GIFS_SEAL_TALKING = Gif.getPImages(this, "data/sam_talk_288.gif");
+  GIFS_ELEPHANT_TALKING = Gif.getPImages(this, "data/eliza_talk_288.gif");
+  GIFS_SLOTH_TALKING = Gif.getPImages(this, "data/stanley_talk_288.gif");
 }
 
 //randomly chooses which animal the user is 

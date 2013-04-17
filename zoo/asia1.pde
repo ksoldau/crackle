@@ -51,7 +51,7 @@ class Asia1 extends Habitat {
   
   void mousePressedInHabitat() {
     if (cursorOverAnimal()) {
-      doAsia1();
+      //doAsia1();
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
     }

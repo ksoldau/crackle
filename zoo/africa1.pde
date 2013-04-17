@@ -52,9 +52,8 @@ class Africa1 extends Habitat {
   //assume/know: animal is not talking
   void mousePressedInHabitat() {
     if (cursorOverAnimal()) { 
-      doAfrica1(); // cleans the scene (somehow)
       ANIMAL_TALKING = true;
-      CALVIN_CAMEL_TEST.trigger(); //sound
+      baron.trigger(); //sound
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
     }
   }

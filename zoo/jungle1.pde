@@ -4,35 +4,65 @@ class Jungle1 extends Habitat {
   boolean isTalking;
   boolean isSleeping;
   PImage background; 
-  PImage animal_static_image = loadImage("data/eliza_elephant.gif");
+  PImage animal_not_talking = loadImage("data/eliza_elephant.gif");
+  
+  int frame;
+  int numTalkingFrames = 16;
+
+  int animalLeft = 500;
+  int animalTop = 100;
+
   
   Jungle1(int state, boolean isSleeping) {
     this.state = state;
     this.isSleeping = isSleeping;
-    this.animal_static_image = loadImage("data/eliza_elephant.gif");
+    this.animal_not_talking = loadImage("data/eliza_elephant.gif");
    this.background = loadImage("data/jungle_1.png");
   }
 
     //displays this habitat's background
   public void display() {
-    /*PImage habitat_background;
-    habitat_background = this.background;*/
-    image(this.background, 0, 0);}
-  //determines if the animal in the habitat was clicked on
-  void displayAnimal() {
-  // img.resize(0,1); how we will resize, it's kind of cheating, but it works
-  //image(animal_static_image, 500, 100);
+    image(this.background, 0, 0);
   }
   
-  void playAnimalTalking() {}
-  
-  boolean cursorOverAnimal() {    return false;
-
+ //display the correct animal image
+ void displayAnimal() {
+   if (ANIMAL_TALKING) {
+     displayAnimalTalking();
+   }
+   else { displayAnimalNotTalking(); }
+ }
+ 
+ //display the talking animal
+  void displayAnimalTalking() {
+    frame = (frame+1) % numTalkingFrames;
+    image(GIFS_ELEPHANT_TALKING[frame], animalLeft, animalTop);
   }
-  void mousePressedInHabitat() {}
   
-  int lengthCurrentTalk() {return 0;}
+  //display the not talking animal 
+  void displayAnimalNotTalking() {
+    image(animal_not_talking, animalLeft, animalTop);
+  }
+  
+  //decides which actions to take if mouse was pressed 
+  //assume/know: animal is not talking
+  void mousePressedInHabitat() {
+    if (cursorOverAnimal()) { 
+      ANIMAL_TALKING = true;
+      baron.trigger(); //sound
+      ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
+    }
+  }
+  
+  //determines if the mouse over the Camel
+  boolean cursorOverAnimal() {
+  return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
+    && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
     
+  }
+  
+  int lengthCurrentTalk() {
+    return LENGTH_CAMEL_HOW_DOIN; //lol
+  }
 }
-    
-  
+     
