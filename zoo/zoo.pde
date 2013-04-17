@@ -40,6 +40,12 @@ Map map;
 // Audio Setup
 // WE will have to initialize all the clips here. Just fyi cause memory leak and etc.
 Minim minim;
+
+AudioPlayer AFRICA_BG;
+AudioPlayer FROSTY_BG;
+AudioPlayer ASIA_BG;
+AudioPlayer JUNGLE_BG;
+
 AudioSample CALVIN_CAMEL_TEST;
 AudioSample ELIZA_ELEPHANT_TEST;
 AudioSample GERRY_GIRAFFE_TEST;
@@ -172,6 +178,11 @@ void setup() {
 
   // Setting up sound engine
   minim = new Minim(this);
+  
+  AFRICA_BG = minim.loadFile("africa_bg.mp3", 512);
+  FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
+  ASIA_BG = minim.loadFile("asia_bg.mp3", 512);
+  JUNGLE_BG = minim.loadFile("jungle_bg.mp3", 512);
   
   CALVIN_CAMEL_TEST = minim.loadSample("calvin_camel_test.mp3", 512);
   ELIZA_ELEPHANT_TEST = minim.loadSample("eliza_elephant_test.mp3", 512);
@@ -436,6 +447,7 @@ void doMap() {
 void doAfrica1() {
   AFRICA1.display();
   arrows.display();
+  AFRICA_BG.play();
 }
 void doAfrica2() {
   AFRICA2.display();
