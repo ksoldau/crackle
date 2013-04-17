@@ -16,18 +16,18 @@ PImage BACKGROUND_IMG;
 Intro intro;
 
 // Habitat classes
-Africa1 africa1;
-Africa2 africa2;
-Africa3 africa3;
+Africa1 AFRICA1;
+Africa2 AFRICA2;
+Africa3 AFRICA3;
 
-Asia1 asia1;
-Asia2 asia2;
+Asia1 ASIA1;
+Asia2 ASIA2;
 
-Frosty1 frosty1;
-Frosty2 frosty2;
+Frosty1 FROSTY1;
+Frosty2 FROSTY2;
 
-Jungle1 jungle1;
-Jungle2 jungle2;
+Jungle1 JUNGLE1;
+Jungle2 JUNGLE2;
 
 // list of Habitats
 Habitat[] LIST_OF_HABITATS = new Habitat[9]; //why nine
@@ -105,8 +105,8 @@ boolean ANIMAL_TALKING = false;
 //------------------------------------------
 //setting up who the user is
 String USER; // which animal the user is can be 
-// "gorillaA", "gorillaB", "cobraA", "cobraB", 
-// "polarbearA", or "polarbearB"
+// "GORILLA_A", "GORILLA_B", "COBRA_A", "COBRA_B", 
+// "POLAR_A", or "POLAR_B"
 
 //------------------------------------------
 //Gifs of talking animals
@@ -145,38 +145,27 @@ void setup() {
   // making all the background objects
   intro = new Intro();
 
-  //loading all background first
-  africa1 = new Africa1(4, false);
-  africa2 = new Africa2(4, false);
-  africa3 = new Africa3(4, false);
+  // randomly chooses which animal and which 
+  // iteration of that animal the user will play
+  chooseUser();
+  //loading all animal classes
+  //depends on which animal/iteration the user is 
+  loadAnimalClasses();
 
-  asia1 = new Asia1(4, false);
-  asia2 = new Asia2(4, false);
-
-  frosty1 = new Frosty1(4, false);
-  frosty2 = new Frosty2(4, false);
-
-  jungle1 = new Jungle1(4, false);
-  jungle2 = new Jungle2(4, false);
-
-  LIST_OF_HABITATS[0] = africa1;
-  LIST_OF_HABITATS[1] = africa2;
-  LIST_OF_HABITATS[2] = africa3;
-  LIST_OF_HABITATS[3] = asia1;
-  LIST_OF_HABITATS[4] = asia2;
-  LIST_OF_HABITATS[5] = frosty1;
-  LIST_OF_HABITATS[6] = frosty2;
-  LIST_OF_HABITATS[7] = jungle1;
-  LIST_OF_HABITATS[8] = jungle2;
+  LIST_OF_HABITATS[0] = AFRICA1;
+  LIST_OF_HABITATS[1] = AFRICA2;
+  LIST_OF_HABITATS[2] = AFRICA3;
+  LIST_OF_HABITATS[3] = ASIA1;
+  LIST_OF_HABITATS[4] = ASIA2;
+  LIST_OF_HABITATS[5] = FROSTY1;
+  LIST_OF_HABITATS[6] = FROSTY2;
+  LIST_OF_HABITATS[7] = JUNGLE1;
+  LIST_OF_HABITATS[8] = JUNGLE2;
 
 
   nav = new Nav();
   arrows = new Arrows();
   map = new Map();
-
-  // randomly chooses which animal and which 
-  // iteration of that animal the user will play
-  chooseUserAnimal();
 
   println(LIST_OF_HABITATS[0]);
 
@@ -208,27 +197,96 @@ void setup() {
 
 //randomly chooses which animal the user is 
 // and which group of 6 animal interacts with
-void chooseUserAnimal() {
+void chooseUser() {
   float random_number = random(0, 6);
   if (random_number < 1) {
-    USER = "gorillaA";
+    USER = "GORILLA_A";
   }
   else if (random_number < 2) {
-    USER = "gorillaB";
+    USER = "GORILLA_B";
   }
   else if (random_number < 3) {
-    USER = "polarbearA";
+    USER = "POLAR_A";
   }
   else if (random_number < 4) {
-    USER = "polarbearB";
+    USER = "POLAR_B";
   }
   else if (random_number < 5) {
-    USER = "cobraA";
+    USER = "COBRA_A";
   }
   else if (random_number < 6) {
-    USER = "cobraB";
+    USER = "COBRA_B";
   }
   println(USER);
+}
+
+void loadAnimalClasses() {
+  if (USER == "GORILLA_A") {
+    AFRICA1 = new Africa1(1, false);
+    AFRICA2 = new Africa2(1, true);
+    AFRICA3 = new Africa3(1, false);
+    ASIA1 = new Asia1(1, true);
+    ASIA2 = new Asia2(1, false);
+    FROSTY1 = new Frosty1(1, true);
+    FROSTY2 = new Frosty2(1, false);
+    JUNGLE1 = new Jungle1(1, false);
+    JUNGLE2 = new Jungle2(1, false);
+  }
+  else if (USER == "GORILLA_B") {
+    AFRICA1 = new Africa1(1, false);
+    AFRICA2 = new Africa2(1, false);
+    AFRICA3 = new Africa3(1, true);
+    ASIA1 = new Asia1(1, false);
+    ASIA2 = new Asia2(1, true);
+    FROSTY1 = new Frosty1(1, false);
+    FROSTY2 = new Frosty2(1, false);
+    JUNGLE1 = new Jungle1(1, true);
+    JUNGLE2 = new Jungle2(1, false);
+  }
+  else if (USER == "COBRA_A") {
+    AFRICA1 = new Africa1(1, false);
+    AFRICA2 = new Africa2(1, true);
+    AFRICA3 = new Africa3(1, false);
+    ASIA1 = new Asia1(1, false);
+    ASIA2 = new Asia2(1, false);
+    FROSTY1 = new Frosty1(1, false);
+    FROSTY2 = new Frosty2(1, true);
+    JUNGLE1 = new Jungle1(1, false);
+    JUNGLE2 = new Jungle2(1, true);
+  }
+  else if (USER == "COBRA_B") {
+    AFRICA1 = new Africa1(1, true);
+    AFRICA2 = new Africa2(1, false);
+    AFRICA3 = new Africa3(1, false);
+    ASIA1 = new Asia1(1, false);
+    ASIA2 = new Asia2(1, false);
+    FROSTY1 = new Frosty1(1, true);
+    FROSTY2 = new Frosty2(1, false);
+    JUNGLE1 = new Jungle1(1, true);
+    JUNGLE2 = new Jungle2(1, false);
+  }
+  else if (USER == "POLAR_A") {
+    AFRICA1 = new Africa1(1, false);
+    AFRICA2 = new Africa2(1, false);
+    AFRICA3 = new Africa3(1, true);
+    ASIA1 = new Asia1(1, true);
+    ASIA2 = new Asia2(1, false);
+    FROSTY1 = new Frosty1(1, false);
+    FROSTY2 = new Frosty2(1, true);
+    JUNGLE1 = new Jungle1(1, false);
+    JUNGLE2 = new Jungle2(1, false);
+  }
+  else if (USER == "POLAR_B") {
+    AFRICA1 = new Africa1(1, true);
+    AFRICA2 = new Africa2(1, false);
+    AFRICA3 = new Africa3(1, true);
+    ASIA1 = new Asia1(1, false);
+    ASIA2 = new Asia2(1, false);
+    FROSTY1 = new Frosty1(1, false);
+    FROSTY2 = new Frosty2(1, false);
+    JUNGLE1 = new Jungle1(1, false);
+    JUNGLE2 = new Jungle2(1, true);
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -376,46 +434,46 @@ void doMap() {
 // arrows are displayed because the backgrounds will hide them.
 
 void doAfrica1() {
-  africa1.display();
+  AFRICA1.display();
   arrows.display();
 }
 void doAfrica2() {
-  africa2.display();
+  AFRICA2.display();
   arrows.display();
 }
 
 void doAfrica3() {
-  africa3.display();
+  AFRICA3.display();
   arrows.display();
 }
 
 void doAsia1() {
-  asia1.display();
+  ASIA1.display();
   arrows.display();
 }
 
 void doAsia2() {
-  asia2.display();
+  ASIA2.display();
   arrows.display();
 }
 
 void doFrosty1() {
-  frosty1.display();
+  FROSTY1.display();
   arrows.display();
 }
 
 void doFrosty2() {
-  frosty2.display();
+  FROSTY2.display();
   arrows.display();
 }
 
 void doJungle1() {
-  jungle1.display();
+  JUNGLE1.display();
   arrows.display();
 }
 
 void doJungle2() {
-  jungle2.display();
+  JUNGLE2.display();
   arrows.display();
 }
 
