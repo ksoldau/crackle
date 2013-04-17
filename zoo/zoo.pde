@@ -113,6 +113,9 @@ boolean ON_MAP = false;
 //current habitat number
 int HABITAT_NUMBER = 8;
 
+//last habitat number
+int LAST_HABITAT_NUMBER = 0;
+
 //is the current animal talking
 boolean ANIMAL_TALKING = false;
 
@@ -344,7 +347,8 @@ void draw() {
   }
 
   drawCursor();
-  printMem(); //DEBUG: To monitor memory usage
+  // printMem(); //DEBUG: To monitor memory usage
+  whenPlay();
 }
 
 
@@ -365,6 +369,42 @@ void printMem() {
   sb.append("total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "  ");
   println(sb);
 }
+
+// SOUNDS
+
+void playBg() {  
+  if (HABITAT_NUMBER == 0 || HABITAT_NUMBER == 1 || HABITAT_NUMBER == 2) {
+    pauseAll();
+    AFRICA_BG.loop();
+  }
+  if (HABITAT_NUMBER == 3 || HABITAT_NUMBER == 4) {
+    pauseAll();
+    ASIA_BG.loop();
+  }
+  if (HABITAT_NUMBER == 5 || HABITAT_NUMBER == 6) {
+    pauseAll();
+    FROSTY_BG.loop();
+  } 
+  if (HABITAT_NUMBER == 7 || HABITAT_NUMBER == 8) {
+    pauseAll();    
+    JUNGLE_BG.loop();
+  }
+}
+
+void pauseAll() {
+  AFRICA_BG.pause();
+  ASIA_BG.pause();
+  JUNGLE_BG.pause();
+  FROSTY_BG.pause();
+}
+
+void whenPlay() {
+  if (HABITAT_NUMBER != LAST_HABITAT_NUMBER) {
+    playBg();
+  }
+  LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+}
+
 
 //changes the cursor to way we want it when we want it
 void drawCursor() {
@@ -527,13 +567,17 @@ void mousePressed() {
   if (WELCOME_SCREEN) { 
     mousePressedWelcomeScreen();
   }
+  
   //if map is up
   if (ON_MAP) {
     mousePressedOnMap();
   }
+  
   //if an animal is talking
   else if (ANIMAL_TALKING) {
   } //stops user from clicking on things while animal talking
+
+
 
   //if over map 
   else if (cursorOverMapButton()) {
@@ -552,50 +596,59 @@ void mousePressed() {
 }
 
 // assume: on map
-// determines what actiosn to perform if on map
+// determines what actions to perform if on map
 void mousePressedOnMap() {
   if (cursor_over_africa1()) {
     doAfrica1();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 0;
     ON_MAP = false;
   }
   else if (cursor_over_africa2()) {
     doAfrica2();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 1;
     ON_MAP = false;
   }
   else if (cursor_over_africa3()) {
     doAfrica3();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 2;
     ON_MAP = false;
   }
   else if (cursor_over_asia1()) {
     doAsia1();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 3;
     ON_MAP = false;
   }
   else if (cursor_over_asia2()) {
     doAsia2();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 4;
     ON_MAP = false;
   }
   else if (cursor_over_frosty1()) {
     doFrosty1();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 5;
     ON_MAP = false;
   }
   else if (cursor_over_frosty2()) {
     doFrosty2();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 6;
     ON_MAP = false;
   }
   else if (cursor_over_jungle1()) {
     doJungle1();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 7;
     ON_MAP = false;
   }
   else if (cursor_over_jungle2()) {
     doJungle2();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 8;
     ON_MAP = false;
   }
@@ -607,14 +660,18 @@ void mousePressedOnMap() {
 int updateSceneNumber(String query) {
   if (query.equals("left") && HABITAT_NUMBER == 0) {
     HABITAT_NUMBER = 8;
+    LAST_HABITAT_NUMBER = 0;
   }
   else if (query.equals("right") && HABITAT_NUMBER == 8) {
     HABITAT_NUMBER = 0;
+    LAST_HABITAT_NUMBER = 8;
   }
   else if (query.equals("left")) {
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER--;
   }
   else { // assume query == "right" 
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER++;
   }
   return HABITAT_NUMBER;
