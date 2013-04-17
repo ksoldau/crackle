@@ -14,6 +14,7 @@ class Frosty2 extends Habitat {
   PImage animal_not_talking = loadImage("data/sam_sealion.gif");
 
   Frosty2(int state, boolean isSleeping) {
+    super(isSleeping);
     this.state = state;
     this.isSleeping = isSleeping;
   }

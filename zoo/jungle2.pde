@@ -14,6 +14,7 @@ class Jungle2 extends Habitat {
 
   
   Jungle2(int state, boolean isSleeping) {
+    super(isSleeping);
     this.state = state;
     this.isSleeping = isSleeping;
   }

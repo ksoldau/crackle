@@ -13,6 +13,7 @@ class Asia2 extends Habitat {
   PImage animal_not_talking = loadImage("data/patty_pandabear.gif");
 
   Asia2(int state, boolean isSleeping) {
+    super(isSleeping);
     this.state = state;
     this.isSleeping = isSleeping;
   }

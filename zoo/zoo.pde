@@ -369,7 +369,7 @@ void drawCursor() {
     }
   } 
 
-  if (ANIMAL_TALKING) {
+  else if (ANIMAL_TALKING) {
     cursor(ARROW);
   }
 
@@ -378,7 +378,8 @@ void drawCursor() {
     cursor_over_help() || 
     cursor_over_left() ||
     cursor_over_right() ||
-    LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverAnimal() ||
+    (!LIST_OF_HABITATS[HABITAT_NUMBER].isSleeping &&
+    LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverAnimal()) ||
     (ON_MAP && (
   cursor_over_africa1() ||
     cursor_over_africa2() ||
@@ -391,6 +392,9 @@ void drawCursor() {
     cursor_over_jungle2() ))) 
   {
     cursor(HAND);
+  }
+  else {
+    cursor(ARROW);
   }
 }
 

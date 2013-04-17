@@ -13,6 +13,7 @@ class Jungle1 extends Habitat {
   PImage animal_not_talking = loadImage("data/eliza_elephant.gif");
 
   Jungle1(int state, boolean isSleeping) {
+    super(isSleeping);
     this.state = state;
     this.isSleeping = isSleeping;
   }

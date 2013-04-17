@@ -2,20 +2,20 @@
 class Africa3 extends Habitat {
   int state;
   boolean isSleeping;
-  PImage background;
-  PImage animal_not_talking;
 
   int frame;
-  int numTalkingFrames = 10;
+  int numTalkingFrames = 6; //al might export one with more frames
 
   int animalLeft = 500;
   int animalTop = 100;
+  
+  PImage background = loadImage("data/africa_3.png");
+  PImage animal_not_talking =  loadImage("data/leonard_lion.gif");
 
   Africa3(int state, boolean isSleeping) {
+    super(isSleeping);
     this.state = state;
     this.isSleeping = isSleeping;
-    this.animal_not_talking = loadImage("data/leonard_lion.gif");
-    this.background = loadImage("data/africa_3.png");
   }
 
 

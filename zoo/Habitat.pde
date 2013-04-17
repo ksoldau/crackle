@@ -1,5 +1,11 @@
 public abstract class Habitat { 
   
+  boolean isSleeping;
+  
+  Habitat(boolean isSleeping) {
+    this.isSleeping = isSleeping;
+  } 
+  
   PImage background =  loadImage("data/africa_1.png");  
   
   //displays the background of the scene

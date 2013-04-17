@@ -14,7 +14,8 @@ class Africa1 extends Habitat {
   PImage animal_not_talking = loadImage("data/sam_sealion.gif");
   PImage background = loadImage("data/africa_1.png");
   
-  Africa1(int state, boolean isSleeping) {
+  Africa1(int state, boolean isSleeping) { //isSleeping too
+    super(isSleeping);
     this.state = state;
     this.isSleeping = isSleeping;
   }

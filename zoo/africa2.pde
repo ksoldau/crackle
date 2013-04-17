@@ -13,6 +13,7 @@ class Africa2 extends Habitat {
   PImage background = loadImage("data/africa_2.png");
   
   Africa2(int state, boolean isSleeping) {
+    super(isSleeping);
     this.state = state;
     this.isSleeping = isSleeping;
   }
