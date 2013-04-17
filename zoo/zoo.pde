@@ -40,7 +40,16 @@ Map map;
 // Audio Setup
 // WE will have to initialize all the clips here. Just fyi cause memory leak and etc.
 Minim minim;
-AudioSample baron;
+AudioSample CALVIN_CAMEL_TEST;
+AudioSample ELIZA_ELEPHANT_TEST;
+AudioSample GERRY_GIRAFFE_TEST;
+AudioSample LEONARD_LION_TEST;
+AudioSample PATTY_PANDABEAR_TEST;
+AudioSample PETER_PENGUIN_TEST;
+AudioSample SAM_SEALION_TEST;
+AudioSample STANLEY_SLOTH_TEST;
+AudioSample TINA_TIGER_TEST;
+
 //------------------------------------------------
 //Static variables
 
@@ -171,11 +180,19 @@ void setup() {
 
   println(LIST_OF_HABITATS[0]);
 
+
   // Setting up sound engine
   minim = new Minim(this);
-  baron = minim.loadSample( "baron.mp3", // filename
-  512      // buffer size
-  );
+  
+  CALVIN_CAMEL_TEST = minim.loadSample("calvin_camel_test.mp3", 512);
+  ELIZA_ELEPHANT_TEST = minim.loadSample("eliza_elephant_test.mp3", 512);
+  GERRY_GIRAFFE_TEST = minim.loadSample("gerry_giraffe_test.mp3", 512);
+  LEONARD_LION_TEST = minim.loadSample("leonard_lion_test.mp3", 512);
+  PATTY_PANDABEAR_TEST = minim.loadSample("patty_pandabear_test.mp3", 512);
+  PETER_PENGUIN_TEST = minim.loadSample("peter_penguin_test.mp3", 512);
+  SAM_SEALION_TEST = minim.loadSample("sam_sealion_test.mp3", 512);
+  STANLEY_SLOTH_TEST = minim.loadSample("stanley_sloth_test.mp3", 512);
+  TINA_TIGER_TEST = minim.loadSample("tina_tiger_test.mp3", 512);
   
   // initializing lists for GIFs for talking animals
   GIFS_CAMEL_TALKING = Gif.getPImages(this, "data/calvin_talk_288.gif");

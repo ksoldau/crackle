@@ -54,7 +54,7 @@ class Africa3 extends Habitat {
   
   void mousePressedInHabitat() {
       if (cursorOverAnimal()) {
-      //doAfrica3();
+      LEONARD_LION_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
     }

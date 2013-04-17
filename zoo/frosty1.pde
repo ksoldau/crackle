@@ -49,7 +49,7 @@ class Frosty1 extends Habitat {
   
   void mousePressedInHabitat() {
     if (cursorOverAnimal()) {
-      //doFrosty1();
+      PETER_PENGUIN_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
     }

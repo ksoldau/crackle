@@ -47,9 +47,9 @@ class Jungle1 extends Habitat {
   //decides which actions to take if mouse was pressed 
   //assume/know: animal is not talking
   void mousePressedInHabitat() {
-    if (cursorOverAnimal()) { 
+    if (cursorOverAnimal()) {
+      ELIZA_ELEPHANT_TEST.trigger(); //sound 
       ANIMAL_TALKING = true;
-      baron.trigger(); //sound
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
     }
   }

@@ -47,8 +47,8 @@ class Jungle2 extends Habitat {
   //assume/know: animal is not talking
   void mousePressedInHabitat() {
     if (cursorOverAnimal()) { 
+      STANLEY_SLOTH_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
-      baron.trigger(); //sound
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
     }
   }

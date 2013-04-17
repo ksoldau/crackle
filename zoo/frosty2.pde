@@ -1,4 +1,5 @@
 // Sam Seal (Conor doesn't know difference between seal and sea lion)
+// fuck off katie
 class Frosty2 extends Habitat {
   int state;
   //boolean isTalking;
@@ -52,7 +53,7 @@ class Frosty2 extends Habitat {
 
   void mousePressedInHabitat() {
     if (cursorOverAnimal()) {
-      //doFrosty1();
+      SAM_SEALION_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
     }

@@ -50,7 +50,7 @@ class Asia2 extends Habitat {
   
   void mousePressedInHabitat() {
     if (cursorOverAnimal()) {
-      //doAsia2();
+      PATTY_PANDABEAR_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
     }
