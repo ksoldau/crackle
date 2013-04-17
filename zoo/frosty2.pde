@@ -2,7 +2,6 @@
 // fuck off katie
 class Frosty2 extends Habitat {
   int state;
-  //boolean isTalking;
   boolean isSleeping;
   PImage background;
   PImage animal_not_talking = loadImage("data/sam_sealion.gif");

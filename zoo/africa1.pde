@@ -4,7 +4,6 @@ int LENGTH_CAMEL_HOW_DOIN = 5700;
 // Calvin Camel
 class Africa1 extends Habitat {
   int state;
-  //boolean isTalking;
   boolean isSleeping;
   PImage background;
   int frame;

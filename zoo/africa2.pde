@@ -1,7 +1,6 @@
 // Gerry Giraffe
 class Africa2 extends Habitat {
   int state;
-//  boolean isTalking;
   boolean isSleeping;
   PImage background;
   PImage animal_not_talking;
