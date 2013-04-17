@@ -41,7 +41,6 @@ Map map;
 // WE will have to initialize all the clips here. Just fyi cause memory leak and etc.
 Minim minim;
 AudioSample baron;
-
 //------------------------------------------------
 //Static variables
 
