@@ -24,7 +24,10 @@ class Jungle2 extends Habitat {
   
  //display the correct animal image
  void displayAnimal() {
-   if (ANIMAL_TALKING) {
+   if (isSleeping) {
+     image(SLEEP_TEST, animalLeft, animalTop);
+   }
+   else if (ANIMAL_TALKING) {
      displayAnimalTalking();
    }
    else { displayAnimalNotTalking(); }

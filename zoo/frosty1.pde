@@ -21,8 +21,11 @@ class Frosty1 extends Habitat {
     image(this.background, 0, 0);}
   
   //displays the correct animal 
-  void displayAnimal() {
-   if (ANIMAL_TALKING) {
+ void displayAnimal() {
+   if (isSleeping) {
+     image(SLEEP_TEST, animalLeft, animalTop);
+   }
+   else if (ANIMAL_TALKING) {
      displayAnimalTalking();
    }
    else { displayAnimalNotTalking(); }

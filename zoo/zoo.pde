@@ -8,6 +8,9 @@ import java.text.NumberFormat;
 
 import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 
+//for tests
+PImage SLEEP_TEST;
+
 // declaring variables outside of setup so they can be used anywhere
 // a la "public" in standard java
 int ANIMAL_TALKING_START_TIME;
@@ -142,6 +145,9 @@ void setup() {
   frameRate(12);
   background(255);
   size(WIDTH, HEIGHT);
+  
+  //for tests
+  SLEEP_TEST = loadImage("data/sleep_test.jpg");
 
   // load image that says "Zoo guess who click here to start"
   BACKGROUND_IMG = loadImage("data/welcome.png");

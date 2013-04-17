@@ -23,12 +23,15 @@ class Asia1 extends Habitat {
   }
   
   //displays the correct animal
-  void displayAnimal() {
-    if (ANIMAL_TALKING) {
-      displayAnimalTalking();
-    }
-    else { displayAnimalNotTalking(); }
-  }
+ void displayAnimal() {
+   if (isSleeping) {
+     image(SLEEP_TEST, animalLeft, animalTop);
+   }
+   else if (ANIMAL_TALKING) {
+     displayAnimalTalking();
+   }
+   else { displayAnimalNotTalking(); }
+ }
   
   //displays the talking animal 
   void displayAnimalTalking() {

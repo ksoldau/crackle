@@ -22,12 +22,15 @@ class Africa2 extends Habitat {
   } 
   
   //determines if the animal in the habitat was clicked on
-  void displayAnimal() {
-    if (ANIMAL_TALKING) {
-      displayAnimalTalking();
-    }
-    else { displayAnimalNotTalking(); }
-  }
+ void displayAnimal() {
+   if (isSleeping) {
+     image(SLEEP_TEST, animalLeft, animalTop);
+   }
+   else if (ANIMAL_TALKING) {
+     displayAnimalTalking();
+   }
+   else { displayAnimalNotTalking(); }
+ }
  
  //display the talking animal
   void displayAnimalTalking() {
