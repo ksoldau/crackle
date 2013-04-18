@@ -1,8 +1,5 @@
 // Patty Panda
 class Asia2 extends Habitat {
-  int state;
-  boolean isSleeping;
-
   int frame;
   int numTalkingFrames = 6;
 
@@ -12,10 +9,8 @@ class Asia2 extends Habitat {
   PImage background = loadImage("data/asia_2.png");
   PImage animal_not_talking = loadImage("data/patty_pandabear.gif");
 
-  Asia2(int state, boolean isSleeping) {
+  Asia2(boolean isSleeping) {
     super(isSleeping);
-    this.state = state;
-    this.isSleeping = isSleeping;
   }
 
   //displays this habitat's background
@@ -70,7 +65,7 @@ class Asia2 extends Habitat {
     else if (USER == "POLAR_B") {}
     else if (USER == "COBRA_A") {}
     else if (USER == "COBRA_B") {}
-              return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
 
   }
   

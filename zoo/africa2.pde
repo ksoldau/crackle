@@ -1,8 +1,5 @@
 // Gerry Giraffe
 class Africa2 extends Habitat {
-  int state;
-  boolean isSleeping;
-
   int frame;
   int numTalkingFrames = 8;
 
@@ -12,10 +9,8 @@ class Africa2 extends Habitat {
   PImage animal_not_talking = loadImage("data/gerry_giraffe.gif");
   PImage background = loadImage("data/africa_2.png");
 
-  Africa2(int state, boolean isSleeping) {
+  Africa2(boolean isSleeping) {
     super(isSleeping);
-    this.state = state;
-    this.isSleeping = isSleeping;
   }
   //displays the background for the habitat
   public void display() {
@@ -39,7 +34,6 @@ class Africa2 extends Habitat {
   void displayAnimalTalking() {
     frame = (frame+1) % numTalkingFrames;
     image(GIFS_GIRAFFE_TALKING[frame], animalLeft, animalTop);
-    println("got to displayAnimalTalking() for Gerry");
   }
 
   //display the not talking animal

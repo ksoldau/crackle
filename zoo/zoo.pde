@@ -19,7 +19,7 @@ int ANIMAL_TALKING_START_TIME;
 PImage BACKGROUND_IMG;
 Intro intro;
 
-// Habitat classes
+// Habitat classes 
 Africa1 AFRICA1;
 Africa2 AFRICA2;
 Africa3 AFRICA3;
@@ -32,6 +32,27 @@ Frosty2 FROSTY2;
 
 Jungle1 JUNGLE1;
 Jungle2 JUNGLE2;
+
+//States for each Habitat class
+int AFRICA1_STATE;
+int AFRICA2_STATE;
+int AFRICA3_STATE;
+
+int ASIA1_STATE;
+int ASIA2_STATE;
+
+int FROSTY1_STATE;
+int FROSTY2_STATE;
+
+int JUNGLE1_STATE;
+int JUNGLE2_STATE;
+
+
+
+
+
+
+
 
 // list of Habitats
 Habitat[] LIST_OF_HABITATS = new Habitat[9]; //why nine
@@ -154,7 +175,7 @@ void setup() {
   frameRate(12);
   background(255);
   size(WIDTH, HEIGHT);
-  
+
   //for tests
   SLEEP_TEST = loadImage("data/sleep_test.jpg");
   TRASH_TEST = loadImage("data/testTrash.png");
@@ -173,6 +194,20 @@ void setup() {
   //loading all animal classes
   //depends on which animal/iteration the user is 
   loadAnimalClasses();
+
+  //initialize states of habitats
+  AFRICA1_STATE = 0;
+  AFRICA2_STATE = 0;
+  AFRICA3_STATE = 0;
+
+  ASIA1_STATE = 0;
+  ASIA2_STATE = 0;
+
+  FROSTY1_STATE = 0;
+  FROSTY2_STATE = 0;
+
+  JUNGLE1_STATE = 0;
+  JUNGLE2_STATE = 0;
 
   LIST_OF_HABITATS[0] = AFRICA1;
   LIST_OF_HABITATS[1] = AFRICA2;
@@ -194,17 +229,17 @@ void setup() {
 
   // Setting up sound engine
   minim = new Minim(this);
-  
+
   AFRICA_BG = minim.loadFile("africa_bg.mp3", 512);
   FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
   ASIA_BG = minim.loadFile("asia_bg.mp3", 512);
   JUNGLE_BG = minim.loadFile("jungle_bg.mp3", 512);
-  
+
   AFRICA = minim.loadSample("africa_bg.mp3", 512);
   FROSTY = minim.loadSample("frosty_bg.mp3", 512);
   ASIA = minim.loadSample("asia_bg.mp3", 512);
   JUNGLE = minim.loadSample("jungle_bg.mp3", 512);
-  
+
   CALVIN_CAMEL_TEST = minim.loadSample("calvin_camel_test.mp3", 512);
   ELIZA_ELEPHANT_TEST = minim.loadSample("eliza_elephant_test.mp3", 512);
   GERRY_GIRAFFE_TEST = minim.loadSample("gerry_giraffe_test.mp3", 512);
@@ -214,7 +249,7 @@ void setup() {
   SAM_SEALION_TEST = minim.loadSample("sam_sealion_test.mp3", 512);
   STANLEY_SLOTH_TEST = minim.loadSample("stanley_sloth_test.mp3", 512);
   TINA_TIGER_TEST = minim.loadSample("tina_tiger_test.mp3", 512);
-  
+
   // initializing lists for GIFs for talking animals
   GIFS_CAMEL_TALKING = Gif.getPImages(this, "data/calvin_talk_288.gif");
   GIFS_GIRAFFE_TALKING = Gif.getPImages(this, "data/gerry_talk_288.gif");
@@ -254,70 +289,70 @@ void chooseUser() {
 
 void loadAnimalClasses() {
   if (USER == "GORILLA_A") {
-    AFRICA1 = new Africa1(1, false);
-    AFRICA2 = new Africa2(1, true);
-    AFRICA3 = new Africa3(1, false);
-    ASIA1 = new Asia1(1, true);
-    ASIA2 = new Asia2(1, false);
-    FROSTY1 = new Frosty1(1, true);
-    FROSTY2 = new Frosty2(1, false);
-    JUNGLE1 = new Jungle1(1, false);
-    JUNGLE2 = new Jungle2(1, false);
+    AFRICA1 = new Africa1(false);
+    AFRICA2 = new Africa2(true);
+    AFRICA3 = new Africa3(false);
+    ASIA1 = new Asia1(true);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(true);
+    FROSTY2 = new Frosty2(false);
+    JUNGLE1 = new Jungle1(false);
+    JUNGLE2 = new Jungle2(false);
   }
   else if (USER == "GORILLA_B") {
-    AFRICA1 = new Africa1(1, false);
-    AFRICA2 = new Africa2(1, false);
-    AFRICA3 = new Africa3(1, true);
-    ASIA1 = new Asia1(1, false);
-    ASIA2 = new Asia2(1, true);
-    FROSTY1 = new Frosty1(1, false);
-    FROSTY2 = new Frosty2(1, false);
-    JUNGLE1 = new Jungle1(1, true);
-    JUNGLE2 = new Jungle2(1, false);
+    AFRICA1 = new Africa1(false);
+    AFRICA2 = new Africa2(false);
+    AFRICA3 = new Africa3(true);
+    ASIA1 = new Asia1(false);
+    ASIA2 = new Asia2(true);
+    FROSTY1 = new Frosty1(false);
+    FROSTY2 = new Frosty2(false);
+    JUNGLE1 = new Jungle1(true);
+    JUNGLE2 = new Jungle2(false);
   }
   else if (USER == "COBRA_A") {
-    AFRICA1 = new Africa1(1, false);
-    AFRICA2 = new Africa2(1, true);
-    AFRICA3 = new Africa3(1, false);
-    ASIA1 = new Asia1(1, false);
-    ASIA2 = new Asia2(1, false);
-    FROSTY1 = new Frosty1(1, false);
-    FROSTY2 = new Frosty2(1, true);
-    JUNGLE1 = new Jungle1(1, false);
-    JUNGLE2 = new Jungle2(1, true);
+    AFRICA1 = new Africa1(false);
+    AFRICA2 = new Africa2(true);
+    AFRICA3 = new Africa3(false);
+    ASIA1 = new Asia1(false);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(false);
+    FROSTY2 = new Frosty2(true);
+    JUNGLE1 = new Jungle1(false);
+    JUNGLE2 = new Jungle2(true);
   }
   else if (USER == "COBRA_B") {
-    AFRICA1 = new Africa1(1, true);
-    AFRICA2 = new Africa2(1, false);
-    AFRICA3 = new Africa3(1, false);
-    ASIA1 = new Asia1(1, false);
-    ASIA2 = new Asia2(1, false);
-    FROSTY1 = new Frosty1(1, true);
-    FROSTY2 = new Frosty2(1, false);
-    JUNGLE1 = new Jungle1(1, true);
-    JUNGLE2 = new Jungle2(1, false);
+    AFRICA1 = new Africa1(true);
+    AFRICA2 = new Africa2(false);
+    AFRICA3 = new Africa3(false);
+    ASIA1 = new Asia1(false);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(true);
+    FROSTY2 = new Frosty2(false);
+    JUNGLE1 = new Jungle1(true);
+    JUNGLE2 = new Jungle2(false);
   }
   else if (USER == "POLAR_A") {
-    AFRICA1 = new Africa1(1, false);
-    AFRICA2 = new Africa2(1, false);
-    AFRICA3 = new Africa3(1, true);
-    ASIA1 = new Asia1(1, true);
-    ASIA2 = new Asia2(1, false);
-    FROSTY1 = new Frosty1(1, false);
-    FROSTY2 = new Frosty2(1, true);
-    JUNGLE1 = new Jungle1(1, false);
-    JUNGLE2 = new Jungle2(1, false);
+    AFRICA1 = new Africa1(false);
+    AFRICA2 = new Africa2(false);
+    AFRICA3 = new Africa3(true);
+    ASIA1 = new Asia1(true);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(false);
+    FROSTY2 = new Frosty2(true);
+    JUNGLE1 = new Jungle1(false);
+    JUNGLE2 = new Jungle2(false);
   }
   else if (USER == "POLAR_B") {
-    AFRICA1 = new Africa1(1, true);
-    AFRICA2 = new Africa2(1, false);
-    AFRICA3 = new Africa3(1, true);
-    ASIA1 = new Asia1(1, false);
-    ASIA2 = new Asia2(1, false);
-    FROSTY1 = new Frosty1(1, false);
-    FROSTY2 = new Frosty2(1, false);
-    JUNGLE1 = new Jungle1(1, false);
-    JUNGLE2 = new Jungle2(1, true);
+    AFRICA1 = new Africa1(true);
+    AFRICA2 = new Africa2(false);
+    AFRICA3 = new Africa3(true);
+    ASIA1 = new Asia1(false);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(false);
+    FROSTY2 = new Frosty2(false);
+    JUNGLE1 = new Jungle1(false);
+    JUNGLE2 = new Jungle2(true);
   }
 }
 
@@ -402,39 +437,39 @@ void pauseAll() {
 
 void whenPlay() {
   /*if (HABITAT_NUMBER != LAST_HABITAT_NUMBER) {
-    playBg();
-  }*/
+   playBg();
+   }*/
   if (((HABITAT_NUMBER==0) || (HABITAT_NUMBER==1) || (HABITAT_NUMBER==2))
-  && !(LAST_HABITAT_NUMBER <= 2)) {
+    && !(LAST_HABITAT_NUMBER <= 2)) {
     playBg();
   }
   else if (((HABITAT_NUMBER ==3) || (HABITAT_NUMBER==4)) &&
-  ((LAST_HABITAT_NUMBER != 3) && (LAST_HABITAT_NUMBER != 4))) {
+    ((LAST_HABITAT_NUMBER != 3) && (LAST_HABITAT_NUMBER != 4))) {
     playBg();
   }
   else if (((HABITAT_NUMBER==5) || (HABITAT_NUMBER==6)) && 
-  ((LAST_HABITAT_NUMBER != 5) && (LAST_HABITAT_NUMBER != 6))) {
+    ((LAST_HABITAT_NUMBER != 5) && (LAST_HABITAT_NUMBER != 6))) {
     playBg();
   }
   else if (((HABITAT_NUMBER == 7) || (HABITAT_NUMBER == 8)) && !(LAST_HABITAT_NUMBER >= 7)) {
     playBg();
   }
   /*if (((HABITAT_NUMBER == 0) || (HABITAT_NUMBER == 1) || (HABITAT_NUMBER == 2)) &&
-  !(LAST_HABITAT_NUMBER < 3)) {
-    playBg();
-  }
-  else if (((HABITAT_NUMBER == 3) || (HABITAT_NUMBER == 4)) &&
-  (!(HABITAT_NUMBER == 3) && !(HABITAT_NUMBER == 4))) {
-    playBg();
-  }
-  else if (((HABITAT_NUMBER == 5) || (HABITAT_NUMBER == 6)) &&
-  (!(HABITAT_NUMBER == 5) && !(HABITAT_NUMBER == 6))) {
-    playBg();
-  }
-  else if (((HABITAT_NUMBER == 7) || (HABITAT_NUMBER == 8)) &&
-  (!(HABITAT_NUMBER == 7) && !(HABITAT_NUMBER == 8))) {
-    playBg();
-  }*/
+   !(LAST_HABITAT_NUMBER < 3)) {
+   playBg();
+   }
+   else if (((HABITAT_NUMBER == 3) || (HABITAT_NUMBER == 4)) &&
+   (!(HABITAT_NUMBER == 3) && !(HABITAT_NUMBER == 4))) {
+   playBg();
+   }
+   else if (((HABITAT_NUMBER == 5) || (HABITAT_NUMBER == 6)) &&
+   (!(HABITAT_NUMBER == 5) && !(HABITAT_NUMBER == 6))) {
+   playBg();
+   }
+   else if (((HABITAT_NUMBER == 7) || (HABITAT_NUMBER == 8)) &&
+   (!(HABITAT_NUMBER == 7) && !(HABITAT_NUMBER == 8))) {
+   playBg();
+   }*/
   LAST_HABITAT_NUMBER = HABITAT_NUMBER;
 }
 
@@ -584,7 +619,6 @@ void doJungle2() {
   arrows.display();
 }
 
-
 //------------------------------------
 //actions to take if mouse is pressed
 
@@ -603,12 +637,12 @@ void mousePressed() {
   if (WELCOME_SCREEN) { 
     mousePressedWelcomeScreen();
   }
-  
+
   //if map is up
   if (ON_MAP) {
     mousePressedOnMap();
   }
-  
+
   //if an animal is talking
   else if (ANIMAL_TALKING) {
   } //stops user from clicking on things while animal talking
@@ -778,3 +812,4 @@ boolean cursor_over_jungle1() {
 boolean cursor_over_jungle2() {
   return cursor_over(373, 461, 95, 159);
 }
+

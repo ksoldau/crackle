@@ -1,8 +1,5 @@
 // Stanley Sloth
 class Jungle2 extends Habitat {
-  int state;
-  boolean isSleeping;
-
   int frame;
   int numTalkingFrames = 10;
 
@@ -23,10 +20,8 @@ class Jungle2 extends Habitat {
   int trash3_x = 250;
   int trash3_y = 100;
 
-  Jungle2(int state, boolean isSleeping) {
+  Jungle2(boolean isSleeping) {
     super(isSleeping);
-    this.state = state;
-    this.isSleeping = isSleeping;
     if (isSleeping) {
       this.pickedUpTrash1 = true;
       this.pickedUpTrash2 = true;

@@ -1,8 +1,5 @@
 // Leonard Lion
 class Africa3 extends Habitat {
-  int state;
-  boolean isSleeping;
-
   int frame;
   int numTalkingFrames = 6; //al might export one with more frames
 
@@ -12,10 +9,8 @@ class Africa3 extends Habitat {
   PImage background = loadImage("data/africa_3.png");
   PImage animal_not_talking =  loadImage("data/leonard_lion.gif");
 
-  Africa3(int state, boolean isSleeping) {
+  Africa3(boolean isSleeping) {
     super(isSleeping);
-    this.state = state;
-    this.isSleeping = isSleeping;
   }
 
 

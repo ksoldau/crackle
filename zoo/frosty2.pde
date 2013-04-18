@@ -1,9 +1,6 @@
 // Sam Seal (Conor doesn't know difference between seal and sea lion)
 // fuck off katie
 class Frosty2 extends Habitat {
-  int state;
-  boolean isSleeping;
-
   int frame;
   int numTalkingFrames = 6;
 
@@ -13,10 +10,8 @@ class Frosty2 extends Habitat {
   PImage background = loadImage("data/frosty_2.png");
   PImage animal_not_talking = loadImage("data/sam_sealion.gif");
 
-  Frosty2(int state, boolean isSleeping) {
+  Frosty2(boolean isSleeping) {
     super(isSleeping);
-    this.state = state;
-    this.isSleeping = isSleeping;
   }
   //displays this habitat's background
   public void display() {

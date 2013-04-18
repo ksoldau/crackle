@@ -1,8 +1,5 @@
 // Peter Penguin
-class Frosty1 extends Habitat {
-  int state;
-  boolean isSleeping;
-  
+class Frosty1 extends Habitat {  
   int frame;
   int numTalkingFrames = 4;
   
@@ -12,10 +9,8 @@ class Frosty1 extends Habitat {
   PImage background = loadImage("data/frosty_1.png");
   PImage animal_not_talking = loadImage("data/peter_penguin.gif");
   
-  Frosty1(int state, boolean isSleeping) {
+  Frosty1(boolean isSleeping) {
     super(isSleeping);
-    this.state = state;
-    this.isSleeping = isSleeping;
   }
     //displays this habitat's background
   public void display() {
