@@ -105,6 +105,14 @@ class Jungle2 extends Habitat {
       pickedUpTrash3 = true;
     }
   }
+  
+  //determines if cursor over any of the trash
+  boolean cursorOverTrash() {
+    return !isSleeping && 
+    ((!pickedUpTrash1 && cursorOverTrash1()) ||
+    (!pickedUpTrash2 && cursorOverTrash2()) ||
+    (!pickedUpTrash3 && cursorOverTrash3()));
+  }
 
     //determines if mouse over trash1
   boolean cursorOverTrash1() {

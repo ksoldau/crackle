@@ -476,6 +476,9 @@ void drawCursor() {
   {
     cursor(HAND);
   }
+  else if ((HABITAT_NUMBER == 8) && JUNGLE2.cursorOverTrash()) {
+    cursor(HAND);
+  }
   else {
     cursor(ARROW);
   }
