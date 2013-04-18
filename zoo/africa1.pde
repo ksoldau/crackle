@@ -53,8 +53,8 @@ class Africa1 extends Habitat {
     if (isSleeping) {}
     else if (cursorOverAnimal()) { 
       ANIMAL_TALKING = true;
+      ANIMAL_TALKING_START_TIME = millis();
       CALVIN_CAMEL_TEST.trigger(); //sound
-      ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
     }
   }
   
@@ -65,8 +65,14 @@ class Africa1 extends Habitat {
     
   }
   
-  int lengthCurrentTalk() {
-    return LENGTH_CAMEL_HOW_DOIN; //lol
+  AudioSample currentTalk() {
+    if (USER == "GORILLA_A") {}
+    else if (USER == "GORILLA_B") {}
+    else if (USER == "POLAR_A") {}
+    else if (USER == "POLAR_B") {}
+    else if (USER == "COBRA_A") {}
+    else if (USER == "COBRA_B") {}
+          return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
      

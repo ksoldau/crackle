@@ -336,7 +336,7 @@ void draw() {
 
   //to stop the animal from visibly speaking if audio over
   if (ANIMAL_TALKING && 
-    (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].lengthCurrentTalk())) {
+    (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].currentTalk().length())) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
   }

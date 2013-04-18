@@ -63,8 +63,16 @@ class Jungle1 extends Habitat {
     
   }
   
-  int lengthCurrentTalk() {
-    return LENGTH_CAMEL_HOW_DOIN; //lol
+  //gets the current line the animal will be/is speaking
+  AudioSample currentTalk() {
+    if (USER == "GORILLA_A") {}
+    else if (USER == "GORILLA_B") {}
+    else if (USER == "POLAR_A") {}
+    else if (USER == "POLAR_B") {}
+    else if (USER == "COBRA_A") {}
+    else if (USER == "COBRA_B") {}
+              return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+
   }
 }
      
