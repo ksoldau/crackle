@@ -60,8 +60,7 @@ class Africa2 extends Habitat {
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
-    if (USER == "GORILLA_A") {
-    }
+    if (USER == "GORILLA_A") {} //he's sleeping
     else if (USER == "GORILLA_B") {
     }
     else if (USER == "POLAR_A") {

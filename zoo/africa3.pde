@@ -62,7 +62,13 @@ class Africa3 extends Habitat {
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
-    if (USER == "GORILLA_A") {}
+    if (USER == "GORILLA_A") {
+    if (AFRICA3_STATE == 0) { return LION_DUMMY; }
+    else if (AFRICA3_STATE == 1) {return GA_LION1; }
+    else if (AFRICA3_STATE == 2) {return LION_DUMMY; }
+    else if (AFRICA3_STATE == 3) {return GA_LION2; }
+    else if (AFRICA3_STATE == 4) {return GA_LION3; }
+    }
     else if (USER == "GORILLA_B") {}
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}

@@ -57,7 +57,11 @@ class Frosty2 extends Habitat {
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
-    if (USER == "GORILLA_A") {}
+    if (USER == "GORILLA_A") {
+      if (FROSTY2_STATE == 0) {return SEAL_DUMMY; }
+      else if (FROSTY2_STATE == 1) {return GA_SEAL1; }
+      else if (FROSTY2_STATE == 2) {return SEAL_DUMMY; }
+    }
     else if (USER == "GORILLA_B") {}
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}

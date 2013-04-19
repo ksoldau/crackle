@@ -48,12 +48,6 @@ int JUNGLE1_STATE;
 int JUNGLE2_STATE;
 
 
-
-
-
-
-
-
 // list of Habitats
 Habitat[] LIST_OF_HABITATS = new Habitat[9]; //why nine
 
@@ -85,6 +79,39 @@ AudioSample PETER_PENGUIN_TEST;
 AudioSample SAM_SEALION_TEST;
 AudioSample STANLEY_SLOTH_TEST;
 AudioSample TINA_TIGER_TEST;
+
+//Dummy lines
+AudioSample CAMEL_DUMMY;
+AudioSample GIRAFFE_DUMMY;
+AudioSample LION_DUMMY;
+AudioSample TIGER_DUMMY;
+AudioSample PANDA_DUMMY;
+AudioSample PENGUIN_DUMMY;
+AudioSample SEAL_DUMMY;
+AudioSample ELEPHANT_DUMMY;
+AudioSample SLOTH_DUMMY;
+
+//Audio for just GORILLA_A
+AudioSample GA_CAMEL1;
+AudioSample GA_CAMEL2;
+AudioSample GA_LION1;
+AudioSample GA_LION2;
+AudioSample GA_LION3;
+AudioSample GA_PANDA1;
+AudioSample GA_PANDA2;
+AudioSample GA_SEAL1;
+
+//Audio for just GORILLA_B
+
+//Audio for just COBRA_A
+//Audio for just COBRA_B
+//Audio for just POLAR_A
+//Audio for just POLAR_B
+
+
+
+
+
 
 //------------------------------------------------
 //Static variables

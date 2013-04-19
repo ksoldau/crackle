@@ -59,7 +59,13 @@ class Asia2 extends Habitat {
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
-    if (USER == "GORILLA_A") {}
+    if (USER == "GORILLA_A") {
+    if (ASIA2_STATE == 0) { return PANDA_DUMMY; }
+    else if (ASIA2_STATE == 1) {return GA_PANDA1; }
+    else if (ASIA2_STATE == 2) {return PANDA_DUMMY; }
+    else if (ASIA2_STATE == 3) {return GA_PANDA2; }
+    else if (ASIA2_STATE == 4) {return PANDA_DUMMY; }
+    }
     else if (USER == "GORILLA_B") {}
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}
