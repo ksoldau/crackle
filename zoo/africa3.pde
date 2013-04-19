@@ -69,7 +69,7 @@ class Africa3 extends Habitat {
     else if (AFRICA3_STATE == 3) {return GA_LION2; }
     else if (AFRICA3_STATE == 4) {return GA_LION3; }
     }
-    else if (USER == "GORILLA_B") {}
+    else if (USER == "GORILLA_B") {} //Leonard Lion is sleeping
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}
     else if (USER == "COBRA_A") {}

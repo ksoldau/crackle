@@ -134,8 +134,15 @@ class Jungle2 extends Habitat {
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {
+      if (JUNGLE2_STATE == 0) {return SLOTH_DUMMY;}
+      else if (JUNGLE2_STATE == 1) {return GA_SLOTH1;}
+      else if (JUNGLE2_STATE == 2) {return SLOTH_DUMMY;}
+      else if (JUNGLE2_STATE == 3) {return GA_SLOTH2;}
+      else if (JUNGLE2_STATE == 4) {return SLOTH_DUMMY;}
     }
     else if (USER == "GORILLA_B") {
+      if (JUNGLE2_STATE == 0) {return SLOTH_DUMMY;}
+      else if (JUNGLE2_STATE == 1) {return GB_SLOTH1;}
     }
     else if (USER == "POLAR_A") {
     }

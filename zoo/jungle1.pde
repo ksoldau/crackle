@@ -60,8 +60,12 @@ class Jungle1 extends Habitat {
   
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
-    if (USER == "GORILLA_A") {}
-    else if (USER == "GORILLA_B") {}
+    if (USER == "GORILLA_A") {
+    if (JUNGLE1_STATE == 0) { return ELEPHANT_DUMMY;}
+    else if (JUNGLE1_STATE == 1) {return GA_ELEPHANT1;}
+    else if (JUNGLE1_STATE == 2) {return ELEPHANT_DUMMY;}
+    }
+    else if (USER == "GORILLA_B") {}//Eliza Elephant is sleeping
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}
     else if (USER == "COBRA_A") {}

@@ -67,7 +67,11 @@ class Africa1 extends Habitat {
       else if (AFRICA1_STATE == 2) { return GA_CAMEL2; }
       else if (AFRICA1_STATE == 3) { return CAMEL_DUMMY; }  
     }
-    else if (USER == "GORILLA_B") {}
+    else if (USER == "GORILLA_B") {
+      if (AFRICA1_STATE == 0) {return CAMEL_DUMMY; }
+      else if (AFRICA1_STATE == 1) {return GB_CAMEL1;}
+      else if (AFRICA1_STATE == 2) {return CAMEL_DUMMY;}
+    }
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}
     else if (USER == "COBRA_A") {}

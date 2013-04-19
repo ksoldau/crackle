@@ -56,7 +56,12 @@ class Frosty1 extends Habitat {
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {} //Peter Penguinn is asleep
-    else if (USER == "GORILLA_B") {}
+    else if (USER == "GORILLA_B") {
+    if (FROSTY1_STATE == 0) {return PENGUIN_DUMMY;}
+    else if (FROSTY1_STATE == 1) {return GB_PENGUIN1;}
+    else if (FROSTY1_STATE == 2) {return GB_PENGUIN2;}
+    else if (FROSTY1_STATE == 3) {return PENGUIN_DUMMY;}
+    }
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}
     else if (USER == "COBRA_A") {}

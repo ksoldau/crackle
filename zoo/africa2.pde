@@ -62,6 +62,9 @@ class Africa2 extends Habitat {
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {} //he's sleeping
     else if (USER == "GORILLA_B") {
+      if (AFRICA2_STATE == 0) {return GIRAFFE_DUMMY;}
+      else if (AFRICA2_STATE == 1) {return GB_GIRAFFE1;}
+      else if (AFRICA3_STATE == 2) {return GIRAFFE_DUMMY;}
     }
     else if (USER == "POLAR_A") {
     }

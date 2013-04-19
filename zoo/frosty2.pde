@@ -62,7 +62,11 @@ class Frosty2 extends Habitat {
       else if (FROSTY2_STATE == 1) {return GA_SEAL1; }
       else if (FROSTY2_STATE == 2) {return SEAL_DUMMY; }
     }
-    else if (USER == "GORILLA_B") {}
+    else if (USER == "GORILLA_B") {
+    if (FROSTY2_STATE == 0) {return SEAL_DUMMY;}
+    else if (FROSTY2_STATE == 1) {return GB_SEAL1;}
+    else if (FROSTY2_STATE == 2) {return SEAL_DUMMY;}
+    }
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}
     else if (USER == "COBRA_A") {}

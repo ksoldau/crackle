@@ -100,8 +100,18 @@ AudioSample GA_LION3;
 AudioSample GA_PANDA1;
 AudioSample GA_PANDA2;
 AudioSample GA_SEAL1;
+AudioSample GA_ELEPHANT1;
+AudioSample GA_SLOTH1;
+AudioSample GA_SLOTH2;
 
 //Audio for just GORILLA_B
+AudioSample GB_SEAL1;
+AudioSample GB_CAMEL1;
+AudioSample GB_PENGUIN1;
+AudioSample GB_PENGUIN2;
+AudioSample GB_GIRAFFE1;
+AudioSample GB_TIGER1;
+AudioSample GB_SLOTH1;
 
 //Audio for just COBRA_A
 //Audio for just COBRA_B
