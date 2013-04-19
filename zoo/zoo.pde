@@ -264,7 +264,8 @@ void setup() {
 
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
-  chooseUser();
+  //chooseUser(); ******
+  USER = "GORILLA_A";
   //loading all animal classes
   //depends on which animal/iteration the user is 
   loadAnimalClasses();
@@ -335,87 +336,98 @@ void setup() {
   GIFS_SEAL_TALKING = Gif.getPImages(this, "data/sam_talk_288.gif");
   GIFS_ELEPHANT_TALKING = Gif.getPImages(this, "data/eliza_talk_288.gif");
   GIFS_SLOTH_TALKING = Gif.getPImages(this, "data/stanley_talk_288.gif");
-  
+
   initializeAudio();
 }
 
 //initialize the audio
 void initializeAudio() {
   //Dummy lines
-CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512);
-GIRAFFE_DUMMY = minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
-LION_DUMMY = minim.loadSample("LION_DUMMY.mp3", 512);
-TIGER_DUMMY = minim.loadSample("TIGER_DUMMY.mp3", 512);
- PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
- PENGUIN_DUMMY = minim.loadSample("PENGUIN_DUMMY.mp3", 512);
- SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
- ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
- SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
+  CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512);
+  GIRAFFE_DUMMY = minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
+  LION_DUMMY = minim.loadSample("LION_DUMMY.mp3", 512);
+  TIGER_DUMMY = minim.loadSample("TIGER_DUMMY.mp3", 512);
+  PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
+  PENGUIN_DUMMY = minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+  SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
+  ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
+  SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
 
-//Audio for just GORILLA_A
- GA_CAMEL1 = minim.loadSample("GA_CAMEL1.mp3", 512);
- GA_CAMEL2 = minim.loadSample("GA_CAMEL2.mp3", 512);
- GA_LION1 = minim.loadSample("GA_LION1.mp3", 512);
- GA_LION2 = minim.loadSample("GA_LION2.mp3", 512);
- GA_LION3 = minim.loadSample("GA_LION3.mp3", 512);
- GA_PANDA1 = minim.loadSample("GA_PANDA1.mp3", 512);
- GA_PANDA2 = minim.loadSample("GA_PANDA2.mp3", 512);
- GA_SEAL1 = minim.loadSample("GA_SEAL1.mp3", 512);
- GA_ELEPHANT1 = minim.loadSample("GA_ELEPHANT1.mp3", 512);
- GA_SLOTH1 = minim.loadSample("GA_SLOTH1.mp3", 512);
- GA_SLOTH2 = minim.loadSample("GA_SLOTH2.mp3", 512);
-
-//Audio for just GORILLA_B
- GB_SEAL1 = minim.loadSample("GB_SEAL1.mp3", 512);
- GB_CAMEL1 = minim.loadSample("GB_CAMEL1.mp3", 512);
- GB_PENGUIN1 = minim.loadSample("GB_PENGUIN1.mp3", 512);
- GB_PENGUIN2 = minim.loadSample("GB_PENGUIN2.mp3", 512);
- GB_GIRAFFE1 = minim.loadSample("GB_GIRAFFE1.mp3", 512);
- GB_TIGER1 = minim.loadSample("GB_TIGER1.mp3", 512);
- GB_SLOTH1 = minim.loadSample("GB_SLOTH1.mp3", 512);
-
-//Audio for just COBRA_A
- CA_PENGUIN1 = minim.loadSample("CA_PENGUIN1.mp3", 512);
- CA_CAMEL1 = minim.loadSample("CA_CAMEL1.mp3", 512);
- CA_PANDA1 = minim.loadSample("CA_PANDA1.mp3", 512);
- CA_PANDA2 = minim.loadSample("CA_PANDA2.mp3", 512);
- CA_ELEPHANT1 = minim.loadSample("CA_ELEPHANT1.mp3", 512);
- CA_LION1 = minim.loadSample("CA_LION1.mp3", 512);
- CA_TIGER1 = minim.loadSample("CA_TIGER1.mp3", 512);
-
-//Audio for just COBRA_B
- CB_GIRAFFE1 = minim.loadSample("CB_GIRAFFE1.mp3", 512);
- CB_LION1 = minim.loadSample("CB_LION1.mp3", 512);
- CB_TIGER1 = minim.loadSample("CB_TIGER1.mp3", 512);
- CB_SLOTH1 = minim.loadSample("CB_SLOTH1.mp3", 512);
- CB_SLOTH2 = minim.loadSample("CB_SLOTH2.mp3", 512);
- CB_PANDA1 = minim.loadSample("CB_PANDA1.mp3", 512);
- CB_GIRAFFE2 = minim.loadSample("CB_GIRAFFE2.mp3", 512);
- CB_PANDA2 = minim.loadSample("CB_PANDA2.mp3", 512);
- CB_SEAL1 = minim.loadSample("CB_SEAL1.mp3", 512);
-
-//Audio for just POLAR_A
- PA_ELEPHANT1 = minim.loadSample("PA_ELEPHANT1.mp3", 512);
- PA_CAMEL1 = minim.loadSample("PA_CAMEL1.mp3", 512);
- PA_PENGUIN1 = minim.loadSample("PA_PENGUIN1.mp3", 512);
- PA_PENGUIN2 = minim.loadSample("PA_PENGUIN2.mp3", 512);
- PA_PANDA1 = minim.loadSample("PA_PANDA1.mp3", 512);
- PA_PANDA2 = minim.loadSample("PA_PANDA2.mp3", 512);
- PA_SLOTH1 = minim.loadSample("PA_SLOTH1.mp3", 512);
- PA_SLOTH2 = minim.loadSample("PA_SLOTH2.mp3", 512);
- PA_GIRAFFE1 = minim.loadSample("PA_GIRAFFE1.mp3", 512);
- PA_GIRAFFE2 = minim.loadSample("PA_GIRAFFE2.mp3", 512);
+  //Audio for just GORILLA_A
+  if (USER == "GORILLA_A") {
+    GA_CAMEL1 = minim.loadSample("GA_CAMEL1.mp3", 512);
+    GA_ELEPHANT1 = minim.loadSample("GA_ELEPHANT1.mp3", 512); 
+    GA_PANDA1 = minim.loadSample("GA_PANDA1.mp3", 512);
+    GA_SLOTH1 = minim.loadSample("GA_SLOTH1.mp3", 512);
+    GA_PANDA2 = minim.loadSample("GA_PANDA2.mp3", 512);
+    GA_SEAL1 = minim.loadSample("GA_SEAL1.mp3", 512);
+    GA_CAMEL2 = minim.loadSample("GA_CAMEL2.mp3", 512);
+    GA_LION1 = minim.loadSample("GA_LION1.mp3", 512);
+    GA_SLOTH2 = minim.loadSample("GA_SLOTH2.mp3", 512);
+    GA_LION2 = minim.loadSample("GA_LION2.mp3", 512);
+    GA_LION3 = minim.loadSample("GA_LION3.mp3", 512);
+  }
 
 
-//Audio for just POLAR_B
- PB_TIGER1 = minim.loadSample("PB_TIGER1.mp3", 512);
- PB_GIRAFFE1 = minim.loadSample("PB_GIRAFFE1.mp3", 512);
- PB_ELEPHANT1 = minim.loadSample("PB_ELEPHANT1.mp3", 512);
- PB_SEAL1 = minim.loadSample("PB_SEAL1.mp3", 512);
- PB_SEAL2 = minim.loadSample("PB_SEAL2.mp3", 512);
- PB_PENGUIN1 = minim.loadSample("PB_PENGUIN1.mp3", 512);
- PB_PANDA1 = minim.loadSample("PB_PANDA1.mp3", 512);
+  else if (USER == "GORILLA_B") {
+    //Audio for just GORILLA_B
+    GB_SEAL1 = minim.loadSample("GB_SEAL1.mp3", 512);
+    GB_CAMEL1 = minim.loadSample("GB_CAMEL1.mp3", 512);
+    GB_PENGUIN1 = minim.loadSample("GB_PENGUIN1.mp3", 512);
+    GB_PENGUIN2 = minim.loadSample("GB_PENGUIN2.mp3", 512);
+    GB_GIRAFFE1 = minim.loadSample("GB_GIRAFFE1.mp3", 512);
+    GB_TIGER1 = minim.loadSample("GB_TIGER1.mp3", 512);
+    GB_SLOTH1 = minim.loadSample("GB_SLOTH1.mp3", 512);
+  }
 
+  //Audio for just COBRA_A
+  else if (USER == "COBRA_A") {
+    CA_PENGUIN1 = minim.loadSample("CA_PENGUIN1.mp3", 512);
+    CA_CAMEL1 = minim.loadSample("CA_CAMEL1.mp3", 512);
+    CA_PANDA1 = minim.loadSample("CA_PANDA1.mp3", 512);
+    CA_PANDA2 = minim.loadSample("CA_PANDA2.mp3", 512);
+    CA_ELEPHANT1 = minim.loadSample("CA_ELEPHANT1.mp3", 512);
+    CA_LION1 = minim.loadSample("CA_LION1.mp3", 512);
+    CA_TIGER1 = minim.loadSample("CA_TIGER1.mp3", 512);
+  }
+
+  //Audio for just COBRA_B
+  else if (USER == "COBRA_B") {
+    CB_GIRAFFE1 = minim.loadSample("CB_GIRAFFE1.mp3", 512);
+    CB_LION1 = minim.loadSample("CB_LION1.mp3", 512);
+    CB_TIGER1 = minim.loadSample("CB_TIGER1.mp3", 512);
+    CB_SLOTH1 = minim.loadSample("CB_SLOTH1.mp3", 512);
+    CB_SLOTH2 = minim.loadSample("CB_SLOTH2.mp3", 512);
+    CB_PANDA1 = minim.loadSample("CB_PANDA1.mp3", 512);
+    CB_GIRAFFE2 = minim.loadSample("CB_GIRAFFE2.mp3", 512);
+    CB_PANDA2 = minim.loadSample("CB_PANDA2.mp3", 512);
+    CB_SEAL1 = minim.loadSample("CB_SEAL1.mp3", 512);
+  }
+
+  else if (USER == "POLAR_A") {
+    //Audio for just POLAR_A
+    PA_ELEPHANT1 = minim.loadSample("PA_ELEPHANT1.mp3", 512);
+    PA_CAMEL1 = minim.loadSample("PA_CAMEL1.mp3", 512);
+    PA_PENGUIN1 = minim.loadSample("PA_PENGUIN1.mp3", 512);
+    PA_PENGUIN2 = minim.loadSample("PA_PENGUIN2.mp3", 512);
+    PA_PANDA1 = minim.loadSample("PA_PANDA1.mp3", 512);
+    PA_PANDA2 = minim.loadSample("PA_PANDA2.mp3", 512);
+    PA_SLOTH1 = minim.loadSample("PA_SLOTH1.mp3", 512);
+    PA_SLOTH2 = minim.loadSample("PA_SLOTH2.mp3", 512);
+    PA_GIRAFFE1 = minim.loadSample("PA_GIRAFFE1.mp3", 512);
+    PA_GIRAFFE2 = minim.loadSample("PA_GIRAFFE2.mp3", 512);
+  }
+
+  //Audio for just POLAR_B
+  else if (USER == "POLAR_B") {
+    PB_TIGER1 = minim.loadSample("PB_TIGER1.mp3", 512);
+    PB_GIRAFFE1 = minim.loadSample("PB_GIRAFFE1.mp3", 512);
+    PB_ELEPHANT1 = minim.loadSample("PB_ELEPHANT1.mp3", 512);
+    PB_SEAL1 = minim.loadSample("PB_SEAL1.mp3", 512);
+    PB_SEAL2 = minim.loadSample("PB_SEAL2.mp3", 512);
+    PB_PENGUIN1 = minim.loadSample("PB_PENGUIN1.mp3", 512);
+    PB_PANDA1 = minim.loadSample("PB_PANDA1.mp3", 512);
+  }
 }
 
 //randomly chooses which animal the user is 
@@ -540,7 +552,7 @@ void draw() {
   }
 
   drawCursor();
-  // printMem(); //DEBUG: To monitor memory usage
+  //printMem(); //DEBUG: To monitor memory usage
   whenPlay();
 }
 

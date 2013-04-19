@@ -57,7 +57,7 @@ class Africa1 extends Habitat {
   //play correct audio
   void playCurrentTalk() {
     if (!this.isSleeping) {
-      currentTalk().trigger();
+      currentTalk().trigger(); 
     }
     updateStateNumbers();
   }
@@ -67,10 +67,11 @@ class Africa1 extends Habitat {
       if (AFRICA1_STATE == 0) {
         AFRICA1_STATE ++;
         JUNGLE1_STATE ++;  
+        println("jungle state" + JUNGLE1_STATE);
       }    
       else if (AFRICA1_STATE == 2) {
         AFRICA1_STATE ++ ;
-        AFRICA2_STATE ++ ; //Leonard Lion
+        AFRICA3_STATE ++ ; //Leonard Lion
     }
     else if (USER == "GORILLA_B") {}
     else if (USER == "COBRA_A") {}

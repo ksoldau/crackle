@@ -58,6 +58,8 @@ class Jungle1 extends Habitat {
   void playCurrentTalk() {
     if (!this.isSleeping) {
       currentTalk().trigger();
+      CAMEL_DUMMY.trigger();
+      println("current talk" + currentTalk());
     }
     updateStateNumbers();
   }
@@ -91,6 +93,9 @@ class Jungle1 extends Habitat {
         return ELEPHANT_DUMMY;
       }
       else if (JUNGLE1_STATE == 1) {
+
+        println("got here");
+        println("jungle state here" + JUNGLE1_STATE);
         return GA_ELEPHANT1;
       }
       else if (JUNGLE1_STATE == 2) {
