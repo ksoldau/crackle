@@ -51,11 +51,18 @@ class Frosty2 extends Habitat {
     if (isSleeping) {
     }
     else if (cursorOverAnimal()) {
-      SAM_SEALION_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
+      playCurrentTalk();
     }
   }  
+  
+    //play correct audio
+  void playCurrentTalk() {
+    if (!this.isSleeping) {
+      currentTalk().trigger();
+    }
+  }
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
@@ -112,7 +119,7 @@ class Frosty2 extends Habitat {
         return CB_SEAL1;
       }
     }
-    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+    return SEAL_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
 

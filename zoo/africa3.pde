@@ -54,9 +54,17 @@ class Africa3 extends Habitat {
     if (isSleeping) {
     }
     else if (cursorOverAnimal()) {
-      LEONARD_LION_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
+      playCurrentTalk();
+    }
+  }
+  
+    
+  //play correct audio
+  void playCurrentTalk() {
+    if (!this.isSleeping) {
+      currentTalk().trigger();
     }
   }
 
@@ -112,7 +120,9 @@ class Africa3 extends Habitat {
         return LION_DUMMY;
       }
     }
-  return CALVIN_CAMEL_TEST;
+    
+  return LION_DUMMY;
+   
   }
 }
 

@@ -86,9 +86,9 @@ class Jungle2 extends Habitat {
     if (isSleeping) {
     }
     else if (cursorOverAnimal()) { 
-      STANLEY_SLOTH_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
+      playCurrentTalk();
     }
     else if (cursorOverTrash1()) {
       pickedUpTrash1 = true;
@@ -98,6 +98,13 @@ class Jungle2 extends Habitat {
     }
     else if (cursorOverTrash3()) {
       pickedUpTrash3 = true;
+    }
+  }
+  
+    //play correct audio
+  void playCurrentTalk() {
+    if (!this.isSleeping) {
+      currentTalk().trigger();
     }
   }
 
@@ -192,7 +199,7 @@ class Jungle2 extends Habitat {
         return SLOTH_DUMMY;
       }
     }
-    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+    return SLOTH_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
 

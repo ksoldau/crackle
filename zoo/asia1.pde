@@ -53,11 +53,19 @@ class Asia1 extends Habitat {
     if (isSleeping) {
     }
     else if (cursorOverAnimal()) {
-      TINA_TIGER_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
+      playCurrentTalk();
     }
   }  
+  
+    
+  //play correct audio
+  void playCurrentTalk() {
+    if (!this.isSleeping) {
+      currentTalk().trigger();
+    }
+  }
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {

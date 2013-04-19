@@ -22,4 +22,7 @@ public abstract class Habitat {
   
   //determines what the current talk is 
   abstract AudioSample currentTalk(); 
+  
+  //plays correct lines for animal
+  abstract void playCurrentTalk();
 }

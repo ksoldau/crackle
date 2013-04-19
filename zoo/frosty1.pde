@@ -51,11 +51,18 @@ class Frosty1 extends Habitat {
     if (isSleeping) {
     }
     else if (cursorOverAnimal()) {
-      PETER_PENGUIN_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
+      playCurrentTalk();
     }
   }  
+  
+    //play correct audio
+  void playCurrentTalk() {
+    if (!this.isSleeping) {
+      currentTalk().trigger();
+    }
+  }
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
@@ -83,15 +90,12 @@ class Frosty1 extends Habitat {
       return PA_PENGUIN1;
       }
       else if (FROSTY1_STATE == 2) {
-      return PA_PENGUIN2;
-      }
-      else if (FROSTY1_STATE == 3) {
         return PENGUIN_DUMMY;
       }
-      else if (FROSTY1_STATE == 4) {
-        return PA_PENGUIN3;
+      else if (FROSTY1_STATE == 3) {
+        return PA_PENGUIN2;
       }
-      else if (FROSTY1_STATE == 5) {
+      else if (FROSTY1_STATE == 4) {
       return PENGUIN_DUMMY;
       }
     }
@@ -117,7 +121,7 @@ class Frosty1 extends Habitat {
     else if (USER == "COBRA_B") {
       //Peter Penguin is asleep
     }
-    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+    return PENGUIN_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
 

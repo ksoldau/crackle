@@ -48,9 +48,16 @@ class Jungle1 extends Habitat {
     if (isSleeping) {
     }
     else if (cursorOverAnimal()) {
-      ELIZA_ELEPHANT_TEST.trigger(); //sound 
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
+      playCurrentTalk();
+    }
+  }
+  
+    //play correct audio
+  void playCurrentTalk() {
+    if (!this.isSleeping) {
+      currentTalk().trigger();
     }
   }
 
@@ -108,7 +115,7 @@ class Jungle1 extends Habitat {
     else if (USER == "COBRA_B") {
       //Eliza Elephant is asleep
     }
-    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+    return ELEPHANT_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
 

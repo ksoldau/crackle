@@ -54,17 +54,32 @@ class Africa2 extends Habitat {
     else if (cursorOverAnimal()) {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
-      GERRY_GIRAFFE_TEST.trigger(); //sound
+      playCurrentTalk();
+    }
+  }
+
+
+  //play correct audio
+  void playCurrentTalk() {
+    if (!this.isSleeping) {
+      currentTalk().trigger();
     }
   }
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
-    if (USER == "GORILLA_A") {} //Gerry Giraffe is asleep
+    if (USER == "GORILLA_A") {
+    } //Gerry Giraffe is asleep
     else if (USER == "GORILLA_B") {
-      if (AFRICA2_STATE == 0) {return GIRAFFE_DUMMY;}
-      else if (AFRICA2_STATE == 1) {return GB_GIRAFFE1;}
-      else if (AFRICA2_STATE == 2) {return GIRAFFE_DUMMY;}
+      if (AFRICA2_STATE == 0) {
+        return GIRAFFE_DUMMY;
+      }
+      else if (AFRICA2_STATE == 1) {
+        return GB_GIRAFFE1;
+      }
+      else if (AFRICA2_STATE == 2) {
+        return GIRAFFE_DUMMY;
+      }
     }
     else if (USER == "POLAR_A") {
       if (AFRICA2_STATE == 0) {
@@ -85,20 +100,28 @@ class Africa2 extends Habitat {
         return PB_GIRAFFE1;
       }
       else if (AFRICA2_STATE == 2) {
-      return GIRAFFE_DUMMY;
+        return GIRAFFE_DUMMY;
       }
     }
     else if (USER == "COBRA_A") {
       //Gerry Giraffe is asleep
     }
     else if (USER == "COBRA_B") {
-      if (AFRICA2_STATE == 0) {return CB_GIRAFFE1;}
-      else if (AFRICA2_STATE == 1) {return GIRAFFE_DUMMY;}
-      else if (AFRICA2_STATE == 2) {return CB_GIRAFFE2;}
-      else if (AFRICA2_STATE == 3) {return GIRAFFE_DUMMY;}
+      if (AFRICA2_STATE == 0) {
+        return CB_GIRAFFE1;
+      }
+      else if (AFRICA2_STATE == 1) {
+        return GIRAFFE_DUMMY;
+      }
+      else if (AFRICA2_STATE == 2) {
+        return CB_GIRAFFE2;
+      }
+      else if (AFRICA2_STATE == 3) {
+        return GIRAFFE_DUMMY;
+      }
     }
-    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+    return GIRAFFE_DUMMY;
+    //this is just so it doesn't yell at us for now, delete it later!
   }
 }
-
 

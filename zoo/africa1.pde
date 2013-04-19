@@ -50,7 +50,14 @@ class Africa1 extends Habitat {
     else if (cursorOverAnimal()) { 
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
-      CALVIN_CAMEL_TEST.trigger(); //sound
+      playCurrentTalk(); //sound
+    }
+  }
+
+  //play correct audio
+  void playCurrentTalk() {
+    if (!this.isSleeping) {
+      currentTalk().trigger();
     }
   }
 
@@ -114,8 +121,8 @@ class Africa1 extends Habitat {
     else if (USER == "COBRA_B") {
       //Calvin Camel is asleep
     }
-    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+      return CAMEL_DUMMY;
+    //this is just so it doesn't yell at us for now, delete it later!
   }
 }
-
 

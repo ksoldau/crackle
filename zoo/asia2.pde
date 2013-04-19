@@ -51,11 +51,18 @@ class Asia2 extends Habitat {
     if (isSleeping) {
     }
     else if (cursorOverAnimal()) {
-      PATTY_PANDABEAR_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
+      playCurrentTalk();
     }
   }  
+  
+    //play correct audio
+  void playCurrentTalk() {
+    if (!this.isSleeping) {
+      currentTalk().trigger();
+    }
+  }
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
@@ -86,6 +93,12 @@ class Asia2 extends Habitat {
       return PA_PANDA1;
       }
       else if (ASIA2_STATE == 2) {
+      return PANDA_DUMMY;
+      }
+      else if (ASIA2_STATE == 3) {
+      return PA_PANDA2;
+      }
+      else if (ASIA2_STATE == 4) {
       return PANDA_DUMMY;
       }
     }
@@ -128,7 +141,7 @@ class Asia2 extends Habitat {
         return PANDA_DUMMY;
       }
     }
-    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+    return PANDA_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
 
