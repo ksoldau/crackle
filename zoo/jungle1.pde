@@ -84,6 +84,15 @@ class Jungle1 extends Habitat {
       }
     }
     else if (USER == "POLAR_B") {
+      if (JUNGLE1_STATE == 0) {
+      return ELEPHANT_DUMMY;
+      }
+      else if (JUNGLE1_STATE == 1) {
+      return PB_ELEPHANT1;
+      }
+      else if (JUNGLE1_STATE == 2) {
+      return ELEPHANT_DUMMY;
+      }
     }
     else if (USER == "COBRA_A") {
       if (JUNGLE1_STATE == 0) {

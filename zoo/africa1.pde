@@ -98,6 +98,7 @@ class Africa1 extends Habitat {
       }
     }
     else if (USER == "POLAR_B") {
+      //Calvin Camel is asleep
     }
     else if (USER == "COBRA_A") {
       if (AFRICA1_STATE == 0) {

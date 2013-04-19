@@ -147,6 +147,13 @@ AudioSample PA_GIRAFFE2;
 
 
 //Audio for just POLAR_B
+AudioSample PB_TIGER1;
+AudioSample PB_GIRAFFE1;
+AudioSample PB_ELEPHANT1;
+AudioSample PB_SEAL1; 
+AudioSample PB_SEAL2;
+AudioSample PB_PENGUIN1;
+AudioSample PB_PANDA1;
 
 
 

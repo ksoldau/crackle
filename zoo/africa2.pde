@@ -78,6 +78,15 @@ class Africa2 extends Habitat {
       }
     }
     else if (USER == "POLAR_B") {
+      if (AFRICA2_STATE == 0) {
+        return GIRAFFE_DUMMY;
+      }
+      else if (AFRICA2_STATE == 1) {
+        return PB_GIRAFFE1;
+      }
+      else if (AFRICA2_STATE == 2) {
+      return GIRAFFE_DUMMY;
+      }
     }
     else if (USER == "COBRA_A") {
       //Gerry Giraffe is asleep

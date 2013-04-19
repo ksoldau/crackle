@@ -1,5 +1,4 @@
 // Sam Seal (Conor doesn't know difference between seal and sea lion)
-// fuck off katie
 class Frosty2 extends Habitat {
   int frame;
   int numTalkingFrames = 6;
@@ -86,6 +85,21 @@ class Frosty2 extends Habitat {
       //Sam Seal is asleep
     }
     else if (USER == "POLAR_B") {
+      if (FROSTY2_STATE == 0) {
+      return SEAL_DUMMY;
+      }
+      else if (FROSTY2_STATE == 1) {
+      return PB_SEAL1;
+      }
+      else if (FROSTY2_STATE == 2) {
+      return SEAL_DUMMY;
+      }
+      else if (FROSTY2_STATE == 3) {
+      return PB_SEAL2;
+      }
+      else if (FROSTY2_STATE == 4) {
+      return SEAL_DUMMY;
+      }
     }
     else if (USER == "COBRA_A") {
       //Sam Seal is asleep

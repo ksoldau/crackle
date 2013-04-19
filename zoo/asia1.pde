@@ -78,6 +78,12 @@ class Asia1 extends Habitat {
       //Tina Tiger is asleep
     }
     else if (USER == "POLAR_B") {
+      if (ASIA1_STATE == 0) {
+      return PB_TIGER1;
+      }
+      else if (ASIA1_STATE == 1) {
+      return TIGER_DUMMY;
+      }
     }
     else if (USER == "COBRA_A") {
       if (ASIA1_STATE == 0) {

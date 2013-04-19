@@ -90,6 +90,12 @@ class Asia2 extends Habitat {
       }
     }
     else if (USER == "POLAR_B") {
+      if (ASIA2_STATE == 0) {
+      return PANDA_DUMMY;
+      }
+      else if (ASIA2_STATE == 1) {
+      return PB_PANDA1;
+      }
     }
     else if (USER == "COBRA_A") {
       if (ASIA2_STATE == 0) {

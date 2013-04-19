@@ -96,6 +96,15 @@ class Frosty1 extends Habitat {
       }
     }
     else if (USER == "POLAR_B") {
+      if (FROSTY1_STATE == 0) {
+        return PENGUIN_DUMMY;
+      }
+      else if (FROSTY1_STATE == 1) {
+      return PB_PENGUIN1;
+      }
+      else if (FROSTY1_STATE == 2) {
+      return PENGUIN_DUMMY;
+      }
     }
     else if (USER == "COBRA_A") {
       if (FROSTY1_STATE == 0) {

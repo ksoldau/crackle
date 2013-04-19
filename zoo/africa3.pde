@@ -85,6 +85,7 @@ class Africa3 extends Habitat {
       //Leonard Lion is asleep
     }
     else if (USER == "POLAR_B") {
+      //Leonard Lion is asleep
     }
     else if (USER == "COBRA_A") {
       if (AFRICA3_STATE == 0) {
