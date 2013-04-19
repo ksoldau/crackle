@@ -69,7 +69,13 @@ class Africa3 extends Habitat {
     updateStateNumbers();
   }
   
-  void updateStateNumbers() {
+  void updateStateNumbers()     {
+    if (USER == "GORILLA_A") {
+      if (AFRICA3_STATE == 1) {
+        AFRICA3_STATE ++;
+        JUNGLE2_STATE ++; //SLOTH
+      }
+    }
   }
 
   //gets the current line the animal will be/is speaking
@@ -111,7 +117,7 @@ class Africa3 extends Habitat {
       }
       else if (USER == "COBRA_B") {
       }
-      return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+      return CAMEL_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
     }
     else if (USER == "COBRA_B") {
       if (AFRICA3_STATE == 0) {

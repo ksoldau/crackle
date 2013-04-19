@@ -68,12 +68,6 @@ class Africa2 extends Habitat {
   }
   
   void updateStateNumbers() {
-    if (USER == "GORILLA_A") {
-      if (AFRICA2_STATE == 1) {
-        AFRICA2_STATE ++;
-        JUNGLE2_STATE ++; //SLOTH
-      }
-    }
   }
   
   //gets the current line the animal will be/is speaking

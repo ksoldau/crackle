@@ -6,7 +6,7 @@ class Africa1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
 
-  PImage animal_not_talking = loadImage("data/sam_sealion.gif");
+  PImage animal_not_talking = loadImage("data/calvin_camel.gif");
   PImage background = loadImage("data/africa_1.png");
 
   Africa1(boolean isSleeping) { //isSleeping too

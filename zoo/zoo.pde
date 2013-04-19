@@ -65,20 +65,6 @@ AudioPlayer FROSTY_BG;
 AudioPlayer ASIA_BG;
 AudioPlayer JUNGLE_BG;
 
-AudioSample AFRICA;
-AudioSample FROSTY;
-AudioSample ASIA;
-AudioSample JUNGLE;
-
-AudioSample CALVIN_CAMEL_TEST;
-AudioSample ELIZA_ELEPHANT_TEST;
-AudioSample GERRY_GIRAFFE_TEST;
-AudioSample LEONARD_LION_TEST;
-AudioSample PATTY_PANDABEAR_TEST;
-AudioSample PETER_PENGUIN_TEST;
-AudioSample SAM_SEALION_TEST;
-AudioSample STANLEY_SLOTH_TEST;
-AudioSample TINA_TIGER_TEST;
 
 //Dummy lines
 AudioSample CAMEL_DUMMY;
@@ -310,21 +296,6 @@ void setup() {
   FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
   ASIA_BG = minim.loadFile("asia_bg.mp3", 512);
   JUNGLE_BG = minim.loadFile("jungle_bg.mp3", 512);
-
-  AFRICA = minim.loadSample("africa_bg.mp3", 512);
-  FROSTY = minim.loadSample("frosty_bg.mp3", 512);
-  ASIA = minim.loadSample("asia_bg.mp3", 512);
-  JUNGLE = minim.loadSample("jungle_bg.mp3", 512);
-
-  CALVIN_CAMEL_TEST = minim.loadSample("calvin_camel_test.mp3", 512);
-  ELIZA_ELEPHANT_TEST = minim.loadSample("eliza_elephant_test.mp3", 512);
-  GERRY_GIRAFFE_TEST = minim.loadSample("gerry_giraffe_test.mp3", 512);
-  LEONARD_LION_TEST = minim.loadSample("leonard_lion_test.mp3", 512);
-  PATTY_PANDABEAR_TEST = minim.loadSample("patty_pandabear_test.mp3", 512);
-  PETER_PENGUIN_TEST = minim.loadSample("peter_penguin_test.mp3", 512);
-  SAM_SEALION_TEST = minim.loadSample("sam_sealion_test.mp3", 512);
-  STANLEY_SLOTH_TEST = minim.loadSample("stanley_sloth_test.mp3", 512);
-  TINA_TIGER_TEST = minim.loadSample("tina_tiger_test.mp3", 512);
 
   // initializing lists for GIFs for talking animals
   GIFS_CAMEL_TALKING = Gif.getPImages(this, "data/calvin_talk_288.gif");

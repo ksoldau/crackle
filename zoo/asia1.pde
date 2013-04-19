@@ -116,7 +116,7 @@ class Asia1 extends Habitat {
         return TIGER_DUMMY;
       }
     }
-    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+    return CAMEL_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
 
