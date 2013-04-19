@@ -2,10 +2,11 @@
 class Nav {
   
   PImage navbar;
-  PImage clue1;
-  PImage clue2; 
-  PImage clue3;
-  PImage clue4;
+  
+  boolean clue1; //GA fur
+  boolean clue2; 
+  boolean clue3;
+  boolean clue4;
   
   Nav() {
     this.navbar = loadImage("data/nav.png");
@@ -14,6 +15,18 @@ class Nav {
   // display the scene
   void display() {
     image(navbar, 0, 0);
+    if (clue1) {
+      displayClue1();
+    }
+    if (clue2) {
+      displayClue2();
+    }
+    if (clue3) {
+      displayClue3();
+    }
+    if (clue4) {
+      displayClue4();
+    }
   }
   
   void displayClue1() {

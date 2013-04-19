@@ -66,6 +66,7 @@ class Jungle1 extends Habitat {
   void updateStateNumbers()     {
     if (USER == "GORILLA_A") {
       if (JUNGLE1_STATE == 1) {
+      nav.clue1 = true;// got fur clue
       JUNGLE1_STATE ++;
       ASIA2_STATE ++;
       }    
