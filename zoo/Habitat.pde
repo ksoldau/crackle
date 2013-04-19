@@ -25,4 +25,7 @@ public abstract class Habitat {
   
   //plays correct lines for animal
   abstract void playCurrentTalk();
+  
+  //updates necessary state numbers for habitats/animals
+  abstract void updateStateNumbers();
 }

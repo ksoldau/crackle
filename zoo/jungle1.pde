@@ -59,8 +59,24 @@ class Jungle1 extends Habitat {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
+    updateStateNumbers();
   }
-
+  
+  //updates state numbers 
+  void updateStateNumbers()     {
+    if (USER == "GORILLA_A") {
+      if (ELEPHANT_STATE == 1) {
+      JUNGLE1_STATE ++;
+      ASIA2_STATE ++;
+      }    
+    }
+    else if (USER == "GORILLA_B") {}
+    else if (USER == "COBRA_A") {}
+    else if (USER == "COBRA_B") {}
+    else if (USER == "POLAR_A") {}
+    else if (USER == "POLAR_B") {}
+  }
+  
   //determines if the mouse over the Camel
   boolean cursorOverAnimal() {
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))

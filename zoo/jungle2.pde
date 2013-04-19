@@ -106,6 +106,27 @@ class Jungle2 extends Habitat {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
+    updateSceneNumbers();
+  }
+  
+  void updateSceneNumbers() {
+    if (USER == "GORILLA_A") {
+      if (JUNGLE2_STATE == 1) {
+        JUNGLE2_STATE ++;
+        ASIA2_STATE ++; //Patty Panda
+      } 
+     if (JUNGLE2_STATE == 3) {
+       JUNGLE2_STATE ++;
+       AFRICA3_STATE ++;
+     } 
+    }
+    else if (USER == "GORILLA_B") {}
+    else if (USER == "COBRA_A") {}
+    else if (USER == "COBRA_B") {}
+    else if (USER == "POLAR_A") {}
+    else if (USER == "POLAR_B") {}
+  }
+  
   }
 
   //determines if cursor over any of the trash

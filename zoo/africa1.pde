@@ -59,6 +59,24 @@ class Africa1 extends Habitat {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
+    updateStateNumbers();
+  }
+  
+  void updateStateNumbers() {
+    if (USER == "GORILLA_A") {
+      if (AFRICA1_STATE == 0) {
+        AFRICA1_STATE ++;
+        JUNGLE1_STATE ++;  
+      }    
+      else if (AFRICA1_STATE == 2) {
+        AFRICA1_STATE ++ ;
+        AFRICA2_STATE ++ ; //Leonard Lion
+    }
+    else if (USER == "GORILLA_B") {}
+    else if (USER == "COBRA_A") {}
+    else if (USER == "COBRA_B") {}
+    else if (USER == "POLAR_A") {}
+    else if (USER == "POLAR_B") {}
   }
 
   //determines if the mouse over the Camel

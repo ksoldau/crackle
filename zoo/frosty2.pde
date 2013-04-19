@@ -62,6 +62,14 @@ class Frosty2 extends Habitat {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
+    updateSceneNumbers();
+  }
+  
+  void updateSceneNumbers() {
+    if (FROSTY2_STATE == 1) {
+      FROSTY2_STATE ++;
+      AFRICA1_STATE ++;
+    }
   }
 
   //gets the current line the animal will be/is speaking

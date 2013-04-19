@@ -64,8 +64,17 @@ class Africa2 extends Habitat {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
+    updateSceneNumbers();
   }
-
+  
+  void updateSceneNumbers() {
+    if (USER == "GORILLA_A") {
+      if (AFRICA2_STATE == 1) {
+        AFRICA2_STATE ++;
+        JUNGLE2_STATE ++; //SLOTH
+      }
+    }
+  }
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {

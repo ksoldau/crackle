@@ -56,11 +56,35 @@ class Asia2 extends Habitat {
       playCurrentTalk();
     }
   }  
-  
-    //play correct audio
+
+  //play correct audio
   void playCurrentTalk() {
     if (!this.isSleeping) {
       currentTalk().trigger();
+    }
+    updateSceneNumbers();
+  }
+
+  void updateSceneNumbers() {
+    if (USER == "GORILLA_A") {
+      if (ASIA2_STATE == 1) {
+        ASIA2_STATE ++;
+        JUNGLE2_STATE ++; //Stanley Sloth
+      }
+      if (ASIA2_STATE == 3) {
+        ASIA2_STATE ++;
+        FROSTY2_STATE ++;//Sam Seal
+      }
+    }
+    else if (USER == "GORILLA_B") {
+    }
+    else if (USER == "COBRA_A") {
+    }
+    else if (USER == "COBRA_B") {
+    }
+    else if (USER == "POLAR_A") {
+    }
+    else if (USER == "POLAR_B") {
     }
   }
 
@@ -87,27 +111,27 @@ class Asia2 extends Habitat {
     } //Patty Panda is asleep
     else if (USER == "POLAR_A") {
       if (ASIA2_STATE == 0) {
-      return PANDA_DUMMY;
+        return PANDA_DUMMY;
       }
       else if (ASIA2_STATE == 1) {
-      return PA_PANDA1;
+        return PA_PANDA1;
       }
       else if (ASIA2_STATE == 2) {
-      return PANDA_DUMMY;
+        return PANDA_DUMMY;
       }
       else if (ASIA2_STATE == 3) {
-      return PA_PANDA2;
+        return PA_PANDA2;
       }
       else if (ASIA2_STATE == 4) {
-      return PANDA_DUMMY;
+        return PANDA_DUMMY;
       }
     }
     else if (USER == "POLAR_B") {
       if (ASIA2_STATE == 0) {
-      return PANDA_DUMMY;
+        return PANDA_DUMMY;
       }
       else if (ASIA2_STATE == 1) {
-      return PB_PANDA1;
+        return PB_PANDA1;
       }
     }
     else if (USER == "COBRA_A") {
