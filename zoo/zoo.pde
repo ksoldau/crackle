@@ -114,7 +114,25 @@ AudioSample GB_TIGER1;
 AudioSample GB_SLOTH1;
 
 //Audio for just COBRA_A
+AudioSample CA_PENGUIN1;
+AudioSample CA_CAMEL1;
+AudioSample CA_PANDA1;
+AudioSample CA_PANDA2;
+AudioSample CA_ELEPHANT1;
+AudioSample CA_LION1;
+AudioSample CA_TIGER1;
+
 //Audio for just COBRA_B
+AudioSample CB_GIRAFFE1;
+AudioSample CB_LION1;
+AudioSample CB_TIGER1;
+AudioSample CB_SLOTH1;
+AudioSample CB_SLOTH2;
+AudioSample CB_PANDA1;
+AudioSample CB_GIRAFFE2;
+AudioSample CB_PANDA2;
+AudioSample CB_SEAL1;
+
 //Audio for just POLAR_A
 //Audio for just POLAR_B
 

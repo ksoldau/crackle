@@ -60,19 +60,24 @@ class Africa2 extends Habitat {
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
-    if (USER == "GORILLA_A") {} //he's sleeping
+    if (USER == "GORILLA_A") {} //Gerry Giraffe is asleep
     else if (USER == "GORILLA_B") {
       if (AFRICA2_STATE == 0) {return GIRAFFE_DUMMY;}
       else if (AFRICA2_STATE == 1) {return GB_GIRAFFE1;}
-      else if (AFRICA3_STATE == 2) {return GIRAFFE_DUMMY;}
+      else if (AFRICA2_STATE == 2) {return GIRAFFE_DUMMY;}
     }
     else if (USER == "POLAR_A") {
     }
     else if (USER == "POLAR_B") {
     }
     else if (USER == "COBRA_A") {
+      //Gerry Giraffe is asleep
     }
     else if (USER == "COBRA_B") {
+      if (AFRICA2_STATE == 0) {return CB_GIRAFFE1;}
+      else if (AFRICA2_STATE == 1) {return GIRAFFE_DUMMY;}
+      else if (AFRICA2_STATE == 2) {return CB_GIRAFFE2;}
+      else if (AFRICA2_STATE == 3) {return GIRAFFE_DUMMY;}
     }
     return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
   }

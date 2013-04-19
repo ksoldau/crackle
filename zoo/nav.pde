@@ -26,4 +26,3 @@ class Nav {
   void displayClue4() {
   }
 }
-    

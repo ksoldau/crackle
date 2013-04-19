@@ -55,26 +55,65 @@ class Asia2 extends Habitat {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
     }
-}  
+  }  
 
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {
-    if (ASIA2_STATE == 0) { return PANDA_DUMMY; }
-    else if (ASIA2_STATE == 1) {return GA_PANDA1; }
-    else if (ASIA2_STATE == 2) {return PANDA_DUMMY; }
-    else if (ASIA2_STATE == 3) {return GA_PANDA2; }
-    else if (ASIA2_STATE == 4) {return PANDA_DUMMY; }
+      if (ASIA2_STATE == 0) { 
+        return PANDA_DUMMY;
+      }
+      else if (ASIA2_STATE == 1) {
+        return GA_PANDA1;
+      }
+      else if (ASIA2_STATE == 2) {
+        return PANDA_DUMMY;
+      }
+      else if (ASIA2_STATE == 3) {
+        return GA_PANDA2;
+      }
+      else if (ASIA2_STATE == 4) {
+        return PANDA_DUMMY;
+      }
     }
-    else if (USER == "GORILLA_B") {} //Patty Panda is asleep
-    else if (USER == "POLAR_A") {}
-    else if (USER == "POLAR_B") {}
-    else if (USER == "COBRA_A") {}
-    else if (USER == "COBRA_B") {}
+    else if (USER == "GORILLA_B") {
+    } //Patty Panda is asleep
+    else if (USER == "POLAR_A") {
+    }
+    else if (USER == "POLAR_B") {
+    }
+    else if (USER == "COBRA_A") {
+      if (ASIA2_STATE == 0) {
+        return PANDA_DUMMY;
+      }
+      else if (ASIA2_STATE == 1) {
+        return CA_PANDA1;
+      }
+      else if (ASIA2_STATE == 2) {
+        return CA_PANDA2;
+      }
+      else if (ASIA2_STATE == 3) {
+        return PANDA_DUMMY;
+      }
+    }
+    else if (USER == "COBRA_B") {
+      if (ASIA2_STATE == 0) {
+        return PANDA_DUMMY;
+      }
+      else if (ASIA2_STATE == 1) {
+        return CB_PANDA1;
+      }
+      else if (ASIA2_STATE == 2) {
+        return PANDA_DUMMY;
+      }
+      else if (ASIA2_STATE == 3) {
+        return CB_PANDA2;
+      }
+      else if (ASIA2_STATE == 4) {
+        return PANDA_DUMMY;
+      }
+    }
     return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
-
   }
-  
 }
-
 

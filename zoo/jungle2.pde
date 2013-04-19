@@ -149,8 +149,13 @@ class Jungle2 extends Habitat {
     else if (USER == "POLAR_B") {
     }
     else if (USER == "COBRA_A") {
+      //Stanley Sloth is asleep
     }
     else if (USER == "COBRA_B") {
+      if (JUNGLE2_STATE == 0) {return SLOTH_DUMMY;}
+      else if (JUNGLE2_STATE == 1) {return CB_SLOTH1;}
+      else if (JUNGLE2_STATE == 2) {return CB_SLOTH2;}
+      else if (JUNGLE2_STATE == 3) {return SLOTH_DUMMY;}
     }
     return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
   }

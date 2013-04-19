@@ -5,7 +5,7 @@ class Africa3 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 100;
-  
+
   PImage background = loadImage("data/africa_3.png");
   PImage animal_not_talking =  loadImage("data/leonard_lion.gif");
 
@@ -63,20 +63,54 @@ class Africa3 extends Habitat {
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {
-    if (AFRICA3_STATE == 0) { return LION_DUMMY; }
-    else if (AFRICA3_STATE == 1) {return GA_LION1; }
-    else if (AFRICA3_STATE == 2) {return LION_DUMMY; }
-    else if (AFRICA3_STATE == 3) {return GA_LION2; }
-    else if (AFRICA3_STATE == 4) {return GA_LION3; }
+      if (AFRICA3_STATE == 0) { 
+        return LION_DUMMY;
+      }
+      else if (AFRICA3_STATE == 1) {
+        return GA_LION1;
+      }
+      else if (AFRICA3_STATE == 2) {
+        return LION_DUMMY;
+      }
+      else if (AFRICA3_STATE == 3) {
+        return GA_LION2;
+      }
+      else if (AFRICA3_STATE == 4) {
+        return GA_LION3;
+      }
     }
-    else if (USER == "GORILLA_B") {} //Leonard Lion is sleeping
-    else if (USER == "POLAR_A") {}
-    else if (USER == "POLAR_B") {}
-    else if (USER == "COBRA_A") {}
-    else if (USER == "COBRA_B") {}
-              return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
-
+    else if (USER == "GORILLA_B") {
+    } //Leonard Lion is sleeping
+    else if (USER == "POLAR_A") {
+    }
+    else if (USER == "POLAR_B") {
+    }
+    else if (USER == "COBRA_A") {
+      if (AFRICA3_STATE == 0) {
+        return LION_DUMMY;
+      }
+      else if (AFRICA3_STATE == 1) {
+        return CA_LION1;
+      }
+      else if (AFRICA3_STATE == 2) {
+        return LION_DUMMY;
+      }
+      else if (USER == "COBRA_B") {
+      }
+      return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
+    }
+    else if (USER == "COBRA_B") {
+      if (AFRICA3_STATE == 0) {
+        return LION_DUMMY;
+      }
+      else if (AFRICA3_STATE == 1) {
+        return CB_LION1;
+      }
+      else if (AFRICA3_STATE == 2) {
+        return LION_DUMMY;
+      }
+    }
+  return CALVIN_CAMEL_TEST;
   }
 }
-
 

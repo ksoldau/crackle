@@ -13,7 +13,5 @@ class Intro {
   boolean mousePressedAnimal() { // yea we know this isn't super legit
   return false;
   }
-  
-  
-  
 }
+

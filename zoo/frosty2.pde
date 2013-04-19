@@ -6,7 +6,7 @@ class Frosty2 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 100;
-  
+
   PImage background = loadImage("data/frosty_2.png");
   PImage animal_not_talking = loadImage("data/sam_sealion.gif");
 
@@ -19,15 +19,17 @@ class Frosty2 extends Habitat {
   }
 
   //displays the correct animal 
- void displayAnimal() {
-   if (isSleeping) {
-     image(SLEEP_TEST, animalLeft, animalTop);
-   }
-   else if (ANIMAL_TALKING) {
-     displayAnimalTalking();
-   }
-   else { displayAnimalNotTalking(); }
- }
+  void displayAnimal() {
+    if (isSleeping) {
+      image(SLEEP_TEST, animalLeft, animalTop);
+    }
+    else if (ANIMAL_TALKING) {
+      displayAnimalTalking();
+    }
+    else { 
+      displayAnimalNotTalking();
+    }
+  }
 
   //displays the talking animal 
   void displayAnimalTalking() {
@@ -47,7 +49,8 @@ class Frosty2 extends Habitat {
   }
 
   void mousePressedInHabitat() {
-    if (isSleeping) {}
+    if (isSleeping) {
+    }
     else if (cursorOverAnimal()) {
       SAM_SEALION_TEST.trigger(); //sound
       ANIMAL_TALKING = true;
@@ -58,21 +61,43 @@ class Frosty2 extends Habitat {
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {
-      if (FROSTY2_STATE == 0) {return SEAL_DUMMY; }
-      else if (FROSTY2_STATE == 1) {return GA_SEAL1; }
-      else if (FROSTY2_STATE == 2) {return SEAL_DUMMY; }
+      if (FROSTY2_STATE == 0) {
+        return SEAL_DUMMY;
+      }
+      else if (FROSTY2_STATE == 1) {
+        return GA_SEAL1;
+      }
+      else if (FROSTY2_STATE == 2) {
+        return SEAL_DUMMY;
+      }
     }
     else if (USER == "GORILLA_B") {
-    if (FROSTY2_STATE == 0) {return SEAL_DUMMY;}
-    else if (FROSTY2_STATE == 1) {return GB_SEAL1;}
-    else if (FROSTY2_STATE == 2) {return SEAL_DUMMY;}
+      if (FROSTY2_STATE == 0) {
+        return SEAL_DUMMY;
+      }
+      else if (FROSTY2_STATE == 1) {
+        return GB_SEAL1;
+      }
+      else if (FROSTY2_STATE == 2) {
+        return SEAL_DUMMY;
+      }
     }
-    else if (USER == "POLAR_A") {}
-    else if (USER == "POLAR_B") {}
-    else if (USER == "COBRA_A") {}
-    else if (USER == "COBRA_B") {}
-              return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
-
+    else if (USER == "POLAR_A") {
+    }
+    else if (USER == "POLAR_B") {
+    }
+    else if (USER == "COBRA_A") {
+      //Sam Seal is asleep
+    }
+    else if (USER == "COBRA_B") {
+      if (FROSTY2_STATE == 0) {
+        return SEAL_DUMMY;
+      }
+      else if (FROSTY2_STATE == 1) {
+        return CB_SEAL1;
+      }
+    }
+    return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
 
