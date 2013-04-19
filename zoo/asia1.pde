@@ -65,6 +65,10 @@ class Asia1 extends Habitat {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
+    updateStateNumbers();
+  }
+  
+  void updateStateNumbers() {
   }
 
   //gets the current line the animal will be/is speaking

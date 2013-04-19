@@ -62,10 +62,10 @@ class Asia2 extends Habitat {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
-    updateSceneNumbers();
+    updateStateNumbers();
   }
 
-  void updateSceneNumbers() {
+  void updateStateNumbers() {
     if (USER == "GORILLA_A") {
       if (ASIA2_STATE == 1) {
         ASIA2_STATE ++;

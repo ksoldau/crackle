@@ -62,10 +62,10 @@ class Frosty2 extends Habitat {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
-    updateSceneNumbers();
+    updateStateNumbers();
   }
   
-  void updateSceneNumbers() {
+  void updateStateNumbers() {
     if (FROSTY2_STATE == 1) {
       FROSTY2_STATE ++;
       AFRICA1_STATE ++;

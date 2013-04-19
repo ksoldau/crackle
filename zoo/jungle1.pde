@@ -65,11 +65,12 @@ class Jungle1 extends Habitat {
   //updates state numbers 
   void updateStateNumbers()     {
     if (USER == "GORILLA_A") {
-      if (ELEPHANT_STATE == 1) {
+      if (JUNGLE1_STATE == 1) {
       JUNGLE1_STATE ++;
       ASIA2_STATE ++;
       }    
     }
+    
     else if (USER == "GORILLA_B") {}
     else if (USER == "COBRA_A") {}
     else if (USER == "COBRA_B") {}

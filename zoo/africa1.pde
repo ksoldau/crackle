@@ -78,6 +78,7 @@ class Africa1 extends Habitat {
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}
   }
+  }
 
   //determines if the mouse over the Camel
   boolean cursorOverAnimal() {

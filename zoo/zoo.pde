@@ -70,7 +70,7 @@ AudioSample FROSTY;
 AudioSample ASIA;
 AudioSample JUNGLE;
 
- CALVIN_CAMEL_TEST;
+AudioSample CALVIN_CAMEL_TEST;
 AudioSample ELIZA_ELEPHANT_TEST;
 AudioSample GERRY_GIRAFFE_TEST;
 AudioSample LEONARD_LION_TEST;
@@ -340,7 +340,7 @@ void setup() {
 }
 
 //initialize the audio
-void initialieAudio() {
+void initializeAudio() {
   //Dummy lines
 CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512);
 GIRAFFE_DUMMY = minim.loadSample("GIRAFFE_DUMMY.mp3", 512);

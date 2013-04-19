@@ -106,10 +106,10 @@ class Jungle2 extends Habitat {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
-    updateSceneNumbers();
+    updateStateNumbers();
   }
   
-  void updateSceneNumbers() {
+  void updateStateNumbers() {
     if (USER == "GORILLA_A") {
       if (JUNGLE2_STATE == 1) {
         JUNGLE2_STATE ++;
@@ -127,7 +127,6 @@ class Jungle2 extends Habitat {
     else if (USER == "POLAR_B") {}
   }
   
-  }
 
   //determines if cursor over any of the trash
   boolean cursorOverTrash() {
