@@ -58,8 +58,6 @@ class Jungle1 extends Habitat {
   void playCurrentTalk() {
     if (!this.isSleeping) {
       currentTalk().trigger();
-      CAMEL_DUMMY.trigger();
-      println("current talk" + currentTalk());
     }
     updateStateNumbers();
   }

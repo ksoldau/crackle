@@ -552,7 +552,7 @@ void draw() {
   }
 
   drawCursor();
-  //printMem(); //DEBUG: To monitor memory usage
+  printMem(); //DEBUG: To monitor memory usage
   whenPlay();
 }
 
