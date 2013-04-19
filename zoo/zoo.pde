@@ -134,6 +134,18 @@ AudioSample CB_PANDA2;
 AudioSample CB_SEAL1;
 
 //Audio for just POLAR_A
+AudioSample PA_ELEPHANT1;
+AudioSample PA_CAMEL1;
+AudioSample PA_PENGUIN1;
+AudioSample PA_PENGUIN2;
+AudioSample PA_PENGUIN3;
+AudioSample PA_PANDA1;
+AudioSample PA_SLOTH1;
+AudioSample PA_SLOTH2;
+AudioSample PA_GIRAFFE1;
+AudioSample PA_GIRAFFE2;
+
+
 //Audio for just POLAR_B
 
 

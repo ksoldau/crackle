@@ -67,6 +67,15 @@ class Africa2 extends Habitat {
       else if (AFRICA2_STATE == 2) {return GIRAFFE_DUMMY;}
     }
     else if (USER == "POLAR_A") {
+      if (AFRICA2_STATE == 0) {
+        return GIRAFFE_DUMMY;
+      }
+      else if (AFRICA2_STATE == 1) {
+        return PA_GIRAFFE1;
+      }
+      else if (AFRICA2_STATE == 2) {
+        return PA_GIRAFFE2;
+      }
     }
     else if (USER == "POLAR_B") {
     }

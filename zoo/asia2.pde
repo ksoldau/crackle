@@ -79,6 +79,15 @@ class Asia2 extends Habitat {
     else if (USER == "GORILLA_B") {
     } //Patty Panda is asleep
     else if (USER == "POLAR_A") {
+      if (ASIA2_STATE == 0) {
+      return PANDA_DUMMY;
+      }
+      else if (ASIA2_STATE == 1) {
+      return PA_PANDA1;
+      }
+      else if (ASIA2_STATE == 2) {
+      return PANDA_DUMMY;
+      }
     }
     else if (USER == "POLAR_B") {
     }

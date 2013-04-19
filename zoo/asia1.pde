@@ -75,6 +75,7 @@ class Asia1 extends Habitat {
       }
     }
     else if (USER == "POLAR_A") {
+      //Tina Tiger is asleep
     }
     else if (USER == "POLAR_B") {
     }

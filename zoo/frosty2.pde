@@ -83,6 +83,7 @@ class Frosty2 extends Habitat {
       }
     }
     else if (USER == "POLAR_A") {
+      //Sam Seal is asleep
     }
     else if (USER == "POLAR_B") {
     }

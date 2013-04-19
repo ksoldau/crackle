@@ -76,6 +76,12 @@ class Jungle1 extends Habitat {
     else if (USER == "GORILLA_B") {
     }//Eliza Elephant is sleeping
     else if (USER == "POLAR_A") {
+      if (JUNGLE1_STATE == 0) {
+      return PA_ELEPHANT1;
+      }
+      else if (JUNGLE1_STATE == 1) {
+      return ELEPHANT_DUMMY;
+      }
     }
     else if (USER == "POLAR_B") {
     }

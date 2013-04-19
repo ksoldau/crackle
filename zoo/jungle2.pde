@@ -100,16 +100,16 @@ class Jungle2 extends Habitat {
       pickedUpTrash3 = true;
     }
   }
-  
+
   //determines if cursor over any of the trash
   boolean cursorOverTrash() {
     return !isSleeping && 
-    ((!pickedUpTrash1 && cursorOverTrash1()) ||
-    (!pickedUpTrash2 && cursorOverTrash2()) ||
-    (!pickedUpTrash3 && cursorOverTrash3()));
+      ((!pickedUpTrash1 && cursorOverTrash1()) ||
+      (!pickedUpTrash2 && cursorOverTrash2()) ||
+      (!pickedUpTrash3 && cursorOverTrash3()));
   }
 
-    //determines if mouse over trash1
+  //determines if mouse over trash1
   boolean cursorOverTrash1() {
     return ((trash1_x < mouseX) && (mouseX < (trash1_x + 100))) 
       && ((trash1_y < mouseY) && (mouseY < (trash1_y + 100)));
@@ -134,17 +134,43 @@ class Jungle2 extends Habitat {
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {
-      if (JUNGLE2_STATE == 0) {return SLOTH_DUMMY;}
-      else if (JUNGLE2_STATE == 1) {return GA_SLOTH1;}
-      else if (JUNGLE2_STATE == 2) {return SLOTH_DUMMY;}
-      else if (JUNGLE2_STATE == 3) {return GA_SLOTH2;}
-      else if (JUNGLE2_STATE == 4) {return SLOTH_DUMMY;}
+      if (JUNGLE2_STATE == 0) {
+        return SLOTH_DUMMY;
+      }
+      else if (JUNGLE2_STATE == 1) {
+        return GA_SLOTH1;
+      }
+      else if (JUNGLE2_STATE == 2) {
+        return SLOTH_DUMMY;
+      }
+      else if (JUNGLE2_STATE == 3) {
+        return GA_SLOTH2;
+      }
+      else if (JUNGLE2_STATE == 4) {
+        return SLOTH_DUMMY;
+      }
     }
     else if (USER == "GORILLA_B") {
-      if (JUNGLE2_STATE == 0) {return SLOTH_DUMMY;}
-      else if (JUNGLE2_STATE == 1) {return GB_SLOTH1;}
+      if (JUNGLE2_STATE == 0) {
+        return SLOTH_DUMMY;
+      }
+      else if (JUNGLE2_STATE == 1) {
+        return GB_SLOTH1;
+      }
     }
     else if (USER == "POLAR_A") {
+      if (JUNGLE2_STATE == 0) {
+        return SLOTH_DUMMY;
+      }
+      else if (JUNGLE2_STATE == 1) {
+        return PA_SLOTH1;
+      }
+      else if (JUNGLE2_STATE == 2) {
+        return PA_SLOTH2;
+      }
+      else if (JUNGLE2_STATE == 3) {
+        return SLOTH_DUMMY;
+      }
     }
     else if (USER == "POLAR_B") {
     }
@@ -152,10 +178,18 @@ class Jungle2 extends Habitat {
       //Stanley Sloth is asleep
     }
     else if (USER == "COBRA_B") {
-      if (JUNGLE2_STATE == 0) {return SLOTH_DUMMY;}
-      else if (JUNGLE2_STATE == 1) {return CB_SLOTH1;}
-      else if (JUNGLE2_STATE == 2) {return CB_SLOTH2;}
-      else if (JUNGLE2_STATE == 3) {return SLOTH_DUMMY;}
+      if (JUNGLE2_STATE == 0) {
+        return SLOTH_DUMMY;
+      }
+      else if (JUNGLE2_STATE == 1) {
+        return CB_SLOTH1;
+      }
+      else if (JUNGLE2_STATE == 2) {
+        return CB_SLOTH2;
+      }
+      else if (JUNGLE2_STATE == 3) {
+        return SLOTH_DUMMY;
+      }
     }
     return CALVIN_CAMEL_TEST; //this is just so it doesn't yell at us for now, delete it later!
   }
