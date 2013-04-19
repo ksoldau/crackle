@@ -53,6 +53,9 @@ class Africa3 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
+    else if (cursorOverAnimal() && (AFRICA3_STATE == 4)) {
+      WIN.doGuess();
+    }
     else if (cursorOverAnimal()) {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
@@ -74,6 +77,9 @@ class Africa3 extends Habitat {
       if (AFRICA3_STATE == 1) {
         AFRICA3_STATE ++;
         JUNGLE2_STATE ++; //SLOTH
+      }
+      if (AFRICA3_STATE == 3) {
+        AFRICA3_STATE ++; //to get to final screen kind of
       }
     }
   }

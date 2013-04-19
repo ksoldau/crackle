@@ -74,6 +74,7 @@ class Asia2 extends Habitat {
       if (ASIA2_STATE == 3) {
         ASIA2_STATE ++;
         FROSTY2_STATE ++;//Sam Seal
+        nav.clue2 = true; //love to eat plants
       }
     }
     else if (USER == "GORILLA_B") {

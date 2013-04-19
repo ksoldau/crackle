@@ -3,7 +3,7 @@ class Map {
   PImage background;
   
   Map() {
-    this.background = loadImage("data/map.gif");
+    this.background = loadImage("data/map.png");
   }
   
   // display the scene

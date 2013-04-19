@@ -12,12 +12,22 @@ import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 PImage SLEEP_TEST;
 PImage TRASH_TEST;
 
+//clues
+PImage CLUE1;
+PImage CLUE2;
+PImage CLUE3;
+PImage CLUE4;
+
+//guess scene
+PImage GUESS_SCENE_BG;
+
 // declaring variables outside of setup so they can be used anywhere
 // a la "public" in standard java
 int ANIMAL_TALKING_START_TIME;
 
 PImage BACKGROUND_IMG;
 Intro intro;
+Win WIN;
 
 // Habitat classes 
 Africa1 AFRICA1;
@@ -191,9 +201,10 @@ int RIGHTYf = 301;
 boolean WELCOME_SCREEN = true; // is it on the welcome screen
 boolean ON_INTRO = false; // is it on the intro screen
 boolean ON_MAP = false; 
+boolean ON_GUESS = false;
 
 //current habitat number
-int HABITAT_NUMBER = 8;
+int HABITAT_NUMBER = 0;// for now, ultimately change this
 
 //last habitat number
 int LAST_HABITAT_NUMBER = 0;
@@ -255,6 +266,7 @@ void setup() {
   //loading all animal classes
   //depends on which animal/iteration the user is 
   loadAnimalClasses();
+  loadClueImages();
 
   //initialize states of habitats
   AFRICA1_STATE = 0;
@@ -285,6 +297,7 @@ void setup() {
   nav = new Nav();
   arrows = new Arrows();
   map = new Map();
+  WIN = new Win();
 
   println(LIST_OF_HABITATS[0]);
 
@@ -307,8 +320,12 @@ void setup() {
   GIFS_SEAL_TALKING = Gif.getPImages(this, "data/sam_talk_288.gif");
   GIFS_ELEPHANT_TALKING = Gif.getPImages(this, "data/eliza_talk_288.gif");
   GIFS_SLOTH_TALKING = Gif.getPImages(this, "data/stanley_talk_288.gif");
+  
+  GUESS_SCENE_BG = loadImage("data/guesswho.png");
+
 
   initializeAudio();
+  
 }
 
 //initialize the audio
@@ -495,6 +512,13 @@ void loadAnimalClasses() {
   }
 }
 
+void loadClueImages() {
+  CLUE1 = loadImage("data/fur.png");
+  CLUE2 = loadImage("data/plants.png");
+  CLUE3 = loadImage("data/twolegs.png");
+  CLUE4 = loadImage("data/blackfur.png");
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 //           _                    
 //          | |                   
@@ -517,7 +541,9 @@ void draw() {
     doScene(HABITAT_NUMBER);
   }
   //to display the correct animal for current habitat
-  if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
+  else if (ON_GUESS) {
+  }
+  else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
     doScene(HABITAT_NUMBER);
     LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED, IF UNCOMMENT MEM PROBZ
   }
@@ -717,45 +743,55 @@ void doMap() {
 void doAfrica1() {
   AFRICA1.display();
   arrows.display();
+  nav.display();
+
 }
 void doAfrica2() {
   AFRICA2.display();
   arrows.display();
+  nav.display();
 }
 
 void doAfrica3() {
   AFRICA3.display();
   arrows.display();
+  nav.display();
 }
 
 void doAsia1() {
   ASIA1.display();
   arrows.display();
+  nav.display();
 }
 
 void doAsia2() {
   ASIA2.display();
   arrows.display();
+  nav.display();
 }
 
 void doFrosty1() {
   FROSTY1.display();
   arrows.display();
+  nav.display();
 }
 
 void doFrosty2() {
   FROSTY2.display();
   arrows.display();
+  nav.display();
 }
 
 void doJungle1() {
   JUNGLE1.display();
   arrows.display();
+  nav.display();
 }
 
 void doJungle2() {
   JUNGLE2.display();
   arrows.display();
+  nav.display();
 }
 
 //------------------------------------
@@ -780,6 +816,10 @@ void mousePressed() {
   //if map is up
   if (ON_MAP) {
     mousePressedOnMap();
+  }
+  
+  else if (ON_GUESS) {
+    WIN.mousePressedOnGuess();
   }
 
   //if an animal is talking
@@ -951,4 +991,5 @@ boolean cursor_over_jungle1() {
 boolean cursor_over_jungle2() {
   return cursor_over(373, 461, 95, 159);
 }
+
 
