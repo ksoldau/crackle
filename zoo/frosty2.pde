@@ -56,19 +56,31 @@ class Frosty2 extends Habitat {
       playCurrentTalk();
     }
   }  
-  
-    //play correct audio
+
+  //play correct audio
   void playCurrentTalk() {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
     updateStateNumbers();
   }
-  
+
   void updateStateNumbers() {
-    if (FROSTY2_STATE == 1) {
-      FROSTY2_STATE ++;
-      AFRICA1_STATE ++;
+    if (USER == "GORILLA_A") {
+      if (FROSTY2_STATE == 1) {
+        FROSTY2_STATE ++;
+        AFRICA1_STATE ++;
+      }
+    }
+    if (USER == "GORILLA_B") {
+      if (FROSTY2_STATE == 1) {
+        FROSTY2_STATE ++;
+        AFRICA1_STATE ++;
+      }
+      if (FROSTY2_STATE == 3) {
+        FROSTY2_STATE ++;
+        ASIA2_STATE ++;
+      }
     }
   }
 
@@ -101,19 +113,19 @@ class Frosty2 extends Habitat {
     }
     else if (USER == "POLAR_B") {
       if (FROSTY2_STATE == 0) {
-      return SEAL_DUMMY;
+        return SEAL_DUMMY;
       }
       else if (FROSTY2_STATE == 1) {
-      return PB_SEAL1;
+        return PB_SEAL1;
       }
       else if (FROSTY2_STATE == 2) {
-      return SEAL_DUMMY;
+        return SEAL_DUMMY;
       }
       else if (FROSTY2_STATE == 3) {
-      return PB_SEAL2;
+        return PB_SEAL2;
       }
       else if (FROSTY2_STATE == 4) {
-      return SEAL_DUMMY;
+        return SEAL_DUMMY;
       }
     }
     else if (USER == "COBRA_A") {

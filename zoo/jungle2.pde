@@ -85,6 +85,9 @@ class Jungle2 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
+    else if (cursorOverAnimal() && (JUNGLE2_STATE == 1)) {
+      WIN.doGuess();
+    }
     else if (cursorOverAnimal()) { 
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
@@ -100,34 +103,39 @@ class Jungle2 extends Habitat {
       pickedUpTrash3 = true;
     }
   }
-  
-    //play correct audio
+
+  //play correct audio
   void playCurrentTalk() {
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
     updateStateNumbers();
   }
-  
+
   void updateStateNumbers() {
     if (USER == "GORILLA_A") {
       if (JUNGLE2_STATE == 1) {
         JUNGLE2_STATE ++;
         ASIA2_STATE ++; //Patty Panda
       } 
-     if (JUNGLE2_STATE == 3) {
-       JUNGLE2_STATE ++;
-       AFRICA3_STATE ++;
-       nav.clue4 = true; //fur is black
-     } 
+      if (JUNGLE2_STATE == 3) {
+        JUNGLE2_STATE ++;
+        AFRICA3_STATE ++;
+        nav.clue4 = true; //fur is black
+      }
     }
-    else if (USER == "GORILLA_B") {}
-    else if (USER == "COBRA_A") {}
-    else if (USER == "COBRA_B") {}
-    else if (USER == "POLAR_A") {}
-    else if (USER == "POLAR_B") {}
+    else if (USER == "GORILLA_B") {
+    }
+    else if (USER == "COBRA_A") {
+    }
+    else if (USER == "COBRA_B") {
+    }
+    else if (USER == "POLAR_A") {
+    }
+    else if (USER == "POLAR_B") {
+    }
   }
-  
+
 
   //determines if cursor over any of the trash
   boolean cursorOverTrash() {

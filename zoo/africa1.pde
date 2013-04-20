@@ -62,19 +62,26 @@ class Africa1 extends Habitat {
     updateStateNumbers();
   }
   
+  //update state numbers after animal has spoken
   void updateStateNumbers() {
     if (USER == "GORILLA_A") {
       if (AFRICA1_STATE == 0) {
         AFRICA1_STATE ++;
         JUNGLE1_STATE ++;  
-        println("jungle state" + JUNGLE1_STATE);
       }    
       else if (AFRICA1_STATE == 2) {
         AFRICA1_STATE ++ ;
         AFRICA3_STATE ++ ; //Leonard Lion
         nav.clue3 = true; //two legs
     }
-    else if (USER == "GORILLA_B") {}
+    else if (USER == "GORILLA_B") {
+      if (AFRICA1_STATE == 1) {
+        AFRICA1_STATE ++;
+        FROSTY1_STATE ++;
+        nav.clue1 = true; //eat plants
+      }
+    
+    }
     else if (USER == "COBRA_A") {}
     else if (USER == "COBRA_B") {}
     else if (USER == "POLAR_A") {}

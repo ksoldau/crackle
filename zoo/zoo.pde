@@ -13,10 +13,15 @@ PImage SLEEP_TEST;
 PImage TRASH_TEST;
 
 //clues
-PImage CLUE1;
-PImage CLUE2;
-PImage CLUE3;
-PImage CLUE4;
+PImage TEST_CLUE1;
+PImage TEST_CLUE2;
+PImage TEST_CLUE3;
+PImage TEST_CLUE4;
+
+PImage GA_CLUE1;
+PImage GA_CLUE2;
+PImage GA_CLUE3;
+PImage GA_CLUE4;
 
 //guess scene
 PImage GUESS_SCENE_BG;
@@ -320,12 +325,11 @@ void setup() {
   GIFS_SEAL_TALKING = Gif.getPImages(this, "data/sam_talk_288.gif");
   GIFS_ELEPHANT_TALKING = Gif.getPImages(this, "data/eliza_talk_288.gif");
   GIFS_SLOTH_TALKING = Gif.getPImages(this, "data/stanley_talk_288.gif");
-  
+
   GUESS_SCENE_BG = loadImage("data/guesswho.png");
 
 
   initializeAudio();
-  
 }
 
 //initialize the audio
@@ -513,10 +517,18 @@ void loadAnimalClasses() {
 }
 
 void loadClueImages() {
-  CLUE1 = loadImage("data/fur.png");
-  CLUE2 = loadImage("data/plants.png");
-  CLUE3 = loadImage("data/twolegs.png");
-  CLUE4 = loadImage("data/blackfur.png");
+  if (USER == "GORILLA_A") {
+    GA_CLUE1 = loadImage("data/fur.png");
+    GA_CLUE2 = loadImage("data/plants.png");
+    GA_CLUE3 = loadImage("data/twolegs.png");
+    GA_CLUE4 = loadImage("data/blackfur.png");
+  }
+  if (USER == "GORILLA_B") {
+    TEST_CLUE1 = loadImage("data/test_clue1.ai");
+    TEST_CLUE2 = loadImage("data/test_clue2.ai");
+    TEST_CLUE3 = loadImage("data/test_clue3.ai");
+    TEST_CLUE4 = loadImage("data/test_clue4.ai");
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -640,6 +652,7 @@ void whenPlay() {
 
 
 //changes the cursor to way we want it when we want it
+//NOTE: *** does not currently show hand when on guess screen
 void drawCursor() {
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
@@ -744,7 +757,6 @@ void doAfrica1() {
   AFRICA1.display();
   arrows.display();
   nav.display();
-
 }
 void doAfrica2() {
   AFRICA2.display();
@@ -817,7 +829,7 @@ void mousePressed() {
   if (ON_MAP) {
     mousePressedOnMap();
   }
-  
+
   else if (ON_GUESS) {
     WIN.mousePressedOnGuess();
   }
@@ -991,5 +1003,4 @@ boolean cursor_over_jungle1() {
 boolean cursor_over_jungle2() {
   return cursor_over(373, 461, 95, 159);
 }
-
 

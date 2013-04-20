@@ -68,6 +68,14 @@ class Africa2 extends Habitat {
   }
   
   void updateStateNumbers() {
+    if (USER == "GORILLA_A") {} //Gerry Giraffe is asleep
+    else if (USER == "GORILLA_B") {
+      if (AFRICA2_STATE == 1) {
+        AFRICA1_STATE ++;
+        FROSTY2_STATE ++;
+        nav.clue3 = true; //climb trees
+      }
+    }
   }
   
   //gets the current line the animal will be/is speaking
