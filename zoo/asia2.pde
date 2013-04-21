@@ -6,7 +6,7 @@ class Asia2 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   int animalSleepingLeft = 200;
-  int animalSleepingLeft = 200;
+  int animalSleepingTop = 200;
 
 
   PImage background = loadImage("data/asia_2.png");
@@ -44,10 +44,15 @@ class Asia2 extends Habitat {
     image(animal_not_talking, animalLeft, animalTop);
   }
 
-  boolean cursorOverAnimal() { 
-    boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
-      && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
-    return ans;
+  boolean cursorOverAnimal() {   
+    if (isSleeping) {
+      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
+        && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+    }
+    else {
+      return ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
+        && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+    }
   }
 
   void mousePressedInHabitat() {

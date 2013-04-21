@@ -6,7 +6,7 @@ class Jungle2 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   int animalSleepingLeft = 200;
-  int animalSleepingLeft = 200;
+  int animalSleepingTop = 200;
 
 
   PImage background = loadImage("data/jungle_2.png");

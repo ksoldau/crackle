@@ -6,7 +6,7 @@ class Africa2 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   int animalSleepingLeft = 200;
-  int animalSleepingLeft = 200;
+  int animalSleepingTop = 200;
 
   PImage animal_not_talking = loadImage("data/gerry_giraffe.gif");
   PImage background = loadImage("data/africa_2.png");
@@ -45,9 +45,14 @@ class Africa2 extends Habitat {
 
   //determines if the mouse was pressed on an animal
   boolean cursorOverAnimal() {
-    boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
+    if (isSleeping) {
+      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
+      && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+    }
+    else { 
+    return ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
       && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
-    return ans;
+    }
   }
 
   void mousePressedInHabitat() {

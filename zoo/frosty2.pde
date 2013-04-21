@@ -6,7 +6,7 @@ class Frosty2 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   int animalSleepingLeft = 200;
-  int animalSleepingLeft = 200;
+  int animalSleepingTop = 200;
 
 
   PImage background = loadImage("data/frosty_2.png");

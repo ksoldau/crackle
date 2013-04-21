@@ -6,7 +6,7 @@ class Africa1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   int animalSleepingLeft = 200;
-  int animalSleepingLeft = 200;
+  int animalSleepingTop = 200;
 
   PImage animal_not_talking = loadImage("data/calvin_camel.gif");
   PImage background = loadImage("data/africa_1.png");
@@ -133,8 +133,14 @@ class Africa1 extends Habitat {
 
   //determines if the mouse over the Camel
   boolean cursorOverAnimal() {
+    if (isSleeping) {
+      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
+      && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+    }
+    else {
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
       && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
+    }
   }
 
   AudioSample currentTalk() {

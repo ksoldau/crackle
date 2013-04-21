@@ -6,7 +6,7 @@ class Asia1 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   int animalSleepingLeft = 200;
-  int animalSleepingLeft = 200;
+  int animalSleepingTop = 200;
 
 
   PImage background = loadImage("data/asia_1.png");
@@ -47,9 +47,14 @@ class Asia1 extends Habitat {
 
   //determines if the animal in the habitat was clicked on
   boolean cursorOverAnimal() {
-    boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
-      && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
-    return ans;
+    if (isSleeping) {
+      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
+        && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+    }
+    else {
+      return  ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
+        && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+    }
   }
 
   void mousePressedInHabitat() {
@@ -97,7 +102,8 @@ class Asia1 extends Habitat {
         nav.clue2 = true;
       }
     }
-    else if (USER == "POLAR_A") {} // Tina Tiger is asleep
+    else if (USER == "POLAR_A") {
+    } // Tina Tiger is asleep
     else if (USER == "POLAR_B") {
       if (ASIA1_STATE == 0) {
         ASIA1_STATE ++;
@@ -154,7 +160,6 @@ class Asia1 extends Habitat {
     return CAMEL_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
-
 
 
 
