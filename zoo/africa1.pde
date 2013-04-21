@@ -57,22 +57,24 @@ class Africa1 extends Habitat {
   //play correct audio
   void playCurrentTalk() {
     if (!this.isSleeping) {
-      currentTalk().trigger(); 
+      currentTalk().trigger();
     }
+    println("GOT TO CURrent talk");
     updateStateNumbers();
   }
-  
+
   //update state numbers after animal has spoken
   void updateStateNumbers() {
     if (USER == "GORILLA_A") {
       if (AFRICA1_STATE == 0) {
         AFRICA1_STATE ++;
-        JUNGLE1_STATE ++;  
+        JUNGLE1_STATE ++;
       }    
       else if (AFRICA1_STATE == 2) {
         AFRICA1_STATE ++ ;
         AFRICA3_STATE ++ ; //Leonard Lion
         nav.clue3 = true; //two legs
+      }
     }
     else if (USER == "GORILLA_B") {
       if (AFRICA1_STATE == 1) {
@@ -80,14 +82,17 @@ class Africa1 extends Habitat {
         FROSTY1_STATE ++;
         nav.clue1 = true; //eat plants
       }
-    
     }
-    else if (USER == "COBRA_A") {}
-    else if (USER == "COBRA_B") {}
-    else if (USER == "POLAR_A") {}
-    else if (USER == "POLAR_B") {}
+    else if (USER == "COBRA_A") {
+    }
+    else if (USER == "COBRA_B") {
+    }
+    else if (USER == "POLAR_A") {
+    }
+    else if (USER == "POLAR_B") {
+    }
   }
-  }
+
 
   //determines if the mouse over the Camel
   boolean cursorOverAnimal() {
@@ -96,7 +101,7 @@ class Africa1 extends Habitat {
   }
 
   AudioSample currentTalk() {
-     if (USER == "GORILLA_A") {
+    if (USER == "GORILLA_A") {
       if (AFRICA1_STATE == 0) { 
         return GA_CAMEL1;
       }
@@ -110,7 +115,7 @@ class Africa1 extends Habitat {
         return CAMEL_DUMMY;
       }
     }
-   else if (USER == "GORILLA_B") {
+    else if (USER == "GORILLA_B") {
       if (AFRICA1_STATE == 0) {
         return CAMEL_DUMMY;
       }
@@ -149,7 +154,7 @@ class Africa1 extends Habitat {
     else if (USER == "COBRA_B") {
       //Calvin Camel is asleep
     } 
-      return CAMEL_DUMMY;
+    return CAMEL_DUMMY;
     //this is just so it doesn't yell at us for now, delete it later!
   }
 }

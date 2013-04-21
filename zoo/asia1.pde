@@ -72,6 +72,7 @@ class Asia1 extends Habitat {
     if (USER == "GORILLA_A") {} //Tina Tiger is asleep
     else if (USER == "GORILLA_B") {
       if (ASIA1_STATE == 1) {
+        println("GOT TO ASIA ONE STATE HERE YO");
         ASIA1_STATE ++;
         JUNGLE2_STATE ++;
         nav.clue4 = true; //black fur

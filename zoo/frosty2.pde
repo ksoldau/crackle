@@ -73,13 +73,9 @@ class Frosty2 extends Habitat {
       }
     }
     if (USER == "GORILLA_B") {
-      if (FROSTY2_STATE == 1) {
+      if (FROSTY2_STATE == 0) {
         FROSTY2_STATE ++;
         AFRICA1_STATE ++;
-      }
-      if (FROSTY2_STATE == 3) {
-        FROSTY2_STATE ++;
-        ASIA2_STATE ++;
       }
     }
   }
@@ -99,12 +95,9 @@ class Frosty2 extends Habitat {
     }
     else if (USER == "GORILLA_B") {
       if (FROSTY2_STATE == 0) {
-        return SEAL_DUMMY;
-      }
-      else if (FROSTY2_STATE == 1) {
         return GB_SEAL1;
       }
-      else if (FROSTY2_STATE == 2) {
+      else if (FROSTY2_STATE == 1) {
         return SEAL_DUMMY;
       }
     }

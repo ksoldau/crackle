@@ -209,7 +209,7 @@ boolean ON_MAP = false;
 boolean ON_GUESS = false;
 
 //current habitat number
-int HABITAT_NUMBER = 0;// for now, ultimately change this
+int HABITAT_NUMBER;// for now, ultimately change this
 
 //last habitat number
 int LAST_HABITAT_NUMBER = 0;
@@ -267,7 +267,11 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "GORILLA_A";
+  USER = "GORILLA_B";
+
+  //chooses correct habitat number to start on based on user animal
+  setFirstHabitatNumber();
+
   //loading all animal classes
   //depends on which animal/iteration the user is 
   loadAnimalClasses();
@@ -330,6 +334,15 @@ void setup() {
 
 
   initializeAudio();
+}
+
+void setFirstHabitatNumber() {
+  if (USER == "GORILLA_A") {
+    HABITAT_NUMBER = 0;
+  }
+  else if (USER == "GORILLA_B") {
+    HABITAT_NUMBER = 6;
+  }
 }
 
 //initialize the audio
@@ -524,10 +537,10 @@ void loadClueImages() {
     GA_CLUE4 = loadImage("data/blackfur.png");
   }
   if (USER == "GORILLA_B") {
-    TEST_CLUE1 = loadImage("data/test_clue1.ai");
-    TEST_CLUE2 = loadImage("data/test_clue2.ai");
-    TEST_CLUE3 = loadImage("data/test_clue3.ai");
-    TEST_CLUE4 = loadImage("data/test_clue4.ai");
+    TEST_CLUE1 = loadImage("data/test_clue1.png");
+    TEST_CLUE2 = loadImage("data/test_clue2.png");
+    TEST_CLUE3 = loadImage("data/test_clue3.png");
+    TEST_CLUE4 = loadImage("data/test_clue4.png");
   }
 }
 
@@ -561,8 +574,10 @@ void draw() {
   }
 
   drawCursor();
-  printMem(); //DEBUG: To monitor memory usage
-  whenPlay();
+  //printMem(); //DEBUG: To monitor memory usage
+  if (!WELCOME_SCREEN && !ON_INTRO) {
+    whenPlay();
+  }
 }
 
 
@@ -612,6 +627,7 @@ void pauseAll() {
   FROSTY_BG.pause();
 }
 
+//play the correct background music
 void whenPlay() {
   /*if (HABITAT_NUMBER != LAST_HABITAT_NUMBER) {
    playBg();

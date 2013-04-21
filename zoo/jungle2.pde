@@ -85,7 +85,7 @@ class Jungle2 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
-    else if (cursorOverAnimal() && (JUNGLE2_STATE == 1)) {
+    else if (cursorOverAnimal() && (JUNGLE2_STATE == 2)) {
       WIN.doGuess();
     }
     else if (cursorOverAnimal()) { 
@@ -106,6 +106,7 @@ class Jungle2 extends Habitat {
 
   //play correct audio
   void playCurrentTalk() {
+    println(JUNGLE2_STATE);
     if (!this.isSleeping) {
       currentTalk().trigger();
     }
@@ -113,6 +114,8 @@ class Jungle2 extends Habitat {
   }
 
   void updateStateNumbers() {
+    println("got to update statenumbers");
+    println(USER == "GORILLA_B");
     if (USER == "GORILLA_A") {
       if (JUNGLE2_STATE == 1) {
         JUNGLE2_STATE ++;
@@ -125,6 +128,10 @@ class Jungle2 extends Habitat {
       }
     }
     else if (USER == "GORILLA_B") {
+      println("got to gorilla_b");
+      if (JUNGLE2_STATE == 1) {
+        JUNGLE2_STATE ++;
+      }
     }
     else if (USER == "COBRA_A") {
     }

@@ -49,26 +49,26 @@ class Nav {
       image(GA_CLUE2, clue2xi, clueyi);
     }
     else if (USER == "GORILLA_B") {
-      image(TEST_CLUE2, clue1xi, clueyi);
+      image(TEST_CLUE2, clue2xi, clueyi);
     }
   }
 
 
   void displayClue3() {
     if (USER == "GORILLA_A") {
-      image(GA_CLUE3, clue2xi, clueyi);
+      image(GA_CLUE3, clue3xi, clueyi);
     }
     else if (USER == "GORILLA_B") {
-      image(TEST_CLUE3, clue1xi, clueyi);
+      image(TEST_CLUE3, clue3xi, clueyi);
     }
   }
 
   void displayClue4() {
     if (USER == "GORILLA_A") {
-      image(GA_CLUE4, clue2xi, clueyi);
+      image(GA_CLUE4, clue4xi, clueyi);
     }
     else if (USER == "GORILLA_B") {
-      image(TEST_CLUE4, clue1xi, clueyi);
+      image(TEST_CLUE4, clue4xi, clueyi);
     }
   }
 }

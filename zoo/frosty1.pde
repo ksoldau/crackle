@@ -56,24 +56,40 @@ class Frosty1 extends Habitat {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
       playCurrentTalk();
+          println("got here homeslice3");
+
     }
   }  
 
   //play correct audio
   void playCurrentTalk() {
     if (!this.isSleeping) {
+          println("got here homeslice2");
+
       currentTalk().trigger();
     }
+    println("got here homeslice1");
+
     updateStateNumbers();
   }
-  
+
   //updates state numbers after an animal has spoken
   void updateStateNumbers() {
-    if (USER == "GORILLA_B") {
+    if (USER == "GORILLA_A"); //Peter Penguin is asleep
+    else if (USER == "GORILLA_B") {
+              println("got here dude");
+
       if (FROSTY1_STATE == 1) {
+                      println("got here dudette");
+
         FROSTY1_STATE ++;
         AFRICA2_STATE ++;
-        nav.clue2 = true; //muscles
+      }
+      else if (FROSTY1_STATE == 3) {
+        println("got here homeslice");
+        FROSTY1_STATE ++;
+        ASIA1_STATE ++;
+        nav.clue3 = true; //muscles
       }
     }
   }
@@ -90,9 +106,12 @@ class Frosty1 extends Habitat {
         return GB_PENGUIN1;
       }
       else if (FROSTY1_STATE == 2) {
-        return GB_PENGUIN2;
+        return PENGUIN_DUMMY;
       }
       else if (FROSTY1_STATE == 3) {
+        return GB_PENGUIN2;
+      }
+      else if (FROSTY1_STATE == 4) {
         return PENGUIN_DUMMY;
       }
     }

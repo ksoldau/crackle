@@ -71,9 +71,9 @@ class Africa2 extends Habitat {
     if (USER == "GORILLA_A") {} //Gerry Giraffe is asleep
     else if (USER == "GORILLA_B") {
       if (AFRICA2_STATE == 1) {
-        AFRICA1_STATE ++;
-        FROSTY2_STATE ++;
-        nav.clue3 = true; //climb trees
+        AFRICA2_STATE ++;
+        FROSTY1_STATE ++;
+        nav.clue2 = true; //climb trees
       }
     }
   }
