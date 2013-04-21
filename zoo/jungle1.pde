@@ -73,7 +73,13 @@ class Jungle1 extends Habitat {
     }
     
     else if (USER == "GORILLA_B") {}
-    else if (USER == "COBRA_A") {}
+    else if (USER == "COBRA_A") {
+    if (JUNGLE1_STATE == 1) {
+      JUNGLE1_STATE ++;
+      ASIA1_STATE ++;
+      nav.clue4 = true;
+    }
+    }
     else if (USER == "COBRA_B") {}
     else if (USER == "POLAR_A") {}
     else if (USER == "POLAR_B") {}

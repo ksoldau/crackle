@@ -56,20 +56,15 @@ class Frosty1 extends Habitat {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
       playCurrentTalk();
-          println("got here homeslice3");
-
+      println("got here homeslice3");
     }
   }  
 
   //play correct audio
   void playCurrentTalk() {
     if (!this.isSleeping) {
-          println("got here homeslice2");
-
       currentTalk().trigger();
     }
-    println("got here homeslice1");
-
     updateStateNumbers();
   }
 
@@ -77,10 +72,10 @@ class Frosty1 extends Habitat {
   void updateStateNumbers() {
     if (USER == "GORILLA_A"); //Peter Penguin is asleep
     else if (USER == "GORILLA_B") {
-              println("got here dude");
+      println("got here dude");
 
       if (FROSTY1_STATE == 1) {
-                      println("got here dudette");
+        println("got here dudette");
 
         FROSTY1_STATE ++;
         AFRICA2_STATE ++;
@@ -92,69 +87,75 @@ class Frosty1 extends Habitat {
         nav.clue3 = true; //muscles
       }
     }
-  }
-
-  //gets the current line the animal will be/is speaking
-  AudioSample currentTalk() {
-    if (USER == "GORILLA_A") {
-    } //Peter Penguinn is asleep
-    else if (USER == "GORILLA_B") {
-      if (FROSTY1_STATE == 0) {
-        return PENGUIN_DUMMY;
-      }
-      else if (FROSTY1_STATE == 1) {
-        return GB_PENGUIN1;
-      }
-      else if (FROSTY1_STATE == 2) {
-        return PENGUIN_DUMMY;
-      }
-      else if (FROSTY1_STATE == 3) {
-        return GB_PENGUIN2;
-      }
-      else if (FROSTY1_STATE == 4) {
-        return PENGUIN_DUMMY;
-      }
-    }
-    else if (USER == "POLAR_A") {
-      if (FROSTY1_STATE == 0) {
-        return PENGUIN_DUMMY;
-      }
-      else if (FROSTY1_STATE == 1) {
-        return PA_PENGUIN1;
-      }
-      else if (FROSTY1_STATE == 2) {
-        return PENGUIN_DUMMY;
-      }
-      else if (FROSTY1_STATE == 3) {
-        return PA_PENGUIN2;
-      }
-      else if (FROSTY1_STATE == 4) {
-        return PENGUIN_DUMMY;
-      }
-    }
-    else if (USER == "POLAR_B") {
-      if (FROSTY1_STATE == 0) {
-        return PENGUIN_DUMMY;
-      }
-      else if (FROSTY1_STATE == 1) {
-        return PB_PENGUIN1;
-      }
-      else if (FROSTY1_STATE == 2) {
-        return PENGUIN_DUMMY;
-      }
-    }
     else if (USER == "COBRA_A") {
       if (FROSTY1_STATE == 0) {
-        return CA_PENGUIN1;
-      }
-      else if (FROSTY2_STATE == 1) {
-        return PENGUIN_DUMMY;
+        FROSTY1_STATE ++;
+        AFRICA1_STATE ++;
       }
     }
-    else if (USER == "COBRA_B") {
-      //Peter Penguin is asleep
-    }
-    return PENGUIN_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
-}
+
+    //gets the current line the animal will be/is speaking
+    AudioSample currentTalk() {
+      if (USER == "GORILLA_A") {
+      } //Peter Penguinn is asleep
+      else if (USER == "GORILLA_B") {
+        if (FROSTY1_STATE == 0) {
+          return PENGUIN_DUMMY;
+        }
+        else if (FROSTY1_STATE == 1) {
+          return GB_PENGUIN1;
+        }
+        else if (FROSTY1_STATE == 2) {
+          return PENGUIN_DUMMY;
+        }
+        else if (FROSTY1_STATE == 3) {
+          return GB_PENGUIN2;
+        }
+        else if (FROSTY1_STATE == 4) {
+          return PENGUIN_DUMMY;
+        }
+      }
+      else if (USER == "POLAR_A") {
+        if (FROSTY1_STATE == 0) {
+          return PENGUIN_DUMMY;
+        }
+        else if (FROSTY1_STATE == 1) {
+          return PA_PENGUIN1;
+        }
+        else if (FROSTY1_STATE == 2) {
+          return PENGUIN_DUMMY;
+        }
+        else if (FROSTY1_STATE == 3) {
+          return PA_PENGUIN2;
+        }
+        else if (FROSTY1_STATE == 4) {
+          return PENGUIN_DUMMY;
+        }
+      }
+      else if (USER == "POLAR_B") {
+        if (FROSTY1_STATE == 0) {
+          return PENGUIN_DUMMY;
+        }
+        else if (FROSTY1_STATE == 1) {
+          return PB_PENGUIN1;
+        }
+        else if (FROSTY1_STATE == 2) {
+          return PENGUIN_DUMMY;
+        }
+      }
+      else if (USER == "COBRA_A") {
+        if (FROSTY1_STATE == 0) {
+          return CA_PENGUIN1;
+        }
+        else if (FROSTY2_STATE == 1) {
+          return PENGUIN_DUMMY;
+        }
+      }
+      else if (USER == "COBRA_B") {
+        //Peter Penguin is asleep
+      }
+      return PENGUIN_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
+    }
+  }
 

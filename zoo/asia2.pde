@@ -77,9 +77,18 @@ class Asia2 extends Habitat {
         nav.clue2 = true; //love to eat plants
       }
     }
-    else if (USER == "GORILLA_B") {
+    else if (USER == "GORILLA_B") { //Patty Panda is asleep
     }
     else if (USER == "COBRA_A") {
+      if (ASIA2_STATE == 1) {
+        ASIA2_STATE ++;
+        AFRICA3_STATE ++;
+      }
+      else if (ASIA2_STATE == 3) {
+        ASIA2_STATE ++;
+        JUNGLE1_STATE ++;
+        nav.clue3 = true;
+      }
     }
     else if (USER == "COBRA_B") {
     }
@@ -143,9 +152,12 @@ class Asia2 extends Habitat {
         return CA_PANDA1;
       }
       else if (ASIA2_STATE == 2) {
-        return CA_PANDA2;
+        return PANDA_DUMMY;
       }
       else if (ASIA2_STATE == 3) {
+        return CA_PANDA2;
+      }
+      else if (ASIA2_STATE == 4) {
         return PANDA_DUMMY;
       }
     }

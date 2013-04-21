@@ -52,6 +52,9 @@ class Asia1 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
+    else if (cursorOverAnimal() && (ASIA1_STATE == 2)) {
+      WIN.doGuess();
+    }
     else if (cursorOverAnimal()) {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
@@ -69,7 +72,8 @@ class Asia1 extends Habitat {
   }
 
   void updateStateNumbers() {
-    if (USER == "GORILLA_A") {} //Tina Tiger is asleep
+    if (USER == "GORILLA_A") {
+    } //Tina Tiger is asleep
     else if (USER == "GORILLA_B") {
       if (ASIA1_STATE == 1) {
         println("GOT TO ASIA ONE STATE HERE YO");
@@ -78,57 +82,61 @@ class Asia1 extends Habitat {
         nav.clue4 = true; //black fur
       }
     }
-}
+    else if (USER == "COBRA_A") {
+      if (ASIA1_STATE == 1) {
+        ASIA1_STATE ++;
+      }
+    }
+  }
 
-//gets the current line the animal will be/is speaking
-AudioSample currentTalk() {
-  if (USER == "GORILLA_A") {
-  } // Tina Tiger is asleep
-  else if (USER == "GORILLA_B") {
-    if (ASIA1_STATE == 0) {
-      return TIGER_DUMMY;
+  //gets the current line the animal will be/is speaking
+  AudioSample currentTalk() {
+    if (USER == "GORILLA_A") {
+    } // Tina Tiger is asleep
+    else if (USER == "GORILLA_B") {
+      if (ASIA1_STATE == 0) {
+        return TIGER_DUMMY;
+      }
+      else if (ASIA1_STATE == 1) {
+        return GB_TIGER1;
+      }
+      else if (ASIA1_STATE == 2) {
+        return TIGER_DUMMY;
+      }
     }
-    else if (ASIA1_STATE == 1) {
-      return GB_TIGER1;
+    else if (USER == "POLAR_A") {
+      //Tina Tiger is asleep
     }
-    else if (ASIA1_STATE == 2) {
-      return TIGER_DUMMY;
+    else if (USER == "POLAR_B") {
+      if (ASIA1_STATE == 0) {
+        return PB_TIGER1;
+      }
+      else if (ASIA1_STATE == 1) {
+        return TIGER_DUMMY;
+      }
     }
+    else if (USER == "COBRA_A") {
+      if (ASIA1_STATE == 0) {
+        return TIGER_DUMMY;
+      }
+      else if (ASIA1_STATE ==1) {
+        return CA_TIGER1;
+      }
+    }
+    else if (USER == "COBRA_B") {
+      if (ASIA1_STATE == 0) {
+        return TIGER_DUMMY;
+      }
+      else if (ASIA1_STATE == 1) {
+        return CB_TIGER1;
+      }
+      else if (ASIA1_STATE == 2) {
+        return TIGER_DUMMY;
+      }
+    }
+    return CAMEL_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
-  else if (USER == "POLAR_A") {
-    //Tina Tiger is asleep
-  }
-  else if (USER == "POLAR_B") {
-    if (ASIA1_STATE == 0) {
-      return PB_TIGER1;
-    }
-    else if (ASIA1_STATE == 1) {
-      return TIGER_DUMMY;
-    }
-  }
-  else if (USER == "COBRA_A") {
-    if (ASIA1_STATE == 0) {
-      return TIGER_DUMMY;
-    }
-    else if (ASIA1_STATE ==1) {
-      return CA_TIGER1;
-    }
-  }
-  else if (USER == "COBRA_B") {
-    if (ASIA1_STATE == 0) {
-      return TIGER_DUMMY;
-    }
-    else if (ASIA1_STATE == 1) {
-      return CB_TIGER1;
-    }
-    else if (ASIA1_STATE == 2) {
-      return TIGER_DUMMY;
-    }
-  }
-  return CAMEL_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
 }
-}
-
 
 
 

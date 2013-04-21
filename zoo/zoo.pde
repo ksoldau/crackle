@@ -209,7 +209,7 @@ boolean ON_MAP = false;
 boolean ON_GUESS = false;
 
 //current habitat number
-int HABITAT_NUMBER;// for now, ultimately change this
+int HABITAT_NUMBER;
 
 //last habitat number
 int LAST_HABITAT_NUMBER = 0;
@@ -267,7 +267,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "GORILLA_B";
+  USER = "COBRA_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -342,6 +342,9 @@ void setFirstHabitatNumber() {
   }
   else if (USER == "GORILLA_B") {
     HABITAT_NUMBER = 6;
+  }
+  else if (USER == "COBRA_A") {
+    HABITAT_NUMBER = 5;
   }
 }
 
@@ -536,7 +539,7 @@ void loadClueImages() {
     GA_CLUE3 = loadImage("data/twolegs.png");
     GA_CLUE4 = loadImage("data/blackfur.png");
   }
-  if (USER == "GORILLA_B") {
+ else {
     TEST_CLUE1 = loadImage("data/test_clue1.png");
     TEST_CLUE2 = loadImage("data/test_clue2.png");
     TEST_CLUE3 = loadImage("data/test_clue3.png");
@@ -558,7 +561,6 @@ void loadClueImages() {
 // called automatically
 void draw() {
   int current_time = millis();
-
   //to stop the animal from visibly speaking if audio over
   if (ANIMAL_TALKING && 
     (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].currentTalk().length())) {

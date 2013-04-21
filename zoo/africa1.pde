@@ -84,6 +84,11 @@ class Africa1 extends Habitat {
       }
     }
     else if (USER == "COBRA_A") {
+      if (AFRICA1_STATE == 1) {
+        AFRICA1_STATE ++;
+        ASIA2_STATE ++;
+        nav.clue1 = true; //sharp teeth
+      }
     }
     else if (USER == "COBRA_B") {
     }

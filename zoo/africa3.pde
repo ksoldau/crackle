@@ -82,6 +82,15 @@ class Africa3 extends Habitat {
         AFRICA3_STATE ++; //to get to final screen kind of
       }
     }
+    else if (USER == "GORILLA_B") {}//Leonard Lion is asleep
+    else if (USER == "COBRA_A") {
+      if (AFRICA3_STATE == 1) {
+        AFRICA3_STATE ++;
+        ASIA2_STATE ++;
+        nav.clue2 = true;
+      }
+    }
+      
   }
 
   //gets the current line the animal will be/is speaking
@@ -121,9 +130,6 @@ class Africa3 extends Habitat {
       else if (AFRICA3_STATE == 2) {
         return LION_DUMMY;
       }
-      else if (USER == "COBRA_B") {
-      }
-      return CAMEL_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
     }
     else if (USER == "COBRA_B") {
       if (AFRICA3_STATE == 0) {
