@@ -20,6 +20,9 @@ public abstract class Habitat {
   //decides which actions to take if mouse was pressed in this habitat
   public abstract void mousePressedInHabitat();
   
+  //decides what to do if moused over in habitat
+  //abstract void mouseOverInHabitat();
+  
   //determines what the current talk is 
   abstract AudioSample currentTalk(); 
   

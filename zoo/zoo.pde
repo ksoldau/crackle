@@ -217,6 +217,9 @@ int LAST_HABITAT_NUMBER = 0;
 //is the current animal talking
 boolean ANIMAL_TALKING = false;
 
+//did user make animal snore
+boolean Z = false;
+
 //------------------------------------------
 //setting up who the user is
 String USER; // which animal the user is can be 
@@ -235,6 +238,10 @@ PImage[] GIFS_PENGUIN_TALKING;
 PImage[] GIFS_SEAL_TALKING;
 PImage[] GIFS_ELEPHANT_TALKING;
 PImage[] GIFS_SLOTH_TALKING;
+
+//Gifs for effects
+PImage[] GIFS_ZS;
+int NUMZFRAMES = 13;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -329,6 +336,9 @@ void setup() {
   GIFS_SEAL_TALKING = Gif.getPImages(this, "data/sam_talk_288.gif");
   GIFS_ELEPHANT_TALKING = Gif.getPImages(this, "data/eliza_talk_288.gif");
   GIFS_SLOTH_TALKING = Gif.getPImages(this, "data/stanley_talk_288.gif");
+
+  //initializing lists for GIfs of effects
+  GIFS_ZS = Gif.getPImages(this, "data/z.gif");
 
   GUESS_SCENE_BG = loadImage("data/guesswho.png");
 
@@ -583,7 +593,12 @@ void draw() {
   }
   else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
     doScene(HABITAT_NUMBER);
-    LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED, IF UNCOMMENT MEM PROBZ
+    LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED
+    println(Z);
+    if (Z) {
+      AFRICA1.displayZs();
+      println(Z);
+    }
   }
 
   drawCursor();
@@ -867,8 +882,6 @@ void mousePressed() {
   else if (ANIMAL_TALKING) {
   } //stops user from clicking on things while animal talking
 
-
-
   //if over map 
   else if (cursorOverMapButton()) {
     doMap();
@@ -965,6 +978,15 @@ int updateSceneNumber(String query) {
     HABITAT_NUMBER++;
   }
   return HABITAT_NUMBER;
+}
+
+
+//--------------------------------------------
+void mouseMoved() {
+  if (!WELCOME_SCREEN && !ON_MAP && !ON_GUESS && !ON_INTRO) {
+    //LIST_OF_HABITATS[HABITAT_NUMBER].mouseOverInHabitat();
+    AFRICA1.mouseOverInHabitat();
+  }
 }
 
 
