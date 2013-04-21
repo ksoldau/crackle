@@ -88,7 +88,7 @@ class Jungle2 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
-    else if (cursorOverAnimal() && (JUNGLE2_STATE == 2) && USER == "COBRA_A") {
+    else if (cursorOverAnimal() && (JUNGLE2_STATE == 2) && USER == "GORILLA_B") {
       WIN.doGuess();
     }
     else if (cursorOverAnimal()) { 

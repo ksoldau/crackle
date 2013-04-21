@@ -52,7 +52,7 @@ class Asia1 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
-    else if (cursorOverAnimal() && (ASIA1_STATE == 2)) {
+    else if (cursorOverAnimal() && (ASIA1_STATE == 2) && USER == "COBRA_A") {
       WIN.doGuess();
     }
     else if (cursorOverAnimal()) {

@@ -53,7 +53,7 @@ class Africa3 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
-    else if (cursorOverAnimal() && (AFRICA3_STATE == 4)) {
+    else if (cursorOverAnimal() && (AFRICA3_STATE == 4) && USER == "GORILLA_A") {
       WIN.doGuess();
     }
     else if (cursorOverAnimal()) {
