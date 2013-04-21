@@ -87,7 +87,13 @@ class Jungle1 extends Habitat {
       AFRICA1_STATE ++;
     }
     }
-    else if (USER == "POLAR_B") {}
+    else if (USER == "POLAR_B") {
+    if (JUNGLE1_STATE == 1) {
+      JUNGLE1_STATE ++;
+      FROSTY2_STATE ++;
+      nav.clue2 = true; //fur 
+    }
+    }
   }
   
   //determines if the mouse over the Camel

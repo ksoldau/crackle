@@ -94,6 +94,13 @@ class Asia1 extends Habitat {
         nav.clue2 = true;
       }
     }
+    else if (USER == "POLAR_A") {} // Tina Tiger is asleep
+    else if (USER == "POLAR_B") {
+      if (ASIA1_STATE == 0) {
+        ASIA1_STATE ++;
+        AFRICA2_STATE ++;
+      }
+    }
   }
 
   //gets the current line the animal will be/is speaking

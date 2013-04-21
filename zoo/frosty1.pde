@@ -104,6 +104,13 @@ class Frosty1 extends Habitat {
         nav.clue2 = true;
       }
     }
+    else if (USER == "POLAR_B") {
+      if (FROSTY1_STATE == 1) {
+        FROSTY1_STATE++;
+        FROSTY2_STATE ++;
+        nav.clue3 = true;
+      }
+    }
   }
 
     //gets the current line the animal will be/is speaking

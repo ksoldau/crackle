@@ -98,6 +98,13 @@ class Africa2 extends Habitat {
         AFRICA2_STATE ++;
       }
     }
+    else if (USER == "POLAR_B") {
+      if (AFRICA2_STATE == 1) {
+        AFRICA2_STATE ++;
+        JUNGLE1_STATE ++;
+        nav.clue1 = true; //four paws
+      }
+    }
   }
 
   //gets the current line the animal will be/is speaking

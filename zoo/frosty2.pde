@@ -76,14 +76,27 @@ class Frosty2 extends Habitat {
         AFRICA1_STATE ++;
       }
     }
-    if (USER == "GORILLA_B") {
+    else if (USER == "GORILLA_B") {
       if (FROSTY2_STATE == 0) {
         FROSTY2_STATE ++;
         AFRICA1_STATE ++;
       }
     }
-    if (USER == "COBRA_B") {
+    else if (USER == "COBRA_A") {} //Sam Seal is asleep
+    else if (USER == "COBRA_B") {
       FROSTY2_STATE ++; //the last person to talk to here
+    }
+    else if (USER == "POLAR_A") {}//Sam Seal is asleep
+    else if (USER == "POLAR_B") {
+    if (FROSTY2_STATE == 1) {
+      FROSTY2_STATE ++;
+      FROSTY1_STATE ++;
+    }
+    if (FROSTY2_STATE == 3) {
+      FROSTY2_STATE ++;
+      ASIA2_STATE ++;
+      nav.clue4 = true;
+    }
     }
   }
 

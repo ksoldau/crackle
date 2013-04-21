@@ -50,6 +50,9 @@ class Asia2 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
+    else if (cursorOverAnimal() && (ASIA2_STATE == 2) && USER == "POLAR_B") {
+      WIN.doGuess();
+    }
     else if (cursorOverAnimal()) {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
@@ -113,6 +116,9 @@ class Asia2 extends Habitat {
       }
     }
     else if (USER == "POLAR_B") {
+      if (ASIA2_STATE == 1) {
+        ASIA2_STATE ++; //last person
+      }
     }
   }
 

@@ -267,7 +267,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "POLAR_A";
+  USER = "POLAR_B";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -353,6 +353,9 @@ void setFirstHabitatNumber() {
   }
   else if (USER == "POLAR_A") {
     HABITAT_NUMBER = 7;
+  }
+  else if (USER == "POLAR_B") {
+    HABITAT_NUMBER = 3;
   }
 }
 
