@@ -37,7 +37,10 @@ class Jungle2 extends Habitat {
   //displays this habitat's background
   public void display() {
     image(this.background, 0, 0);
-    if (!isSleeping) {
+    if (!isSleeping && USER == "COBRA_B") {
+      image(TRASH_TEST, trash1_x, trash1_y);
+    }
+    else if (!isSleeping) {
       displayTrash();
     }
   }
@@ -85,13 +88,17 @@ class Jungle2 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
-    else if (cursorOverAnimal() && (JUNGLE2_STATE == 2)) {
+    else if (cursorOverAnimal() && (JUNGLE2_STATE == 2) && USER == "COBRA_A") {
       WIN.doGuess();
     }
     else if (cursorOverAnimal()) { 
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
       playCurrentTalk();
+    }
+    else if (cursorOverTrash1() && USER == "COBRA_B") {
+      pickedUpTrash1 = true;
+      JUNGLE2_STATE ++; // so Stanley Sloth will say next line
     }
     else if (cursorOverTrash1()) {
       pickedUpTrash1 = true;
@@ -136,6 +143,13 @@ class Jungle2 extends Habitat {
     else if (USER == "COBRA_A") {
     }
     else if (USER == "COBRA_B") {
+      if (JUNGLE2_STATE == 1) { //stay same until pick up rock
+      }
+      else if (JUNGLE2_STATE == 2) {
+        JUNGLE2_STATE ++;
+        ASIA2_STATE ++;
+        nav.clue3 = true;
+      }
     }
     else if (USER == "POLAR_A") {
     }

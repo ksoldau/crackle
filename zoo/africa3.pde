@@ -90,6 +90,13 @@ class Africa3 extends Habitat {
         nav.clue2 = true;
       }
     }
+    else if (USER == "COBRA_B") {
+      if (AFRICA3_STATE == 1) {
+        AFRICA3_STATE++;
+        ASIA1_STATE ++;
+        nav.clue1 = true;
+      }
+    }
       
   }
 

@@ -76,6 +76,17 @@ class Africa2 extends Habitat {
         nav.clue2 = true; //climb trees
       }
     }
+    else if (USER == "COBRA_A") {} //Gerry Giraffe is asleep
+    else if (USER == "COBRA_B") {
+      if (AFRICA2_STATE == 0) {
+        AFRICA2_STATE ++;
+        AFRICA3_STATE ++;
+      }
+      if (AFRICA2_STATE == 2) {
+        AFRICA2_STATE ++;
+        ASIA2_STATE ++; //Patty Panda
+      }
+    }
   }
   
   //gets the current line the animal will be/is speaking

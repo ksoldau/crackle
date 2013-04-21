@@ -91,6 +91,15 @@ class Asia2 extends Habitat {
       }
     }
     else if (USER == "COBRA_B") {
+      if (ASIA2_STATE == 1) {
+        ASIA2_STATE ++;
+        AFRICA2_STATE ++;
+      }
+      if (ASIA2_STATE == 3) {
+        ASIA2_STATE ++;
+        FROSTY2_STATE ++;
+        nav.clue4 = true; //eats mice
+      }
     }
     else if (USER == "POLAR_A") {
     }

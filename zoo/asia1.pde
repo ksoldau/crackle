@@ -87,6 +87,13 @@ class Asia1 extends Habitat {
         ASIA1_STATE ++;
       }
     }
+    else if (USER == "COBRA_B") {
+      if (ASIA1_STATE == 1) {
+        ASIA1_STATE ++;
+        JUNGLE2_STATE ++;
+        nav.clue2 = true;
+      }
+    }
   }
 
   //gets the current line the animal will be/is speaking
