@@ -46,9 +46,14 @@ class Frosty2 extends Habitat {
   }
 
   boolean cursorOverAnimal() { 
-    boolean ans = ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
-      && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
-    return ans;
+    if (isSleeping) {
+      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
+        && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+    }
+    else {
+      return ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
+        && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+    }
   }
 
   void mousePressedInHabitat() {
@@ -85,21 +90,23 @@ class Frosty2 extends Habitat {
         AFRICA1_STATE ++;
       }
     }
-    else if (USER == "COBRA_A") {} //Sam Seal is asleep
+    else if (USER == "COBRA_A") {
+    } //Sam Seal is asleep
     else if (USER == "COBRA_B") {
       FROSTY2_STATE ++; //the last person to talk to here
     }
-    else if (USER == "POLAR_A") {}//Sam Seal is asleep
+    else if (USER == "POLAR_A") {
+    }//Sam Seal is asleep
     else if (USER == "POLAR_B") {
-    if (FROSTY2_STATE == 1) {
-      FROSTY2_STATE ++;
-      FROSTY1_STATE ++;
-    }
-    if (FROSTY2_STATE == 3) {
-      FROSTY2_STATE ++;
-      ASIA2_STATE ++;
-      nav.clue4 = true;
-    }
+      if (FROSTY2_STATE == 1) {
+        FROSTY2_STATE ++;
+        FROSTY1_STATE ++;
+      }
+      if (FROSTY2_STATE == 3) {
+        FROSTY2_STATE ++;
+        ASIA2_STATE ++;
+        nav.clue4 = true;
+      }
     }
   }
 

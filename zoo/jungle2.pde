@@ -193,8 +193,14 @@ class Jungle2 extends Habitat {
 
   //determines if the mouse over the Camel
   boolean cursorOverAnimal() {
+        if (isSleeping) {
+      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
+        && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+    }
+    else {
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
       && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
+    }
   }
 
   //gets the current line the animal will be/is speaking

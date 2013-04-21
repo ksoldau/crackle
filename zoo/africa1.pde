@@ -43,17 +43,6 @@ class Africa1 extends Habitat {
   void displayAnimalNotTalking() {
     image(animal_not_talking, animalLeft, animalTop);
   }
-  
-  void displayZs() {
-      frame = (frame + 1);
-      if (frame < 13) {
-      image(GIFS_ZS[frame], 300, 100);
-      }
-      else {
-        Z = false;
-        frame = 0;
-      }
-  }
 
   //decides which actions to take if mouse was pressed 
   //assume/know: animal is not talking
@@ -64,15 +53,6 @@ class Africa1 extends Habitat {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
       playCurrentTalk(); //sound
-    }
-  }
-  
-  //decides what to do if something moused over
-  void mouseOverInHabitat() {
-    if (this.isSleeping && cursorOverAnimal()) {
-      Z = true;
-      println(Z);
-      //displayZs();
     }
   }
 

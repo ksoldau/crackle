@@ -581,6 +581,11 @@ void loadClueImages() {
 // draw is called directly after setup
 // called automatically
 void draw() {
+  
+  if (LAST_HABITAT_NUMBER != HABITAT_NUMBER) {
+    Z = false;//cancel the Zs
+  }
+  
   int current_time = millis();
   //to stop the animal from visibly speaking if audio over
   if (ANIMAL_TALKING && 
@@ -591,18 +596,21 @@ void draw() {
   //to display the correct animal for current habitat
   else if (ON_GUESS) {
   }
+  
   else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
     doScene(HABITAT_NUMBER);
     LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED
     println(Z);
     if (Z) {
-      AFRICA1.displayZs();
+      LIST_OF_HABITATS[HABITAT_NUMBER].displayZs();
       println(Z);
     }
   }
 
   drawCursor();
   //printMem(); //DEBUG: To monitor memory usage
+  
+  //plays correct background music
   if (!WELCOME_SCREEN && !ON_INTRO) {
     whenPlay();
   }
@@ -985,7 +993,7 @@ int updateSceneNumber(String query) {
 void mouseMoved() {
   if (!WELCOME_SCREEN && !ON_MAP && !ON_GUESS && !ON_INTRO) {
     //LIST_OF_HABITATS[HABITAT_NUMBER].mouseOverInHabitat();
-    AFRICA1.mouseOverInHabitat();
+    LIST_OF_HABITATS[HABITAT_NUMBER].mouseMovedInHabitat();
   }
 }
 
