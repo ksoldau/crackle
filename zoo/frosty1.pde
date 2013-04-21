@@ -70,7 +70,7 @@ class Frosty1 extends Habitat {
 
   //updates state numbers after an animal has spoken
   void updateStateNumbers() {
-    if (USER == "GORILLA_A"); //Peter Penguin is asleep
+    if (USER == "GORILLA_A") {}//Peter Penguin is asleep
     else if (USER == "GORILLA_B") {
       println("got here dude");
 
@@ -91,6 +91,17 @@ class Frosty1 extends Habitat {
       if (FROSTY1_STATE == 0) {
         FROSTY1_STATE ++;
         AFRICA1_STATE ++;
+      }
+    }
+    else if (USER == "POLAR_A") {
+      if (FROSTY1_STATE == 1) {
+        FROSTY1_STATE ++;
+        ASIA2_STATE ++;
+      }
+      else if (FROSTY1_STATE == 3) {
+        FROSTY1_STATE ++;
+        ASIA2_STATE ++;
+        nav.clue2 = true;
       }
     }
   }

@@ -19,15 +19,12 @@ class Frosty2 extends Habitat {
 
   //displays the correct animal 
   void displayAnimal() {
-   
+
     if (isSleeping) {
       image(SLEEP_TEST, animalLeft, animalTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
-    }
-    else if (cursorOverAnimal() && (FROSTY2_STATE == 2) && USER == "COBRA_B") {
-      WIN.doGuess();
     }
     else { 
       displayAnimalNotTalking();
@@ -53,6 +50,9 @@ class Frosty2 extends Habitat {
 
   void mousePressedInHabitat() {
     if (isSleeping) {
+    }
+    else if (cursorOverAnimal() && (FROSTY2_STATE == 2) && USER == "COBRA_B") {
+      WIN.doGuess();
     }
     else if (cursorOverAnimal()) {
       ANIMAL_TALKING = true;
@@ -83,7 +83,7 @@ class Frosty2 extends Habitat {
       }
     }
     if (USER == "COBRA_B") {
-     FROSTY2_STATE ++; //the last person to talk to here
+      FROSTY2_STATE ++; //the last person to talk to here
     }
   }
 

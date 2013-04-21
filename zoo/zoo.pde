@@ -267,7 +267,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "COBRA_B";
+  USER = "POLAR_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -336,6 +336,8 @@ void setup() {
   initializeAudio();
 }
 
+//sets the first habitat the user sees to correct one
+//based on USER
 void setFirstHabitatNumber() {
   if (USER == "GORILLA_A") {
     HABITAT_NUMBER = 0;
@@ -348,6 +350,9 @@ void setFirstHabitatNumber() {
   }
   else if (USER == "COBRA_B") {
     HABITAT_NUMBER = 1;
+  }
+  else if (USER == "POLAR_A") {
+    HABITAT_NUMBER = 7;
   }
 }
 
@@ -542,7 +547,7 @@ void loadClueImages() {
     GA_CLUE3 = loadImage("data/twolegs.png");
     GA_CLUE4 = loadImage("data/blackfur.png");
   }
- else {
+  else {
     TEST_CLUE1 = loadImage("data/test_clue1.png");
     TEST_CLUE2 = loadImage("data/test_clue2.png");
     TEST_CLUE3 = loadImage("data/test_clue3.png");

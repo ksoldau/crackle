@@ -72,7 +72,7 @@ class Jungle1 extends Habitat {
       }    
     }
     
-    else if (USER == "GORILLA_B") {}
+    else if (USER == "GORILLA_B") {} //ELiza Elephant is asleep
     else if (USER == "COBRA_A") {
     if (JUNGLE1_STATE == 1) {
       JUNGLE1_STATE ++;
@@ -80,8 +80,13 @@ class Jungle1 extends Habitat {
       nav.clue4 = true;
     }
     }
-    else if (USER == "COBRA_B") {}
-    else if (USER == "POLAR_A") {}
+    else if (USER == "COBRA_B") {} //Elize Elephant is asleep
+    else if (USER == "POLAR_A") {
+    if (JUNGLE1_STATE == 0) {
+      JUNGLE1_STATE ++;
+      AFRICA1_STATE ++;
+    }
+    }
     else if (USER == "POLAR_B") {}
   }
   

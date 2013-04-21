@@ -51,6 +51,9 @@ class Africa2 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
+    else if (cursorOverAnimal() && (AFRICA2_STATE == 2) && USER == "POLAR_A") {
+      WIN.doGuess();
+    }
     else if (cursorOverAnimal()) {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
@@ -66,9 +69,10 @@ class Africa2 extends Habitat {
     }
     updateStateNumbers();
   }
-  
+
   void updateStateNumbers() {
-    if (USER == "GORILLA_A") {} //Gerry Giraffe is asleep
+    if (USER == "GORILLA_A") {
+    } //Gerry Giraffe is asleep
     else if (USER == "GORILLA_B") {
       if (AFRICA2_STATE == 1) {
         AFRICA2_STATE ++;
@@ -76,19 +80,26 @@ class Africa2 extends Habitat {
         nav.clue2 = true; //climb trees
       }
     }
-    else if (USER == "COBRA_A") {} //Gerry Giraffe is asleep
+    else if (USER == "COBRA_A") {
+    } //Gerry Giraffe is asleep
     else if (USER == "COBRA_B") {
       if (AFRICA2_STATE == 0) {
         AFRICA2_STATE ++;
         AFRICA3_STATE ++;
+        nav.clue1 = true;
       }
       if (AFRICA2_STATE == 2) {
         AFRICA2_STATE ++;
         ASIA2_STATE ++; //Patty Panda
       }
     }
+    else if (USER == "POLAR_A") {
+      if (AFRICA2_STATE == 1) {
+        AFRICA2_STATE ++;
+      }
+    }
   }
-  
+
   //gets the current line the animal will be/is speaking
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {

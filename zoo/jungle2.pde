@@ -96,7 +96,7 @@ class Jungle2 extends Habitat {
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
       playCurrentTalk();
     }
-    else if (cursorOverTrash1() && USER == "COBRA_B") {
+    else if (cursorOverTrash1() && (USER == "COBRA_B" || USER == "POLAR_A")) {
       pickedUpTrash1 = true;
       JUNGLE2_STATE ++; // so Stanley Sloth will say next line
     }
@@ -152,6 +152,12 @@ class Jungle2 extends Habitat {
       }
     }
     else if (USER == "POLAR_A") {
+      if (JUNGLE2_STATE == 1) {
+      }
+      if (JUNGLE2_STATE == 2) {
+        JUNGLE2_STATE ++;
+        AFRICA2_STATE ++;
+      }
     }
     else if (USER == "POLAR_B") {
     }

@@ -102,6 +102,15 @@ class Asia2 extends Habitat {
       }
     }
     else if (USER == "POLAR_A") {
+      if (ASIA2_STATE == 1) {
+        ASIA2_STATE ++;
+        FROSTY1_STATE ++;
+      }
+      else if (ASIA2_STATE == 3) {
+        ASIA2_STATE ++;
+        JUNGLE2_STATE ++;
+        nav.clue3 = true; //black nose
+      }
     }
     else if (USER == "POLAR_B") {
     }
