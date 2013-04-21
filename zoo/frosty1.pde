@@ -5,6 +5,9 @@ class Frosty1 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 100;
+  int animalSleepingLeft = 200;
+  int animalSleepingLeft = 200;
+
 
   PImage background = loadImage("data/frosty_1.png");
   PImage animal_not_talking = loadImage("data/peter_penguin.gif");
@@ -20,7 +23,7 @@ class Frosty1 extends Habitat {
   //displays the correct animal 
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalLeft, animalTop);
+      image(SLEEP_TEST, animalSeepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();

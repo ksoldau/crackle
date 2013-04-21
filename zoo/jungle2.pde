@@ -5,6 +5,9 @@ class Jungle2 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 100;
+  int animalSleepingLeft = 200;
+  int animalSleepingLeft = 200;
+
 
   PImage background = loadImage("data/jungle_2.png");
   PImage animal_not_talking = loadImage("data/stanley_sloth.gif");
@@ -62,7 +65,7 @@ class Jungle2 extends Habitat {
   //display the correct animal image
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalLeft, animalTop);
+      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();

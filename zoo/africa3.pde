@@ -5,6 +5,8 @@ class Africa3 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 100;
+  int animalSleepingLeft = 200;
+  int animalSleepingLeft = 200;
 
   PImage background = loadImage("data/africa_3.png");
   PImage animal_not_talking =  loadImage("data/leonard_lion.gif");
@@ -17,7 +19,7 @@ class Africa3 extends Habitat {
   //displays the correct animal
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalLeft, animalTop);
+      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -62,8 +64,8 @@ class Africa3 extends Habitat {
       playCurrentTalk();
     }
   }
-  
-    
+
+
   //play correct audio
   void playCurrentTalk() {
     if (!this.isSleeping) {
@@ -71,8 +73,8 @@ class Africa3 extends Habitat {
     }
     updateStateNumbers();
   }
-  
-  void updateStateNumbers()     {
+
+  void updateStateNumbers() {
     if (USER == "GORILLA_A") {
       if (AFRICA3_STATE == 1) {
         AFRICA3_STATE ++;
@@ -82,7 +84,8 @@ class Africa3 extends Habitat {
         AFRICA3_STATE ++; //to get to final screen kind of
       }
     }
-    else if (USER == "GORILLA_B") {}//Leonard Lion is asleep
+    else if (USER == "GORILLA_B") {
+    }//Leonard Lion is asleep
     else if (USER == "COBRA_A") {
       if (AFRICA3_STATE == 1) {
         AFRICA3_STATE ++;
@@ -97,7 +100,6 @@ class Africa3 extends Habitat {
         nav.clue1 = true;
       }
     }
-      
   }
 
   //gets the current line the animal will be/is speaking
@@ -149,9 +151,8 @@ class Africa3 extends Habitat {
         return LION_DUMMY;
       }
     }
-    
-  return LION_DUMMY;
-   
+
+    return LION_DUMMY;
   }
 }
 
