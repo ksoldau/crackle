@@ -26,7 +26,7 @@ PImage GA_CLUE4;
 //guess scene
 PImage GUESS_SCENE_BG;
 
-// declaring variables outside of setup so they can be used anywhere
+// declaring variables outside of so they can be used anywhere
 // a la "public" in standard java
 int ANIMAL_TALKING_START_TIME;
 
@@ -66,10 +66,13 @@ int JUNGLE2_STATE;
 // list of Habitats
 Habitat[] LIST_OF_HABITATS = new Habitat[9]; //why nine
 
-// Navigation and Arrows
+
+
+// Navigation,arrows, map, owl
 Nav nav;
 Arrows arrows;
 Map map;
+Owl OWL;
 
 // Audio Setup
 // WE will have to initialize all the clips here. Just fyi cause memory leak and etc.
@@ -207,6 +210,19 @@ boolean ON_GUESS = false;
 //current habitat number
 int HABITAT_NUMBER;
 
+//current help owl
+int HELP;
+//list of Helps
+PImage[] LIST_OF_HELP = new PImage[9];
+//is it on help
+boolean ON_OWL = false;
+//initialize lines //test for now
+AudioSample TEST_OWL;
+//length of owl line
+int OWL_AUDIO_LENGTH;
+//time owl started talking
+int OWL_TALKING_START_TIME;
+
 //last habitat number
 int LAST_HABITAT_NUMBER = 0;
 
@@ -265,6 +281,18 @@ void setup() {
   BACKGROUND_IMG = loadImage("data/welcome.png");
   image(BACKGROUND_IMG, 0, 0);
 
+  //helpowls
+  LIST_OF_HELP[0] = loadImage("data/help_calvin_288.png"); 
+  LIST_OF_HELP[1] =loadImage("data/help_calvin_288.png"); 
+  LIST_OF_HELP[2] =loadImage("data/help_calvin_288.png");
+  LIST_OF_HELP[3] =loadImage("data/help_calvin_288.png");
+  LIST_OF_HELP[4] =loadImage("data/help_calvin_288.png");
+  LIST_OF_HELP[5] =loadImage("data/help_calvin_288.png");
+  LIST_OF_HELP[6] =loadImage("data/help_calvin_288.png");
+  LIST_OF_HELP[7] =loadImage("data/help_calvin_288.png");
+  LIST_OF_HELP[8] =loadImage("data/help_calvin_288.png");
+
+
 
   // making all the background objects
   intro = new Intro();
@@ -276,6 +304,8 @@ void setup() {
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
+  //set the first help numner 
+  setFirstHelp();
 
   //loading all animal classes
   //depends on which animal/iteration the user is 
@@ -310,18 +340,27 @@ void setup() {
 
   //initialize the navigation bar class
   nav = new Nav();
-  
+
   //initialize the class for the arrows
   arrows = new Arrows();
-  
+
   //initialize the class for the map
   map = new Map();
-  
+
   //initialize the win class
   WIN = new Win();
 
+  //initialize the Owl class
+  OWL = new Owl();
+
   // Setting up sound engine
   minim = new Minim(this);
+
+
+  //testing the owl
+  TEST_OWL = minim.loadSample("SEAL_DUMMY.mp3", 512);
+  OWL_AUDIO_LENGTH = TEST_OWL.length();
+
 
   AFRICA_BG = minim.loadFile("africa_bg.mp3", 512);
   FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
@@ -343,7 +382,7 @@ void setup() {
   GIFS_ZS = Gif.getPImages(this, "data/z.gif");
 
   GUESS_SCENE_BG = loadImage("data/guesswho.png");
-  
+
 
 
   initializeAudio();
@@ -372,21 +411,22 @@ void setFirstHabitatNumber() {
   }
 }
 
+//set first help number 
+void setFirstHelp() {
+  HELP = HABITAT_NUMBER;
+}
+
 //initialize the audio
 void initializeAudio() {
-  //Dummy lines
-  CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512);
-  GIRAFFE_DUMMY = minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
-  LION_DUMMY = minim.loadSample("LION_DUMMY.mp3", 512);
-  TIGER_DUMMY = minim.loadSample("TIGER_DUMMY.mp3", 512);
-  PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
-  PENGUIN_DUMMY = minim.loadSample("PENGUIN_DUMMY.mp3", 512);
-  SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
-  ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
-  SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
-
   //Audio for just GORILLA_A
   if (USER == "GORILLA_A") {
+    CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512);
+    ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
+    PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
+    SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
+    SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
+    LION_DUMMY = minim.loadSample("LION_DUMMY.mp3", 512);
+
     GA_CAMEL1 = minim.loadSample("GA_CAMEL1.mp3", 512);
     GA_ELEPHANT1 = minim.loadSample("GA_ELEPHANT1.mp3", 512); 
     GA_PANDA1 = minim.loadSample("GA_PANDA1.mp3", 512);
@@ -402,6 +442,14 @@ void initializeAudio() {
 
 
   else if (USER == "GORILLA_B") {
+    //Dummy lines
+    CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512);
+    GIRAFFE_DUMMY = minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
+    TIGER_DUMMY = minim.loadSample("TIGER_DUMMY.mp3", 512);
+    PENGUIN_DUMMY = minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+    SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
+    SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
+
     //Audio for just GORILLA_B
     GB_SEAL1 = minim.loadSample("GB_SEAL1.mp3", 512);
     GB_CAMEL1 = minim.loadSample("GB_CAMEL1.mp3", 512);
@@ -414,6 +462,14 @@ void initializeAudio() {
 
   //Audio for just COBRA_A
   else if (USER == "COBRA_A") {
+    //Dummy lines
+    CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512);
+    LION_DUMMY = minim.loadSample("LION_DUMMY.mp3", 512);
+    TIGER_DUMMY = minim.loadSample("TIGER_DUMMY.mp3", 512);
+    PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
+    PENGUIN_DUMMY = minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+    ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
+
     CA_PENGUIN1 = minim.loadSample("CA_PENGUIN1.mp3", 512);
     CA_CAMEL1 = minim.loadSample("CA_CAMEL1.mp3", 512);
     CA_PANDA1 = minim.loadSample("CA_PANDA1.mp3", 512);
@@ -425,6 +481,14 @@ void initializeAudio() {
 
   //Audio for just COBRA_B
   else if (USER == "COBRA_B") {
+    //Dummy lines
+    GIRAFFE_DUMMY = minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
+    LION_DUMMY = minim.loadSample("LION_DUMMY.mp3", 512);
+    TIGER_DUMMY = minim.loadSample("TIGER_DUMMY.mp3", 512);
+    PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
+    SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
+    SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
+    
     CB_GIRAFFE1 = minim.loadSample("CB_GIRAFFE1.mp3", 512);
     CB_LION1 = minim.loadSample("CB_LION1.mp3", 512);
     CB_TIGER1 = minim.loadSample("CB_TIGER1.mp3", 512);
@@ -437,6 +501,14 @@ void initializeAudio() {
   }
 
   else if (USER == "POLAR_A") {
+    //Dummy lines
+    CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512);
+    GIRAFFE_DUMMY = minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
+    PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
+    PENGUIN_DUMMY = minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+    ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
+    SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
+    
     //Audio for just POLAR_A
     PA_ELEPHANT1 = minim.loadSample("PA_ELEPHANT1.mp3", 512);
     PA_CAMEL1 = minim.loadSample("PA_CAMEL1.mp3", 512);
@@ -452,6 +524,14 @@ void initializeAudio() {
 
   //Audio for just POLAR_B
   else if (USER == "POLAR_B") {
+    //Dummy lines
+    GIRAFFE_DUMMY = minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
+    TIGER_DUMMY = minim.loadSample("TIGER_DUMMY.mp3", 512);
+    PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
+    PENGUIN_DUMMY = minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+    SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
+    ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
+    
     PB_TIGER1 = minim.loadSample("PB_TIGER1.mp3", 512);
     PB_GIRAFFE1 = minim.loadSample("PB_GIRAFFE1.mp3", 512);
     PB_ELEPHANT1 = minim.loadSample("PB_ELEPHANT1.mp3", 512);
@@ -584,11 +664,11 @@ void loadClueImages() {
 // draw is called directly after setup
 // called automatically
 void draw() {
-  
+
   if (LAST_HABITAT_NUMBER != HABITAT_NUMBER) {
     Z = false;//cancel the Zs
   }
-  
+
   int current_time = millis();
   println("Current Time is" + current_time);
   println("AUDIO_LENGTH is" + AUDIO_LENGTH);
@@ -596,7 +676,7 @@ void draw() {
   //println("LASTTalkLength" + LIST_OF_HABITATS[LAST_HABITAT_NUMBER].currentTalk().length());
 
   //println(GA_CAMEL1.length());
-  
+
   //to stop the animal from visibly speaking if audio over
   if (ANIMAL_TALKING && 
     (current_time - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {//LIST_OF_HABITATS[HABITAT_NUMBER].currentTalk().length())) {
@@ -606,7 +686,17 @@ void draw() {
   //to display the correct animal for current habitat
   else if (ON_GUESS) {
   }
-  
+
+  //makes owl stay up as long as audio plays
+  if (ON_OWL) {
+    if  (current_time - OWL_TALKING_START_TIME >= OWL_AUDIO_LENGTH) {
+      ON_OWL = false;
+    }
+    else {
+      doOwl();
+    }
+  }
+
   //plays any animated gifs
   else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
     doScene(HABITAT_NUMBER);
@@ -620,7 +710,7 @@ void draw() {
 
   drawCursor();
   //printMem(); //DEBUG: To monitor memory usage
-  
+
   //plays correct background music
   if (!WELCOME_SCREEN && !ON_INTRO) {
     whenPlay();
@@ -734,7 +824,7 @@ void drawCursor() {
 
   else if 
     (cursorOverMapButton() || 
-    cursor_over_help() || 
+    cursorOverHelp() || 
     cursor_over_left() ||
     cursor_over_right() ||
     (!LIST_OF_HABITATS[HABITAT_NUMBER].isSleeping &&
@@ -809,6 +899,12 @@ void doIntro() {
 void doMap() {
   map.display();
   ON_MAP = true;
+}
+
+//help Oscar Owl
+void doOwl() {
+  OWL.displayOwl();
+  ON_OWL = true;
 }
 
 //---------------------
@@ -906,6 +1002,13 @@ void mousePressed() {
     doMap();
     ON_MAP = true;
   }
+
+  //if over help
+  else if (cursorOverHelp()) {
+    OWL.talkOwl();
+    ON_OWL = true;
+  }
+
   else if (cursor_over_left()) {
     doScene(updateSceneNumber("left"));
   }
@@ -1035,7 +1138,7 @@ boolean cursorOverHabitat() {
 boolean cursorOverMapButton() {
   return cursor_over(MAPXi, MAPXf, MAPYi, MAPYf);
 }
-boolean cursor_over_help() {
+boolean cursorOverHelp() {
   return cursor_over(HELPXi, HELPXf, HELPYi, HELPYf);
 }
 boolean cursor_over_left() {
@@ -1073,5 +1176,4 @@ boolean cursor_over_jungle1() {
 boolean cursor_over_jungle2() {
   return cursor_over(373, 461, 95, 159);
 }
-
 
