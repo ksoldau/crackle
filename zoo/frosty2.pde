@@ -3,8 +3,8 @@ class Frosty2 extends Habitat {
   int frame;
   int numTalkingFrames = 6;
 
-  int animalLeft = 500;
-  int animalTop = 100;
+  int animalLeft = 200;
+  int animalTop = 220;
   int animalSleepingLeft = 200;
   int animalSleepingTop = 200;
 

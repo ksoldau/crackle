@@ -3,7 +3,7 @@ class Nav {
 
   PImage navbar;
 
-  boolean clue1; //GA fur
+  boolean clue1; //GA fur //GB //CA/ //CB //PA //PB
   boolean clue2; 
   boolean clue3;
   boolean clue4;

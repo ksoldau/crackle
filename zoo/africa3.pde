@@ -3,8 +3,9 @@ class Africa3 extends Habitat {
   int frame;
   int numTalkingFrames = 6; //al might export one with more frames
 
-  int animalLeft = 500;
-  int animalTop = 100;
+  int animalLeft = 300;
+  int animalTop = 50;
+  
   int animalSleepingLeft = 200;
   int animalSleepingTop = 200;
 

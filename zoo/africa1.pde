@@ -115,14 +115,15 @@ class Africa1 extends Habitat {
   boolean cursorOverAnimal() {
     if (isSleeping) {
       return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
-      && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+        && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
     }
     else {
-    return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
-      && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
+      return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
+        && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
     }
   }
 
+  //plays what the animal should currently be saying
   AudioSample currentTalk() {
     if (USER == "GORILLA_A") {
       if (AFRICA1_STATE == 0) { 

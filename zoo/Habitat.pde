@@ -34,14 +34,11 @@ public abstract class Habitat {
   //updates necessary state numbers for habitats/animals
   abstract void updateStateNumbers();
   
-  //decides what to do if mouse moved in habitat
-  //abstract void mouseMovedInHabitat();
-
   //display the Zs (when mouse over sleeping animal)
   void displayZs() {
     frameZs = (frameZs + 1);
     if (frameZs < 13) {
-      image(GIFS_ZS[frameZs], 300, 100);
+      image(GIFS_ZS[frameZs], 200, 200);
     }
     else {
       Z = false;

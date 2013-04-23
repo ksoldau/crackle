@@ -3,8 +3,8 @@ class Jungle2 extends Habitat {
   int frame;
   int numTalkingFrames = 10;
 
-  int animalLeft = 500;
-  int animalTop = 100;
+  int animalLeft = 400;
+  int animalTop = 40;
   int animalSleepingLeft = 200;
   int animalSleepingTop = 200;
 

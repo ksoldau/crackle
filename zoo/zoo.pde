@@ -157,10 +157,6 @@ AudioSample PB_PENGUIN1;
 AudioSample PB_PANDA1;
 
 
-
-
-
-
 //------------------------------------------------
 //Static variables
 
@@ -239,7 +235,7 @@ PImage[] GIFS_SEAL_TALKING;
 PImage[] GIFS_ELEPHANT_TALKING;
 PImage[] GIFS_SLOTH_TALKING;
 
-//Gifs for effects
+//Gifs and other information for effects
 PImage[] GIFS_ZS;
 int NUMZFRAMES = 13;
 
@@ -274,7 +270,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "POLAR_B";
+  USER = "GORILLA_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -310,13 +306,17 @@ void setup() {
 
 
 
+  //initialize the navigation bar class
   nav = new Nav();
+  
+  //initialize the class for the arrows
   arrows = new Arrows();
+  
+  //initialize the class for the map
   map = new Map();
+  
+  //initialize the win class
   WIN = new Win();
-
-  println(LIST_OF_HABITATS[0]);
-
 
   // Setting up sound engine
   minim = new Minim(this);
@@ -587,6 +587,7 @@ void draw() {
   }
   
   int current_time = millis();
+  
   //to stop the animal from visibly speaking if audio over
   if (ANIMAL_TALKING && 
     (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].currentTalk().length())) {
@@ -597,6 +598,7 @@ void draw() {
   else if (ON_GUESS) {
   }
   
+  //plays any animated gifs
   else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
     doScene(HABITAT_NUMBER);
     LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED

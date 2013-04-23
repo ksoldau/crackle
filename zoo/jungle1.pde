@@ -4,7 +4,7 @@ class Jungle1 extends Habitat {
   int numTalkingFrames = 16;
 
   int animalLeft = 500;
-  int animalTop = 100;
+  int animalTop = 170;
   int animalSleepingLeft = 200;
   int animalSleepingTop = 200;
 
