@@ -86,6 +86,7 @@ class Africa3 extends Habitat {
       if (AFRICA3_STATE == 1) {
         AFRICA3_STATE ++;
         JUNGLE2_STATE ++; //SLOTH
+        HELP = 8;
       }
       if (AFRICA3_STATE == 3) {
         AFRICA3_STATE ++; //to get to final screen kind of

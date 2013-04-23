@@ -83,6 +83,7 @@ class Frosty2 extends Habitat {
       if (FROSTY2_STATE == 1) {
         FROSTY2_STATE ++;
         AFRICA1_STATE ++;
+        HELP = 0;
       }
     }
     else if (USER == "GORILLA_B") {

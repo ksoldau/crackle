@@ -73,6 +73,7 @@ class Jungle1 extends Habitat {
         nav.clue1 = true;// got fur clue
         JUNGLE1_STATE ++;
         ASIA2_STATE ++;
+        HELP = 4;
       }
     }
 

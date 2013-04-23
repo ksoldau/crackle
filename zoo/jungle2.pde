@@ -131,11 +131,13 @@ class Jungle2 extends Habitat {
       if (JUNGLE2_STATE == 1) {
         JUNGLE2_STATE ++;
         ASIA2_STATE ++; //Patty Panda
+        HELP = 4; //*** later can make this be a token 
       } 
       if (JUNGLE2_STATE == 3) {
         JUNGLE2_STATE ++;
         AFRICA3_STATE ++;
         nav.clue4 = true; //fur is black
+        HELP = 2;
       }
     }
     else if (USER == "GORILLA_B") {

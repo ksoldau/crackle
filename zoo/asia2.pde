@@ -82,11 +82,13 @@ class Asia2 extends Habitat {
       if (ASIA2_STATE == 1) {
         ASIA2_STATE ++;
         JUNGLE2_STATE ++; //Stanley Sloth
+        HELP = 8;
       }
       if (ASIA2_STATE == 3) {
         ASIA2_STATE ++;
         FROSTY2_STATE ++;//Sam Seal
         nav.clue2 = true; //love to eat plants
+        HELP = 6;
       }
     }
     else if (USER == "GORILLA_B") { //Patty Panda is asleep

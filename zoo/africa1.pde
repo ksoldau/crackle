@@ -73,11 +73,13 @@ class Africa1 extends Habitat {
       if (AFRICA1_STATE == 0) {
         AFRICA1_STATE ++;
         JUNGLE1_STATE ++;
+        HELP = 7;
       }    
       else if (AFRICA1_STATE == 2) {
         AFRICA1_STATE ++ ;
         AFRICA3_STATE ++ ; //Leonard Lion
         nav.clue3 = true; //two legs
+        HELP = 2;
       }
     }
     else if (USER == "GORILLA_B") {

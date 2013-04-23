@@ -64,7 +64,7 @@ int JUNGLE2_STATE;
 
 
 // list of Habitats
-Habitat[] LIST_OF_HABITATS = new Habitat[9]; //why nine
+Habitat[] LIST_OF_HABITATS = new Habitat[9]; 
 
 
 
@@ -218,8 +218,8 @@ PImage[] LIST_OF_HELP = new PImage[9];
 boolean ON_OWL = false;
 //initialize lines //test for now
 AudioSample TEST_OWL;
-//length of owl line
-int OWL_AUDIO_LENGTH;
+AudioSample[] LIST_OWL_AUDIO = new AudioSample[9];
+
 //time owl started talking
 int OWL_TALKING_START_TIME;
 
@@ -359,8 +359,16 @@ void setup() {
 
   //testing the owl
   TEST_OWL = minim.loadSample("SEAL_DUMMY.mp3", 512);
-  OWL_AUDIO_LENGTH = TEST_OWL.length();
-
+    
+  LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
+  LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);;
+  LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);;
+  LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);;
+  LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);;
+  LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);;
+  LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);;
+  LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);;
+  LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);;
 
   AFRICA_BG = minim.loadFile("africa_bg.mp3", 512);
   FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
@@ -689,7 +697,7 @@ void draw() {
 
   //makes owl stay up as long as audio plays
   if (ON_OWL) {
-    if  (current_time - OWL_TALKING_START_TIME >= OWL_AUDIO_LENGTH) {
+    if  (current_time - OWL_TALKING_START_TIME >= LIST_OWL_AUDIO[HELP].length()) {
       ON_OWL = false;
     }
     else {
@@ -994,7 +1002,7 @@ void mousePressed() {
   }
 
   //if an animal is talking
-  else if (ANIMAL_TALKING) {
+  else if (ANIMAL_TALKING || ON_OWL) {
   } //stops user from clicking on things while animal talking
 
   //if over map 

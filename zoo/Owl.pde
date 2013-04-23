@@ -10,7 +10,7 @@ class Owl {
   }
   
   void talkOwl() {
-     TEST_OWL.trigger();
+    LIST_OWL_AUDIO[HELP].trigger();
      OWL_TALKING_START_TIME = millis();
   }
 }
