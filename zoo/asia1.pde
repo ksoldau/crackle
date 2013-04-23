@@ -5,12 +5,14 @@ class Asia1 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 100;
-  int animalSleepingLeft = 200;
-  int animalSleepingTop = 200;
+  
+  int animalSleepingLeft = 300;
+  int animalSleepingTop = 250;
 
 
   PImage background = loadImage("data/asia_1.png");
   PImage animal_not_talking = loadImage("data/tina_tiger.gif");
+  PImage animal_sleeping = loadImage("data/tina_sleep_288.png");
 
   Asia1(boolean isSleeping) {
     super(isSleeping);
@@ -24,7 +26,7 @@ class Asia1 extends Habitat {
   //displays the correct animal
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -42,7 +44,7 @@ class Asia1 extends Habitat {
 
   //displays the not talking animal
   void displayAnimalNotTalking() {
-    image(animal_not_talking, animalLeft, animalTop);
+    image(GIFS_TIGER_TALKING[0], animalLeft, animalTop);
   }
 
   //determines if the animal in the habitat was clicked on

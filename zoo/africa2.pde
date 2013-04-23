@@ -5,11 +5,14 @@ class Africa2 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 100;
-  int animalSleepingLeft = 200;
-  int animalSleepingTop = 200;
+  
+  int animalSleepingLeft = 400;
+  int animalSleepingTop = 100;
+  
 
   PImage animal_not_talking = loadImage("data/gerry_giraffe.gif");
   PImage background = loadImage("data/africa_2.png");
+  PImage animal_sleeping = loadImage("data/gerry_sleep_288.png");
 
   Africa2(boolean isSleeping) {
     super(isSleeping);
@@ -22,7 +25,7 @@ class Africa2 extends Habitat {
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -40,7 +43,7 @@ class Africa2 extends Habitat {
 
   //display the not talking animal
   void displayAnimalNotTalking() {
-    image(animal_not_talking, animalLeft, animalTop);
+    image(GIFS_GIRAFFE_TALKING[0], animalLeft, animalTop);
   }
 
   //determines if the mouse was pressed on an animal

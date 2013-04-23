@@ -42,7 +42,7 @@ class Frosty2 extends Habitat {
 
   //displays the not talking animal
   void displayAnimalNotTalking() {
-    image(animal_not_talking, animalLeft, animalTop);
+    image(GIFS_SEAL_TALKING[0], animalLeft, animalTop);
   }
 
   boolean cursorOverAnimal() { 

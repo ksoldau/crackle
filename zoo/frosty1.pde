@@ -11,6 +11,8 @@ class Frosty1 extends Habitat {
 
   PImage background = loadImage("data/frosty_1.png");
   PImage animal_not_talking = loadImage("data/peter_penguin.gif");
+  PImage animal_sleeping = loadImage("data/peter_sleep_288.png");
+
 
   Frosty1(boolean isSleeping) {
     super(isSleeping);
@@ -23,7 +25,7 @@ class Frosty1 extends Habitat {
   //displays the correct animal 
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -41,7 +43,7 @@ class Frosty1 extends Habitat {
 
   //displays the not talking animal
   void displayAnimalNotTalking() {
-    image(animal_not_talking, animalLeft, animalTop);
+    image(GIFS_PENGUIN_TALKING[0], animalLeft, animalTop);
   }
 
   //determines if the cursor is over Peter Penguin

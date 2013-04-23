@@ -83,7 +83,7 @@ class Jungle2 extends Habitat {
 
   //display the not talking animal 
   void displayAnimalNotTalking() {
-    image(animal_not_talking, animalLeft, animalTop);
+    image(GIFS_SLOTH_TALKING[0], animalLeft, animalTop);
   }
 
   //decides which actions to take if mouse was pressed 
