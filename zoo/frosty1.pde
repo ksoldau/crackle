@@ -83,26 +83,26 @@ class Frosty1 extends Habitat {
   void updateStateNumbers() {
     if (USER == "GORILLA_A") {
     }//Peter Penguin is asleep
+    
     else if (USER == "GORILLA_B") {
-      println("got here dude");
-
       if (FROSTY1_STATE == 1) {
-        println("got here dudette");
-
         FROSTY1_STATE ++;
         AFRICA2_STATE ++;
+        HELP = 1;
       }
       else if (FROSTY1_STATE == 3) {
         println("got here homeslice");
         FROSTY1_STATE ++;
         ASIA1_STATE ++;
         nav.clue3 = true; //muscles
+        HELP = 3; //Tina Tiger
       }
     }
     else if (USER == "COBRA_A") {
       if (FROSTY1_STATE == 0) {
         FROSTY1_STATE ++;
         AFRICA1_STATE ++;
+        HELP = 0; //Calvin Camel
       }
     }
     else if (USER == "POLAR_A") {

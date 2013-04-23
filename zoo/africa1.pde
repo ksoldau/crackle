@@ -87,6 +87,7 @@ class Africa1 extends Habitat {
         AFRICA1_STATE ++;
         FROSTY1_STATE ++;
         nav.clue1 = true; //eat plants
+        HELP = 5;
       }
     }
     else if (USER == "COBRA_A") {
@@ -94,6 +95,7 @@ class Africa1 extends Habitat {
         AFRICA1_STATE ++;
         ASIA2_STATE ++;
         nav.clue1 = true; //sharp teeth
+        HELP = 4; //Patty Panda
       }
     }
     else if (USER == "COBRA_B") {

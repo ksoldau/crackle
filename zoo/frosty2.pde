@@ -90,6 +90,7 @@ class Frosty2 extends Habitat {
       if (FROSTY2_STATE == 0) {
         FROSTY2_STATE ++;
         AFRICA1_STATE ++;
+        HELP = 0;
       }
     }
     else if (USER == "COBRA_A") {

@@ -141,9 +141,9 @@ class Jungle2 extends Habitat {
       }
     }
     else if (USER == "GORILLA_B") {
-      println("got to gorilla_b");
       if (JUNGLE2_STATE == 1) {
         JUNGLE2_STATE ++;
+        //Finish
       }
     }
     else if (USER == "COBRA_A") {

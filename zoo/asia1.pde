@@ -91,11 +91,13 @@ class Asia1 extends Habitat {
         ASIA1_STATE ++;
         JUNGLE2_STATE ++;
         nav.clue4 = true; //black fur
+        HELP = 8; //Stanley Sloth
       }
     }
     else if (USER == "COBRA_A") {
       if (ASIA1_STATE == 1) {
         ASIA1_STATE ++;
+        //Finish
       }
     }
     else if (USER == "COBRA_B") {

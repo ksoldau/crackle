@@ -84,6 +84,7 @@ class Jungle1 extends Habitat {
         JUNGLE1_STATE ++;
         ASIA1_STATE ++;
         nav.clue4 = true;
+        HELP = 3;//Tina Tiger
       }
     }
     else if (USER == "COBRA_B") {

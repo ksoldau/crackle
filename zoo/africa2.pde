@@ -89,6 +89,7 @@ class Africa2 extends Habitat {
         AFRICA2_STATE ++;
         FROSTY1_STATE ++;
         nav.clue2 = true; //climb trees
+        HELP = 5; //Peter Penguin
       }
     }
     else if (USER == "COBRA_A") {
@@ -98,6 +99,7 @@ class Africa2 extends Habitat {
         AFRICA2_STATE ++;
         AFRICA3_STATE ++;
         nav.clue1 = true;
+        HELP = 2;//Leonard Lion
       }
       if (AFRICA2_STATE == 2) {
         AFRICA2_STATE ++;

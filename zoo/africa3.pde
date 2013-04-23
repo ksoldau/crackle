@@ -99,6 +99,7 @@ class Africa3 extends Habitat {
         AFRICA3_STATE ++;
         ASIA2_STATE ++;
         nav.clue2 = true;
+        HELP = 4; //Patty Panda
       }
     }
     else if (USER == "COBRA_B") {
