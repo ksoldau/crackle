@@ -219,7 +219,7 @@ AudioSample[] LIST_OWL_AUDIO = new AudioSample[9];
 int OWL_TALKING_START_TIME;
 
 //last habitat number
-int LAST_HABITAT_NUMBER = 0;
+int LAST_HABITAT_NUMBER = 8;
 
 //is the current animal talking
 boolean ANIMAL_TALKING = false;
@@ -406,6 +406,7 @@ void setFirstHabitatNumber() {
   }
   else if (USER == "POLAR_A") {
     HABITAT_NUMBER = 7;
+    LAST_HABITAT_NUMBER = 0;
   }
   else if (USER == "POLAR_B") {
     HABITAT_NUMBER = 3;
