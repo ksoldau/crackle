@@ -5,6 +5,7 @@ import ddf.minim.analysis.*;
 import ddf.minim.ugens.*;
 import ddf.minim.effects.*;
 import java.text.NumberFormat;
+import processing.video.*;
 
 import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 
@@ -24,6 +25,8 @@ PImage GUESS_SCENE_BG;
 // declaring variables outside of so they can be used anywhere
 // a la "public" in standard java
 int ANIMAL_TALKING_START_TIME;
+
+int OPENING_START_TIME;
 
 PImage BACKGROUND_IMG;
 Intro intro;
@@ -227,6 +230,9 @@ boolean ANIMAL_TALKING = false;
 //did user make animal snore
 boolean Z = false;
 
+//the opening sequence
+Movie OPENING_MOVIE;
+
 //------------------------------------------
 //setting up who the user is
 String USER; // which animal the user is can be 
@@ -291,6 +297,7 @@ void setup() {
 
   // making all the background objects
   intro = new Intro();
+  OPENING_MOVIE = new Movie(this, "opening.mov");
 
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
@@ -693,13 +700,21 @@ void loadClueImages() {
 void draw() {
 
   int current_time = millis();
-  println("Current Time is" + current_time);
-  println("AUDIO_LENGTH is" + AUDIO_LENGTH);
+  frameRate(12);
 
-  if (LAST_HABITAT_NUMBER != HABITAT_NUMBER) {
-    Z = false;//cancel the Zs
+  if (ON_INTRO) {
+    frameRate(30);
+    image(OPENING_MOVIE, 0, 0);
+    println("HERE!");
+    if (OPENING_MOVIE.time() >= 10) {
+      ON_INTRO = false;
+    }
   }
 
+  else if (LAST_HABITAT_NUMBER != HABITAT_NUMBER) {
+    Z = false;//cancel the Zs
+    println("FDSJKDF");
+  }
 
   //to stop the animal from visibly speaking if audio over
   else if (ANIMAL_TALKING && 
@@ -720,8 +735,8 @@ void draw() {
       doOwl();
     }
   }
-  
-    else if (ON_MAP) {
+
+  else if (ON_MAP) {
     doMap();
   }
 
@@ -921,7 +936,7 @@ void doIntro() {
   intro.display();
   arrows.display();
   nav.display();
-  //ON_INTRO = true;
+  ON_INTRO = true;
 }
 
 // map screen
@@ -1003,6 +1018,7 @@ void mousePressedWelcomeScreen() {
   if (cursor_over_start() && mousePressed == true) {
     doIntro();
     WELCOME_SCREEN = false;
+    OPENING_START_TIME = millis();
   }
 }
 
@@ -1012,9 +1028,11 @@ void mousePressed() {
   if (WELCOME_SCREEN) { 
     mousePressedWelcomeScreen();
   }
+  else if (ON_INTRO) {
+  }
 
   //if map is up
-  if (ON_MAP) {
+  else if (ON_MAP) {
     mousePressedOnMap();
   }
 
@@ -1210,5 +1228,11 @@ boolean cursor_over_jungle1() {
 }
 boolean cursor_over_jungle2() {
   return cursor_over(373, 461, 95, 159);
+}
+
+
+//method for opening intro
+void movieEvent(Movie m) {
+  m.read();
 }
 
