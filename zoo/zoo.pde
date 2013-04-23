@@ -282,15 +282,15 @@ void setup() {
   image(BACKGROUND_IMG, 0, 0);
 
   //helpowls
-  LIST_OF_HELP[0] = loadImage("data/help_calvin_288.png"); 
-  LIST_OF_HELP[1] =loadImage("data/help_calvin_288.png"); 
-  LIST_OF_HELP[2] =loadImage("data/help_calvin_288.png");
-  LIST_OF_HELP[3] =loadImage("data/help_calvin_288.png");
-  LIST_OF_HELP[4] =loadImage("data/help_calvin_288.png");
-  LIST_OF_HELP[5] =loadImage("data/help_calvin_288.png");
-  LIST_OF_HELP[6] =loadImage("data/help_calvin_288.png");
-  LIST_OF_HELP[7] =loadImage("data/help_calvin_288.png");
-  LIST_OF_HELP[8] =loadImage("data/help_calvin_288.png");
+  LIST_OF_HELP[0] = loadImage("data/oscar/help_calvin_288.png"); 
+  LIST_OF_HELP[1] =loadImage("data/oscar/help_gerry_288.png"); 
+  LIST_OF_HELP[2] =loadImage("data/oscar/help_leonard_288.png");
+  LIST_OF_HELP[3] =loadImage("data/oscar/help_tina_288.png");
+  LIST_OF_HELP[4] =loadImage("data/oscar/help_patty_288.png");
+  LIST_OF_HELP[5] =loadImage("data/oscar/help_peter_288.png");
+  LIST_OF_HELP[6] =loadImage("data/oscar/help_sam_288.png");
+  LIST_OF_HELP[7] =loadImage("data/oscar/help_eliza_288.png");
+  LIST_OF_HELP[8] =loadImage("data/oscar/help_stanley_288.png");
 
 
 
@@ -696,7 +696,7 @@ void draw() {
   }
 
   //makes owl stay up as long as audio plays
-  if (ON_OWL) {
+  else if (ON_OWL) {
     if  (current_time - OWL_TALKING_START_TIME >= LIST_OWL_AUDIO[HELP].length()) {
       ON_OWL = false;
     }
