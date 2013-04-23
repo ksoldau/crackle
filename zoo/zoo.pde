@@ -13,15 +13,10 @@ PImage SLEEP_TEST;
 PImage TRASH_TEST;
 
 //clues
-PImage TEST_CLUE1;
-PImage TEST_CLUE2;
-PImage TEST_CLUE3;
-PImage TEST_CLUE4;
-
-PImage GA_CLUE1;
-PImage GA_CLUE2;
-PImage GA_CLUE3;
-PImage GA_CLUE4;
+PImage CLUE1;
+PImage CLUE2;
+PImage CLUE3;
+PImage CLUE4;
 
 //guess scene
 PImage GUESS_SCENE_BG;
@@ -359,16 +354,16 @@ void setup() {
 
   //testing the owl
   TEST_OWL = minim.loadSample("SEAL_DUMMY.mp3", 512);
-    
+
   LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
-  LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);;
-  LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);;
-  LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);;
-  LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);;
-  LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);;
-  LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);;
-  LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);;
-  LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);;
+  LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
+  LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);
+  LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
+  LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
+  LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+  LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
+  LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
+  LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
 
   AFRICA_BG = minim.loadFile("africa_bg.mp3", 512);
   FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
@@ -390,8 +385,6 @@ void setup() {
   GIFS_ZS = Gif.getPImages(this, "data/z.gif");
 
   GUESS_SCENE_BG = loadImage("data/guesswho.png");
-
-
 
   initializeAudio();
 }
@@ -496,7 +489,7 @@ void initializeAudio() {
     PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
     SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
     SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
-    
+
     CB_GIRAFFE1 = minim.loadSample("CB_GIRAFFE1.mp3", 512);
     CB_LION1 = minim.loadSample("CB_LION1.mp3", 512);
     CB_TIGER1 = minim.loadSample("CB_TIGER1.mp3", 512);
@@ -516,7 +509,7 @@ void initializeAudio() {
     PENGUIN_DUMMY = minim.loadSample("PENGUIN_DUMMY.mp3", 512);
     ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
     SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
-    
+
     //Audio for just POLAR_A
     PA_ELEPHANT1 = minim.loadSample("PA_ELEPHANT1.mp3", 512);
     PA_CAMEL1 = minim.loadSample("PA_CAMEL1.mp3", 512);
@@ -539,7 +532,7 @@ void initializeAudio() {
     PENGUIN_DUMMY = minim.loadSample("PENGUIN_DUMMY.mp3", 512);
     SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
     ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
-    
+
     PB_TIGER1 = minim.loadSample("PB_TIGER1.mp3", 512);
     PB_GIRAFFE1 = minim.loadSample("PB_GIRAFFE1.mp3", 512);
     PB_ELEPHANT1 = minim.loadSample("PB_ELEPHANT1.mp3", 512);
@@ -646,18 +639,43 @@ void loadAnimalClasses() {
 
 void loadClueImages() {
   if (USER == "GORILLA_A") {
-    GA_CLUE1 = loadImage("data/fur.png");
-    GA_CLUE2 = loadImage("data/plants.png");
-    GA_CLUE3 = loadImage("data/twolegs.png");
-    GA_CLUE4 = loadImage("data/blackfur.png");
+    CLUE1 = loadImage("data/clues/clue_fur.png");
+    CLUE2 = loadImage("data/clues/clue_plants.png");
+    CLUE3 = loadImage("data/clues/clue_2legs.png");
+    CLUE4 = loadImage("data/clues/clue_black.png");
   }
-  else {
-    TEST_CLUE1 = loadImage("data/test_clue1.png");
-    TEST_CLUE2 = loadImage("data/test_clue2.png");
-    TEST_CLUE3 = loadImage("data/test_clue3.png");
-    TEST_CLUE4 = loadImage("data/test_clue4.png");
+  else if (USER == "GORILLA_B") {
+    CLUE1 = loadImage("data/clues/clue_plants.png");
+    CLUE2 = loadImage("data/clues/clue_muscular.png");
+    CLUE3 = loadImage("data/clues/clue_climbstrees.png");
+    CLUE4 = loadImage("data/clues/clue_black.png");
+  }
+  else if (USER == "COBRA_A") {
+    CLUE1 = loadImage("data/clues/clue_sharpteeth.png");
+    CLUE2 = loadImage("data/clues/clue_poisonous.png");
+    CLUE3 = loadImage("data/clues/clue_longtongue.png");
+    CLUE4 = loadImage("data/clues/clue_scales.png");
+  }
+  else if (USER == "COBRA_B") {  
+    CLUE1 = loadImage("data/clues/clue_sharpteeth.png");
+    CLUE2 = loadImage("data/clues/clue_scales.png");
+    CLUE3 = loadImage("data/clues/clue_eggs.png");
+    CLUE4 = loadImage("data/clues/clue_eatsmice.png");
+  }
+  else if (USER == "POLAR_A") {  
+    CLUE1 = loadImage("data/clues/clue_white.png");
+    CLUE2 = loadImage("data/clues/clue_4paws.png");
+    CLUE3 = loadImage("data/clues/clue_blacknose.png");
+    CLUE4 = loadImage("data/clues/clue_sharpteeth.png");
+  }
+  else if (USER == "POLAR_B") {
+    CLUE1 = loadImage("data/clues/clue_4paws.png");
+    CLUE2 = loadImage("data/clues/clue_fur.png");
+    CLUE3 = loadImage("data/clues/clue_claws.png");
+    CLUE4 = loadImage("data/clues/clue_fish.png");
   }
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //           _                    
@@ -673,21 +691,18 @@ void loadClueImages() {
 // called automatically
 void draw() {
 
+  int current_time = millis();
+  println("Current Time is" + current_time);
+  println("AUDIO_LENGTH is" + AUDIO_LENGTH);
+
   if (LAST_HABITAT_NUMBER != HABITAT_NUMBER) {
     Z = false;//cancel the Zs
   }
 
-  int current_time = millis();
-  println("Current Time is" + current_time);
-  println("AUDIO_LENGTH is" + AUDIO_LENGTH);
-  //println("CurrentTalkLength" + LIST_OF_HABITATS[HABITAT_NUMBER].currentTalk().length());
-  //println("LASTTalkLength" + LIST_OF_HABITATS[LAST_HABITAT_NUMBER].currentTalk().length());
-
-  //println(GA_CAMEL1.length());
 
   //to stop the animal from visibly speaking if audio over
-  if (ANIMAL_TALKING && 
-    (current_time - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {//LIST_OF_HABITATS[HABITAT_NUMBER].currentTalk().length())) {
+  else if (ANIMAL_TALKING && 
+    (current_time - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
   }
@@ -704,6 +719,11 @@ void draw() {
       doOwl();
     }
   }
+  
+    else if (ON_MAP) {
+    doMap();
+  }
+
 
   //plays any animated gifs
   else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
@@ -730,19 +750,19 @@ void draw() {
 // This is for memory concerns; it prints out the totals to the 
 // console if called in draw()
 
-void printMem() {
-  Runtime runtime = Runtime.getRuntime();
-  NumberFormat format = NumberFormat.getInstance();
-  StringBuilder sb = new StringBuilder();
-  long maxMemory = runtime.maxMemory();
-  long allocatedMemory = runtime.totalMemory();
-  long freeMemory = runtime.freeMemory();
-  sb.append("free memory: " + format.format(freeMemory / 1024) + "  ");
-  sb.append("allocated memory: " + format.format(allocatedMemory / 1024) + "  ");
-  sb.append("max memory: " + format.format(maxMemory / 1024) + "  ");
-  sb.append("total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "  ");
-  println(sb);
-}
+/*void printMem() {
+ Runtime runtime = Runtime.getRuntime();
+ NumberFormat format = NumberFormat.getInstance();
+ StringBuilder sb = new StringBuilder();
+ long maxMemory = runtime.maxMemory();
+ long allocatedMemory = runtime.totalMemory();
+ long freeMemory = runtime.freeMemory();
+ sb.append("free memory: " + format.format(freeMemory / 1024) + "  ");
+ sb.append("allocated memory: " + format.format(allocatedMemory / 1024) + "  ");
+ sb.append("max memory: " + format.format(maxMemory / 1024) + "  ");
+ sb.append("total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "  ");
+ println(sb);
+ }*/
 
 // SOUNDS
 
@@ -826,7 +846,7 @@ void drawCursor() {
     }
   } 
 
-  else if (ANIMAL_TALKING) {
+  else if (ANIMAL_TALKING  || ON_OWL) {
     cursor(ARROW);
   }
 
@@ -1031,7 +1051,14 @@ void mousePressed() {
 // assume: on map
 // determines what actions to perform if on map
 void mousePressedOnMap() {
-  if (cursor_over_africa1()) {
+  if (cursorOverMapButton()) {
+    ON_MAP = false;
+  }
+  else if (cursorOverHelp()) {
+    OWL.talkOwl();
+    ON_OWL = true;
+  }
+  else if (cursor_over_africa1()) {
     doAfrica1();
     LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 0;
@@ -1140,7 +1167,6 @@ boolean cursor_over_start() {
 boolean cursorOverHabitat() {
   return cursor_over(0, 960, 0, 540);
 }
-
 
 // determines if cursor over map 
 boolean cursorOverMapButton() {

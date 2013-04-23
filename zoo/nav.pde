@@ -8,11 +8,11 @@ class Nav {
   boolean clue3;
   boolean clue4;
 
-  int clue1xi = 57;
-  int clue2xi = 211;
-  int clue3xi = 368;
-  int clue4xi = 524;
-  int clueyi = 570;
+  int clue1xi = 55;
+  int clue2xi = 209;
+  int clue3xi = 366;
+  int clue4xi = 522;
+  int clueyi = 567;
 
   Nav() {
     this.navbar = loadImage("data/nav.png");
@@ -36,40 +36,19 @@ class Nav {
   }
 
   void displayClue1() {
-    if (USER == "GORILLA_A") {
-      image(GA_CLUE1, clue1xi, clueyi);
-    }
-    else {
-      image(TEST_CLUE1, clue1xi, clueyi);
-    }
+      image(CLUE1, clue1xi, clueyi);
   }
 
   void displayClue2() {
-    if (USER == "GORILLA_A") {
-      image(GA_CLUE2, clue2xi, clueyi);
-    }
-    else {
-      image(TEST_CLUE2, clue2xi, clueyi);
-    }
+      image(CLUE2, clue2xi, clueyi);
   }
 
-
   void displayClue3() {
-    if (USER == "GORILLA_A") {
-      image(GA_CLUE3, clue3xi, clueyi);
-    }
-    else {
-      image(TEST_CLUE3, clue3xi, clueyi);
-    }
+      image(CLUE3, clue3xi, clueyi);
   }
 
   void displayClue4() {
-    if (USER == "GORILLA_A") {
-      image(GA_CLUE4, clue4xi, clueyi);
-    }
-    else {
-      image(TEST_CLUE4, clue4xi, clueyi);
-    }
+      image(CLUE4, clue4xi, clueyi);
   }
 }
 
