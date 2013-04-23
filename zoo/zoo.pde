@@ -238,6 +238,8 @@ PImage[] GIFS_SLOTH_TALKING;
 //Gifs and other information for effects
 PImage[] GIFS_ZS;
 int NUMZFRAMES = 13;
+int AUDIO_LENGTH;
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -341,6 +343,7 @@ void setup() {
   GIFS_ZS = Gif.getPImages(this, "data/z.gif");
 
   GUESS_SCENE_BG = loadImage("data/guesswho.png");
+  
 
 
   initializeAudio();
@@ -587,10 +590,16 @@ void draw() {
   }
   
   int current_time = millis();
+  println("Current Time is" + current_time);
+  println("AUDIO_LENGTH is" + AUDIO_LENGTH);
+  //println("CurrentTalkLength" + LIST_OF_HABITATS[HABITAT_NUMBER].currentTalk().length());
+  //println("LASTTalkLength" + LIST_OF_HABITATS[LAST_HABITAT_NUMBER].currentTalk().length());
+
+  //println(GA_CAMEL1.length());
   
   //to stop the animal from visibly speaking if audio over
   if (ANIMAL_TALKING && 
-    (current_time - ANIMAL_TALKING_START_TIME >= LIST_OF_HABITATS[HABITAT_NUMBER].currentTalk().length())) {
+    (current_time - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {//LIST_OF_HABITATS[HABITAT_NUMBER].currentTalk().length())) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
   }
@@ -602,7 +611,7 @@ void draw() {
   else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
     doScene(HABITAT_NUMBER);
     LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED
-    println(Z);
+    //println(Z);
     if (Z) {
       LIST_OF_HABITATS[HABITAT_NUMBER].displayZs();
       println(Z);
@@ -1064,4 +1073,5 @@ boolean cursor_over_jungle1() {
 boolean cursor_over_jungle2() {
   return cursor_over(373, 461, 95, 159);
 }
+
 

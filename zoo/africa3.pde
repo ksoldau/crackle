@@ -76,6 +76,7 @@ class Africa3 extends Habitat {
   void playCurrentTalk() {
     if (!this.isSleeping) {
       currentTalk().trigger();
+      AUDIO_LENGTH = currentTalk().length();
     }
     updateStateNumbers();
   }

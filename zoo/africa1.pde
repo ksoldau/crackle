@@ -61,8 +61,9 @@ class Africa1 extends Habitat {
   void playCurrentTalk() {
     if (!this.isSleeping) {
       currentTalk().trigger();
+      AUDIO_LENGTH = currentTalk().length();
     }
-    println("GOT TO CURrent talk");
+    println("GOT TO CURRENT talk");
     updateStateNumbers();
   }
 

@@ -119,6 +119,7 @@ class Jungle2 extends Habitat {
     println(JUNGLE2_STATE);
     if (!this.isSleeping) {
       currentTalk().trigger();
+      AUDIO_LENGTH = currentTalk().length();
     }
     updateStateNumbers();
   }
