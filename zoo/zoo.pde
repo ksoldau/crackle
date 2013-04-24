@@ -41,7 +41,7 @@ int OPENING_START_TIME;
 int CURRENT_TIME;
 
 PImage BACKGROUND_IMG;
-Intro intro;
+Intro INTRO;
 Win WIN;
 
 // Habitat classes 
@@ -320,7 +320,7 @@ void setup() {
 
 
   // making all the background objects
-  intro = new Intro();
+  INTRO = new Intro();
   OPENING_MOVIE = new Movie(this, "opening.mov");
 
   // randomly chooses which animal and which 
@@ -998,7 +998,7 @@ void doScene(int i) {
 // intro of the box screen
 void doIntro() {
   NAV.display();
-  intro.display();
+  INTRO.display();
   ON_INTRO = true;
 }
 
