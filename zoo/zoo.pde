@@ -16,9 +16,13 @@ PImage SLEEP_TEST;
 PImage TRASH_IMAGE;
 PImage ROCK_IMAGE;
 PImage CHERRY_BLOSSOM;
+PImage BAMBOO_IMAGE;
+PImage FISH_IMAGE;
 
 //items user might collect
 PImage CHERRY_BLOSSOM_CORNER;
+PImage FISH_CORNER;
+PImage BAMBOO_CORNER;
 
 //clues
 PImage CLUE1;
@@ -292,8 +296,12 @@ void setup() {
   TRASH_IMAGE= loadImage("data/elements/trash.png");
   ROCK_IMAGE = loadImage("data/elements/rock.png");
   CHERRY_BLOSSOM = loadImage("data/elements/cherryblossom.png");
+  //FISH_IMAGE = ;
+  //BAMBOO_IMAGE = ;
   
   CHERRY_BLOSSOM_CORNER = loadImage("data/elements/cherryblossomcorner.png");
+  //FISH_CORNER = ;
+  //BAMBOO_CORNER = ;
   
 
   // load image that says "Zoo guess who click here to start"
@@ -320,7 +328,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "GORILLA_B";
+  USER = "POLAR_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();

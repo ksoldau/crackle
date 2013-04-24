@@ -7,6 +7,11 @@ class Asia2 extends Habitat {
   int animalTop = 250;
   int animalSleepingLeft = 200;
   int animalSleepingTop = 200;
+  
+  int elx = 600;
+  int ely = 200;
+  
+  boolean replaced_bamboo = false;
 
 
   PImage background = loadImage("data/asia_2.png");
@@ -19,7 +24,21 @@ class Asia2 extends Habitat {
   //displays this habitat's background
   public void display() {
     image(this.background, 0, 0);
+    
+    if (USER == "POLAR_A") {
+      displayBambooOrFish();
+    }
   }
+  
+  void displayBambooOrFish() {
+    if (!replaced_bamboo) {
+    image(BAMBOO_IMAGE, elx, ely);
+    }
+    else {
+      image (FISH_IMAGE, elx, ely);
+    }
+  }
+  
   //displays the correct animal 
   void displayAnimal() {
     if (isSleeping) {
@@ -54,9 +73,22 @@ class Asia2 extends Habitat {
         && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
     }
   }
+  
+  boolean cursorOverBamboo() {
+     return ((elx < mouseX) && (mouseX < (elx + 200)))
+        && ((ely < mouseY) && (mouseY < (ely + 200)));
+  }
+    
 
   void mousePressedInHabitat() {
     if (isSleeping) {
+    }
+    else if (cursorOverBamboo() && !replaced_bamboo) {
+      replaced_bamboo = true;
+      ASIA2_STATE ++;
+      ANIMAL_TALKING = true;
+      ANIMAL_TALKING_START_TIME = millis();
+      playCurrentTalk();
     }
     else if (cursorOverAnimal() && (ASIA2_STATE == 2) && USER == "POLAR_B") {
       WIN.doGuess();

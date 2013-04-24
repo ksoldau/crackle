@@ -12,6 +12,14 @@ class Arrows {
     if (USER == "GORILLA_B" && HAS_ITEM) {
       displayCherryBlossom();
     }
+    if (USER == "POLAR_A" && HAS_ITEM) {
+      if (FROSTY1_STATE == 3) {
+        displayBamboo();
+      }
+      else {
+      displayFish();
+      }
+    }
   }
   
   //assume GORILLA_B and that user has it
@@ -19,6 +27,13 @@ class Arrows {
     image(CHERRY_BLOSSOM_CORNER, 810, 0);
   }
   
+  void displayFish() {
+    image(FISH_CORNER, 810, 0);
+  }
+  
+  void displayBamboo() {
+    image(BAMBOO_CORNER, 810, 0);
+  }
   
 }
 
