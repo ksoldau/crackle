@@ -124,8 +124,6 @@ class Jungle2 extends Habitat {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
       playCurrentTalk();
-      HELP = 1;
-      AFRICA2_STATE ++;
     }
     else if ((USER == "COBRA_B") && (JUNGLE2_STATE == 2) && cursorOverRock()) {
       rockx = rockx - 100; //move the rock
@@ -142,7 +140,7 @@ class Jungle2 extends Habitat {
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
       playCurrentTalk();
     }
-    else if (cursorOverTrash1() && (USER == "COBRA_B" || USER == "POLAR_A")) {
+    else if (cursorOverTrash1() && (USER == "COBRA_B" ) {
       pickedUpTrash1 = true;
       JUNGLE2_STATE ++; // so Stanley Sloth will say next line
     }
@@ -208,8 +206,8 @@ class Jungle2 extends Habitat {
       }
       if (JUNGLE2_STATE == 2) {
         JUNGLE2_STATE ++;
-        AFRICA2_STATE ++;
         HELP = 1; //Gerry Giraffe
+        AFRICA2_STATE ++;
       }
     }
     else if (USER == "POLAR_B") {

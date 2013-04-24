@@ -300,8 +300,8 @@ void setup() {
   CHERRY_BLOSSOM = loadImage("data/elements/cherryblossom.png");
   FISH_IMAGE = loadImage("data/elements/fish.png");
   BAMBOO_IMAGE = loadImage("data/elements/bamboo.png");
-  VINES_IMAGE = loadImage("data/elements/vine.png");
-  VINES_CUT_IMAGE = loadImage("data/elements/vinecut.png");
+  VINES_IMAGE = loadImage("data/elements/fish.png");  //*** 
+  VINES_CUT_IMAGE = loadImage("data/elements/bamboo.png"); //***
   
   CHERRY_BLOSSOM_CORNER = loadImage("data/elements/cherryblossomcorner.png");
   FISH_CORNER = loadImage("data/elements/fishcorner.png");
