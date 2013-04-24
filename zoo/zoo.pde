@@ -808,9 +808,9 @@ void playBg() {
   }
 }
 
-
+//determines if this is the point where the guess screen should automatically pop up 
 boolean shouldShowGuess() {
-  if (! (!ANIMAL_TALKING && CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH + 1000)) {
+  if (! (!ANIMAL_TALKING && CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH + 700)) {
     return false;
   }
   if (USER == "GORILLA_A" && AFRICA3_STATE == 4) { 
@@ -968,9 +968,8 @@ void doScene(int i) {
 
 // intro of the box screen
 void doIntro() {
-  intro.display();
-  arrows.display();
   nav.display();
+  intro.display();
   ON_INTRO = true;
 }
 
