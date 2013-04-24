@@ -940,7 +940,7 @@ void drawCursor() {
     cursor_over_frosty1() ||
     cursor_over_frosty2() ||
     cursor_over_jungle1() ||
-    cursor_over_jungle2() ))) 
+   cursorOverJungle2() ))) 
   {
     cursor(HAND);
   }
@@ -1188,7 +1188,7 @@ void mousePressedOnMap() {
     HABITAT_NUMBER = 7;
     ON_MAP = false;
   }
-  else if (cursor_over_jungle2()) {
+  else if (cursorOverJungle2()) {
     doJungle2();
     LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 8;
@@ -1289,7 +1289,7 @@ boolean cursor_over_frosty2() {
 boolean cursor_over_jungle1() {
   return cursorOver(283, 372, 171, 235);
 }
-boolean cursor_over_jungle2() {
+boolean cursorOverJungle2() {
   return cursorOver(373, 461, 95, 159);
 }
 
