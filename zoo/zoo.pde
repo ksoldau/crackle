@@ -172,6 +172,13 @@ AudioSample PB_PENGUIN1;
 AudioSample PB_PANDA1;
 
 
+
+
+
+//Audio for Guess screen
+AudioSample TRY_AGAIN_AUDIO;
+
+
 //------------------------------------------------
 //Static variables
 
@@ -228,7 +235,7 @@ int HABITAT_NUMBER;
 //current help owl
 int HELP;
 //list of Helps
-PImage[] LIST_OF_HELP = new PImage[9];
+PImage[] LIST_HELP_IMAGES = new PImage[13];
 //is it on help
 boolean ON_OWL = false;
 //initialize lines //test for now
@@ -312,15 +319,15 @@ void setup() {
   image(BACKGROUND_IMG, 0, 0);
 
   //helpowls
-  LIST_OF_HELP[0] = loadImage("data/oscar/help_calvin_288.png"); 
-  LIST_OF_HELP[1] =loadImage("data/oscar/help_gerry_288.png"); 
-  LIST_OF_HELP[2] =loadImage("data/oscar/help_leonard_288.png");
-  LIST_OF_HELP[3] =loadImage("data/oscar/help_tina_288.png");
-  LIST_OF_HELP[4] =loadImage("data/oscar/help_patty_288.png");
-  LIST_OF_HELP[5] =loadImage("data/oscar/help_peter_288.png");
-  LIST_OF_HELP[6] =loadImage("data/oscar/help_sam_288.png");
-  LIST_OF_HELP[7] =loadImage("data/oscar/help_eliza_288.png");
-  LIST_OF_HELP[8] =loadImage("data/oscar/help_stanley_288.png");
+  LIST_HELP_IMAGES[0] = loadImage("data/oscar/help_calvin_288.png"); 
+  LIST_HELP_IMAGES[1] =loadImage("data/oscar/help_gerry_288.png"); 
+  LIST_HELP_IMAGES[2] =loadImage("data/oscar/help_leonard_288.png");
+  LIST_HELP_IMAGES[3] =loadImage("data/oscar/help_tina_288.png");
+  LIST_HELP_IMAGES[4] =loadImage("data/oscar/help_patty_288.png");
+  LIST_HELP_IMAGES[5] =loadImage("data/oscar/help_peter_288.png");
+  LIST_HELP_IMAGES[6] =loadImage("data/oscar/help_sam_288.png");
+  LIST_HELP_IMAGES[7] =loadImage("data/oscar/help_eliza_288.png");
+  LIST_HELP_IMAGES[8] =loadImage("data/oscar/help_stanley_288.png");
 
 
 
@@ -413,7 +420,8 @@ void setup() {
   GUESS_SCENE_BG = loadImage("data/guesswho.png");
 
   initializeAudio();
-  initializeHelpAudio();
+  initializeHelpAudioAndImages();
+  TRY_AGAIN_AUDIO = minim.loadSample("try_again.mp3", 512);
 }
 
 //sets the first habitat the user sees to correct one
@@ -571,7 +579,7 @@ void initializeAudio() {
   }
 }
 
-void initializeHelpAudio() {
+void initializeHelpAudioAndImages() {
   if (USER == "GORILLA_A") {
     LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);  //("owl_help_0.mp3", 512);
         LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);  //("owl_help_2.mp3", 512);
@@ -582,6 +590,7 @@ void initializeHelpAudio() {
         LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512); //("owl_help_8.mp3", 512);
     
         LIST_OWL_AUDIO[9] = minim.loadSample("owl_help_9_ga_trash.mp3", 512);
+        LIST_HELP_IMAGES[9] = loadImage("data/oscar/help_stanley_288.png");
       }
       else if (USER == "GORILLA_B") {
       }
@@ -976,6 +985,9 @@ void initializeHelpAudio() {
       else if (ON_GUESS) {
         if (WIN.cursorOverGuessOption()) {
           cursor(HAND);
+        }
+        else {
+          cursor(ARROW);
         }
       }
     

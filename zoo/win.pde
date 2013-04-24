@@ -100,7 +100,7 @@ class Win {
       //doWin();
     }
     else if (cursorOverGuessOption()) { //and not correct option
-    //play try again somehow
+    TRY_AGAIN_AUDIO.trigger();
     }
   }
 }
