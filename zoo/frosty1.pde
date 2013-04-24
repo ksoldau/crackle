@@ -101,7 +101,7 @@ class Frosty1 extends Habitat {
         println("got here homeslice");
         FROSTY1_STATE ++;
         ASIA1_STATE ++;
-        nav.clue3 = true; //muscles
+        NAV.clue3 = true; //muscles
         HELP = 3; //Tina Tiger
         HAS_ITEM = false;
         show_blossom = true;
@@ -123,7 +123,7 @@ class Frosty1 extends Habitat {
       else if (FROSTY1_STATE == 3) {
         FROSTY1_STATE ++;
         ASIA2_STATE ++;
-        nav.clue2 = true;
+        NAV.clue2 = true;
         HELP = 4; //Patty Panda
         HAS_ITEM = false;
       }
@@ -132,7 +132,7 @@ class Frosty1 extends Habitat {
       if (FROSTY1_STATE == 1) {
         FROSTY1_STATE++;
         FROSTY2_STATE ++;
-        nav.clue3 = true;
+        NAV.clue3 = true;
         HELP = 6; //Sam Seal
       }
     }

@@ -130,7 +130,7 @@ class Asia2 extends Habitat {
       if (ASIA2_STATE == 3) {
         ASIA2_STATE ++;
         FROSTY2_STATE ++;//Sam Seal
-        nav.clue2 = true; //love to eat plants
+        NAV.clue2 = true; //love to eat plants
         HELP = 6;
       }
     }
@@ -145,7 +145,7 @@ class Asia2 extends Habitat {
       else if (ASIA2_STATE == 3) {
         ASIA2_STATE ++;
         JUNGLE1_STATE ++;
-        nav.clue3 = true;
+        NAV.clue3 = true;
         HELP = 7; //Eliza Elephant
       }
     }
@@ -158,7 +158,7 @@ class Asia2 extends Habitat {
       if (ASIA2_STATE == 3) {
         ASIA2_STATE ++;
         FROSTY2_STATE ++;
-        nav.clue4 = true; //eats mice
+        NAV.clue4 = true; //eats mice
         HELP = 6;//Sam Seal
       }
     }
@@ -169,7 +169,7 @@ class Asia2 extends Habitat {
       else if (ASIA2_STATE == 3) {
         ASIA2_STATE ++;
         JUNGLE2_STATE ++;
-        nav.clue3 = true; //black nose
+        NAV.clue3 = true; //black nose
         HELP = 8; //Stanley sloth
       }
     }

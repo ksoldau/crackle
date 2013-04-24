@@ -111,7 +111,7 @@ PImage animal_sleeping;
       if (FROSTY2_STATE == 3) {
         FROSTY2_STATE ++;
         ASIA2_STATE ++;
-        nav.clue4 = true;
+        NAV.clue4 = true;
         HELP = 4; //Patty Panda
       }
     }

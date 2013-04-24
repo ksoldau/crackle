@@ -87,7 +87,7 @@ class Asia1 extends Habitat {
         println("GOT TO ASIA ONE STATE HERE YO");
         ASIA1_STATE ++;
         JUNGLE2_STATE ++;
-        nav.clue4 = true; //black fur
+        NAV.clue4 = true; //black fur
         HELP = 8; //Stanley Sloth
       }
     }
@@ -101,7 +101,7 @@ class Asia1 extends Habitat {
       if (ASIA1_STATE == 1) {
         ASIA1_STATE ++;
         JUNGLE2_STATE ++;
-        nav.clue2 = true;
+        NAV.clue2 = true;
         HELP = 8; //Stanley Sloth
       }
     }

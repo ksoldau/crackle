@@ -97,7 +97,7 @@ class Africa3 extends Habitat {
       if (AFRICA3_STATE == 1) {
         AFRICA3_STATE ++;
         ASIA2_STATE ++;
-        nav.clue2 = true;
+        NAV.clue2 = true;
         HELP = 4; //Patty Panda
       }
     }
@@ -105,7 +105,7 @@ class Africa3 extends Habitat {
       if (AFRICA3_STATE == 1) {
         AFRICA3_STATE++;
         ASIA1_STATE ++;
-        nav.clue1 = true;
+        NAV.clue1 = true;
         HELP = 3;//Tina Tiger
       }
     }

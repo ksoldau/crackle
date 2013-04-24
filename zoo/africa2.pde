@@ -85,7 +85,7 @@ class Africa2 extends Habitat {
       if (AFRICA2_STATE == 1) {
         AFRICA2_STATE ++;
         FROSTY1_STATE ++;
-        nav.clue2 = true; //climb trees
+        NAV.clue2 = true; //climb trees
         HAS_ITEM = true;
         HELP = 5; //Peter Penguin
       }
@@ -113,7 +113,7 @@ class Africa2 extends Habitat {
       if (AFRICA2_STATE == 1) {
         AFRICA2_STATE ++;
         JUNGLE1_STATE ++;
-        nav.clue1 = true; //four paws
+        NAV.clue1 = true; //four paws
         HELP = 7; //Eliza Elephant
       }
     }

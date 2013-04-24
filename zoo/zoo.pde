@@ -79,7 +79,7 @@ Habitat[] LIST_OF_HABITATS = new Habitat[9];
 
 
 // Navigation,arrows, map, owl
-Nav nav;
+Nav NAV;
 Arrows arrows;
 Map map;
 Owl OWL;
@@ -365,7 +365,7 @@ void setup() {
 
 
   //initialize the navigation bar class
-  nav = new Nav();
+  NAV = new Nav();
 
   //initialize the class for the arrows
   arrows = new Arrows();
@@ -912,7 +912,7 @@ void drawCursor() {
   // changes the cursor to show it's over the start button
   if (WELCOME_SCREEN) {
 
-    if (cursor_over(STARTXi, STARTXf, STARTYi, STARTYf)) {
+    if (cursorOver(STARTXi, STARTXf, STARTYi, STARTYf)) {
       cursor(HAND);
     }
     else {
@@ -945,6 +945,9 @@ void drawCursor() {
     cursor(HAND);
   }
   else if (LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverElement()) {
+    cursor(HAND);
+  }
+  else if (NAV.cursorOverClue()) {
     cursor(HAND);
   }
   else if ((HABITAT_NUMBER == 8) && JUNGLE2.cursorOverTrash()) {
@@ -994,7 +997,7 @@ void doScene(int i) {
 
 // intro of the box screen
 void doIntro() {
-  nav.display();
+  NAV.display();
   intro.display();
   ON_INTRO = true;
 }
@@ -1019,54 +1022,54 @@ void doOwl() {
 void doAfrica1() {
   AFRICA1.display();
   arrows.display();
-  nav.display();
+  NAV.display();
 }
 void doAfrica2() {
   AFRICA2.display();
   arrows.display();
-  nav.display();
+  NAV.display();
 }
 
 void doAfrica3() {
   AFRICA3.display();
   arrows.display();
-  nav.display();
+  NAV.display();
 }
 
 void doAsia1() {
   ASIA1.display();
   arrows.display();
-  nav.display();
+  NAV.display();
 }
 
 void doAsia2() {
   ASIA2.display();
   arrows.display();
-  nav.display();
+  NAV.display();
 }
 
 void doFrosty1() {
   FROSTY1.display();
   arrows.display();
-  nav.display();
+  NAV.display();
 }
 
 void doFrosty2() {
   FROSTY2.display();
   arrows.display();
-  nav.display();
+  NAV.display();
 }
 
 void doJungle1() {
   JUNGLE1.display();
   arrows.display();
-  nav.display();
+  NAV.display();
 }
 
 void doJungle2() {
   JUNGLE2.display();
   arrows.display();
-  nav.display();
+  NAV.display();
 }
 
 //------------------------------------
@@ -1230,64 +1233,64 @@ void mouseMoved() {
 // determine if cursor is over a certain area 
 
 // determines if cursor in a certain box
-boolean cursor_over(int xmin, int xmax, int ymin, int ymax) {
+boolean cursorOver(int xmin, int xmax, int ymin, int ymax) {
   return xmin < mouseX && mouseX < xmax && ymin < mouseY && mouseY < ymax;
 }
 
 // determines if cursor over the start button 
 // assume: on welcome page
 boolean cursor_over_start() {
-  return cursor_over(STARTXi, STARTXf, STARTYi, STARTYf);
+  return cursorOver(STARTXi, STARTXf, STARTYi, STARTYf);
 }
 
 
 //assume: not on welcome screen, not on map
 // determines if mouse pressed in a habitat
 boolean cursorOverHabitat() {
-  return cursor_over(0, 960, 0, 540);
+  return cursorOver(0, 960, 0, 540);
 }
 
 // determines if cursor over map 
 boolean cursorOverMapButton() {
-  return cursor_over(MAPXi, MAPXf, MAPYi, MAPYf);
+  return cursorOver(MAPXi, MAPXf, MAPYi, MAPYf);
 }
 boolean cursorOverHelp() {
-  return cursor_over(HELPXi, HELPXf, HELPYi, HELPYf);
+  return cursorOver(HELPXi, HELPXf, HELPYi, HELPYf);
 }
 boolean cursor_over_left() {
-  return cursor_over(LEFTXi, LEFTXf, LEFTYi, LEFTYf);
+  return cursorOver(LEFTXi, LEFTXf, LEFTYi, LEFTYf);
 }
 boolean cursor_over_right() {
-  return cursor_over(RIGHTXi, RIGHTXf, RIGHTYi, RIGHTYf);
+  return cursorOver(RIGHTXi, RIGHTXf, RIGHTYi, RIGHTYf);
 }
 
 // assuming in the map
 boolean cursor_over_africa1() {
-  return cursor_over(473, 562, 96, 160);
+  return cursorOver(473, 562, 96, 160);
 }
 boolean cursor_over_africa2() {
-  return cursor_over(564, 654, 171, 237);
+  return cursorOver(564, 654, 171, 237);
 }
 boolean cursor_over_africa3() {
-  return cursor_over(581, 670, 270, 336);
+  return cursorOver(581, 670, 270, 336);
 }
 boolean cursor_over_asia1() {
-  return cursor_over(527, 616, 370, 435);
+  return cursorOver(527, 616, 370, 435);
 }
 boolean cursor_over_asia2() {
-  return cursor_over(423, 513, 409, 474);
+  return cursorOver(423, 513, 409, 474);
 }
 boolean cursor_over_frosty1() {
-  return cursor_over(318, 407, 369, 433);
+  return cursorOver(318, 407, 369, 433);
 }
 boolean cursor_over_frosty2() {
-  return cursor_over(267, 356, 272, 336);
+  return cursorOver(267, 356, 272, 336);
 }
 boolean cursor_over_jungle1() {
-  return cursor_over(283, 372, 171, 235);
+  return cursorOver(283, 372, 171, 235);
 }
 boolean cursor_over_jungle2() {
-  return cursor_over(373, 461, 95, 159);
+  return cursorOver(373, 461, 95, 159);
 }
 
 

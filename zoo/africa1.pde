@@ -81,7 +81,7 @@ class Africa1 extends Habitat {
       else if (AFRICA1_STATE == 2) {
         AFRICA1_STATE ++ ;
         AFRICA3_STATE ++ ; //Leonard Lion
-        nav.clue3 = true; //two legs
+        NAV.clue3 = true; //two legs
         HELP = 2;
       }
     }
@@ -89,7 +89,7 @@ class Africa1 extends Habitat {
       if (AFRICA1_STATE == 1) {
         AFRICA1_STATE ++;
         FROSTY1_STATE ++;
-        nav.clue1 = true; //eat plants
+        NAV.clue1 = true; //eat plants
         HELP = 5;
       }
     }
@@ -97,7 +97,7 @@ class Africa1 extends Habitat {
       if (AFRICA1_STATE == 1) {
         AFRICA1_STATE ++;
         ASIA2_STATE ++;
-        nav.clue1 = true; //sharp teeth
+        NAV.clue1 = true; //sharp teeth
         HELP = 4; //Patty Panda
       }
     }
@@ -105,14 +105,14 @@ class Africa1 extends Habitat {
       if (AFRICA1_STATE == 1) {
         AFRICA1_STATE ++;
         ASIA1_STATE++;
-        nav.clue1 = true;
+        NAV.clue1 = true;
       }
     }
     else if (USER == "POLAR_A") {
       if (AFRICA1_STATE == 1) {
         AFRICA1_STATE ++;
         FROSTY1_STATE ++;
-        nav.clue1 = true;
+        NAV.clue1 = true;
         HELP = 5; //Peter Penguin
       }
     }

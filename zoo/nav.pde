@@ -50,5 +50,25 @@ class Nav {
   void displayClue4() {
       image(CLUE4, clue4xi, clueyi);
   }
+  
+  //determines if cursor should be over a clue
+  boolean cursorOverClue() {
+    if (clue1 && cursorOver(clue1xi, clue1xi + 100, clueyi, clueyi+ 65)) {
+      return true;
+    }
+     else if (clue2 && cursorOver(clue2xi, clue2xi + 100, clueyi, clueyi+ 65)) {
+      return true;
+    }
+     else if (clue3 && cursorOver(clue3xi, clue3xi + 100, clueyi, clueyi+ 65)) {
+      return true;
+    }
+     else if (clue2 && cursorOver(clue4xi, clue4xi + 100, clueyi, clueyi+ 65)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+
+  }
 }
 

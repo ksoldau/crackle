@@ -179,7 +179,7 @@ PImage animal_sleeping;
       if (JUNGLE2_STATE == 3) {
         JUNGLE2_STATE ++;
         AFRICA3_STATE ++;
-        nav.clue4 = true; //fur is black
+        NAV.clue4 = true; //fur is black
         HELP = 2;
       }
     }
@@ -198,13 +198,13 @@ PImage animal_sleeping;
       else if (JUNGLE2_STATE == 3) {
         JUNGLE2_STATE ++;
         ASIA2_STATE ++;
-        nav.clue3 = true;
+        NAV.clue3 = true;
         HELP = 4; //Patty Panda
       }
     }
     else if (USER == "POLAR_A") {
       if (JUNGLE2_STATE == 1) {
-        nav.clue4 = true;
+        NAV.clue4 = true;
       }
       if (JUNGLE2_STATE == 2) {
         JUNGLE2_STATE ++;
