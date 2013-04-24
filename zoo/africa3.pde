@@ -7,7 +7,7 @@ class Africa3 extends Habitat {
   int animalTop = 50;
 
   PImage background = loadImage("data/africa_3.png");
-  
+
   PImage animal_sleeping;
 
   Africa3(boolean isSleeping) {
@@ -45,7 +45,7 @@ class Africa3 extends Habitat {
   //displays this habitat's background
   public void display() {
     image(this.background, 0, 0);
-        displayAnimal();
+    displayAnimal();
   }
 
   // determines if 
@@ -60,6 +60,7 @@ class Africa3 extends Habitat {
     }
   }
 
+  //decides what to do if the mouse was pressed in the habitat
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
@@ -80,6 +81,7 @@ class Africa3 extends Habitat {
     updateStateNumbers();
   }
 
+  //updates the state numbers to get  next line
   void updateStateNumbers() {
     if (USER == "GORILLA_A") {
       if (AFRICA3_STATE == 1) {
@@ -126,7 +128,7 @@ class Africa3 extends Habitat {
       else if (AFRICA3_STATE == 3) {
         return GA_LION2;
       }
-    //  else if (AFRICA3_STATE == 4) {
+      //  else if (AFRICA3_STATE == 4) {
       //  return GA_LION3;
       //}
     }
