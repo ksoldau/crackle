@@ -6,14 +6,11 @@ class Africa2 extends Habitat {
   int animalLeft = 500;
   int animalTop = 100;
   
-  int animalSleepingLeft = 400;
-  int animalSleepingTop = 100;
-  
   PImage background = loadImage("data/africa_2.png");
   PImage animal_sleeping;
 
   Africa2(boolean isSleeping) {
-    super(isSleeping);
+    super(isSleeping, 400, 100);
     PImage animal_sleeping = loadImage("data/gerry_sleep_288.png");
   }
   //displays the background for the habitat
@@ -24,7 +21,7 @@ class Africa2 extends Habitat {
   //determines if the animal in the habitat was clicked on
   void displayAnimal() {
     if (isSleeping) {
-      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, sleepingx, sleepingy);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -48,8 +45,8 @@ class Africa2 extends Habitat {
   //determines if the mouse was pressed on an animal
   boolean cursorOverAnimal() {
     if (isSleeping) {
-      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
-      && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+      return ((sleepingx < mouseX) && (mouseX < (sleepingx + 200)))
+      && ((sleepingy < mouseY) && (mouseY < (sleepingy + 200)));
     }
     else { 
     return ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))

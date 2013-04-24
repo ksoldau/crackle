@@ -5,8 +5,6 @@ class Asia2 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 250;
-  int animalSleepingLeft = 200;
-  int animalSleepingTop = 200;
   
   int elx = 200;
   int ely = 200;
@@ -18,7 +16,7 @@ class Asia2 extends Habitat {
   PImage animal_sleeping;
   
   Asia2(boolean isSleeping) {
-    super(isSleeping); 
+    super(isSleeping, 200, 200); 
     if (isSleeping) {
       animal_sleeping = loadImage("data/sleep/patty_sleep_288.png");
     }
@@ -45,7 +43,7 @@ class Asia2 extends Habitat {
   //displays the correct animal 
   void displayAnimal() {
     if (isSleeping) {
-      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, sleepingx, sleepingy);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -68,8 +66,8 @@ class Asia2 extends Habitat {
 
   boolean cursorOverAnimal() {   
     if (isSleeping) {
-      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
-        && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+      return ((sleepingx < mouseX) && (mouseX < (sleepingx + 200)))
+        && ((sleepingy < mouseY) && (mouseY < (sleepingy + 200)));
     }
     else {
       return ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))

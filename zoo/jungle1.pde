@@ -5,8 +5,6 @@ class Jungle1 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 170;
-  int animalSleepingLeft = 200;
-  int animalSleepingTop = 200;
 
 
   PImage background = loadImage("data/jungle_1.png"); 
@@ -14,7 +12,7 @@ class Jungle1 extends Habitat {
   PImage animal_sleeping;
   
   Jungle1(boolean isSleeping) {
-    super(isSleeping);
+    super(isSleeping, 200, 200);
     if (isSleeping) {
       animal_sleeping = loadImage("data/sleep/eliza_sleep_288.png");
     }
@@ -28,7 +26,7 @@ class Jungle1 extends Habitat {
   //display the correct animal image
   void displayAnimal() {
     if (isSleeping) {
-      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, sleepingx, sleepingy);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -113,8 +111,8 @@ class Jungle1 extends Habitat {
   //determines if the mouse over the Camel
   boolean cursorOverAnimal() {
     if (isSleeping) {
-      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
-        && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+      return ((sleepingx < mouseX) && (mouseX < (sleepingx + 200)))
+        && ((sleepingy < mouseY) && (mouseY < (sleepingy + 200)));
     }
     else {
       return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))

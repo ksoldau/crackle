@@ -5,16 +5,13 @@ class Africa3 extends Habitat {
 
   int animalLeft = 300;
   int animalTop = 50;
-  
-  int animalSleepingLeft = 200;
-  int animalSleepingTop = 200;
 
   PImage background = loadImage("data/africa_3.png");
   
   PImage animal_sleeping;
 
   Africa3(boolean isSleeping) {
-    super(isSleeping);
+    super(isSleeping, 200, 200);
     if (isSleeping) {
       animal_sleeping = loadImage("data/sleep/leonard_sleep_288.png");
     }
@@ -24,7 +21,7 @@ class Africa3 extends Habitat {
   //displays the correct animal
   void displayAnimal() {
     if (isSleeping) {
-      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, sleepingx, sleepingy);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -53,8 +50,8 @@ class Africa3 extends Habitat {
   // determines if 
   boolean cursorOverAnimal() {   
     if (isSleeping) {
-      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
-        && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+      return ((sleepingx < mouseX) && (mouseX < (sleepingx + 200)))
+        && ((sleepingy < mouseY) && (mouseY < (sleepingy + 200)));
     }
     else {
       return ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))

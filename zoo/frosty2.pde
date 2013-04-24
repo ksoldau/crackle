@@ -5,15 +5,12 @@ class Frosty2 extends Habitat {
 
   int animalLeft = 200;
   int animalTop = 220;
-  int animalSleepingLeft = 200;
-  int animalSleepingTop = 200;
-
 
   PImage background = loadImage("data/frosty_2.png");
 
 PImage animal_sleeping;
   Frosty2(boolean isSleeping) {
-    super(isSleeping);
+    super(isSleeping, 200, 200);
     if (isSleeping) {
       animal_sleeping = loadImage("data/sleep/sam_sleep_288.png");
       
@@ -28,7 +25,7 @@ PImage animal_sleeping;
   void displayAnimal() {
 
     if (isSleeping) {
-      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, sleepingx, sleepingy);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
@@ -51,8 +48,8 @@ PImage animal_sleeping;
 
   boolean cursorOverAnimal() { 
     if (isSleeping) {
-      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
-        && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
+      return ((sleepingx < mouseX) && (mouseX < (sleepingx + 200)))
+        && ((sleepingy < mouseY) && (mouseY < (sleepingy + 200)));
     }
     else {
       return ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))

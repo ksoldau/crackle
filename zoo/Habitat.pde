@@ -1,11 +1,15 @@
 public abstract class Habitat { 
 
   boolean isSleeping;
+  int sleepingx;
+  int sleepingy;
   
   int frameZs = 0; 
 
-  Habitat(boolean isSleeping) {
+  Habitat(boolean isSleeping, int sleepingx, int sleepingy) {
     this.isSleeping = isSleeping;
+    this.sleepingx = sleepingx;
+    this.sleepingy = sleepingy;
   } 
 
   PImage background =  loadImage("data/africa_1.png");  
