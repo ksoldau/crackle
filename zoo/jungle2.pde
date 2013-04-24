@@ -169,7 +169,7 @@ class Jungle2 extends Habitat {
       if (JUNGLE2_STATE == 1) { //stay same until pick up rock
       JUNGLE2_STATE ++;
       }
-      else if (JUNGLE2_STATE == 2) {
+      else if (JUNGLE2_STATE == 3) {
         JUNGLE2_STATE ++;
         ASIA2_STATE ++;
         nav.clue3 = true;
