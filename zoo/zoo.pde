@@ -11,7 +11,8 @@ import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 
 //for tests
 PImage SLEEP_TEST;
-PImage TRASH_TEST;
+
+PImage TRASH_IMAGE;
 
 //clues
 PImage CLUE1;
@@ -278,7 +279,9 @@ void setup() {
 
   //for tests
   SLEEP_TEST = loadImage("data/sleep_test.jpg");
-  TRASH_TEST = loadImage("data/testTrash.png");
+  
+  //elements for scenes
+  TRASH_IMAGE= loadImage("data/elements/trash.png");
 
   // load image that says "Zoo guess who click here to start"
   BACKGROUND_IMG = loadImage("data/welcome.png");

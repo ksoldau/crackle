@@ -41,7 +41,7 @@ class Jungle2 extends Habitat {
   public void display() {
     image(this.background, 0, 0);
     if (!isSleeping && USER == "COBRA_B") {
-      image(TRASH_TEST, trash1_x, trash1_y);
+      image(TRASH_IMAGE, trash1_x, trash1_y);
     }
     else if (!isSleeping) {
       displayTrash();
@@ -52,13 +52,13 @@ class Jungle2 extends Habitat {
   //assume: not sleeping
   void displayTrash() {
     if (!pickedUpTrash1) {
-      image(TRASH_TEST, trash1_x, trash1_y); //change
+      image(TRASH_IMAGE, trash1_x, trash1_y); //change
     }
     if (!pickedUpTrash2) {
-      image(TRASH_TEST, trash2_x, trash2_y);
+      image(TRASH_IMAGE, trash2_x, trash2_y);
     }
     if (!pickedUpTrash3) {
-      image(TRASH_TEST, trash3_x, trash3_y);
+      image(TRASH_IMAGE, trash3_x, trash3_y);
     }
   }
 
