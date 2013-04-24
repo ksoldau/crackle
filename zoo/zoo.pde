@@ -931,6 +931,12 @@ void drawCursor() {
   else if (ANIMAL_TALKING || ON_OWL || ON_INTRO) {
     cursor(ARROW);
   }
+  
+  else if (ON_GUESS) {
+    if (WIN.cursorOverGuess()) {
+      cursor(HAND):
+    }
+  }
 
   else if 
     (cursorOverMapButton() || 

@@ -2,7 +2,12 @@
 class Win {
 
   int correct_x;
-  int correct_y;
+  int guess_y = 268;
+  
+  int guess1_x = 32; 
+  int guess2_x = 264;
+  int guess3_x = 498;
+  int guess4_x = 730;
 
   PImage background;
   PImage img;
@@ -12,20 +17,29 @@ class Win {
     win_image = loadImage("data/youwin.png");
     setCorrectLocation();
   }
-  
+
   //sets where correct location is on guess creen
   void setCorrectLocation() {
     if (USER == "GORILLA_A") {
-      correct_x = 497;
-      correct_y = 268;
+      correct_x = guess3_x;
     }
-    else if (USER == "GORILLA_B") {}
-    else if (USER == "COBRA_A") {}
-    else if (USER == "COBRA_B") {}
-    else if (USER == "POLAR_A") {}
-    else if (USER == "POLAR_B") {}
+    else if (USER == "GORILLA_B") {
+      correct_x = guess1_x;
+    }
+    else if (USER == "COBRA_A") {
+      correct_x = guess2_x;
+    }
+    else if (USER == "COBRA_B") {
+      correct_x = guess3_x;
+    }
+    else if (USER == "POLAR_A") {
+      correct_x = guess4_x;
+    }
+    else if (USER == "POLAR_B") {
+      correct_x = guess3_x;
+    }
   }
-  
+
   //displays the guessing screen
   void doGuess() {
     ON_GUESS = true;
@@ -41,10 +55,17 @@ class Win {
   boolean mousePressedAnimal() { // yea we know this isn't super legit
     return false;
   }
+  
+  boolean cursorOverGuessOption() {
+    return cursorOver(guess1_x, guess1_x + 100, guess_y, guess_y + 200) 
+    || cursorOver(guess2_x, guess2_x + 100, guess_y, guess_y + 200) 
+    || cursorOver(guess3_x, guess3_x + 100, guess_y, guess_y + 200) 
+    || cursorOver(guess4_x, guess4_x + 100, guess_y, guess_y + 200); 
+  }
 
   //determiens if cursor over the correct answer
   boolean cursorOverCorrect() {
-      return cursorOver(correct_x, correct_x + 200, correct_y, correct_y + 200);
+    return cursorOver(correct_x, correct_x + 200, guess_y, guess_y + 200);
   }
 
   //decides what to do if mouse pressed in the habitat
@@ -53,6 +74,9 @@ class Win {
       ON_GUESS = false;
       ON_WIN = true;
       //doWin();
+    }
+    else if (cursorOverGuessOption()) { //and not correct option
+    //play try again somehow
     }
   }
 }
