@@ -8,7 +8,7 @@ class Asia2 extends Habitat {
   int animalSleepingLeft = 200;
   int animalSleepingTop = 200;
   
-  int elx = 600;
+  int elx = 200;
   int ely = 200;
   
   boolean replaced_bamboo = false;
@@ -83,12 +83,16 @@ class Asia2 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
-    else if (cursorOverBamboo() && !replaced_bamboo) {
+    else if (USER == "POLAR_A" && cursorOverBamboo() && !replaced_bamboo && (FROSTY1_STATE == 2)) {
       replaced_bamboo = true;
       ASIA2_STATE ++;
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
       playCurrentTalk();
+      HELP = 5;
+      FROSTY1_STATE ++;
+      ASIA2_STATE ++;
+
     }
     else if (cursorOverAnimal() && (ASIA2_STATE == 2) && USER == "POLAR_B") {
       WIN.doGuess();
@@ -153,8 +157,6 @@ class Asia2 extends Habitat {
     }
     else if (USER == "POLAR_A") {
       if (ASIA2_STATE == 1) {
-        ASIA2_STATE ++;
-        FROSTY1_STATE ++;
         HELP = 5; //Peter Penguin
       }
       else if (ASIA2_STATE == 3) {

@@ -13,7 +13,7 @@ class Arrows {
       displayCherryBlossom();
     }
     if (USER == "POLAR_A" && HAS_ITEM) {
-      if (FROSTY1_STATE == 3) {
+      if (FROSTY1_STATE >= 3) {
         displayBamboo();
       }
       else {

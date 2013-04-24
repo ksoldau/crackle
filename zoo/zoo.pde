@@ -18,6 +18,8 @@ PImage ROCK_IMAGE;
 PImage CHERRY_BLOSSOM;
 PImage BAMBOO_IMAGE;
 PImage FISH_IMAGE;
+PImage VINES_IMAGE;
+PImage VINES_CUT_IMAGE;
 
 //items user might collect
 PImage CHERRY_BLOSSOM_CORNER;
@@ -296,12 +298,14 @@ void setup() {
   TRASH_IMAGE= loadImage("data/elements/trash.png");
   ROCK_IMAGE = loadImage("data/elements/rock.png");
   CHERRY_BLOSSOM = loadImage("data/elements/cherryblossom.png");
-  //FISH_IMAGE = ;
-  //BAMBOO_IMAGE = ;
+  FISH_IMAGE = loadImage("data/elements/fish.png");
+  BAMBOO_IMAGE = loadImage("data/elements/bamboo.png");
+  VINES_IMAGE = loadImage("data/elements/vine.png");
+  VINES_CUT_IMAGE = loadImage("data/elements/vinecut.png");
   
   CHERRY_BLOSSOM_CORNER = loadImage("data/elements/cherryblossomcorner.png");
-  //FISH_CORNER = ;
-  //BAMBOO_CORNER = ;
+  FISH_CORNER = loadImage("data/elements/fishcorner.png");
+  BAMBOO_CORNER = loadImage("data/elements/bamboocorner.png");
   
 
   // load image that says "Zoo guess who click here to start"

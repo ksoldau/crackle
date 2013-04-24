@@ -26,6 +26,11 @@ class Jungle2 extends Habitat {
   int rockx = 800;
   int rocky = 100;
 
+  //if POLAR_A
+  boolean vines_cut = false;
+  int vinex = 200; 
+  int viney = 0;
+
   Jungle2(boolean isSleeping) {
     super(isSleeping);
     if (isSleeping || USER != "GORILLA_A") {
@@ -50,8 +55,20 @@ class Jungle2 extends Habitat {
     else if (USER == "COBRA_B") {
       displayRock();
     }
+    else if (USER == "POLAR_A") {
+      displayVines();
+    }
   }
 
+
+  void displayVines() {
+    if (vines_cut) {
+      image(VINES_CUT_IMAGE, vinex, viney);
+    }
+    else {
+      image(VINES_IMAGE, vinex, viney);
+    }
+  }
   //displays the trash
   //assume: not sleeping
   void displayTrash() {
@@ -100,6 +117,15 @@ class Jungle2 extends Habitat {
   //assume/know: animal is not talking
   void mousePressedInHabitat() {
     if (isSleeping) {
+    }
+    else if ((USER == "POLAR_A") && (JUNGLE2_STATE == 1) && cursorOverVines()) {
+      vines_cut = true;
+      JUNGLE2_STATE ++; 
+      ANIMAL_TALKING = true;
+      ANIMAL_TALKING_START_TIME = millis();
+      playCurrentTalk();
+      HELP = 1;
+      AFRICA2_STATE ++;
     }
     else if ((USER == "COBRA_B") && (JUNGLE2_STATE == 2) && cursorOverRock()) {
       rockx = rockx - 100; //move the rock
@@ -167,7 +193,7 @@ class Jungle2 extends Habitat {
     }
     else if (USER == "COBRA_B") {
       if (JUNGLE2_STATE == 1) { //stay same until pick up rock
-      JUNGLE2_STATE ++;
+        JUNGLE2_STATE ++;
       }
       else if (JUNGLE2_STATE == 3) {
         JUNGLE2_STATE ++;
@@ -192,9 +218,15 @@ class Jungle2 extends Habitat {
 
   //determines if cursor over any elements
   boolean cursorOverElement() {
-    return cursorOverRock() || cursorOverTrash();
+    return cursorOverRock() || cursorOverTrash() || cursorOverVines();
   }
 
+//determines if the cursor is over the vines
+  boolean cursorOverVines() {
+    return (USER == "POLAR_A") && (JUNGLE2_STATE == 1) && 
+      ((vinex < mouseX) && (mouseX < (vinex + 200))) 
+      && ((viney < mouseY) && (mouseY < (viney + 540)));
+  }
   //determines if cursor over the rock 
   //assume: it should be clicked on
   boolean cursorOverRock() {
