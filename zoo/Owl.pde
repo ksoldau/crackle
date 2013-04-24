@@ -1,7 +1,5 @@
 class Owl { 
-  
-  int num;
-  
+    
   Owl() {
   }
   
