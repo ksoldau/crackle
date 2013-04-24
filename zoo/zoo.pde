@@ -938,7 +938,7 @@ void drawCursor() {
     cursor_over_asia1() ||
     cursor_over_asia2() ||
     cursor_over_frosty1() ||
-    cursor_over_frosty2() ||
+    cursorOverFrosty2() ||
     cursorOverJungle1() ||
    cursorOverJungle2() ))) 
   {
@@ -1176,7 +1176,7 @@ void mousePressedOnMap() {
     HABITAT_NUMBER = 5;
     ON_MAP = false;
   }
-  else if (cursor_over_frosty2()) {
+  else if (cursorOverFrosty2()) {
     doFrosty2();
     LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 6;
@@ -1283,7 +1283,7 @@ boolean cursor_over_asia2() {
 boolean cursor_over_frosty1() {
   return cursorOver(318, 407, 369, 433);
 }
-boolean cursor_over_frosty2() {
+boolean cursorOverFrosty2() {
   return cursorOver(267, 356, 272, 336);
 }
 boolean cursorOverJungle1() {
