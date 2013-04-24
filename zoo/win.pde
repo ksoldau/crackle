@@ -11,11 +11,13 @@ class Win {
 
   PImage background;
   PImage img;
+  PImage guess_screen;
   PImage win_image; 
 
   Win() {
     win_image = loadImage("data/youwin.png");
     setCorrectLocation();
+    setGuessScreen();
   }
 
   //sets where correct location is on guess creen
@@ -39,11 +41,33 @@ class Win {
       correct_x = guess3_x;
     }
   }
+  
+  //set correct guess screen based on user animal
+  void setGuessScreen() {
+    if (USER == "GORILLA_A") {
+      guess_screen = loadImage("data/guess/guess_gorilla_a.png");
+    }
+    else if (USER == "GORILLA_B") {
+      guess_screen = loadImage("data/guess/guess_gorilla_b.png");
+    }
+    else if (USER == "COBRA_A") {
+      guess_screen = loadImage("data/guess/guess_cobra_a.png");
+    }
+    else if (USER == "COBRA_B") {
+    guess_screen = loadImage("data/guess/guess_cobra_b.png");
+    }
+    else if (USER == "POLAR_A") {
+      guess_screen = loadImage("data/guess/guess_polar_a.png");
+    }
+    else if (USER == "POLAR_B") {
+      guess_screen = loadImage("data/guess/guess_polar_b.png");
+    }
+  }
 
   //displays the guessing screen
   void doGuess() {
     ON_GUESS = true;
-    image(GUESS_SCENE_BG, 0, 0);
+    image(guess_screen, 0, 0);
   }
 
   //displays the winning screen

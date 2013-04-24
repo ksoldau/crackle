@@ -933,8 +933,8 @@ void drawCursor() {
   }
   
   else if (ON_GUESS) {
-    if (WIN.cursorOverGuess()) {
-      cursor(HAND):
+    if (WIN.cursorOverGuessOption()) {
+      cursor(HAND);
     }
   }
 
