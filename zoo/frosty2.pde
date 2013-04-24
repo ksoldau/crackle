@@ -5,8 +5,10 @@ class Frosty2 extends Habitat {
 
   int animalLeft = 200;
   int animalTop = 220;
+ 
 
   PImage background = loadImage("data/frosty_2.png");
+  boolean has_fish;
 
 PImage animal_sleeping;
   Frosty2(boolean isSleeping) {
@@ -20,6 +22,10 @@ PImage animal_sleeping;
   public void display() {
     image(this.background, 0, 0);
         displayAnimal();
+        
+        if (has_fish) {
+          image(FISH_IMAGE, 400, 400);
+        }
   }
 
   //displays the correct animal 
@@ -113,6 +119,8 @@ PImage animal_sleeping;
         ASIA2_STATE ++;
         NAV.clue4 = true;
         HELP = 4; //Patty Panda
+        HAS_ITEM = false;
+        has_fish = true;
       }
     }
   }

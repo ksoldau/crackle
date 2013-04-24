@@ -24,6 +24,9 @@ class Arrows {
         displayFish();
       }
     }
+    if (USER == "POLAR_B" && HAS_ITEM) {
+      displayFish();
+    }
   }
 
   //assume GORILLA_B and that user HAS_ITEM

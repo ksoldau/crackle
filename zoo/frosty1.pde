@@ -134,6 +134,7 @@ class Frosty1 extends Habitat {
         FROSTY2_STATE ++;
         NAV.clue3 = true;
         HELP = 6; //Sam Seal
+        HAS_ITEM = true;
       }
     }
   }
