@@ -96,6 +96,7 @@ class Frosty1 extends Habitat {
         ASIA1_STATE ++;
         nav.clue3 = true; //muscles
         HELP = 3; //Tina Tiger
+        HAS_ITEM = false;
       }
     }
     else if (USER == "COBRA_A") {

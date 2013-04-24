@@ -89,6 +89,7 @@ class Africa2 extends Habitat {
         AFRICA2_STATE ++;
         FROSTY1_STATE ++;
         nav.clue2 = true; //climb trees
+        HAS_ITEM = true;
         HELP = 5; //Peter Penguin
       }
     }

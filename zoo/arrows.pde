@@ -1,4 +1,5 @@
-// Arrows
+//arrows
+// and some items that you gather
 class Arrows {
   PImage background;
 
@@ -8,7 +9,17 @@ class Arrows {
 
   public void display() {
     image(background, 0, 0);
+    if (USER == "GORILLA_B" && HAS_ITEM) {
+      displayCherryBlossom();
+    }
   }
+  
+  //assume GORILLA_B and that user has it
+  void displayCherryBlosom() {
+    image(CHERRY_BLOSSOM_CORNER, 810, 0);
+  }
+  
+  
 }
 
 

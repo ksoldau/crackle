@@ -210,6 +210,8 @@ boolean ON_INTRO = false; // is it on the intro screen
 boolean ON_MAP = false; 
 boolean ON_GUESS = false;
 
+boolean HAS_ITEM = false;
+
 //current habitat number
 int HABITAT_NUMBER;
 
@@ -310,7 +312,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "COBRA_B";
+  USER = "GORILLA_B";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
