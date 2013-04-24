@@ -10,6 +10,7 @@ class Asia2 extends Habitat {
   int ely = 200;
   
   boolean replaced_bamboo = false;
+  boolean has_token = false;
 
   PImage background = loadImage("data/asia_2.png");
   
@@ -30,6 +31,13 @@ class Asia2 extends Habitat {
     if (USER == "POLAR_A") {
       displayBambooOrFish();
     }
+    if (has_token) {
+      displayToken();
+    }
+  }
+  
+  void displayToken() {
+    image(SLOTH_TOKEN_IMAGE, elx, ely);
   }
   
   void displayBambooOrFish() {
@@ -133,6 +141,7 @@ class Asia2 extends Habitat {
         NAV.clue2 = true; //love to eat plants
         HELP = 6;
         HAS_ITEM = false;
+        has_token = true;
       }
     }
     else if (USER == "GORILLA_B") { //Patty Panda is asleep

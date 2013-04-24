@@ -17,11 +17,13 @@ PImage BAMBOO_IMAGE;
 PImage FISH_IMAGE;
 PImage VINES_IMAGE;
 PImage VINES_CUT_IMAGE;
+PImage SLOTH_TOKEN_IMAGE; 
 
 //items user might collect
 PImage CHERRY_BLOSSOM_CORNER;
 PImage FISH_CORNER;
 PImage BAMBOO_CORNER;
+PImage SLOTH_TOKEN_CORNER;
 
 //clues
 PImage CLUE1;
@@ -216,6 +218,7 @@ boolean WELCOME_SCREEN = true; // is it on the welcome screen
 boolean ON_INTRO = false; // is it on the intro screen
 boolean ON_MAP = false; 
 boolean ON_GUESS = false;
+boolean ON_WIN = false;
 
 boolean HAS_ITEM = false;
 
@@ -296,10 +299,12 @@ void setup() {
   BAMBOO_IMAGE = loadImage("data/elements/bamboo.png");
   VINES_IMAGE = loadImage("data/elements/vineswhole.png");  
   VINES_CUT_IMAGE = loadImage("data/elements/vinescut.png"); 
+  SLOTH_TOKEN_IMAGE = loadImage("data/elements/slothtoken.png");
   
   CHERRY_BLOSSOM_CORNER = loadImage("data/elements/cherryblossomcorner.png");
   FISH_CORNER = loadImage("data/elements/fishcorner.png");
   BAMBOO_CORNER = loadImage("data/elements/bamboocorner.png");
+  SLOTH_TOKEN_CORNER = loadImage("data/elements/slothtokencorner.png");
   
 
   // load image that says "Zoo guess who click here to start"
@@ -735,9 +740,13 @@ void draw() {
       ON_INTRO = false;
     }
   }
+  
+  if (ON_WIN) {
+    WIN.doWin();
+  }
 
   //automatically shows the guessing screen if need be
-  if (shouldShowGuess()) {
+  else if (shouldShowGuess()) {
     WIN.doGuess();
   }
 
@@ -750,7 +759,6 @@ void draw() {
     (CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
-    //LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal();
   }
   //to display the correct animal for current habitat
   else if (ON_GUESS) {

@@ -10,12 +10,6 @@ class Win {
   Win() {
   }
 
-  //** might not do anything now?
-  void display() {
-    background = loadImage("data/box.png"); //change, not right
-    image(background, 0, 0);
-  }
-
   //displays the guessing screen
   void doGuess() {
     ON_GUESS = true;
@@ -43,7 +37,8 @@ class Win {
   void mousePressedOnGuess() {
     if (cursorOverCorrect()) {
       ON_GUESS = false;
-      doWin();
+      ON_WIN = true;
+      //doWin();
     }
   }
 }

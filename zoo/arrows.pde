@@ -43,7 +43,7 @@ class Arrows {
 
   //assume GORILLA_A and HAS_ITEM
   void displayToken() {
-    displayCherryBlossom(); ///
+    image(SLOTH_TOKEN_CORNER, 810, 0);
   }
 }
 

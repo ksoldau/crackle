@@ -11,7 +11,9 @@ class Africa2 extends Habitat {
 
   Africa2(boolean isSleeping) {
     super(isSleeping, 400, 100);
-    PImage animal_sleeping = loadImage("data/gerry_sleep_288.png");
+    if (isSleeping) {
+     animal_sleeping = loadImage("data/gerry_sleep_288.png");
+    }
   }
   //displays the background for the habitat
   public void display() {
