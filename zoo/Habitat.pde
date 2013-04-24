@@ -49,8 +49,8 @@ public abstract class Habitat {
   boolean cursorOverElement() {
     //...yea, so this isn't the best practice, but it works so ...
     return false;
-  }
   
+  }
     //decides what to do if something moused over
   void mouseMovedInHabitat() {
     if (this.isSleeping && cursorOverAnimal()) {

@@ -10,17 +10,21 @@ class Africa3 extends Habitat {
   int animalSleepingTop = 200;
 
   PImage background = loadImage("data/africa_3.png");
-  PImage animal_not_talking =  loadImage("data/leonard_lion.gif");
+  
+  PImage animal_sleeping;
 
   Africa3(boolean isSleeping) {
     super(isSleeping);
+    if (isSleeping) {
+      animal_sleeping = loadImage("data/sleep/leonard_sleep_288.png");
+    }
   }
 
 
   //displays the correct animal
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();

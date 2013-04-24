@@ -9,13 +9,12 @@ class Africa2 extends Habitat {
   int animalSleepingLeft = 400;
   int animalSleepingTop = 100;
   
-
-  PImage animal_not_talking = loadImage("data/gerry_giraffe.gif");
   PImage background = loadImage("data/africa_2.png");
-  PImage animal_sleeping = loadImage("data/gerry_sleep_288.png");
+  PImage animal_sleeping;
 
   Africa2(boolean isSleeping) {
     super(isSleeping);
+    PImage animal_sleeping = loadImage("data/gerry_sleep_288.png");
   }
   //displays the background for the habitat
   public void display() {

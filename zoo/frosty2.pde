@@ -10,10 +10,14 @@ class Frosty2 extends Habitat {
 
 
   PImage background = loadImage("data/frosty_2.png");
-  PImage animal_not_talking = loadImage("data/sam_sealion.gif");
 
+PImage animal_sleeping;
   Frosty2(boolean isSleeping) {
     super(isSleeping);
+    if (isSleeping) {
+      animal_sleeping = loadImage("data/sleep/sam_sleep_288.png");
+      
+    }
   }
   //displays this habitat's background
   public void display() {
@@ -24,7 +28,7 @@ class Frosty2 extends Habitat {
   void displayAnimal() {
 
     if (isSleeping) {
-      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();

@@ -9,9 +9,6 @@ import processing.video.*;
 
 import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 
-//for tests
-PImage SLEEP_TEST;
-
 //elements
 PImage TRASH_IMAGE;
 PImage ROCK_IMAGE;
@@ -290,9 +287,6 @@ void setup() {
   frameRate(12);
   background(255);
   size(WIDTH, HEIGHT);
-
-  //for tests
-  SLEEP_TEST = loadImage("data/sleep_test.jpg");
   
   //elements for scenes
   TRASH_IMAGE= loadImage("data/elements/trash.png");

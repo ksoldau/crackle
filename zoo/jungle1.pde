@@ -10,10 +10,14 @@ class Jungle1 extends Habitat {
 
 
   PImage background = loadImage("data/jungle_1.png"); 
-  PImage animal_not_talking = loadImage("data/eliza_elephant.gif");
-
+  
+  PImage animal_sleeping;
+  
   Jungle1(boolean isSleeping) {
     super(isSleeping);
+    if (isSleeping) {
+      animal_sleeping = loadImage("data/sleep/eliza_sleep_288.png");
+    }
   }
 
   //displays this habitat's background
@@ -24,7 +28,7 @@ class Jungle1 extends Habitat {
   //display the correct animal image
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();

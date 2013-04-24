@@ -5,14 +5,19 @@ class Africa1 extends Habitat {
 
   int animalLeft = 500;
   int animalTop = 100;
+  
   int animalSleepingLeft = 200;
   int animalSleepingTop = 200;
 
-  PImage animal_not_talking = loadImage("data/calvin_camel.gif");
   PImage background = loadImage("data/africa_1.png");
+  
+  PImage animal_sleeping;
 
   Africa1(boolean isSleeping) { //isSleeping too
     super(isSleeping);
+    if (isSleeping) {
+      PImage animal_sleeping = loadImage("data/sleep/calvin_sleep_288.png");
+    }
   }
 
   //display the background for this class
@@ -23,7 +28,7 @@ class Africa1 extends Habitat {
   //display the correct animal image
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();

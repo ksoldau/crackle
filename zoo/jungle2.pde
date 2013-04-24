@@ -10,8 +10,8 @@ class Jungle2 extends Habitat {
 
 
   PImage background = loadImage("data/jungle_2.png");
-  PImage animal_not_talking = loadImage("data/stanley_sloth.gif");
 
+PImage animal_sleeping;
   //did User pick up the trash
   boolean pickedUpTrash1;
   int trash1_x = 50;
@@ -42,6 +42,9 @@ class Jungle2 extends Habitat {
       this.pickedUpTrash1 = false;
       this.pickedUpTrash2 = false;
       this.pickedUpTrash3 = false;
+    }
+    if (isSleeping) {
+      animal_sleeping = loadImage("data/sleep/stanley_sleep_288.png");
     }
   }
 
@@ -92,7 +95,7 @@ class Jungle2 extends Habitat {
   //display the correct animal image
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();

@@ -13,12 +13,15 @@ class Asia2 extends Habitat {
   
   boolean replaced_bamboo = false;
 
-
   PImage background = loadImage("data/asia_2.png");
-  PImage animal_not_talking = loadImage("data/patty_pandabear.gif");
-
+  
+  PImage animal_sleeping;
+  
   Asia2(boolean isSleeping) {
-    super(isSleeping);
+    super(isSleeping); 
+    if (isSleeping) {
+      animal_sleeping = loadImage("data/sleep/patty_sleep_288.png");
+    }
   }
 
   //displays this habitat's background
@@ -42,7 +45,7 @@ class Asia2 extends Habitat {
   //displays the correct animal 
   void displayAnimal() {
     if (isSleeping) {
-      image(SLEEP_TEST, animalSleepingLeft, animalSleepingTop);
+      image(animal_sleeping, animalSleepingLeft, animalSleepingTop);
     }
     else if (ANIMAL_TALKING) {
       displayAnimalTalking();
