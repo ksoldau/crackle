@@ -932,12 +932,12 @@ void drawCursor() {
     (!LIST_OF_HABITATS[HABITAT_NUMBER].isSleeping &&
     LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverAnimal()) ||
     (ON_MAP && (
-  cursor_over_africa1() ||
-    cursor_over_africa2() ||
-    cursor_over_africa3() ||
-    cursor_over_asia1() ||
-    cursor_over_asia2() ||
-    cursor_over_frosty1() ||
+  cursorOverAfrica1() ||
+    cursorOverAfrica2() ||
+    cursorOverAfrica3() ||
+    cursorOverAsia1() ||
+    cursorOverAsia2() ||
+    cursorOverFrosty1() ||
     cursorOverFrosty2() ||
     cursorOverJungle1() ||
    cursorOverJungle2() ))) 
@@ -1140,37 +1140,37 @@ void mousePressedOnMap() {
     OWL.talkOwl();
     ON_OWL = true;
   }
-  else if (cursor_over_africa1()) {
+  else if (cursorOverAfrica1()) {
     doAfrica1();
     LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 0;
     ON_MAP = false;
   }
-  else if (cursor_over_africa2()) {
+  else if (cursorOverAfrica2()) {
     doAfrica2();
     LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 1;
     ON_MAP = false;
   }
-  else if (cursor_over_africa3()) {
+  else if (cursorOverAfrica3()) {
     doAfrica3();
     LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 2;
     ON_MAP = false;
   }
-  else if (cursor_over_asia1()) {
+  else if (cursorOverAsia1()) {
     doAsia1();
     LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 3;
     ON_MAP = false;
   }
-  else if (cursor_over_asia2()) {
+  else if (cursorOverAsia2()) {
     doAsia2();
     LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 4;
     ON_MAP = false;
   }
-  else if (cursor_over_frosty1()) {
+  else if (cursorOverFrosty1()) {
     doFrosty1();
     LAST_HABITAT_NUMBER = HABITAT_NUMBER;
     HABITAT_NUMBER = 5;
@@ -1265,22 +1265,22 @@ boolean cursor_over_right() {
 }
 
 // assuming in the map
-boolean cursor_over_africa1() {
+boolean cursorOverAfrica1() {
   return cursorOver(473, 562, 96, 160);
 }
-boolean cursor_over_africa2() {
+boolean cursorOverAfrica2() {
   return cursorOver(564, 654, 171, 237);
 }
-boolean cursor_over_africa3() {
+boolean cursorOverAfrica3() {
   return cursorOver(581, 670, 270, 336);
 }
-boolean cursor_over_asia1() {
+boolean cursorOverAsia1() {
   return cursorOver(527, 616, 370, 435);
 }
-boolean cursor_over_asia2() {
+boolean cursorOverAsia2() {
   return cursorOver(423, 513, 409, 474);
 }
-boolean cursor_over_frosty1() {
+boolean cursorOverFrosty1() {
   return cursorOver(318, 407, 369, 433);
 }
 boolean cursorOverFrosty2() {
