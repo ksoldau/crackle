@@ -9,7 +9,7 @@ class Jungle2 extends Habitat {
 
   PImage background = loadImage("data/jungle_2.png");
 
-PImage animal_sleeping;
+  PImage animal_sleeping;
   //did User pick up the trash
   boolean pickedUpTrash1;
   int trash1_x = 50;
@@ -49,7 +49,7 @@ PImage animal_sleeping;
   //displays this habitat's background
   void display() {
     image(this.background, 0, 0);
-        displayAnimal();
+    displayAnimal();
 
     if (USER == "GORILLA_A") {
       displayTrash();
@@ -120,6 +120,24 @@ PImage animal_sleeping;
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
+    else if ((USER == "GORILLA_A") && (JUNGLE2_STATE == 2) && cursorOverTrash()) {
+      if (cursorOverTrash1()) {
+        pickedUpTrash1 = true;
+      }
+      else if (cursorOverTrash2()) {
+        pickedUpTrash2 = true;
+      }
+      else if (cursorOverTrash3()) {
+        pickedUpTrash3 = true;
+      }
+      
+      if (pickedUpTrash1 && pickedUpTrash2 && pickedUpTrash3) {
+        HAS_ITEM = true; //token         
+        ASIA2_STATE ++; //Patty Panda
+        HELP = 4; //*** later can make this be a token
+      }
+    }
+
     else if ((USER == "POLAR_A") && (JUNGLE2_STATE == 1) && cursorOverVines()) {
       vines_cut = true;
       JUNGLE2_STATE ++; 
@@ -146,15 +164,6 @@ PImage animal_sleeping;
       pickedUpTrash1 = true;
       JUNGLE2_STATE ++; // so Stanley Sloth will say next line
     }
-    else if (cursorOverTrash1()) {
-      pickedUpTrash1 = true;
-    }
-    else if (cursorOverTrash2()) {
-      pickedUpTrash2 = true;
-    }
-    else if (cursorOverTrash3()) {
-      pickedUpTrash3 = true;
-    }
   }
 
   //play correct audio
@@ -173,8 +182,6 @@ PImage animal_sleeping;
     if (USER == "GORILLA_A") {
       if (JUNGLE2_STATE == 1) {
         JUNGLE2_STATE ++;
-        ASIA2_STATE ++; //Patty Panda
-        HELP = 4; //*** later can make this be a token
       } 
       if (JUNGLE2_STATE == 3) {
         JUNGLE2_STATE ++;
@@ -221,7 +228,7 @@ PImage animal_sleeping;
     return cursorOverRock() || cursorOverTrash() || cursorOverVines();
   }
 
-//determines if the cursor is over the vines
+  //determines if the cursor is over the vines
   boolean cursorOverVines() {
     return (USER == "POLAR_A") && (JUNGLE2_STATE == 1) && 
       ((vinex < mouseX) && (mouseX < (vinex + 200))) 

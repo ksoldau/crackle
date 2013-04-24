@@ -132,6 +132,7 @@ class Asia2 extends Habitat {
         FROSTY2_STATE ++;//Sam Seal
         NAV.clue2 = true; //love to eat plants
         HELP = 6;
+        HAS_ITEM = false;
       }
     }
     else if (USER == "GORILLA_B") { //Patty Panda is asleep
