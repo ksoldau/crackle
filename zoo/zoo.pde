@@ -601,6 +601,12 @@ void initializeHelpAudioAndImages() {
     LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
   }
   else if (USER == "COBRA_A") {
+    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
   }
   else if (USER == "COBRA_B") {
   }
