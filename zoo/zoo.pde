@@ -81,7 +81,7 @@ Habitat[] LIST_OF_HABITATS = new Habitat[9];
 // Navigation,arrows, map, owl
 Nav NAV;
 Arrows ARROWS;
-Map map;
+Map MAP;
 Owl OWL;
 
 // Audio Setup
@@ -371,7 +371,7 @@ void setup() {
   ARROWS = new Arrows();
 
   //initialize the class for the map
-  map = new Map();
+  MAP = new Map();
 
   //initialize the win class
   WIN = new Win();
@@ -1004,7 +1004,7 @@ void doIntro() {
 
 // map screen
 void doMap() {
-  map.display();
+  MAP.display();
   ON_MAP = true;
 }
 
