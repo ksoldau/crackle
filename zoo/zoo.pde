@@ -80,7 +80,7 @@ Habitat[] LIST_OF_HABITATS = new Habitat[9];
 
 // Navigation,arrows, map, owl
 Nav NAV;
-Arrows arrows;
+Arrows ARROWS;
 Map map;
 Owl OWL;
 
@@ -368,7 +368,7 @@ void setup() {
   NAV = new Nav();
 
   //initialize the class for the arrows
-  arrows = new Arrows();
+  ARROWS = new Arrows();
 
   //initialize the class for the map
   map = new Map();
@@ -1021,54 +1021,54 @@ void doOwl() {
 
 void doAfrica1() {
   AFRICA1.display();
-  arrows.display();
+  ARROWS.display();
   NAV.display();
 }
 void doAfrica2() {
   AFRICA2.display();
-  arrows.display();
+  ARROWS.display();
   NAV.display();
 }
 
 void doAfrica3() {
   AFRICA3.display();
-  arrows.display();
+  ARROWS.display();
   NAV.display();
 }
 
 void doAsia1() {
   ASIA1.display();
-  arrows.display();
+  ARROWS.display();
   NAV.display();
 }
 
 void doAsia2() {
   ASIA2.display();
-  arrows.display();
+  ARROWS.display();
   NAV.display();
 }
 
 void doFrosty1() {
   FROSTY1.display();
-  arrows.display();
+  ARROWS.display();
   NAV.display();
 }
 
 void doFrosty2() {
   FROSTY2.display();
-  arrows.display();
+  ARROWS.display();
   NAV.display();
 }
 
 void doJungle1() {
   JUNGLE1.display();
-  arrows.display();
+  ARROWS.display();
   NAV.display();
 }
 
 void doJungle2() {
   JUNGLE2.display();
-  arrows.display();
+  ARROWS.display();
   NAV.display();
 }
 
