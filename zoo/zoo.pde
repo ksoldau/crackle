@@ -28,6 +28,8 @@ int ANIMAL_TALKING_START_TIME;
 
 int OPENING_START_TIME;
 
+int CURRENT_TIME;
+
 PImage BACKGROUND_IMG;
 Intro intro;
 Win WIN;
@@ -302,7 +304,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "GORILLA_A";
+  USER = "COBRA_B";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -700,7 +702,8 @@ void loadClueImages() {
 void draw() {
   println(ON_GUESS);
 
-  int current_time = millis();
+  CURRENT_TIME = millis();
+
   frameRate(12);
 
   if (ON_INTRO) {
@@ -712,7 +715,9 @@ void draw() {
   }
 
   //automatically shows the guessing screen if need be
-  showGuess();
+  if (shouldShowGuess()) {
+    WIN.doGuess();
+  }
 
   else if (LAST_HABITAT_NUMBER != HABITAT_NUMBER) {
     Z = false;//cancel the Zs
@@ -720,7 +725,7 @@ void draw() {
 
   //to stop the animal from visibly speaking if audio over
   else if (ANIMAL_TALKING && 
-    (current_time - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {
+    (CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
   }
@@ -730,7 +735,7 @@ void draw() {
 
   //makes owl stay up as long as audio plays
   else if (ON_OWL) {
-    if  (current_time - OWL_TALKING_START_TIME >= LIST_OWL_AUDIO[HELP].length()) {
+    if  (CURRENT_TIME - OWL_TALKING_START_TIME >= LIST_OWL_AUDIO[HELP].length()) {
       ON_OWL = false;
     }
     else {
@@ -804,26 +809,30 @@ void playBg() {
 }
 
 
-void showGuess() {
-  if (!ANIMAL_TALKING && current_time - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH + 1000) {
+boolean shouldShowGuess() {
+  if (! (!ANIMAL_TALKING && CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH + 1000)) {
+    return false;
   }
-  else if (USER == "GORILLA_A" && AFRICA3_STATE == 4) { 
-    WIN.doGuess();
+  if (USER == "GORILLA_A" && AFRICA3_STATE == 4) { 
+    return true;
   }
   else if (USER == "GORILLA_B" && JUNGLE2_STATE == 2) {
-    WIN.doGuess();
+    return true;
   }
   else if (USER == "COBRA_A" && ASIA1_STATE == 2) {
-    WIN.doGuess();
+    return true;
   }
-  else if (USER == "COBRA_B" && FROSTY2_STATE == 2) {
-    WIN.doGuess();
+  else if (USER == "COBRA_B" && FROSTY2_STATE == 2) { 
+    return true;
   }
   else if (USER == "POLAR_A" && AFRICA2_STATE == 2) {
-    WIN.doGuess();
+    return true;
   }
   else if (USER == "POLAR_B" && ASIA2_STATE == 2) {
-    WIN.doGuess();
+    return true;
+  }
+  else {
+    return false;
   }
 }
 
