@@ -391,8 +391,6 @@ void setup() {
   //testing the owl
   TEST_OWL = minim.loadSample("SEAL_DUMMY.mp3", 512);
 
-  initializeHelpAudio();
-
   AFRICA_BG = minim.loadFile("africa_bg.mp3", 512);
   FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
   ASIA_BG = minim.loadFile("asia_bg.mp3", 512);
@@ -415,6 +413,7 @@ void setup() {
   GUESS_SCENE_BG = loadImage("data/guesswho.png");
 
   initializeAudio();
+  initializeHelpAudio();
 }
 
 //sets the first habitat the user sees to correct one
@@ -1353,4 +1352,5 @@ void initializeHelpAudio() {
     //method for opening intro
     void movieEvent(Movie m) {
       m.read();
+    }
 
