@@ -302,7 +302,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "POLAR_B";
+  USER = "GORILLA_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -698,6 +698,7 @@ void loadClueImages() {
 // draw is called directly after setup
 // called automatically
 void draw() {
+  println(ON_GUESS);
 
   int current_time = millis();
   frameRate(12);
@@ -705,15 +706,16 @@ void draw() {
   if (ON_INTRO) {
     frameRate(30);
     image(OPENING_MOVIE, 0, 0);
-    println("HERE!");
     if (OPENING_MOVIE.time() >= 10) {
       ON_INTRO = false;
     }
   }
 
+  //automatically shows the guessing screen if need be
+  showGuess();
+
   else if (LAST_HABITAT_NUMBER != HABITAT_NUMBER) {
     Z = false;//cancel the Zs
-    println("FDSJKDF");
   }
 
   //to stop the animal from visibly speaking if audio over
@@ -741,8 +743,8 @@ void draw() {
   }
 
 
-  //plays any animated gifs
-  else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO) { 
+  else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO && !ON_GUESS) { 
+    println("GOT HERE HOMESLICE");
     doScene(HABITAT_NUMBER);
     LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED
     //println(Z);
@@ -751,7 +753,7 @@ void draw() {
       println(Z);
     }
   }
-
+  println("NOT THERE BOOOO");
   drawCursor();
   //printMem(); //DEBUG: To monitor memory usage
 
@@ -798,6 +800,30 @@ void playBg() {
   if (HABITAT_NUMBER == 7 || HABITAT_NUMBER == 8) {
     pauseAll();    
     JUNGLE_BG.loop();
+  }
+}
+
+
+void showGuess() {
+  if (!ANIMAL_TALKING && current_time - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH + 1000) {
+  }
+  else if (USER == "GORILLA_A" && AFRICA3_STATE == 4) { 
+    WIN.doGuess();
+  }
+  else if (USER == "GORILLA_B" && JUNGLE2_STATE == 2) {
+    WIN.doGuess();
+  }
+  else if (USER == "COBRA_A" && ASIA1_STATE == 2) {
+    WIN.doGuess();
+  }
+  else if (USER == "COBRA_B" && FROSTY2_STATE == 2) {
+    WIN.doGuess();
+  }
+  else if (USER == "POLAR_A" && AFRICA2_STATE == 2) {
+    WIN.doGuess();
+  }
+  else if (USER == "POLAR_B" && ASIA2_STATE == 2) {
+    WIN.doGuess();
   }
 }
 

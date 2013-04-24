@@ -61,9 +61,6 @@ class Africa3 extends Habitat {
   void mousePressedInHabitat() {
     if (isSleeping) {
     }
-    else if (cursorOverAnimal() && (AFRICA3_STATE == 4) && USER == "GORILLA_A") {
-      WIN.doGuess();
-    }
     else if (cursorOverAnimal()) {
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis();
@@ -127,9 +124,9 @@ class Africa3 extends Habitat {
       else if (AFRICA3_STATE == 3) {
         return GA_LION2;
       }
-      else if (AFRICA3_STATE == 4) {
-        return GA_LION3;
-      }
+    //  else if (AFRICA3_STATE == 4) {
+      //  return GA_LION3;
+      //}
     }
     else if (USER == "GORILLA_B") {
     } //Leonard Lion is sleeping

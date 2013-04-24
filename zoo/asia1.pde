@@ -55,7 +55,7 @@ class Asia1 extends Habitat {
     }
     else {
       return  ((animalLeft + 50 < mouseX) && (mouseX < (animalLeft + 230)))
-        && ((animalTop - 30 < mouseY) && (mouseY < (animalTop + 200)));
+        && ((animalTop + 40 < mouseY) && (mouseY < (animalTop + 280)));
     }
   }
 
