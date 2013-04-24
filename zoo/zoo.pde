@@ -15,6 +15,10 @@ PImage SLEEP_TEST;
 //elements
 PImage TRASH_IMAGE;
 PImage ROCK_IMAGE;
+PImage CHERRY_BLOSSOM;
+
+//items user might collect
+PImage CHERRY_BLOSSOM_CORNER;
 
 //clues
 PImage CLUE1;
@@ -287,6 +291,10 @@ void setup() {
   //elements for scenes
   TRASH_IMAGE= loadImage("data/elements/trash.png");
   ROCK_IMAGE = loadImage("data/elements/rock.png");
+  CHERRY_BLOSSOM = loadImage("data/elements/cherryblossom.png");
+  
+  CHERRY_BLOSSOM_CORNER = loadImage("data/elements/cherryblossomcorner.png");
+  
 
   // load image that says "Zoo guess who click here to start"
   BACKGROUND_IMG = loadImage("data/welcome.png");
@@ -664,7 +672,7 @@ void loadClueImages() {
   }
   else if (USER == "GORILLA_B") {
     CLUE1 = loadImage("data/clues/clue_plants.png");
-    CLUE2 = loadImage("data/clues/clue_climbtrees.png");
+    CLUE2 = loadImage("data/clues/clue_climbstrees.png");
     CLUE3 = loadImage("data/clues/clue_muscular.png");
     CLUE4 = loadImage("data/clues/clue_black.png");
   }

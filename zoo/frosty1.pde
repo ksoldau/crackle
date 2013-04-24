@@ -12,6 +12,8 @@ class Frosty1 extends Habitat {
   PImage background = loadImage("data/frosty_1.png");
   PImage animal_not_talking = loadImage("data/peter_penguin.gif");
   PImage animal_sleeping = loadImage("data/peter_sleep_288.png");
+  
+  boolean show_blossom = false;
 
 
   Frosty1(boolean isSleeping) {
@@ -20,6 +22,10 @@ class Frosty1 extends Habitat {
   //displays this habitat's background
   public void display() {
     image(this.background, 0, 0);
+    
+    if (show_blossom) {
+      image (CHERRY_BLOSSOM, 250, 400);
+    }
   }
 
   //displays the correct animal 
@@ -97,6 +103,7 @@ class Frosty1 extends Habitat {
         nav.clue3 = true; //muscles
         HELP = 3; //Tina Tiger
         HAS_ITEM = false;
+        show_blossom = true;
       }
     }
     else if (USER == "COBRA_A") {

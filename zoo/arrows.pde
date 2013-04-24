@@ -15,7 +15,7 @@ class Arrows {
   }
   
   //assume GORILLA_B and that user has it
-  void displayCherryBlosom() {
+  void displayCherryBlossom() {
     image(CHERRY_BLOSSOM_CORNER, 810, 0);
   }
   
