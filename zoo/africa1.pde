@@ -20,6 +20,7 @@ class Africa1 extends Habitat {
   //display the background for this class
   public void display() {
     image(this.background, 0, 0);
+        displayAnimal();
   } 
 
   //display the correct animal image

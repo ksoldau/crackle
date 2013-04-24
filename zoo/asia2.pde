@@ -25,6 +25,7 @@ class Asia2 extends Habitat {
   //displays this habitat's background
   public void display() {
     image(this.background, 0, 0);
+        displayAnimal();
     
     if (USER == "POLAR_A") {
       displayBambooOrFish();

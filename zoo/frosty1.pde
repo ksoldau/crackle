@@ -19,6 +19,7 @@ class Frosty1 extends Habitat {
   //displays this habitat's background
   public void display() {
     image(this.background, 0, 0);
+        displayAnimal();
     
     if (show_blossom) {
       image (CHERRY_BLOSSOM, 250, 400);

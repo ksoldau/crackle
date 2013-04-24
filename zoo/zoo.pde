@@ -750,6 +750,7 @@ void draw() {
     (CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
+    //LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal();
   }
   //to display the correct animal for current habitat
   else if (ON_GUESS) {
@@ -773,7 +774,7 @@ void draw() {
   else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO && !ON_GUESS) { 
     println("GOT HERE HOMESLICE");
     doScene(HABITAT_NUMBER);
-    LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED
+    //LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED
     //println(Z);
     if (Z) {
       LIST_OF_HABITATS[HABITAT_NUMBER].displayZs();

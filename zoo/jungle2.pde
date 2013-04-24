@@ -49,6 +49,7 @@ PImage animal_sleeping;
   //displays this habitat's background
   void display() {
     image(this.background, 0, 0);
+        displayAnimal();
 
     if (USER == "GORILLA_A") {
       displayTrash();

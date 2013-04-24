@@ -16,6 +16,7 @@ class Africa2 extends Habitat {
   //displays the background for the habitat
   public void display() {
     image(this.background, 0, 0);
+        displayAnimal();
   } 
 
   //determines if the animal in the habitat was clicked on
