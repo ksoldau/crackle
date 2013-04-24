@@ -1,8 +1,8 @@
 // class for last scene after you win
 class Win {
 
-  int correctXi = 497;
-  int correctYi =268;
+  int correct_x;
+  int correct_y;
 
   PImage background;
   PImage img;
@@ -10,8 +10,22 @@ class Win {
 
   Win() {
     win_image = loadImage("data/youwin.png");
+    setCorrectLocation();
   }
-
+  
+  //sets where correct location is on guess creen
+  void setCorrectLocation() {
+    if (USER == "GORILLA_A") {
+      correct_x = 497;
+      correct_y = 268;
+    }
+    else if (USER == "GORILLA_B") {}
+    else if (USER == "COBRA_A") {}
+    else if (USER == "COBRA_B") {}
+    else if (USER == "POLAR_A") {}
+    else if (USER == "POLAR_B") {}
+  }
+  
   //displays the guessing screen
   void doGuess() {
     ON_GUESS = true;
@@ -30,8 +44,7 @@ class Win {
 
   //determiens if cursor over the correct answer
   boolean cursorOverCorrect() {
-    return ((correctXi < mouseX) && (mouseX < (correctXi + 200)))
-      && ((correctYi < mouseY) && (mouseY < (correctYi + 200)));
+      return cursorOver(correct_x, correct_x + 200, correct_y, correct_y + 200);
   }
 
   //decides what to do if mouse pressed in the habitat
