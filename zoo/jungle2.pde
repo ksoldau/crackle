@@ -140,7 +140,7 @@ class Jungle2 extends Habitat {
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
       playCurrentTalk();
     }
-    else if (cursorOverTrash1() && (USER == "COBRA_B" ) {
+    else if (cursorOverTrash1() && (USER == "COBRA_B" )) {
       pickedUpTrash1 = true;
       JUNGLE2_STATE ++; // so Stanley Sloth will say next line
     }
