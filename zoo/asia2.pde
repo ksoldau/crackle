@@ -74,8 +74,13 @@ class Asia2 extends Habitat {
     }
   }
   
+  boolean cursorOverElement() {
+    return cursorOverBamboo();
+  }
+  
   boolean cursorOverBamboo() {
-     return ((elx < mouseX) && (mouseX < (elx + 200)))
+     return (USER == "POLAR_A" && !replaced_bamboo && (FROSTY1_STATE == 2)) &&
+     ((elx < mouseX) && (mouseX < (elx + 200)))
         && ((ely < mouseY) && (mouseY < (ely + 200)));
   }
     
