@@ -98,12 +98,12 @@ class Africa2 extends Habitat {
       if (AFRICA2_STATE == 0) {
         AFRICA2_STATE ++;
         AFRICA3_STATE ++;
-        nav.clue1 = true;
         HELP = 2;//Leonard Lion
       }
       if (AFRICA2_STATE == 2) {
         AFRICA2_STATE ++;
         ASIA2_STATE ++; //Patty Panda
+        HELP = 4; //Patty Panda
       }
     }
     else if (USER == "POLAR_A") {

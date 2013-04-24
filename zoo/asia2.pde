@@ -110,11 +110,13 @@ class Asia2 extends Habitat {
       if (ASIA2_STATE == 1) {
         ASIA2_STATE ++;
         AFRICA2_STATE ++;
+        HELP = 1; //Gerry Giraffe
       }
       if (ASIA2_STATE == 3) {
         ASIA2_STATE ++;
         FROSTY2_STATE ++;
         nav.clue4 = true; //eats mice
+        HELP = 6;//Sam Seal
       }
     }
     else if (USER == "POLAR_A") {

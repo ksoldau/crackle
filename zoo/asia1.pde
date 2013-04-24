@@ -105,6 +105,7 @@ class Asia1 extends Habitat {
         ASIA1_STATE ++;
         JUNGLE2_STATE ++;
         nav.clue2 = true;
+        HELP = 8; //Stanley Sloth
       }
     }
     else if (USER == "POLAR_A") {

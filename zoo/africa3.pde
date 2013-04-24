@@ -107,6 +107,7 @@ class Africa3 extends Habitat {
         AFRICA3_STATE++;
         ASIA1_STATE ++;
         nav.clue1 = true;
+        HELP = 3;//Tina Tiger
       }
     }
   }

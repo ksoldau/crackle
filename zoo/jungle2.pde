@@ -155,6 +155,7 @@ class Jungle2 extends Habitat {
         JUNGLE2_STATE ++;
         ASIA2_STATE ++;
         nav.clue3 = true;
+        HELP = 4; //Patty Panda
       }
     }
     else if (USER == "POLAR_A") {
