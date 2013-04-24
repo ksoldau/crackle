@@ -338,7 +338,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "GORILLA_B";
+  USER = "COBRA_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -742,7 +742,7 @@ void loadClueImages() {
   else if (USER == "COBRA_A") {
     CLUE1 = loadImage("data/clues/clue_sharpteeth.png");
     CLUE2 = loadImage("data/clues/clue_scales.png");
-    CLUE3 = loadImage("data/clues/clue_poison.png");
+    CLUE3 = loadImage("data/clues/clue_poisonous.png");
     CLUE4 = loadImage("data/clues/clue_longtongue.png");
   }
   else if (USER == "COBRA_B") {  
