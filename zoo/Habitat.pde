@@ -42,7 +42,7 @@ public abstract class Habitat {
   void displayZs() {
     frameZs = (frameZs + 1);
     if (frameZs < 13) {
-      image(GIFS_ZS[frameZs], 200, 200);
+      image(GIFS_ZS[frameZs], sleepingx, sleepingy - 180);
     }
     else {
       Z = false;
