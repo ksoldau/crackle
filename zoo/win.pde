@@ -36,6 +36,7 @@ class Win {
 
   void mousePressedOnGuess() {
     if (cursorOverCorrect()) {
+      ON_GUESS = false;
       doWin();
     }
   }
