@@ -50,12 +50,12 @@ class Asia1 extends Habitat {
   //determines if the animal in the habitat was clicked on
   boolean cursorOverAnimal() {
     if (isSleeping) {
-      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
+      return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 220)))
         && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
     }
     else {
-      return  ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
-        && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+      return  ((animalLeft + 50 < mouseX) && (mouseX < (animalLeft + 230)))
+        && ((animalTop - 30 < mouseY) && (mouseY < (animalTop + 200)));
     }
   }
 
