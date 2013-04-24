@@ -160,10 +160,12 @@ class Jungle2 extends Habitat {
     }
     else if (USER == "POLAR_A") {
       if (JUNGLE2_STATE == 1) {
+        nav.clue4 = true;
       }
       if (JUNGLE2_STATE == 2) {
         JUNGLE2_STATE ++;
         AFRICA2_STATE ++;
+        HELP = 1; //Gerry Giraffe
       }
     }
     else if (USER == "POLAR_B") {

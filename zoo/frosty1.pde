@@ -109,11 +109,13 @@ class Frosty1 extends Habitat {
       if (FROSTY1_STATE == 1) {
         FROSTY1_STATE ++;
         ASIA2_STATE ++;
+        HELP = 4; //Patty Panda//***need to pick up fish here though
       }
       else if (FROSTY1_STATE == 3) {
         FROSTY1_STATE ++;
         ASIA2_STATE ++;
         nav.clue2 = true;
+        HELP = 4; //Patty Panda
       }
     }
     else if (USER == "POLAR_B") {

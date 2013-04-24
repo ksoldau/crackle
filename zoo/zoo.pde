@@ -302,7 +302,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "COBRA_B";
+  USER = "POLAR_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -1030,6 +1030,10 @@ void mousePressed() {
   }
   else if (ON_INTRO) {
   }
+  //if an animal is talking
+  else if (ANIMAL_TALKING || ON_OWL) {
+  } //stops user from clicking on things while animal talking
+
 
   //if map is up
   else if (ON_MAP) {
@@ -1039,10 +1043,6 @@ void mousePressed() {
   else if (ON_GUESS) {
     WIN.mousePressedOnGuess();
   }
-
-  //if an animal is talking
-  else if (ANIMAL_TALKING || ON_OWL) {
-  } //stops user from clicking on things while animal talking
 
   //if over map 
   else if (cursorOverMapButton()) {

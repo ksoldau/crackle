@@ -110,6 +110,7 @@ class Africa1 extends Habitat {
         AFRICA1_STATE ++;
         FROSTY1_STATE ++;
         nav.clue1 = true;
+        HELP = 5; //Peter Penguin
       }
     }
     else if (USER == "POLAR_B") {

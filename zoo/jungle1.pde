@@ -93,6 +93,7 @@ class Jungle1 extends Habitat {
       if (JUNGLE1_STATE == 0) {
         JUNGLE1_STATE ++;
         AFRICA1_STATE ++;
+        HELP = 0;//Calvin Camel
       }
     }
     else if (USER == "POLAR_B") {
