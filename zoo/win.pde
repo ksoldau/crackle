@@ -6,8 +6,10 @@ class Win {
 
   PImage background;
   PImage img;
+  PImage win_image; 
 
   Win() {
+    win_image = loadImage("data/youwin.png");
   }
 
   //displays the guessing screen
@@ -18,8 +20,7 @@ class Win {
 
   //displays the winning screen
   void doWin() {
-    img = loadImage("data/youwin.png");
-    image(img, 0, 0);
+    image(win_image, 0, 0);
   }
 
   //determines if a mouse pressed on animal in the habitat
