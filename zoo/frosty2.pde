@@ -104,11 +104,13 @@ class Frosty2 extends Habitat {
       if (FROSTY2_STATE == 1) {
         FROSTY2_STATE ++;
         FROSTY1_STATE ++;
+        HELP = 5; //Peter Penguin *** but really need to get a fish
       }
       if (FROSTY2_STATE == 3) {
         FROSTY2_STATE ++;
         ASIA2_STATE ++;
         nav.clue4 = true;
+        HELP = 4; //Patty Panda
       }
     }
   }

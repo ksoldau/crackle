@@ -114,6 +114,7 @@ class Asia1 extends Habitat {
       if (ASIA1_STATE == 0) {
         ASIA1_STATE ++;
         AFRICA2_STATE ++;
+        HELP = 1; //Gerry Giraffe
       }
     }
   }

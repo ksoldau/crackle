@@ -116,6 +116,7 @@ class Africa2 extends Habitat {
         AFRICA2_STATE ++;
         JUNGLE1_STATE ++;
         nav.clue1 = true; //four paws
+        HELP = 7; //Eliza Elephant
       }
     }
   }

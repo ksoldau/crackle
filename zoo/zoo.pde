@@ -302,7 +302,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "POLAR_A";
+  USER = "POLAR_B";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -679,8 +679,8 @@ void loadClueImages() {
   else if (USER == "POLAR_B") {
     CLUE1 = loadImage("data/clues/clue_4paws.png");
     CLUE2 = loadImage("data/clues/clue_fur.png");
-    CLUE3 = loadImage("data/clues/clue_claws.png");
-    CLUE4 = loadImage("data/clues/clue_fish.png");
+    CLUE3 = loadImage("data/clues/clue_fish.png");
+    CLUE4 = loadImage("data/clues/clue_claws.png");
   }
 }
 

@@ -101,6 +101,7 @@ class Jungle1 extends Habitat {
         JUNGLE1_STATE ++;
         FROSTY2_STATE ++;
         nav.clue2 = true; //fur
+        HELP = 6; //Sam Seal
       }
     }
   }
