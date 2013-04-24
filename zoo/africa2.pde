@@ -55,6 +55,7 @@ class Africa2 extends Habitat {
     }
   }
 
+//decides what to do if the mouse was pressed in the habitat
   void mousePressedInHabitat() {
     if (isSleeping) {
     }

@@ -1,5 +1,6 @@
 // Calvin Camel
 class Africa1 extends Habitat {  
+  
   int frame;
   int numTalkingFrames = 6;
 
