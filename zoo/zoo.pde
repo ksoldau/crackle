@@ -338,7 +338,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "GORILLA_A";
+  USER = "GORILLA_B";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -582,787 +582,793 @@ void initializeAudio() {
 void initializeHelpAudioAndImages() {
   if (USER == "GORILLA_A") {
     LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);  //("owl_help_0.mp3", 512);
-        LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);  //("owl_help_2.mp3", 512);
-        LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);  //("owl_help_3.mp3", 512);
-        LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512); //("owl_help_4.mp3", 512);
-        LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512); //("owl_help_6.mp3", 512);
-        LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512); //("owl_help_7.mp3", 512);
-        LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512); //("owl_help_8.mp3", 512);
-    
-        LIST_OWL_AUDIO[9] = minim.loadSample("owl_help_9_ga_trash.mp3", 512);
-        LIST_HELP_IMAGES[9] = loadImage("data/oscar/help_stanley_288.png");
-      }
-      else if (USER == "GORILLA_B") {
-      }
-      else if (USER == "COBRA_A") {
-      }
-      else if (USER == "COBRA_B") {
-      }
-      else if (USER == "POLAR_A") {
-      }
-      else if (USER == "POLAR_B") {
-      }
-      else {
-        
-         LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
-      LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
-      LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);
-      LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
-      LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
-      LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
-      LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
-      LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
-      LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
-    
-        /*LIST_OWL_AUDIO[0] =  minim.loadSample("owl_help_0.mp3", 512);
-        LIST_OWL_AUDIO[1] =  minim.loadSample("owl_help_1.mp3", 512);
-        LIST_OWL_AUDIO[2] =  minim.loadSample("owl_help_2.mp3", 512);
-        LIST_OWL_AUDIO[3] =  minim.loadSample("owl_help_3.mp3", 512);
-        LIST_OWL_AUDIO[4] =  minim.loadSample("owl_help_4.mp3", 512);
-        LIST_OWL_AUDIO[5] =  minim.loadSample("owl_help_5.mp3", 512);
-        LIST_OWL_AUDIO[6] =  minim.loadSample("owl_help_6.mp3", 512);
-        LIST_OWL_AUDIO[7] =  minim.loadSample("owl_help_7.mp3", 512);
-        LIST_OWL_AUDIO[8] =  minim.loadSample("owl_help_8.mp3", 512); */
-      }
+    LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);  //("owl_help_2.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);  //("owl_help_3.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512); //("owl_help_4.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512); //("owl_help_6.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512); //("owl_help_7.mp3", 512);
+    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512); //("owl_help_8.mp3", 512);
+
+    LIST_OWL_AUDIO[9] = minim.loadSample("owl_help_9_ga_trash.mp3", 512);
+    LIST_HELP_IMAGES[9] = loadImage("data/oscar/help_stanley_288.png");
+  }
+  else if (USER == "GORILLA_B") {
+    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
+  }
+  else if (USER == "COBRA_A") {
+  }
+  else if (USER == "COBRA_B") {
+  }
+  else if (USER == "POLAR_A") {
+  }
+  else if (USER == "POLAR_B") {
+  }
+  else {
+
+    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
+
+    /*LIST_OWL_AUDIO[0] =  minim.loadSample("owl_help_0.mp3", 512);
+     LIST_OWL_AUDIO[1] =  minim.loadSample("owl_help_1.mp3", 512);
+     LIST_OWL_AUDIO[2] =  minim.loadSample("owl_help_2.mp3", 512);
+     LIST_OWL_AUDIO[3] =  minim.loadSample("owl_help_3.mp3", 512);
+     LIST_OWL_AUDIO[4] =  minim.loadSample("owl_help_4.mp3", 512);
+     LIST_OWL_AUDIO[5] =  minim.loadSample("owl_help_5.mp3", 512);
+     LIST_OWL_AUDIO[6] =  minim.loadSample("owl_help_6.mp3", 512);
+     LIST_OWL_AUDIO[7] =  minim.loadSample("owl_help_7.mp3", 512);
+     LIST_OWL_AUDIO[8] =  minim.loadSample("owl_help_8.mp3", 512); */
+  }
+}
+
+//randomly chooses which animal the user is 
+// and which group of 6 animal interacts with
+void chooseUser() {
+  float random_number = random(0, 6);
+  if (random_number < 1) {
+    USER = "GORILLA_A";
+  }
+  else if (random_number < 2) {
+    USER = "GORILLA_B";
+  }
+  else if (random_number < 3) {
+    USER = "POLAR_A";
+  }
+  else if (random_number < 4) {
+    USER = "POLAR_B";
+  }
+  else if (random_number < 5) {
+    USER = "COBRA_A";
+  }
+  else if (random_number < 6) {
+    USER = "COBRA_B";
+  }
+  println(USER);
+}
+
+void loadAnimalClasses() {
+  if (USER == "GORILLA_A") {
+    AFRICA1 = new Africa1(false);
+    AFRICA2 = new Africa2(true);
+    AFRICA3 = new Africa3(false);
+    ASIA1 = new Asia1(true);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(true);
+    FROSTY2 = new Frosty2(false);
+    JUNGLE1 = new Jungle1(false);
+    JUNGLE2 = new Jungle2(false);
+  }
+  else if (USER == "GORILLA_B") {
+    AFRICA1 = new Africa1(false);
+    AFRICA2 = new Africa2(false);
+    AFRICA3 = new Africa3(true);
+    ASIA1 = new Asia1(false);
+    ASIA2 = new Asia2(true);
+    FROSTY1 = new Frosty1(false);
+    FROSTY2 = new Frosty2(false);
+    JUNGLE1 = new Jungle1(true);
+    JUNGLE2 = new Jungle2(false);
+  }
+  else if (USER == "COBRA_A") {
+    AFRICA1 = new Africa1(false);
+    AFRICA2 = new Africa2(true);
+    AFRICA3 = new Africa3(false);
+    ASIA1 = new Asia1(false);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(false);
+    FROSTY2 = new Frosty2(true);
+    JUNGLE1 = new Jungle1(false);
+    JUNGLE2 = new Jungle2(true);
+  }
+  else if (USER == "COBRA_B") {
+    AFRICA1 = new Africa1(true);
+    AFRICA2 = new Africa2(false);
+    AFRICA3 = new Africa3(false);
+    ASIA1 = new Asia1(false);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(true);
+    FROSTY2 = new Frosty2(false);
+    JUNGLE1 = new Jungle1(true);
+    JUNGLE2 = new Jungle2(false);
+  }
+  else if (USER == "POLAR_A") {
+    AFRICA1 = new Africa1(false);
+    AFRICA2 = new Africa2(false);
+    AFRICA3 = new Africa3(true);
+    ASIA1 = new Asia1(true);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(false);
+    FROSTY2 = new Frosty2(true);
+    JUNGLE1 = new Jungle1(false);
+    JUNGLE2 = new Jungle2(false);
+  }
+  else if (USER == "POLAR_B") {
+    AFRICA1 = new Africa1(true);
+    AFRICA2 = new Africa2(false);
+    AFRICA3 = new Africa3(true);
+    ASIA1 = new Asia1(false);
+    ASIA2 = new Asia2(false);
+    FROSTY1 = new Frosty1(false);
+    FROSTY2 = new Frosty2(false);
+    JUNGLE1 = new Jungle1(false);
+    JUNGLE2 = new Jungle2(true);
+  }
+}
+
+void loadClueImages() {
+  if (USER == "GORILLA_A") {
+    CLUE1 = loadImage("data/clues/clue_fur.png");
+    CLUE2 = loadImage("data/clues/clue_plants.png");
+    CLUE3 = loadImage("data/clues/clue_2legs.png");
+    CLUE4 = loadImage("data/clues/clue_black.png");
+  }
+  else if (USER == "GORILLA_B") {
+    CLUE1 = loadImage("data/clues/clue_plants.png");
+    CLUE2 = loadImage("data/clues/clue_climbstrees.png");
+    CLUE3 = loadImage("data/clues/clue_muscular.png");
+    CLUE4 = loadImage("data/clues/clue_black.png");
+  }
+  else if (USER == "COBRA_A") {
+    CLUE1 = loadImage("data/clues/clue_sharpteeth.png");
+    CLUE2 = loadImage("data/clues/clue_scales.png");
+    CLUE3 = loadImage("data/clues/clue_poison.png");
+    CLUE4 = loadImage("data/clues/clue_longtongue.png");
+  }
+  else if (USER == "COBRA_B") {  
+    CLUE1 = loadImage("data/clues/clue_sharpteeth.png");
+    CLUE2 = loadImage("data/clues/clue_scales.png");
+    CLUE3 = loadImage("data/clues/clue_eggs.png");
+    CLUE4 = loadImage("data/clues/clue_eatsmice.png");
+  }
+  else if (USER == "POLAR_A") {  
+    CLUE1 = loadImage("data/clues/clue_white.png");
+    CLUE2 = loadImage("data/clues/clue_4paws.png");
+    CLUE3 = loadImage("data/clues/clue_blacknose.png");
+    CLUE4 = loadImage("data/clues/clue_sharpteeth.png");
+  }
+  else if (USER == "POLAR_B") {
+    CLUE1 = loadImage("data/clues/clue_4paws.png");
+    CLUE2 = loadImage("data/clues/clue_fur.png");
+    CLUE3 = loadImage("data/clues/clue_fish.png");
+    CLUE4 = loadImage("data/clues/clue_claws.png");
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//           _                    
+//          | |                   
+//        __| |_ __ __ ___      __
+//       / _` | '__/ _` \ \ /\ / /
+//      | (_| | | | (_| |\ V  V / 
+//       \__,_|_|  \__,_| \_/\_/  
+////////////////////////////////////////////////////////////////////////////////
+
+
+// draw is called directly after setup
+// called automatically
+void draw() {
+  println(ON_GUESS);
+
+  CURRENT_TIME = millis();
+
+  frameRate(12);
+
+  if (ON_INTRO) {
+    frameRate(30);
+    image(OPENING_MOVIE, 0, 0);
+    if (OPENING_MOVIE.time() >= 10) {
+      ON_INTRO = false;
     }
-    
-    //randomly chooses which animal the user is 
-    // and which group of 6 animal interacts with
-    void chooseUser() {
-      float random_number = random(0, 6);
-      if (random_number < 1) {
-        USER = "GORILLA_A";
-      }
-      else if (random_number < 2) {
-        USER = "GORILLA_B";
-      }
-      else if (random_number < 3) {
-        USER = "POLAR_A";
-      }
-      else if (random_number < 4) {
-        USER = "POLAR_B";
-      }
-      else if (random_number < 5) {
-        USER = "COBRA_A";
-      }
-      else if (random_number < 6) {
-        USER = "COBRA_B";
-      }
-      println(USER);
+  }
+
+  if (ON_WIN) {
+    WIN.doWin();
+  }
+
+  //automatically shows the guessing screen if need be
+  else if (shouldShowGuess()) {
+    WIN.doGuess();
+  }
+
+  else if (LAST_HABITAT_NUMBER != HABITAT_NUMBER) {
+    Z = false;//cancel the Zs
+  }
+
+  //to stop the animal from visibly speaking if audio over
+  else if (ANIMAL_TALKING && 
+    (CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {
+    ANIMAL_TALKING = false;
+    doScene(HABITAT_NUMBER);
+  }
+  //to display the correct animal for current habitat
+  else if (ON_GUESS) {
+  }
+
+  //makes owl stay up as long as audio plays
+  else if (ON_OWL) {
+    if  (CURRENT_TIME - OWL_TALKING_START_TIME >= LIST_OWL_AUDIO[HELP].length()) {
+      ON_OWL = false;
     }
-    
-    void loadAnimalClasses() {
-      if (USER == "GORILLA_A") {
-        AFRICA1 = new Africa1(false);
-        AFRICA2 = new Africa2(true);
-        AFRICA3 = new Africa3(false);
-        ASIA1 = new Asia1(true);
-        ASIA2 = new Asia2(false);
-        FROSTY1 = new Frosty1(true);
-        FROSTY2 = new Frosty2(false);
-        JUNGLE1 = new Jungle1(false);
-        JUNGLE2 = new Jungle2(false);
-      }
-      else if (USER == "GORILLA_B") {
-        AFRICA1 = new Africa1(false);
-        AFRICA2 = new Africa2(false);
-        AFRICA3 = new Africa3(true);
-        ASIA1 = new Asia1(false);
-        ASIA2 = new Asia2(true);
-        FROSTY1 = new Frosty1(false);
-        FROSTY2 = new Frosty2(false);
-        JUNGLE1 = new Jungle1(true);
-        JUNGLE2 = new Jungle2(false);
-      }
-      else if (USER == "COBRA_A") {
-        AFRICA1 = new Africa1(false);
-        AFRICA2 = new Africa2(true);
-        AFRICA3 = new Africa3(false);
-        ASIA1 = new Asia1(false);
-        ASIA2 = new Asia2(false);
-        FROSTY1 = new Frosty1(false);
-        FROSTY2 = new Frosty2(true);
-        JUNGLE1 = new Jungle1(false);
-        JUNGLE2 = new Jungle2(true);
-      }
-      else if (USER == "COBRA_B") {
-        AFRICA1 = new Africa1(true);
-        AFRICA2 = new Africa2(false);
-        AFRICA3 = new Africa3(false);
-        ASIA1 = new Asia1(false);
-        ASIA2 = new Asia2(false);
-        FROSTY1 = new Frosty1(true);
-        FROSTY2 = new Frosty2(false);
-        JUNGLE1 = new Jungle1(true);
-        JUNGLE2 = new Jungle2(false);
-      }
-      else if (USER == "POLAR_A") {
-        AFRICA1 = new Africa1(false);
-        AFRICA2 = new Africa2(false);
-        AFRICA3 = new Africa3(true);
-        ASIA1 = new Asia1(true);
-        ASIA2 = new Asia2(false);
-        FROSTY1 = new Frosty1(false);
-        FROSTY2 = new Frosty2(true);
-        JUNGLE1 = new Jungle1(false);
-        JUNGLE2 = new Jungle2(false);
-      }
-      else if (USER == "POLAR_B") {
-        AFRICA1 = new Africa1(true);
-        AFRICA2 = new Africa2(false);
-        AFRICA3 = new Africa3(true);
-        ASIA1 = new Asia1(false);
-        ASIA2 = new Asia2(false);
-        FROSTY1 = new Frosty1(false);
-        FROSTY2 = new Frosty2(false);
-        JUNGLE1 = new Jungle1(false);
-        JUNGLE2 = new Jungle2(true);
-      }
+    else {
+      doOwl();
     }
-    
-    void loadClueImages() {
-      if (USER == "GORILLA_A") {
-        CLUE1 = loadImage("data/clues/clue_fur.png");
-        CLUE2 = loadImage("data/clues/clue_plants.png");
-        CLUE3 = loadImage("data/clues/clue_2legs.png");
-        CLUE4 = loadImage("data/clues/clue_black.png");
-      }
-      else if (USER == "GORILLA_B") {
-        CLUE1 = loadImage("data/clues/clue_plants.png");
-        CLUE2 = loadImage("data/clues/clue_climbstrees.png");
-        CLUE3 = loadImage("data/clues/clue_muscular.png");
-        CLUE4 = loadImage("data/clues/clue_black.png");
-      }
-      else if (USER == "COBRA_A") {
-        CLUE1 = loadImage("data/clues/clue_sharpteeth.png");
-        CLUE2 = loadImage("data/clues/clue_scales.png");
-        CLUE3 = loadImage("data/clues/clue_poison.png");
-        CLUE4 = loadImage("data/clues/clue_longtongue.png");
-      }
-      else if (USER == "COBRA_B") {  
-        CLUE1 = loadImage("data/clues/clue_sharpteeth.png");
-        CLUE2 = loadImage("data/clues/clue_scales.png");
-        CLUE3 = loadImage("data/clues/clue_eggs.png");
-        CLUE4 = loadImage("data/clues/clue_eatsmice.png");
-      }
-      else if (USER == "POLAR_A") {  
-        CLUE1 = loadImage("data/clues/clue_white.png");
-        CLUE2 = loadImage("data/clues/clue_4paws.png");
-        CLUE3 = loadImage("data/clues/clue_blacknose.png");
-        CLUE4 = loadImage("data/clues/clue_sharpteeth.png");
-      }
-      else if (USER == "POLAR_B") {
-        CLUE1 = loadImage("data/clues/clue_4paws.png");
-        CLUE2 = loadImage("data/clues/clue_fur.png");
-        CLUE3 = loadImage("data/clues/clue_fish.png");
-        CLUE4 = loadImage("data/clues/clue_claws.png");
-      }
+  }
+
+  else if (ON_MAP) {
+    doMap();
+  }
+
+
+  else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO && !ON_GUESS) { 
+    println("GOT HERE HOMESLICE");
+    doScene(HABITAT_NUMBER);
+    //LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED
+    //println(Z);
+    if (Z) {
+      LIST_OF_HABITATS[HABITAT_NUMBER].displayZs();
+      println(Z);
     }
-    
-    
-    ////////////////////////////////////////////////////////////////////////////////
-    //           _                    
-    //          | |                   
-    //        __| |_ __ __ ___      __
-    //       / _` | '__/ _` \ \ /\ / /
-    //      | (_| | | | (_| |\ V  V / 
-    //       \__,_|_|  \__,_| \_/\_/  
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    
-    // draw is called directly after setup
-    // called automatically
-    void draw() {
-      println(ON_GUESS);
-    
-      CURRENT_TIME = millis();
-    
-      frameRate(12);
-    
-      if (ON_INTRO) {
-        frameRate(30);
-        image(OPENING_MOVIE, 0, 0);
-        if (OPENING_MOVIE.time() >= 10) {
-          ON_INTRO = false;
-        }
-      }
-    
-      if (ON_WIN) {
-        WIN.doWin();
-      }
-    
-      //automatically shows the guessing screen if need be
-      else if (shouldShowGuess()) {
-        WIN.doGuess();
-      }
-    
-      else if (LAST_HABITAT_NUMBER != HABITAT_NUMBER) {
-        Z = false;//cancel the Zs
-      }
-    
-      //to stop the animal from visibly speaking if audio over
-      else if (ANIMAL_TALKING && 
-        (CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {
-        ANIMAL_TALKING = false;
-        doScene(HABITAT_NUMBER);
-      }
-      //to display the correct animal for current habitat
-      else if (ON_GUESS) {
-      }
-    
-      //makes owl stay up as long as audio plays
-      else if (ON_OWL) {
-        if  (CURRENT_TIME - OWL_TALKING_START_TIME >= LIST_OWL_AUDIO[HELP].length()) {
-          ON_OWL = false;
-        }
-        else {
-          doOwl();
-        }
-      }
-    
-      else if (ON_MAP) {
-        doMap();
-      }
-    
-    
-      else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO && !ON_GUESS) { 
-        println("GOT HERE HOMESLICE");
-        doScene(HABITAT_NUMBER);
-        //LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED
-        //println(Z);
-        if (Z) {
-          LIST_OF_HABITATS[HABITAT_NUMBER].displayZs();
-          println(Z);
-        }
-      }
-      println("NOT THERE BOOOO");
-      drawCursor();
-      //printMem(); //DEBUG: To monitor memory usage
-    
-      //plays correct background music
-      if (!WELCOME_SCREEN && !ON_INTRO) {
-        whenPlay();
-      }
-    }
-    
-    
-    // DEBUG section
-    // This is for memory concerns; it prints out the totals to the 
-    // console if called in draw()
-    
-    /*void printMem() {
-     Runtime runtime = Runtime.getRuntime();
-     NumberFormat format = NumberFormat.getInstance();
-     StringBuilder sb = new StringBuilder();
-     long maxMemory = runtime.maxMemory();
-     long allocatedMemory = runtime.totalMemory();
-     long freeMemory = runtime.freeMemory();
+  }
+  println("NOT THERE BOOOO");
+  drawCursor();
+  //printMem(); //DEBUG: To monitor memory usage
+
+  //plays correct background music
+  if (!WELCOME_SCREEN && !ON_INTRO) {
+    whenPlay();
+  }
+}
+
+
+// DEBUG section
+// This is for memory concerns; it prints out the totals to the 
+// console if called in draw()
+
+/*void printMem() {
+ Runtime runtime = Runtime.getRuntime();
+ NumberFormat format = NumberFormat.getInstance();
+ StringBuilder sb = new StringBuilder();
+ long maxMemory = runtime.maxMemory();
+ long allocatedMemory = runtime.totalMemory();
+ long freeMemory = runtime.freeMemory();
  sb.append("free memory: 
-    " + format.format(freeMemory / 1024) + "  ");
+ " + format.format(freeMemory / 1024) + "  ");
  sb.append("allocated memory: 
-    " + format.format(allocatedMemory / 1024) + "  ");
+ " + format.format(allocatedMemory / 1024) + "  ");
  sb.append("max memory: 
-    " + format.format(maxMemory / 1024) + "  ");
+ " + format.format(maxMemory / 1024) + "  ");
  sb.append("total free memory: 
-    " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "  ");
-     println(sb);
-     }*/
-    
-    // SOUNDS
-    
-    void playBg() {  
-      if (HABITAT_NUMBER == 0 || HABITAT_NUMBER == 1 || HABITAT_NUMBER == 2) {
-        pauseAll();
-        AFRICA_BG.loop();
-      }
-      if (HABITAT_NUMBER == 3 || HABITAT_NUMBER == 4) {
-        pauseAll();
-        ASIA_BG.loop();
-      }
-      if (HABITAT_NUMBER == 5 || HABITAT_NUMBER == 6) {
-        pauseAll();
-        FROSTY_BG.loop();
-      } 
-      if (HABITAT_NUMBER == 7 || HABITAT_NUMBER == 8) {
-        pauseAll();    
-        JUNGLE_BG.loop();
-      }
+ " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "  ");
+ println(sb);
+ }*/
+
+// SOUNDS
+
+void playBg() {  
+  if (HABITAT_NUMBER == 0 || HABITAT_NUMBER == 1 || HABITAT_NUMBER == 2) {
+    pauseAll();
+    AFRICA_BG.loop();
+  }
+  if (HABITAT_NUMBER == 3 || HABITAT_NUMBER == 4) {
+    pauseAll();
+    ASIA_BG.loop();
+  }
+  if (HABITAT_NUMBER == 5 || HABITAT_NUMBER == 6) {
+    pauseAll();
+    FROSTY_BG.loop();
+  } 
+  if (HABITAT_NUMBER == 7 || HABITAT_NUMBER == 8) {
+    pauseAll();    
+    JUNGLE_BG.loop();
+  }
+}
+
+//determines if this is the point where the guess screen should automatically pop up 
+boolean shouldShowGuess() {
+  if (! (!ANIMAL_TALKING && CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH + 700)) {
+    return false;
+  }
+  if (USER == "GORILLA_A" && AFRICA3_STATE == 4) { 
+    return true;
+  }
+  else if (USER == "GORILLA_B" && JUNGLE2_STATE == 2) {
+    return true;
+  }
+  else if (USER == "COBRA_A" && ASIA1_STATE == 2) {
+    return true;
+  }
+  else if (USER == "COBRA_B" && FROSTY2_STATE == 2) { 
+    return true;
+  }
+  else if (USER == "POLAR_A" && AFRICA2_STATE == 2) {
+    return true;
+  }
+  else if (USER == "POLAR_B" && ASIA2_STATE == 2) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+void pauseAll() {
+  AFRICA_BG.pause();
+  ASIA_BG.pause();
+  JUNGLE_BG.pause();
+  FROSTY_BG.pause();
+}
+
+//play the correct background music
+void whenPlay() {
+  /*if (HABITAT_NUMBER != LAST_HABITAT_NUMBER) {
+   playBg();
+   }*/
+  if (((HABITAT_NUMBER==0) || (HABITAT_NUMBER==1) || (HABITAT_NUMBER==2))
+    && !(LAST_HABITAT_NUMBER <= 2)) {
+    playBg();
+  }
+  else if (((HABITAT_NUMBER ==3) || (HABITAT_NUMBER==4)) &&
+    ((LAST_HABITAT_NUMBER != 3) && (LAST_HABITAT_NUMBER != 4))) {
+    playBg();
+  }
+  else if (((HABITAT_NUMBER==5) || (HABITAT_NUMBER==6)) && 
+    ((LAST_HABITAT_NUMBER != 5) && (LAST_HABITAT_NUMBER != 6))) {
+    playBg();
+  }
+  else if (((HABITAT_NUMBER == 7) || (HABITAT_NUMBER == 8)) && !(LAST_HABITAT_NUMBER >= 7)) {
+    playBg();
+  }
+  /*if (((HABITAT_NUMBER == 0) || (HABITAT_NUMBER == 1) || (HABITAT_NUMBER == 2)) &&
+   !(LAST_HABITAT_NUMBER < 3)) {
+   playBg();
+   }
+   else if (((HABITAT_NUMBER == 3) || (HABITAT_NUMBER == 4)) &&
+   (!(HABITAT_NUMBER == 3) && !(HABITAT_NUMBER == 4))) {
+   playBg();
+   }
+   else if (((HABITAT_NUMBER == 5) || (HABITAT_NUMBER == 6)) &&
+   (!(HABITAT_NUMBER == 5) && !(HABITAT_NUMBER == 6))) {
+   playBg();
+   }
+   else if (((HABITAT_NUMBER == 7) || (HABITAT_NUMBER == 8)) &&
+   (!(HABITAT_NUMBER == 7) && !(HABITAT_NUMBER == 8))) {
+   playBg();
+   }*/
+  LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+}
+
+
+//changes the cursor to way we want it when we want it
+//NOTE: *** does not currently show hand when on guess screen
+void drawCursor() {
+  // changes the cursor to show it's over the start button
+  if (WELCOME_SCREEN) {
+
+    if (cursorOver(STARTXi, STARTXf, STARTYi, STARTYf)) {
+      cursor(HAND);
     }
-    
-    //determines if this is the point where the guess screen should automatically pop up 
-    boolean shouldShowGuess() {
-      if (! (!ANIMAL_TALKING && CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH + 700)) {
-        return false;
-      }
-      if (USER == "GORILLA_A" && AFRICA3_STATE == 4) { 
-        return true;
-      }
-      else if (USER == "GORILLA_B" && JUNGLE2_STATE == 2) {
-        return true;
-      }
-      else if (USER == "COBRA_A" && ASIA1_STATE == 2) {
-        return true;
-      }
-      else if (USER == "COBRA_B" && FROSTY2_STATE == 2) { 
-        return true;
-      }
-      else if (USER == "POLAR_A" && AFRICA2_STATE == 2) {
-        return true;
-      }
-      else if (USER == "POLAR_B" && ASIA2_STATE == 2) {
-        return true;
-      }
-      else {
-        return false;
-      }
+    else {
+      cursor(ARROW);
     }
-    
-    void pauseAll() {
-      AFRICA_BG.pause();
-      ASIA_BG.pause();
-      JUNGLE_BG.pause();
-      FROSTY_BG.pause();
+  } 
+
+  else if (ANIMAL_TALKING || ON_OWL || ON_INTRO) {
+    cursor(ARROW);
+  }
+
+  else if (ON_GUESS) {
+    if (WIN.cursorOverGuessOption()) {
+      cursor(HAND);
     }
-    
-    //play the correct background music
-    void whenPlay() {
-      /*if (HABITAT_NUMBER != LAST_HABITAT_NUMBER) {
-       playBg();
-       }*/
-      if (((HABITAT_NUMBER==0) || (HABITAT_NUMBER==1) || (HABITAT_NUMBER==2))
-        && !(LAST_HABITAT_NUMBER <= 2)) {
-        playBg();
-      }
-      else if (((HABITAT_NUMBER ==3) || (HABITAT_NUMBER==4)) &&
-        ((LAST_HABITAT_NUMBER != 3) && (LAST_HABITAT_NUMBER != 4))) {
-        playBg();
-      }
-      else if (((HABITAT_NUMBER==5) || (HABITAT_NUMBER==6)) && 
-        ((LAST_HABITAT_NUMBER != 5) && (LAST_HABITAT_NUMBER != 6))) {
-        playBg();
-      }
-      else if (((HABITAT_NUMBER == 7) || (HABITAT_NUMBER == 8)) && !(LAST_HABITAT_NUMBER >= 7)) {
-        playBg();
-      }
-      /*if (((HABITAT_NUMBER == 0) || (HABITAT_NUMBER == 1) || (HABITAT_NUMBER == 2)) &&
-       !(LAST_HABITAT_NUMBER < 3)) {
-       playBg();
-       }
-       else if (((HABITAT_NUMBER == 3) || (HABITAT_NUMBER == 4)) &&
-       (!(HABITAT_NUMBER == 3) && !(HABITAT_NUMBER == 4))) {
-       playBg();
-       }
-       else if (((HABITAT_NUMBER == 5) || (HABITAT_NUMBER == 6)) &&
-       (!(HABITAT_NUMBER == 5) && !(HABITAT_NUMBER == 6))) {
-       playBg();
-       }
-       else if (((HABITAT_NUMBER == 7) || (HABITAT_NUMBER == 8)) &&
-       (!(HABITAT_NUMBER == 7) && !(HABITAT_NUMBER == 8))) {
-       playBg();
-       }*/
-      LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    else {
+      cursor(ARROW);
     }
-    
-    
-    //changes the cursor to way we want it when we want it
-    //NOTE: *** does not currently show hand when on guess screen
-    void drawCursor() {
-      // changes the cursor to show it's over the start button
-      if (WELCOME_SCREEN) {
-    
-        if (cursorOver(STARTXi, STARTXf, STARTYi, STARTYf)) {
-          cursor(HAND);
-        }
-        else {
-          cursor(ARROW);
-        }
-      } 
-    
-      else if (ANIMAL_TALKING || ON_OWL || ON_INTRO) {
-        cursor(ARROW);
-      }
-    
-      else if (ON_GUESS) {
-        if (WIN.cursorOverGuessOption()) {
-          cursor(HAND);
-        }
-        else {
-          cursor(ARROW);
-        }
-      }
-    
-      else if 
-        (cursorOverMapButton() || 
-        cursorOverHelp() || 
-        cursor_over_left() ||
-        cursor_over_right() ||
-        (!LIST_OF_HABITATS[HABITAT_NUMBER].isSleeping &&
-        LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverAnimal()) ||
-        (ON_MAP && (
-      cursorOverAfrica1() ||
-        cursorOverAfrica2() ||
-        cursorOverAfrica3() ||
-        cursorOverAsia1() ||
-        cursorOverAsia2() ||
-        cursorOverFrosty1() ||
-        cursorOverFrosty2() ||
-        cursorOverJungle1() ||
-        cursorOverJungle2() ))) 
-      {
-        cursor(HAND);
-      }
-      else if (LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverElement()) {
-        cursor(HAND);
-      }
-      else if (NAV.cursorOverClue()) {
-        cursor(HAND);
-      }
-      else if ((HABITAT_NUMBER == 8) && JUNGLE2.cursorOverTrash()) {
-        cursor(HAND);
-      }
-      else {
-        cursor(ARROW);
-      }
-    }
-    
-    
-    //---------------------------------------
-    // "do" functions 
-    // these call the display methods in the corresponding classes
-    // so we can view them in zoo.pde
-    
-    //chooses what scene to do next based on int argument
-    void doScene(int i) {
-      if (i == 0) {
-        doAfrica1();
-      }
-      else if (i == 1) {
-        doAfrica2();
-      } 
-      else if (i == 2) {
-        doAfrica3();
-      }
-      else if (i == 3) {
-        doAsia1();
-      }
-      else if (i == 4) {
-        doAsia2();
-      }
-      else if (i == 5) {
-        doFrosty1();
-      }
-      else if (i == 6) {
-        doFrosty2();
-      }
-      else if (i == 7) {
-        doJungle1();
-      }
-      else if (i == 8) {
-        doJungle2();
-      }
-    }
-    
-    // intro of the box screen
-    void doIntro() {
-      NAV.display();
-      INTRO.display();
-      ON_INTRO = true;
-    }
-    
-    // map screen
-    void doMap() {
-      MAP.display();
-      ON_MAP = true;
-    }
-    
-    //help Oscar Owl
-    void doOwl() {
-      OWL.displayOwl();
-      ON_OWL = true;
-    }
-    
-    //---------------------
-    // all of the do methods display the habitat for each 
-    // specified habitat
-    // arrows are displayed because the backgrounds will hide them.
-    
-    void doAfrica1() {
-      AFRICA1.display();
-      ARROWS.display();
-      NAV.display();
-    }
-    void doAfrica2() {
-      AFRICA2.display();
-      ARROWS.display();
-      NAV.display();
-    }
-    
-    void doAfrica3() {
-      AFRICA3.display();
-      ARROWS.display();
-      NAV.display();
-    }
-    
-    void doAsia1() {
-      ASIA1.display();
-      ARROWS.display();
-      NAV.display();
-    }
-    
-    void doAsia2() {
-      ASIA2.display();
-      ARROWS.display();
-      NAV.display();
-    }
-    
-    void doFrosty1() {
-      FROSTY1.display();
-      ARROWS.display();
-      NAV.display();
-    }
-    
-    void doFrosty2() {
-      FROSTY2.display();
-      ARROWS.display();
-      NAV.display();
-    }
-    
-    void doJungle1() {
-      JUNGLE1.display();
-      ARROWS.display();
-      NAV.display();
-    }
-    
-    void doJungle2() {
-      JUNGLE2.display();
-      ARROWS.display();
-      NAV.display();
-    }
-    
-    //------------------------------------
-    //actions to take if mouse is pressed
-    
-    // assume: on welcome screen
-    // determines what actions to perform if mouse pressed 
-    void mousePressedWelcomeScreen() {
-      if (cursor_over_start() && mousePressed == true) {
-        doIntro();
-        WELCOME_SCREEN = false;
-        OPENING_START_TIME = millis();
-      }
-    }
-    
-    // if mouse is pressed, do this stuff 
-    void mousePressed() {
-      //if welcome screen is up 
-      if (WELCOME_SCREEN) { 
-        mousePressedWelcomeScreen();
-      }
-      else if (ON_INTRO) {
-      }
-      //if an animal is talking
-      else if (ANIMAL_TALKING || ON_OWL) {
-      } //stops user from clicking on things while animal talking
-    
-    
-      //if map is up
-      else if (ON_MAP) {
-        mousePressedOnMap();
-      }
-    
-      else if (ON_GUESS) {
-        WIN.mousePressedOnGuess();
-      }
-    
-      //if over map 
-      else if (cursorOverMapButton()) {
-        doMap();
-        ON_MAP = true;
-      }
-    
-      //if over help
-      else if (cursorOverHelp()) {
-        OWL.talkOwl();
-        ON_OWL = true;
-      }
-    
-      else if (cursor_over_left()) {
-        doScene(updateSceneNumber("left"));
-      }
-      else if (cursor_over_right()) {
-        doScene(updateSceneNumber("right"));
-      }
-      else if (!ON_MAP && cursorOverHabitat()) {//&& (HABITAT_NUMBER == 0)) {
-        LIST_OF_HABITATS[HABITAT_NUMBER].mousePressedInHabitat();
-      }
-    }
-    
-    // assume: on map
-    // determines what actions to perform if on map
-    void mousePressedOnMap() {
-      if (cursorOverMapButton()) {
-        ON_MAP = false;
-      }
-      else if (cursorOverHelp()) {
-        OWL.talkOwl();
-        ON_OWL = true;
-      }
-      else if (cursorOverAfrica1()) {
-        doAfrica1();
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER = 0;
-        ON_MAP = false;
-      }
-      else if (cursorOverAfrica2()) {
-        doAfrica2();
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER = 1;
-        ON_MAP = false;
-      }
-      else if (cursorOverAfrica3()) {
-        doAfrica3();
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER = 2;
-        ON_MAP = false;
-      }
-      else if (cursorOverAsia1()) {
-        doAsia1();
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER = 3;
-        ON_MAP = false;
-      }
-      else if (cursorOverAsia2()) {
-        doAsia2();
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER = 4;
-        ON_MAP = false;
-      }
-      else if (cursorOverFrosty1()) {
-        doFrosty1();
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER = 5;
-        ON_MAP = false;
-      }
-      else if (cursorOverFrosty2()) {
-        doFrosty2();
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER = 6;
-        ON_MAP = false;
-      }
-      else if (cursorOverJungle1()) {
-        doJungle1();
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER = 7;
-        ON_MAP = false;
-      }
-      else if (cursorOverJungle2()) {
-        doJungle2();
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER = 8;
-        ON_MAP = false;
-      }
-    }
-    
-    
-    // to update the scene the user is on
-    // when they click on an arrow key as specified by query
-    int updateSceneNumber(String query) {
-      if (query.equals("left") && HABITAT_NUMBER == 0) {
-        HABITAT_NUMBER = 8;
-        LAST_HABITAT_NUMBER = 0;
-      }
-      else if (query.equals("right") && HABITAT_NUMBER == 8) {
-        HABITAT_NUMBER = 0;
-        LAST_HABITAT_NUMBER = 8;
-      }
-      else if (query.equals("left")) {
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER--;
-      }
-      else { // assume query == "right" 
-        LAST_HABITAT_NUMBER = HABITAT_NUMBER;
-        HABITAT_NUMBER++;
-      }
-      return HABITAT_NUMBER;
-    }
-    
-    
-    //--------------------------------------------
-    void mouseMoved() {
-      if (!WELCOME_SCREEN && !ON_MAP && !ON_GUESS && !ON_INTRO) {
-        //LIST_OF_HABITATS[HABITAT_NUMBER].mouseOverInHabitat();
-        LIST_OF_HABITATS[HABITAT_NUMBER].mouseMovedInHabitat();
-      }
-    }
-    
-    
-    //---------------------------------------------
-    // determine if cursor is over a certain area 
-    
-    // determines if cursor in a certain box
-    boolean cursorOver(int xmin, int xmax, int ymin, int ymax) {
-      return xmin < mouseX && mouseX < xmax && ymin < mouseY && mouseY < ymax;
-    }
-    
-    // determines if cursor over the start button 
-    // assume: on welcome page
-    boolean cursor_over_start() {
-      return cursorOver(STARTXi, STARTXf, STARTYi, STARTYf);
-    }
-    
-    
-    //assume: not on welcome screen, not on map
-    // determines if mouse pressed in a habitat
-    boolean cursorOverHabitat() {
-      return cursorOver(0, 960, 0, 540);
-    }
-    
-    // determines if cursor over map 
-    boolean cursorOverMapButton() {
-      return cursorOver(MAPXi, MAPXf, MAPYi, MAPYf);
-    }
-    boolean cursorOverHelp() {
-      return cursorOver(HELPXi, HELPXf, HELPYi, HELPYf);
-    }
-    boolean cursor_over_left() {
-      return cursorOver(LEFTXi, LEFTXf, LEFTYi, LEFTYf);
-    }
-    boolean cursor_over_right() {
-      return cursorOver(RIGHTXi, RIGHTXf, RIGHTYi, RIGHTYf);
-    }
-    
-    // assuming in the map
-    boolean cursorOverAfrica1() {
-      return cursorOver(473, 562, 96, 160);
-    }
-    boolean cursorOverAfrica2() {
-      return cursorOver(564, 654, 171, 237);
-    }
-    boolean cursorOverAfrica3() {
-      return cursorOver(581, 670, 270, 336);
-    }
-    boolean cursorOverAsia1() {
-      return cursorOver(527, 616, 370, 435);
-    }
-    boolean cursorOverAsia2() {
-      return cursorOver(423, 513, 409, 474);
-    }
-    boolean cursorOverFrosty1() {
-      return cursorOver(318, 407, 369, 433);
-    }
-    boolean cursorOverFrosty2() {
-      return cursorOver(267, 356, 272, 336);
-    }
-    boolean cursorOverJungle1() {
-      return cursorOver(283, 372, 171, 235);
-    }
-    boolean cursorOverJungle2() {
-      return cursorOver(373, 461, 95, 159);
-    }
-    
-    
-    //method for opening intro
-    void movieEvent(Movie m) {
-      m.read();
-    }
+  }
+
+  else if 
+    (cursorOverMapButton() || 
+    cursorOverHelp() || 
+    cursor_over_left() ||
+    cursor_over_right() ||
+    (!LIST_OF_HABITATS[HABITAT_NUMBER].isSleeping &&
+    LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverAnimal()) ||
+    (ON_MAP && (
+  cursorOverAfrica1() ||
+    cursorOverAfrica2() ||
+    cursorOverAfrica3() ||
+    cursorOverAsia1() ||
+    cursorOverAsia2() ||
+    cursorOverFrosty1() ||
+    cursorOverFrosty2() ||
+    cursorOverJungle1() ||
+    cursorOverJungle2() ))) 
+  {
+    cursor(HAND);
+  }
+  else if (LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverElement()) {
+    cursor(HAND);
+  }
+  else if (NAV.cursorOverClue()) {
+    cursor(HAND);
+  }
+  else if ((HABITAT_NUMBER == 8) && JUNGLE2.cursorOverTrash()) {
+    cursor(HAND);
+  }
+  else {
+    cursor(ARROW);
+  }
+}
+
+
+//---------------------------------------
+// "do" functions 
+// these call the display methods in the corresponding classes
+// so we can view them in zoo.pde
+
+//chooses what scene to do next based on int argument
+void doScene(int i) {
+  if (i == 0) {
+    doAfrica1();
+  }
+  else if (i == 1) {
+    doAfrica2();
+  } 
+  else if (i == 2) {
+    doAfrica3();
+  }
+  else if (i == 3) {
+    doAsia1();
+  }
+  else if (i == 4) {
+    doAsia2();
+  }
+  else if (i == 5) {
+    doFrosty1();
+  }
+  else if (i == 6) {
+    doFrosty2();
+  }
+  else if (i == 7) {
+    doJungle1();
+  }
+  else if (i == 8) {
+    doJungle2();
+  }
+}
+
+// intro of the box screen
+void doIntro() {
+  NAV.display();
+  INTRO.display();
+  ON_INTRO = true;
+}
+
+// map screen
+void doMap() {
+  MAP.display();
+  ON_MAP = true;
+}
+
+//help Oscar Owl
+void doOwl() {
+  OWL.displayOwl();
+  ON_OWL = true;
+}
+
+//---------------------
+// all of the do methods display the habitat for each 
+// specified habitat
+// arrows are displayed because the backgrounds will hide them.
+
+void doAfrica1() {
+  AFRICA1.display();
+  ARROWS.display();
+  NAV.display();
+}
+void doAfrica2() {
+  AFRICA2.display();
+  ARROWS.display();
+  NAV.display();
+}
+
+void doAfrica3() {
+  AFRICA3.display();
+  ARROWS.display();
+  NAV.display();
+}
+
+void doAsia1() {
+  ASIA1.display();
+  ARROWS.display();
+  NAV.display();
+}
+
+void doAsia2() {
+  ASIA2.display();
+  ARROWS.display();
+  NAV.display();
+}
+
+void doFrosty1() {
+  FROSTY1.display();
+  ARROWS.display();
+  NAV.display();
+}
+
+void doFrosty2() {
+  FROSTY2.display();
+  ARROWS.display();
+  NAV.display();
+}
+
+void doJungle1() {
+  JUNGLE1.display();
+  ARROWS.display();
+  NAV.display();
+}
+
+void doJungle2() {
+  JUNGLE2.display();
+  ARROWS.display();
+  NAV.display();
+}
+
+//------------------------------------
+//actions to take if mouse is pressed
+
+// assume: on welcome screen
+// determines what actions to perform if mouse pressed 
+void mousePressedWelcomeScreen() {
+  if (cursor_over_start() && mousePressed == true) {
+    doIntro();
+    WELCOME_SCREEN = false;
+    OPENING_START_TIME = millis();
+  }
+}
+
+// if mouse is pressed, do this stuff 
+void mousePressed() {
+  //if welcome screen is up 
+  if (WELCOME_SCREEN) { 
+    mousePressedWelcomeScreen();
+  }
+  else if (ON_INTRO) {
+  }
+  //if an animal is talking
+  else if (ANIMAL_TALKING || ON_OWL) {
+  } //stops user from clicking on things while animal talking
+
+
+  //if map is up
+  else if (ON_MAP) {
+    mousePressedOnMap();
+  }
+
+  else if (ON_GUESS) {
+    WIN.mousePressedOnGuess();
+  }
+
+  //if over map 
+  else if (cursorOverMapButton()) {
+    doMap();
+    ON_MAP = true;
+  }
+
+  //if over help
+  else if (cursorOverHelp()) {
+    OWL.talkOwl();
+    ON_OWL = true;
+  }
+
+  else if (cursor_over_left()) {
+    doScene(updateSceneNumber("left"));
+  }
+  else if (cursor_over_right()) {
+    doScene(updateSceneNumber("right"));
+  }
+  else if (!ON_MAP && cursorOverHabitat()) {//&& (HABITAT_NUMBER == 0)) {
+    LIST_OF_HABITATS[HABITAT_NUMBER].mousePressedInHabitat();
+  }
+}
+
+// assume: on map
+// determines what actions to perform if on map
+void mousePressedOnMap() {
+  if (cursorOverMapButton()) {
+    ON_MAP = false;
+  }
+  else if (cursorOverHelp()) {
+    OWL.talkOwl();
+    ON_OWL = true;
+  }
+  else if (cursorOverAfrica1()) {
+    doAfrica1();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER = 0;
+    ON_MAP = false;
+  }
+  else if (cursorOverAfrica2()) {
+    doAfrica2();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER = 1;
+    ON_MAP = false;
+  }
+  else if (cursorOverAfrica3()) {
+    doAfrica3();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER = 2;
+    ON_MAP = false;
+  }
+  else if (cursorOverAsia1()) {
+    doAsia1();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER = 3;
+    ON_MAP = false;
+  }
+  else if (cursorOverAsia2()) {
+    doAsia2();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER = 4;
+    ON_MAP = false;
+  }
+  else if (cursorOverFrosty1()) {
+    doFrosty1();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER = 5;
+    ON_MAP = false;
+  }
+  else if (cursorOverFrosty2()) {
+    doFrosty2();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER = 6;
+    ON_MAP = false;
+  }
+  else if (cursorOverJungle1()) {
+    doJungle1();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER = 7;
+    ON_MAP = false;
+  }
+  else if (cursorOverJungle2()) {
+    doJungle2();
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER = 8;
+    ON_MAP = false;
+  }
+}
+
+
+// to update the scene the user is on
+// when they click on an arrow key as specified by query
+int updateSceneNumber(String query) {
+  if (query.equals("left") && HABITAT_NUMBER == 0) {
+    HABITAT_NUMBER = 8;
+    LAST_HABITAT_NUMBER = 0;
+  }
+  else if (query.equals("right") && HABITAT_NUMBER == 8) {
+    HABITAT_NUMBER = 0;
+    LAST_HABITAT_NUMBER = 8;
+  }
+  else if (query.equals("left")) {
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER--;
+  }
+  else { // assume query == "right" 
+    LAST_HABITAT_NUMBER = HABITAT_NUMBER;
+    HABITAT_NUMBER++;
+  }
+  return HABITAT_NUMBER;
+}
+
+
+//--------------------------------------------
+void mouseMoved() {
+  if (!WELCOME_SCREEN && !ON_MAP && !ON_GUESS && !ON_INTRO) {
+    //LIST_OF_HABITATS[HABITAT_NUMBER].mouseOverInHabitat();
+    LIST_OF_HABITATS[HABITAT_NUMBER].mouseMovedInHabitat();
+  }
+}
+
+
+//---------------------------------------------
+// determine if cursor is over a certain area 
+
+// determines if cursor in a certain box
+boolean cursorOver(int xmin, int xmax, int ymin, int ymax) {
+  return xmin < mouseX && mouseX < xmax && ymin < mouseY && mouseY < ymax;
+}
+
+// determines if cursor over the start button 
+// assume: on welcome page
+boolean cursor_over_start() {
+  return cursorOver(STARTXi, STARTXf, STARTYi, STARTYf);
+}
+
+
+//assume: not on welcome screen, not on map
+// determines if mouse pressed in a habitat
+boolean cursorOverHabitat() {
+  return cursorOver(0, 960, 0, 540);
+}
+
+// determines if cursor over map 
+boolean cursorOverMapButton() {
+  return cursorOver(MAPXi, MAPXf, MAPYi, MAPYf);
+}
+boolean cursorOverHelp() {
+  return cursorOver(HELPXi, HELPXf, HELPYi, HELPYf);
+}
+boolean cursor_over_left() {
+  return cursorOver(LEFTXi, LEFTXf, LEFTYi, LEFTYf);
+}
+boolean cursor_over_right() {
+  return cursorOver(RIGHTXi, RIGHTXf, RIGHTYi, RIGHTYf);
+}
+
+// assuming in the map
+boolean cursorOverAfrica1() {
+  return cursorOver(473, 562, 96, 160);
+}
+boolean cursorOverAfrica2() {
+  return cursorOver(564, 654, 171, 237);
+}
+boolean cursorOverAfrica3() {
+  return cursorOver(581, 670, 270, 336);
+}
+boolean cursorOverAsia1() {
+  return cursorOver(527, 616, 370, 435);
+}
+boolean cursorOverAsia2() {
+  return cursorOver(423, 513, 409, 474);
+}
+boolean cursorOverFrosty1() {
+  return cursorOver(318, 407, 369, 433);
+}
+boolean cursorOverFrosty2() {
+  return cursorOver(267, 356, 272, 336);
+}
+boolean cursorOverJungle1() {
+  return cursorOver(283, 372, 171, 235);
+}
+boolean cursorOverJungle2() {
+  return cursorOver(373, 461, 95, 159);
+}
+
+
+//method for opening intro
+void movieEvent(Movie m) {
+  m.read();
+}
 

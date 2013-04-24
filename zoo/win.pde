@@ -81,10 +81,10 @@ class Win {
   }
   
   boolean cursorOverGuessOption() {
-    return cursorOver(guess1_x, guess1_x + 100, guess_y, guess_y + 200) 
-    || cursorOver(guess2_x, guess2_x + 100, guess_y, guess_y + 200) 
-    || cursorOver(guess3_x, guess3_x + 100, guess_y, guess_y + 200) 
-    || cursorOver(guess4_x, guess4_x + 100, guess_y, guess_y + 200); 
+    return cursorOver(guess1_x, guess1_x + 200, guess_y, guess_y + 200) 
+    || cursorOver(guess2_x, guess2_x + 200, guess_y, guess_y + 200) 
+    || cursorOver(guess3_x, guess3_x + 200, guess_y, guess_y + 200) 
+    || cursorOver(guess4_x, guess4_x + 200, guess_y, guess_y + 200); 
   }
 
   //determiens if cursor over the correct answer
