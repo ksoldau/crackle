@@ -897,7 +897,7 @@ void drawCursor() {
     }
   } 
 
-  else if (ANIMAL_TALKING  || ON_OWL) {
+  else if (ANIMAL_TALKING || ON_OWL || ON_INTRO) {
     cursor(ARROW);
   }
 
