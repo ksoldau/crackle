@@ -134,7 +134,7 @@ class Jungle2 extends Habitat {
       if (pickedUpTrash1 && pickedUpTrash2 && pickedUpTrash3) {
         HAS_ITEM = true; //token         
         ASIA2_STATE ++; //Patty Panda
-        HELP = 4; //*** later can make this be a token
+        HELP = 4;
       }
     }
 
@@ -182,6 +182,7 @@ class Jungle2 extends Habitat {
     if (USER == "GORILLA_A") {
       if (JUNGLE2_STATE == 1) {
         JUNGLE2_STATE ++;
+        HELP = 9;
       } 
       if (JUNGLE2_STATE == 3) {
         JUNGLE2_STATE ++;
