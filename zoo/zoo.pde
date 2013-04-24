@@ -12,7 +12,9 @@ import gifAnimation.*; //from http://www.extrapixel.ch/processing/gifAnimation/
 //for tests
 PImage SLEEP_TEST;
 
+//elements
 PImage TRASH_IMAGE;
+PImage ROCK_IMAGE;
 
 //clues
 PImage CLUE1;
@@ -282,6 +284,7 @@ void setup() {
   
   //elements for scenes
   TRASH_IMAGE= loadImage("data/elements/trash.png");
+  ROCK_IMAGE = loadImage("data/elements/rock.png");
 
   // load image that says "Zoo guess who click here to start"
   BACKGROUND_IMG = loadImage("data/welcome.png");
@@ -922,6 +925,9 @@ void drawCursor() {
     cursor_over_jungle1() ||
     cursor_over_jungle2() ))) 
   {
+    cursor(HAND);
+  }
+  else if (LIST_OF_HABITATS[HABITAT_NUMBER].cursorOverElement()) {
     cursor(HAND);
   }
   else if ((HABITAT_NUMBER == 8) && JUNGLE2.cursorOverTrash()) {

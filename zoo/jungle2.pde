@@ -23,9 +23,12 @@ class Jungle2 extends Habitat {
   int trash3_x = 250;
   int trash3_y = 100;
 
+  int rockx = 800;
+  int rocky = 100;
+
   Jungle2(boolean isSleeping) {
     super(isSleeping);
-    if (isSleeping) {
+    if (isSleeping || USER != "GORILLA_A") {
       this.pickedUpTrash1 = true;
       this.pickedUpTrash2 = true;
       this.pickedUpTrash3 = true;
@@ -38,13 +41,14 @@ class Jungle2 extends Habitat {
   }
 
   //displays this habitat's background
-  public void display() {
+  void display() {
     image(this.background, 0, 0);
-    if (!isSleeping && USER == "COBRA_B") {
-      image(TRASH_IMAGE, trash1_x, trash1_y);
-    }
-    else if (!isSleeping) {
+
+    if (USER == "GORILLA_A") {
       displayTrash();
+    }
+    else if (USER == "COBRA_B") {
+      displayRock();
     }
   }
 
@@ -60,6 +64,12 @@ class Jungle2 extends Habitat {
     if (!pickedUpTrash3) {
       image(TRASH_IMAGE, trash3_x, trash3_y);
     }
+  }
+
+  //displayrock when necessary
+  //assume on COBRA_B
+  void displayRock() {
+    image(ROCK_IMAGE, rockx, rocky);
   }
 
   //display the correct animal image
@@ -90,6 +100,13 @@ class Jungle2 extends Habitat {
   //assume/know: animal is not talking
   void mousePressedInHabitat() {
     if (isSleeping) {
+    }
+    else if ((USER == "COBRA_B") && (JUNGLE2_STATE == 2) && cursorOverRock()) {
+      rockx = rockx - 100; //move the rock
+      JUNGLE2_STATE ++; //update state
+      ANIMAL_TALKING = true;
+      ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
+      playCurrentTalk();
     }
     else if (cursorOverAnimal() && (JUNGLE2_STATE == 2) && USER == "GORILLA_B") {
       WIN.doGuess();
@@ -131,7 +148,7 @@ class Jungle2 extends Habitat {
       if (JUNGLE2_STATE == 1) {
         JUNGLE2_STATE ++;
         ASIA2_STATE ++; //Patty Panda
-        HELP = 4; //*** later can make this be a token 
+        HELP = 4; //*** later can make this be a token
       } 
       if (JUNGLE2_STATE == 3) {
         JUNGLE2_STATE ++;
@@ -150,6 +167,7 @@ class Jungle2 extends Habitat {
     }
     else if (USER == "COBRA_B") {
       if (JUNGLE2_STATE == 1) { //stay same until pick up rock
+      JUNGLE2_STATE ++;
       }
       else if (JUNGLE2_STATE == 2) {
         JUNGLE2_STATE ++;
@@ -172,14 +190,28 @@ class Jungle2 extends Habitat {
     }
   }
 
+  //determines if cursor over any elements
+  boolean cursorOverElement() {
+    return cursorOverRock() || cursorOverTrash();
+  }
+
+  //determines if cursor over the rock 
+  //assume: it should be clicked on
+  boolean cursorOverRock() {
+    return (USER == "COBRA_B") && (JUNGLE2_STATE ==  2) &&
+      ((rockx < mouseX) && (mouseX < (rockx + 60))) 
+      && ((rocky < mouseY) && (mouseY < (rocky + 45)));
+  }
+
 
   //determines if cursor over any of the trash
   boolean cursorOverTrash() {
-    return !isSleeping && 
+    return (USER == "GORILLA_A") && !isSleeping && 
       ((!pickedUpTrash1 && cursorOverTrash1()) ||
       (!pickedUpTrash2 && cursorOverTrash2()) ||
       (!pickedUpTrash3 && cursorOverTrash3()));
   }
+
 
   //determines if mouse over trash1
   boolean cursorOverTrash1() {
@@ -199,13 +231,13 @@ class Jungle2 extends Habitat {
 
   //determines if the mouse over the Camel
   boolean cursorOverAnimal() {
-        if (isSleeping) {
+    if (isSleeping) {
       return ((animalSleepingLeft < mouseX) && (mouseX < (animalSleepingLeft + 200)))
         && ((animalSleepingTop < mouseY) && (mouseY < (animalSleepingTop + 200)));
     }
     else {
-    return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
-      && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
+      return ((animalLeft < mouseX) && (mouseX < (animalLeft + 288)))
+        && ((animalTop < mouseY) && (mouseY < (animalTop + 288)));
     }
   }
 
@@ -264,9 +296,12 @@ class Jungle2 extends Habitat {
         return CB_SLOTH1;
       }
       else if (JUNGLE2_STATE == 2) {
-        return CB_SLOTH2;
+        return CB_SLOTH1;
       }
       else if (JUNGLE2_STATE == 3) {
+        return CB_SLOTH2;
+      }
+      else if (JUNGLE2_STATE == 4) {
         return SLOTH_DUMMY;
       }
     }
