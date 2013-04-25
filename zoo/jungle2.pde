@@ -214,6 +214,7 @@ class Jungle2 extends Habitat {
     else if (USER == "POLAR_A") {
       if (JUNGLE2_STATE == 1) {
         NAV.clue4 = true;
+        HELP = 12; //cut Stanley's vines
       }
       if (JUNGLE2_STATE == 2) {
         JUNGLE2_STATE ++;

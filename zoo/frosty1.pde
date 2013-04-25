@@ -118,7 +118,7 @@ class Frosty1 extends Habitat {
       if (FROSTY1_STATE == 1) {
         FROSTY1_STATE ++;
         HAS_ITEM = true;
-        HELP = 4;
+        HELP = 11; //switch bamboo for fish
       }
       else if (FROSTY1_STATE == 3) {
         FROSTY1_STATE ++;
