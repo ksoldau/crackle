@@ -5,17 +5,17 @@ class Asia2 extends Habitat {
 
   int animalLeft = 450;
   int animalTop = 250;
-  
-  int elx = 200;
-  int ely = 200;
-  
+
+  int elx = 400;
+  int ely = 400;
+
   boolean replaced_bamboo = false;
   boolean has_token = false;
 
   PImage background = loadImage("data/asia_2.png");
-  
+
   PImage animal_sleeping;
-  
+
   Asia2(boolean isSleeping) {
     super(isSleeping, 200, 200); 
     if (isSleeping) {
@@ -26,8 +26,9 @@ class Asia2 extends Habitat {
   //displays this habitat's background
   public void display() {
     image(this.background, 0, 0);
-        displayAnimal();
-    
+    displayAnimal();
+    displayToken(); /** delete this after testing */
+
     if (USER == "POLAR_A") {
       displayBambooOrFish();
     }
@@ -35,20 +36,20 @@ class Asia2 extends Habitat {
       displayToken();
     }
   }
-  
+
   void displayToken() {
     image(SLOTH_TOKEN_IMAGE, elx, ely);
   }
-  
+
   void displayBambooOrFish() {
     if (!replaced_bamboo) {
-    image(BAMBOO_IMAGE, elx, ely);
+      image(BAMBOO_IMAGE, elx, ely);
     }
     else {
       image (FISH_IMAGE, elx, ely);
     }
   }
-  
+
   //displays the correct animal 
   void displayAnimal() {
     if (isSleeping) {
@@ -83,17 +84,17 @@ class Asia2 extends Habitat {
         && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
     }
   }
-  
+
   boolean cursorOverElement() {
     return cursorOverBamboo();
   }
-  
+
   boolean cursorOverBamboo() {
-     return (USER == "POLAR_A" && !replaced_bamboo && (FROSTY1_STATE == 2)) &&
-     ((elx < mouseX) && (mouseX < (elx + 200)))
-        && ((ely < mouseY) && (mouseY < (ely + 200)));
+    return (USER == "POLAR_A" && !replaced_bamboo && (FROSTY1_STATE == 2)) &&
+      ((elx < mouseX) && (mouseX < (elx + 200)))
+      && ((ely < mouseY) && (mouseY < (ely + 200)));
   }
-    
+
 
   void mousePressedInHabitat() {
     if (isSleeping) {
@@ -107,7 +108,6 @@ class Asia2 extends Habitat {
       HELP = 5;
       FROSTY1_STATE ++;
       ASIA2_STATE ++;
-
     }
     else if (cursorOverAnimal() && (ASIA2_STATE == 2) && USER == "POLAR_B") {
       WIN.doGuess();
@@ -273,6 +273,5 @@ class Asia2 extends Habitat {
     return PANDA_DUMMY; //this is just so it doesn't yell at us for now, delete it later!
   }
 }
-
 
 
