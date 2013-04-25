@@ -427,7 +427,7 @@ void setup() {
   initializeAudio();
   initializeHelpAudioAndImages();
   initializeClueAudio();
-  TRY_AGAIN_AUDIO = MINIM2.loadSample("try_again.mp3", 512);
+  TRY_AGAIN_AUDIO = minim.loadSample("try_again.mp3", 512);
 }
 
 //sets the first habitat the user sees to correct one
@@ -901,7 +901,7 @@ void draw() {
   //printMem(); //DEBUG: To monitor memory usage
 
   //plays correct background music
-  if (!WELCOME_SCREEN && !ON_INTRO) {
+  if (!WELCOME_SCREEN && !ON_INTRO && !ON_GUESS &&!ON_WIN) {
     whenPlay();
   }
 }
