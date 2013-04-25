@@ -682,6 +682,30 @@ void initializeClueAudio() {
     CLUE3_AUDIO = minim.loadSample("GB_CLUE3.mp3", 512);
     CLUE4_AUDIO = minim.loadSample("GB_CLUE4.mp3", 512);
   }
+  else if (USER == "COBRA_A") {
+    CLUE1_AUDIO = minim.loadSample("CA_CLUE1.mp3", 512);
+    CLUE2_AUDIO = minim.loadSample("CA_CLUE2.mp3", 512);
+    CLUE3_AUDIO = minim.loadSample("CA_CLUE3.mp3", 512);
+    CLUE4_AUDIO = minim.loadSample("CA_CLUE4.mp3", 512);
+  }
+  else if (USER == "COBRA_B") {
+    CLUE1_AUDIO = minim.loadSample("CB_CLUE1.mp3", 512);
+    CLUE2_AUDIO = minim.loadSample("CB_CLUE2.mp3", 512);
+    CLUE3_AUDIO = minim.loadSample("CB_CLUE3.mp3", 512);
+    CLUE4_AUDIO = minim.loadSample("CB_CLUE4.mp3", 512);
+  }
+  else if (USER == "POLAR_A") {
+    CLUE1_AUDIO = minim.loadSample("PA_CLUE1.mp3", 512);
+    CLUE2_AUDIO = minim.loadSample("PA_CLUE2.mp3", 512);
+    CLUE3_AUDIO = minim.loadSample("PA_CLUE3.mp3", 512);
+    CLUE4_AUDIO = minim.loadSample("PA_CLUE4.mp3", 512);
+  }
+  else if (USER == "POLAR_B") {
+    CLUE1_AUDIO = minim.loadSample("PB_CLUE1.mp3", 512);
+    CLUE2_AUDIO = minim.loadSample("PB_CLUE2.mp3", 512);
+    CLUE3_AUDIO = minim.loadSample("PB_CLUE3.mp3", 512);
+    CLUE4_AUDIO = minim.loadSample("PB_CLUE4.mp3", 512);
+  }
 }
 
 //randomly chooses which animal the user is 
@@ -934,7 +958,7 @@ void draw() {
 void playBg() {  
   if (HABITAT_NUMBER == 0 || HABITAT_NUMBER == 1 || HABITAT_NUMBER == 2) {
     pauseAll();
-    FROSTY_BG.loop(); //changed because of audio limit, both are wind sounds 
+    FROSTY_BG.loop(); //changed because of audio limit, both are wind sounds
   }
   if (HABITAT_NUMBER == 3 || HABITAT_NUMBER == 4) {
     pauseAll();
