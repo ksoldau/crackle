@@ -260,7 +260,7 @@ class Jungle2 extends Habitat {
 
   //determines if cursor over any of the trash
   boolean cursorOverTrash() {
-    return (USER == "GORILLA_A") && !isSleeping && 
+    return (USER == "GORILLA_A") && (JUNGLE2_STATE == 2) && !isSleeping && 
       ((!pickedUpTrash1 && cursorOverTrash1()) ||
       (!pickedUpTrash2 && cursorOverTrash2()) ||
       (!pickedUpTrash3 && cursorOverTrash3()));
