@@ -31,12 +31,20 @@ PImage CLUE2;
 PImage CLUE3;
 PImage CLUE4;
 
+//clue audio
+AudioSample CLUE1_AUDIO;
+AudioSample CLUE2_AUDIO;
+AudioSample CLUE3_AUDIO;
+AudioSample CLUE4_AUDIO;
+
 //guess scene
 PImage GUESS_SCENE_BG;
 
 // declaring variables outside of so they can be used anywhere
 // a la "public" in standard java
 int ANIMAL_TALKING_START_TIME;
+//
+int CLUE_TALKING_START_TIME;
 
 int OPENING_START_TIME;
 
@@ -250,6 +258,7 @@ int LAST_HABITAT_NUMBER = 8;
 
 //is the current animal talking
 boolean ANIMAL_TALKING = false;
+boolean CLUE_TALKING = false;
 
 //did user make animal snore
 boolean Z = false;
@@ -421,6 +430,7 @@ void setup() {
 
   initializeAudio();
   initializeHelpAudioAndImages();
+  initializeClueAudio();
   TRY_AGAIN_AUDIO = minim.loadSample("try_again.mp3", 512);
 }
 
@@ -664,6 +674,15 @@ void initializeHelpAudioAndImages() {
   }
 }
 
+void initializeClueAudio() {
+  if (USER == "GORILLA_A") {
+    CLUE1_AUDIO = minim.loadSample("GA_CLUE1.mp3", 512);
+    CLUE2_AUDIO = minim.loadSample("GA_CLUE2.mp3", 512);
+    CLUE3_AUDIO = minim.loadSample("GA_CLUE3.mp3", 512);
+    CLUE4_AUDIO = minim.loadSample("GA_CLUE4.mp3", 512);
+  }
+}
+
 //randomly chooses which animal the user is 
 // and which group of 6 animal interacts with
 void chooseUser() {
@@ -811,11 +830,11 @@ void loadClueImages() {
 // draw is called directly after setup
 // called automatically
 void draw() {
-  println(ON_GUESS);
 
   CURRENT_TIME = millis();
 
   frameRate(12);
+  drawCursor();
 
   if (ON_INTRO) {
     frameRate(30);
@@ -843,6 +862,11 @@ void draw() {
     (CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH)) {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
+  }
+  
+  else if (CLUE_TALKING && 
+  (CURRENT_TIME - CLUE_TALKING_START_TIME >= AUDIO_LENGTH)) {
+    CLUE_TALKING = false;
   }
   //to display the correct animal for current habitat
   else if (ON_GUESS) {
@@ -873,7 +897,6 @@ void draw() {
       println(Z);
     }
   }
-  drawCursor();
   //printMem(); //DEBUG: To monitor memory usage
 
   //plays correct background music
@@ -1198,15 +1221,18 @@ void mousePressed() {
   else if (ON_INTRO) {
   }
   //if an animal is talking
-  else if (ANIMAL_TALKING || ON_OWL) {
+  else if (ANIMAL_TALKING || ON_OWL || CLUE_TALKING) {
   } //stops user from clicking on things while animal talking
-
+  
+  else if (!WELCOME_SCREEN && !ON_INTRO && NAV.cursorOverClue()) {
+    NAV.mousePressedOnClue();
+  }
 
   //if map is up
   else if (ON_MAP) {
     mousePressedOnMap();
   }
-
+  
   else if (ON_GUESS) {
     WIN.mousePressedOnGuess();
   }

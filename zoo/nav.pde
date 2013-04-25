@@ -36,39 +36,62 @@ class Nav {
   }
 
   void displayClue1() {
-      image(CLUE1, clue1xi, clueyi);
+    image(CLUE1, clue1xi, clueyi);
   }
 
   void displayClue2() {
-      image(CLUE2, clue2xi, clueyi);
+    image(CLUE2, clue2xi, clueyi);
   }
 
   void displayClue3() {
-      image(CLUE3, clue3xi, clueyi);
+    image(CLUE3, clue3xi, clueyi);
   }
 
   void displayClue4() {
-      image(CLUE4, clue4xi, clueyi);
+    image(CLUE4, clue4xi, clueyi);
   }
-  
+
   //determines if cursor should be over a clue
   boolean cursorOverClue() {
-    if (clue1 && cursorOver(clue1xi, clue1xi + 100, clueyi, clueyi+ 65)) {
-      return true;
+    return cursorOverClue1() || cursorOverClue2() || 
+      cursorOverClue3() || cursorOverClue4();
+  }
+
+    boolean cursorOverClue1() {
+      return (clue1 && cursorOver(clue1xi, clue1xi + 100, clueyi, clueyi+ 65));
+      }
+      boolean cursorOverClue2() {
+        return (clue2 && cursorOver(clue2xi, clue2xi + 100, clueyi, clueyi+ 65));
+      }
+    boolean cursorOverClue3() {
+      return (clue3 && cursorOver(clue3xi, clue3xi + 100, clueyi, clueyi+ 65));
     }
-     else if (clue2 && cursorOver(clue2xi, clue2xi + 100, clueyi, clueyi+ 65)) {
-      return true;
-    }
-     else if (clue3 && cursorOver(clue3xi, clue3xi + 100, clueyi, clueyi+ 65)) {
-      return true;
-    }
-     else if (clue2 && cursorOver(clue4xi, clue4xi + 100, clueyi, clueyi+ 65)) {
-      return true;
-    }
-    else {
-      return false;
+    boolean cursorOverClue4() {
+      return clue4 && cursorOver(clue4xi, clue4xi + 100, clueyi, clueyi+ 65);
     }
 
+    //decides what to do if mouse pressed on nav
+    void mousePressedOnClue() {
+      if (cursorOverClue1()) {
+        CLUE1_AUDIO.trigger();
+        CLUE_TALKING = true;
+        CLUE_TALKING_START_TIME = millis();
+      }
+      else if (cursorOverClue2()) {
+        CLUE2_AUDIO.trigger();
+        CLUE_TALKING = true;
+        CLUE_TALKING_START_TIME = millis();
+      }
+      else if (cursorOverClue3()) {
+        CLUE3_AUDIO.trigger();
+        CLUE_TALKING = true;
+        CLUE_TALKING_START_TIME = millis();
+      }
+      else if (cursorOverClue4()) {
+        CLUE4_AUDIO.trigger();
+        CLUE_TALKING = true;
+        CLUE_TALKING_START_TIME = millis();
+      }
+    }
   }
-}
 
