@@ -12,7 +12,7 @@ class Asia2 extends Habitat {
   boolean replaced_bamboo = false;
   boolean has_token = false;
 
-  PImage background = loadImage("data/asia_2.png");
+  PImage background = loadImage("data/asia_2.png"); 
 
   PImage animal_sleeping;
 
