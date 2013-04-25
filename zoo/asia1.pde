@@ -4,7 +4,7 @@ class Asia1 extends Habitat {
   int numTalkingFrames = 8;
 
   int animalLeft = 500;
-  int animalTop = 300;
+  int animalTop = 250;
 
   PImage background = loadImage("data/asia_1.png");
   PImage animal_not_talking = loadImage("data/tina_tiger.gif");
