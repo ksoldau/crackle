@@ -29,6 +29,7 @@ PImage SLOTH_TOKEN_CORNER;
 PImage CLUE1;
 PImage CLUE2;
 PImage CLUE3;
+
 PImage CLUE4;
 
 //clue audio
