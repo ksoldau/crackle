@@ -74,21 +74,25 @@ class Nav {
     void mousePressedOnClue() {
       if (cursorOverClue1()) {
         CLUE1_AUDIO.trigger();
+        AUDIO_LENGTH = CLUE1.AUDIO.length();
         CLUE_TALKING = true;
         CLUE_TALKING_START_TIME = millis();
       }
       else if (cursorOverClue2()) {
-        CLUE2_AUDIO.trigger();
+        CLUE2_AUDIO.trigger();        
+        AUDIO_LENGTH = CLUE2.AUDIO.length();
         CLUE_TALKING = true;
         CLUE_TALKING_START_TIME = millis();
       }
       else if (cursorOverClue3()) {
         CLUE3_AUDIO.trigger();
+        AUDIO_LENGTH = CLUE3.AUDIO.length();
         CLUE_TALKING = true;
         CLUE_TALKING_START_TIME = millis();
       }
       else if (cursorOverClue4()) {
         CLUE4_AUDIO.trigger();
+        AUDIO_LENGTH = CLUE4.AUDIO.length();
         CLUE_TALKING = true;
         CLUE_TALKING_START_TIME = millis();
       }
