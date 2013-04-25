@@ -338,7 +338,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "COBRA_B";
+  USER = "POLAR_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -626,13 +626,19 @@ void initializeHelpAudioAndImages() {
     LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
     LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
     LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
-    
+
     LIST_OWL_AUDIO[11] = minim.loadSample("owl_help_11_pa_fish.mp3", 512);
     LIST_OWL_AUDIO[12] = minim.loadSample("owl_help_12_pa_vines.mp3", 512);
     LIST_HELP_IMAGES[11] = loadImage("data/oscar/help_patty_288.png");
     LIST_HELP_IMAGES[12] = loadImage("data/oscar/help_stanley_288.png");
   }
   else if (USER == "POLAR_B") {
+    LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
   }
   else {
 
