@@ -30,7 +30,7 @@ class Jungle2 extends Habitat {
   int viney = 0;
 
   Jungle2(boolean isSleeping) {
-    super(isSleeping, 200, 200);
+    super(isSleeping, animalLeft, animalTop);
     if (isSleeping || USER != "GORILLA_A") {
       this.pickedUpTrash1 = true;
       this.pickedUpTrash2 = true;
