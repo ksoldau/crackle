@@ -191,51 +191,51 @@ AudioSample TRY_AGAIN_AUDIO;
 //Static variables
 
 //width and height of scenes and total height
-int WIDTH = 960;
-int HEIGHT = 650;
-int HABITAT_HEIGHT = 540;
+int WIDTH;
+int HEIGHT;
+int HABITAT_HEIGHT;
 
 //coordinates for start button on welcome page
-int STARTXi = 400; //wrong
-int STARTXf = 560; //wrong
-int STARTYi = 500; //wrong
-int STARTYf = 550; //wrong
+int STARTXi;
+int STARTXf;
+int STARTYi;
+int STARTYf;
 
 //coordinates for map button
-int MAPXi = 780;
-int MAPXf = 960;
-int MAPYi = 550;
-int MAPYf = 690;
+int MAPXi;
+int MAPXf;
+int MAPYi;
+int MAPYf;
 
 //coordinates for help button
-int HELPXi = 680;
-int HELPXf = 760;
-int HELPYi = 550;
-int HELPYf = 690;
+int HELPXi;
+int HELPXf;
+int HELPYi;
+int HELPYf;
 
 //coordinates for left arrow button
-int LEFTXi = 24;
-int LEFTXf = 127;
-int LEFTYi = 226;
-int LEFTYf = 301;
+int LEFTXi;
+int LEFTXf;
+int LEFTYi;
+int LEFTYf;
 
 //coordinates for right arrow button
-int RIGHTXi = 834;
-int RIGHTXf = 942;
-int RIGHTYi = 226;
-int RIGHTYf = 301;
+int RIGHTXi;
+int RIGHTXf;
+int RIGHTYi;
+int RIGHTYf;
 
 //--------------------------------------------
 //Dynamic variables 
 
 // if a certain screen is up
-boolean WELCOME_SCREEN = true; // is it on the welcome screen
-boolean ON_INTRO = false; // is it on the intro screen
-boolean ON_MAP = false; 
-boolean ON_GUESS = false;
-boolean ON_WIN = false;
+boolean WELCOME_SCREEN; // is it on the welcome screen
+boolean ON_INTRO; // is it on the intro screen
+boolean ON_MAP; 
+boolean ON_GUESS;
+boolean ON_WIN;
 
-boolean HAS_ITEM = false;
+boolean HAS_ITEM;
 
 //current habitat number
 int HABITAT_NUMBER;
@@ -245,7 +245,7 @@ int HELP;
 //list of Helps
 PImage[] LIST_HELP_IMAGES = new PImage[13];
 //is it on help
-boolean ON_OWL = false;
+boolean ON_OWL;
 //initialize lines //test for now
 AudioSample TEST_OWL;
 AudioSample[] LIST_OWL_AUDIO = new AudioSample[13];
@@ -254,14 +254,14 @@ AudioSample[] LIST_OWL_AUDIO = new AudioSample[13];
 int OWL_TALKING_START_TIME;
 
 //last habitat number
-int LAST_HABITAT_NUMBER = 8;
+int LAST_HABITAT_NUMBER;
 
 //is the current animal talking
-boolean ANIMAL_TALKING = false;
-boolean CLUE_TALKING = false;
+boolean ANIMAL_TALKING;
+boolean CLUE_TALKING;
 
 //did user make animal snore
-boolean Z = false;
+boolean Z;
 
 //the opening sequence
 Movie OPENING_MOVIE;
@@ -287,7 +287,7 @@ PImage[] GIFS_SLOTH_TALKING;
 
 //Gifs and other information for effects
 PImage[] GIFS_ZS;
-int NUMZFRAMES = 13;
+int NUMZFRAMES;
 int AUDIO_LENGTH;
 
 
@@ -305,7 +305,71 @@ int AUDIO_LENGTH;
 void setup() {
   frameRate(12);
   background(255);
+  
+  WIDTH = 960;
+HEIGHT = 650;
+HABITAT_HEIGHT = 540;
   size(WIDTH, HEIGHT);
+  
+  
+//width and height of scenes and total height
+
+//coordinates for start button on welcome page
+STARTXi = 400; //wrong
+STARTXf = 560; //wrong
+STARTYi = 500; //wrong
+STARTYf = 550; //wrong
+
+//coordinates for map button
+MAPXi = 780;
+ MAPXf = 960;
+ MAPYi = 550;
+ MAPYf = 690;
+
+//coordinates for help button
+ HELPXi = 680;
+ HELPXf = 760;
+ HELPYi = 550;
+ HELPYf = 690;
+
+//coordinates for left arrow button
+ LEFTXi = 24;
+ LEFTXf = 127;
+ LEFTYi = 226;
+ LEFTYf = 301;
+
+//coordinates for right arrow button
+ RIGHTXi = 834;
+ RIGHTXf = 942;
+ RIGHTYi = 226;
+ RIGHTYf = 301;
+
+//--------------------------------------------
+//Dynamic variables 
+
+// if a certain screen is up
+ WELCOME_SCREEN = true; // is it on the welcome screen
+ ON_INTRO = false; // is it on the intro screen
+ ON_MAP = false; 
+ ON_GUESS = false;
+ ON_WIN = false;
+
+ HAS_ITEM = false;
+
+//is it on help
+ON_OWL = false;
+
+//last habitat number
+LAST_HABITAT_NUMBER = 8;
+
+//is the current animal talking
+ ANIMAL_TALKING = false;
+ CLUE_TALKING = false;
+
+//did user make animal snore
+ Z = false;
+ 
+ NUMZFRAMES = 13;
 
   //elements for scenes
   TRASH_IMAGE= loadImage("data/elements/trash.png");
@@ -1239,6 +1303,9 @@ void mousePressedWelcomeScreen() {
 
 // if mouse is pressed, do this stuff 
 void mousePressed() {
+  if (ON_WIN) {
+    setup(); //restart 
+  }
   //if welcome screen is up 
   if (WELCOME_SCREEN) { 
     mousePressedWelcomeScreen();
