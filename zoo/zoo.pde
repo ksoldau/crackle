@@ -403,10 +403,6 @@ void setup() {
   // Setting up sound engine
   minim = new Minim(this);
 
-
-  //testing the owl
-  TEST_OWL = minim.loadSample("SEAL_DUMMY.mp3", 512);
-
   AFRICA_BG = minim.loadFile("africa_bg.mp3", 512);
   FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
   ASIA_BG = minim.loadFile("asia_bg.mp3", 512);
