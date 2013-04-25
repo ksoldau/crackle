@@ -338,7 +338,7 @@ void setup() {
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
   //chooseUser(); ******
-  USER = "COBRA_A";
+  USER = "COBRA_B";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -616,8 +616,8 @@ void initializeHelpAudioAndImages() {
     LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
     LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
 
-
     LIST_OWL_AUDIO[10] = minim.loadSample("owl_help_10_cb_rock.mp3", 512);
+    LIST_HELP_IMAGES[10] = loadImage("data/oscar/help_stanley_288.png");
   }
   else if (USER == "POLAR_A") {
   }
@@ -856,7 +856,6 @@ void draw() {
       println(Z);
     }
   }
-  println("NOT THERE BOOOO");
   drawCursor();
   //printMem(); //DEBUG: To monitor memory usage
 
@@ -912,7 +911,7 @@ void playBg() {
 
 //determines if this is the point where the guess screen should automatically pop up 
 boolean shouldShowGuess() {
-  if (! (!ANIMAL_TALKING && CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH + 700)) {
+  if (! (!ANIMAL_TALKING && CURRENT_TIME - ANIMAL_TALKING_START_TIME >= AUDIO_LENGTH + 500)) {
     return false;
   }
   if (USER == "GORILLA_A" && AFRICA3_STATE == 4) { 

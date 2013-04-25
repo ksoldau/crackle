@@ -202,6 +202,7 @@ class Jungle2 extends Habitat {
     else if (USER == "COBRA_B") {
       if (JUNGLE2_STATE == 1) { //stay same until pick up rock
         JUNGLE2_STATE ++;
+        HELP = 10;
       }
       else if (JUNGLE2_STATE == 3) {
         JUNGLE2_STATE ++;
