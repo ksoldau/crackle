@@ -56,7 +56,7 @@ class Africa3 extends Habitat {
     }
     else {
       return ((animalLeft < mouseX) && (mouseX < (animalLeft + 270)))
-        && ((animalTop < mouseY) && (mouseY < (animalTop + 300)));
+        && ((animalTop < mouseY) && (mouseY < (animalTop + 250)));
     }
   }
 
