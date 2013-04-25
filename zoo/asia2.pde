@@ -3,7 +3,7 @@ class Asia2 extends Habitat {
   int frame;
   int numTalkingFrames = 6;
 
-  int animalLeft = 500;
+  int animalLeft = 450;
   int animalTop = 250;
   
   int elx = 200;
