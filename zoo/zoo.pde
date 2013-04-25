@@ -410,8 +410,9 @@ LAST_HABITAT_NUMBER = 8;
 
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
-  //chooseUser(); ******
-  USER = "GORILLA_A";
+  chooseUser();
+  println("YOU ARE THIS USER" + USER);
+  //USER = "GORILLA_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -794,7 +795,6 @@ void chooseUser() {
   else if (random_number < 6) {
     USER = "COBRA_B";
   }
-  println(USER);
 }
 
 void loadAnimalClasses() {
@@ -977,7 +977,6 @@ void draw() {
 
 
   else if (!ON_MAP && !WELCOME_SCREEN && !ON_INTRO && !ON_GUESS) { 
-    println("GOT HERE HOMESLICE");
     doScene(HABITAT_NUMBER);
     //LIST_OF_HABITATS[HABITAT_NUMBER].displayAnimal(); //HERE IS WHERE ANIMALS ARE DISPLAYED
     //println(Z);
