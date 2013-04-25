@@ -410,9 +410,9 @@ LAST_HABITAT_NUMBER = 8;
 
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
-  chooseUser();
+  //chooseUser();
   println("YOU ARE THIS USER" + USER);
-  //USER = "GORILLA_A";
+  USER = "COBRA_B";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();
@@ -1303,6 +1303,7 @@ void mousePressedWelcomeScreen() {
 // if mouse is pressed, do this stuff 
 void mousePressed() {
   if (ON_WIN) {
+    minim.stop();
     setup(); //restart 
   }
   //if welcome screen is up 

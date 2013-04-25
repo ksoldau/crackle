@@ -11,10 +11,10 @@ class Africa1 extends Habitat {
   
   PImage animal_sleeping;
 
-  Africa1(boolean isSleeping) { //isSleeping too
+  Africa1(boolean isSleeping) {
     super(isSleeping, 200, 200);
     if (isSleeping) {
-      PImage animal_sleeping = loadImage("data/sleep/calvin_sleep_288.png");
+      animal_sleeping = loadImage("data/sleep/calvin_sleep_288.png");
     }
   }
 
