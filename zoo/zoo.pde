@@ -403,7 +403,7 @@ void setup() {
   // Setting up sound engine
   minim = new Minim(this);
 
-  AFRICA_BG = minim.loadFile("africa_bg.mp3", 512);
+  //AFRICA_BG = minim.loadFile("africa_bg.mp3", 512);
   FROSTY_BG = minim.loadFile("frosty_bg.mp3", 512);
   ASIA_BG = minim.loadFile("asia_bg.mp3", 512);
   JUNGLE_BG = minim.loadFile("jungle_bg.mp3", 512);
@@ -427,7 +427,7 @@ void setup() {
   initializeAudio();
   initializeHelpAudioAndImages();
   initializeClueAudio();
-  TRY_AGAIN_AUDIO = minim.loadSample("try_again.mp3", 512);
+  TRY_AGAIN_AUDIO = MINIM2.loadSample("try_again.mp3", 512);
 }
 
 //sets the first habitat the user sees to correct one
@@ -463,14 +463,14 @@ void setFirstHelp() {
 void initializeAudio() {
   //Audio for just GORILLA_A
   if (USER == "GORILLA_A") {
-    CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512);
+    CAMEL_DUMMY = minim.loadSample("CAMEL_DUMMY.mp3", 512); 
     ELEPHANT_DUMMY = minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
     PANDA_DUMMY = minim.loadSample("PANDA_DUMMY.mp3", 512);
     SLOTH_DUMMY = minim.loadSample("SLOTH_DUMMY.mp3", 512);
     SEAL_DUMMY = minim.loadSample("SEAL_DUMMY.mp3", 512);
     LION_DUMMY = minim.loadSample("LION_DUMMY.mp3", 512);
 
-    GA_CAMEL1 = minim.loadSample("GA_CAMEL1.mp3", 512);
+    GA_CAMEL1 = minim.loadSample("GA_CAMEL1.mp3", 512); //***
     GA_ELEPHANT1 = minim.loadSample("GA_ELEPHANT1.mp3", 512); 
     GA_PANDA1 = minim.loadSample("GA_PANDA1.mp3", 512);
     GA_SLOTH1 = minim.loadSample("GA_SLOTH1.mp3", 512);
@@ -480,7 +480,6 @@ void initializeAudio() {
     GA_LION1 = minim.loadSample("GA_LION1.mp3", 512);
     GA_SLOTH2 = minim.loadSample("GA_SLOTH2.mp3", 512);
     GA_LION2 = minim.loadSample("GA_LION2.mp3", 512);
-    GA_LION3 = minim.loadSample("GA_LION3.mp3", 512);
   }
 
 
@@ -935,7 +934,7 @@ void draw() {
 void playBg() {  
   if (HABITAT_NUMBER == 0 || HABITAT_NUMBER == 1 || HABITAT_NUMBER == 2) {
     pauseAll();
-    AFRICA_BG.loop();
+    FROSTY_BG.loop(); //changed because of audio limit, both are wind sounds 
   }
   if (HABITAT_NUMBER == 3 || HABITAT_NUMBER == 4) {
     pauseAll();
@@ -980,7 +979,7 @@ boolean shouldShowGuess() {
 }
 
 void pauseAll() {
-  AFRICA_BG.pause();
+  //AFRICA_BG.pause();
   ASIA_BG.pause();
   JUNGLE_BG.pause();
   FROSTY_BG.pause();
