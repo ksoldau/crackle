@@ -61,6 +61,17 @@ class Jungle2 extends Habitat {
       displayVines();
     }
   }
+  
+    void displayZs() {
+    frameZs = (frameZs + 1);
+    if (frameZs < 13) {
+      image(GIFS_ZS[frameZs], sleepingx + 50, sleepingy - 140);
+    }
+    else {
+      Z = false;
+      frameZs = 0;
+    }
+  }
 
 
   void displayVines() {

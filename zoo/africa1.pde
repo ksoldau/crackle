@@ -23,6 +23,17 @@ class Africa1 extends Habitat {
     image(this.background, 0, 0);
         displayAnimal();
   } 
+  
+  void displayZs() {
+    frameZs = (frameZs + 1);
+    if (frameZs < 13) {
+      image(GIFS_ZS[frameZs], sleepingx - 80, sleepingy - 200);
+    }
+    else {
+      Z = false;
+      frameZs = 0;
+    }
+  }
 
   //display the correct animal image
   void displayAnimal() {
