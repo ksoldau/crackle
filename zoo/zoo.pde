@@ -936,6 +936,11 @@ void draw() {
   if (ON_WIN) {
     WIN.doWin();
   }
+  
+  else if (CLUE_TALKING && 
+    (CURRENT_TIME - CLUE_TALKING_START_TIME >= AUDIO_LENGTH)) {
+    CLUE_TALKING = false;
+  }
 
   //automatically shows the guessing screen if need be
   else if (shouldShowGuess()) {
@@ -953,10 +958,6 @@ void draw() {
     doScene(HABITAT_NUMBER);
   }
 
-  else if (CLUE_TALKING && 
-    (CURRENT_TIME - CLUE_TALKING_START_TIME >= AUDIO_LENGTH)) {
-    CLUE_TALKING = false;
-  }
   //to display the correct animal for current habitat
   else if (ON_GUESS) {
   }
