@@ -51,12 +51,12 @@ class Africa3 extends Habitat {
   // determines if 
   boolean cursorOverAnimal() {   
     if (isSleeping) {
-      return ((sleepingx < mouseX) && (mouseX < (sleepingx + 200)))
+      return ((sleepingx < mouseX) && (mouseX < (sleepingx + 270)))
         && ((sleepingy < mouseY) && (mouseY < (sleepingy + 200)));
     }
     else {
-      return ((animalLeft < mouseX) && (mouseX < (animalLeft + 200)))
-        && ((animalTop < mouseY) && (mouseY < (animalTop + 200)));
+      return ((animalLeft < mouseX) && (mouseX < (animalLeft + 270)))
+        && ((animalTop < mouseY) && (mouseY < (animalTop + 300)));
     }
   }
 
