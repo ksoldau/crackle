@@ -27,7 +27,6 @@ class Asia2 extends Habitat {
   public void display() {
     image(this.background, 0, 0);
     displayAnimal();
-    displayToken(); /** delete this after testing */
 
     if (USER == "POLAR_A") {
       displayBambooOrFish();
