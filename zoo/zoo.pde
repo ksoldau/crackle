@@ -412,7 +412,7 @@ LAST_HABITAT_NUMBER = 8;
   // iteration of that animal the user will play
   //chooseUser();
   println("YOU ARE THIS USER" + USER);
-  USER = "COBRA_B";
+  USER = "GORILLA_A";
 
   //chooses correct habitat number to start on based on user animal
   setFirstHabitatNumber();

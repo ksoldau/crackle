@@ -13,13 +13,13 @@ class Jungle2 extends Habitat {
   //did User pick up the trash
   boolean pickedUpTrash1;
   int trash1_x = 50;
-  int trash1_y = 100;
+  int trash1_y = 400;
   boolean pickedUpTrash2;
-  int trash2_x = 150; 
-  int trash2_y = 100;
+  int trash2_x = 300; 
+  int trash2_y = 350;
   boolean pickedUpTrash3;
-  int trash3_x = 250;
-  int trash3_y = 100;
+  int trash3_x = 600;
+  int trash3_y = 375;
 
   int rockx = 800;
   int rocky = 100;
@@ -71,6 +71,7 @@ class Jungle2 extends Habitat {
       image(VINES_IMAGE, vinex, viney);
     }
   }
+  
   //displays the trash
   //assume: not sleeping
   void displayTrash() {
