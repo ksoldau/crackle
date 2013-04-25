@@ -681,6 +681,12 @@ void initializeClueAudio() {
     CLUE3_AUDIO = minim.loadSample("GA_CLUE3.mp3", 512);
     CLUE4_AUDIO = minim.loadSample("GA_CLUE4.mp3", 512);
   }
+  else if (USER == "GORILLA_B") {
+    CLUE1_AUDIO = minim.loadSample("GB_CLUE1.mp3", 512);
+    CLUE2_AUDIO = minim.loadSample("GB_CLUE2.mp3", 512);
+    CLUE3_AUDIO = minim.loadSample("GB_CLUE3.mp3", 512);
+    CLUE4_AUDIO = minim.loadSample("GB_CLUE4.mp3", 512);
+  }
 }
 
 //randomly chooses which animal the user is 
@@ -863,9 +869,9 @@ void draw() {
     ANIMAL_TALKING = false;
     doScene(HABITAT_NUMBER);
   }
-  
+
   else if (CLUE_TALKING && 
-  (CURRENT_TIME - CLUE_TALKING_START_TIME >= AUDIO_LENGTH)) {
+    (CURRENT_TIME - CLUE_TALKING_START_TIME >= AUDIO_LENGTH)) {
     CLUE_TALKING = false;
   }
   //to display the correct animal for current habitat
@@ -1223,7 +1229,7 @@ void mousePressed() {
   //if an animal is talking
   else if (ANIMAL_TALKING || ON_OWL || CLUE_TALKING) {
   } //stops user from clicking on things while animal talking
-  
+
   else if (!WELCOME_SCREEN && !ON_INTRO && NAV.cursorOverClue()) {
     NAV.mousePressedOnClue();
   }
@@ -1232,7 +1238,7 @@ void mousePressed() {
   else if (ON_MAP) {
     mousePressedOnMap();
   }
-  
+
   else if (ON_GUESS) {
     WIN.mousePressedOnGuess();
   }
