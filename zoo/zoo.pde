@@ -1135,6 +1135,9 @@ void drawCursor() {
     if (WIN.cursorOverGuessOption()) {
       cursor(HAND);
     }
+    if (NAV.cursorOverClue()) {
+      cursor(HAND);
+    }
     else {
       cursor(ARROW);
     }
