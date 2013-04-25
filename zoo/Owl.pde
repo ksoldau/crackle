@@ -5,7 +5,7 @@ class Owl {
   }
 
   void displayOwl() {
-    image(LIST_HELP_IMAGES[HELP], 520, 200);
+    image(LIST_HELP_IMAGES[HELP], 640, 200);
   }
 
   void talkOwl() {
