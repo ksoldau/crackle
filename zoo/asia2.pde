@@ -4,7 +4,7 @@ class Asia2 extends Habitat {
   int numTalkingFrames = 6;
 
   int animalLeft = 450;
-  int animalTop = 250;
+  int animalTop = 270;
 
   int elx = 400;
   int ely = 400;
@@ -17,7 +17,7 @@ class Asia2 extends Habitat {
   PImage animal_sleeping;
 
   Asia2(boolean isSleeping) {
-    super(isSleeping, 200, 200); 
+    super(isSleeping, 200, 270); 
     if (isSleeping) {
       animal_sleeping = loadImage("data/sleep/patty_sleep_288.png");
     }
