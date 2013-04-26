@@ -414,11 +414,11 @@ void setup() {
   INTRO = new Intro();
   OPENING_MOVIE = new Movie(this, "opening.mov");
   
-  //final winning movies DO THIS WHEN AL'S DONE
-  /*GORILLA_WIN_MOVIE = new Movie(this, "<<name>>.mov");
-  COBRA_WIN_MOVIE = new Movie(this, "<<name>>.mov");
-  POLAR_WIN_MOVIE = new Movie(this, "<<name>>.mov");
-  */
+  //final winning movies
+  GORILLA_WIN_MOVIE = new Movie(this, "jungle.mov");
+  COBRA_WIN_MOVIE = new Movie(this, "africa.mov");
+  POLAR_WIN_MOVIE = new Movie(this, "polar.mov");
+  
 
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
@@ -945,7 +945,6 @@ void draw() {
     }
   }
   
-  /* do this on win stuff instead when al's done
   if (ON_WIN) {
     frameRate(30);
     if (USER == "GORILLA_A" || USER == "GORILLA_B") {
@@ -957,11 +956,11 @@ void draw() {
     else if (USER == "POLAR_A" || USER == "POLAR_B") {
       image (POLAR_WIN_MOVIE, 0, 0);
     }
-  } */
+  } 
 
-  if (ON_WIN) {
+ /* if (ON_WIN) {
     WIN.doWin();
-  }
+  }*/
 
   else if (CLUE_TALKING && 
     (CURRENT_TIME - CLUE_TALKING_START_TIME >= AUDIO_LENGTH)) {

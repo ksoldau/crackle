@@ -72,19 +72,17 @@ class Win {
 
   //displays the winning screen
   void doWin() {
-    image(win_image, 0, 0);
-    /* 
+    //image(win_image, 0, 0);
+    
     if (USER == "GORILLA_A" || USER == "GORILLA_B") {
-        GORILLA_WIN_MOVIE.loop();
+        GORILLA_WIN_MOVIE.play();
     }
     else if (USER == "COBRA_A" || USER == "COBRA_B") {
-      COBRA_WIN_MOVIE.loop();
+      COBRA_WIN_MOVIE.play();
     }
     else if (USER == "POLAR_A" || USER == "POLAR_B") {
-      POLAR_WIN_MOVIE.loop();
+      POLAR_WIN_MOVIE.play();
     }
-
-    */
   }
 
   //determines if a mouse pressed on animal in the habitat
