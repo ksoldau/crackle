@@ -104,6 +104,7 @@ PImage animal_sleeping;
     else if (USER == "COBRA_A") {
     } //Sam Seal is asleep
     else if (USER == "COBRA_B") {
+      FROSTY2_STATE ++;
       FROSTY2_STATE ++; //the last person to talk to here
     }
     else if (USER == "POLAR_A") {
