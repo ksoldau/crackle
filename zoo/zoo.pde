@@ -651,13 +651,13 @@ void initializeAudio() {
 
 void initializeHelpAudioAndImages() {
   if (USER == "GORILLA_A") {
-    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);  //("owl_help_0.mp3", 512);
-    LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);  //("owl_help_2.mp3", 512);
-    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);  //("owl_help_3.mp3", 512);
-    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512); //("owl_help_4.mp3", 512);
-    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512); //("owl_help_6.mp3", 512);
-    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512); //("owl_help_7.mp3", 512);
-    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512); //("owl_help_8.mp3", 512);
+    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);  //("oscar/owl_help_0.mp3", 512);
+    LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);  //("oscar/owl_help_2.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);  //("oscar/owl_help_3.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512); //("oscar/owl_help_4.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512); //("oscar/owl_help_6.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512); //("oscar/owl_help_7.mp3", 512);
+    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512); //("oscar/owl_help_8.mp3", 512);
 
     LIST_OWL_AUDIO[9] = minim.loadSample("owl_help_9_ga_trash.mp3", 512);
     LIST_HELP_IMAGES[9] = loadImage("data/oscar/help_stanley_288.png");

@@ -24,9 +24,9 @@ class Frosty1 extends Habitat {
     if (show_blossom) {
       image (CHERRY_BLOSSOM, 220, 280);
     }
-    //if (USER == "POLAR_A" && FROSTY1_STATE > 3) {
+    if (USER == "POLAR_A" && FROSTY1_STATE > 3) {
       image(BAMBOO_IMAGE, 200, 300);
-   // }
+    }
   }
 
   //displays the correct animal 
