@@ -1078,7 +1078,7 @@ boolean shouldShowGuess() {
   else if (USER == "COBRA_A" && ASIA1_STATE == 2) {
     return true;
   }
-  else if (USER == "COBRA_B" && FROSTY2_STATE == 2) { 
+  else if (USER == "COBRA_B" && FROSTY2_STATE == 3) { 
     return true;
   }
   else if (USER == "POLAR_A" && AFRICA2_STATE == 2) {
