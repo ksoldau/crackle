@@ -107,6 +107,7 @@ class Win {
     if (cursorOverCorrect()) {
       ON_GUESS = false;
       ON_WIN = true;
+      doWin();
     }
     else if (cursorOverGuessOption()) { //and not correct option
     TRY_AGAIN_AUDIO.trigger();

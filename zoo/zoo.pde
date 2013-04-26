@@ -958,10 +958,6 @@ void draw() {
     }
   } 
 
- /* if (ON_WIN) {
-    WIN.doWin();
-  }*/
-
   else if (CLUE_TALKING && 
     (CURRENT_TIME - CLUE_TALKING_START_TIME >= AUDIO_LENGTH)) {
     CLUE_TALKING = false;
