@@ -7,7 +7,7 @@ class Intro {
   
   PImage img;
   void display() {
-    OPENING_MOVIE.play();
+  OPENING_MOVIE.play();
   }
   
   

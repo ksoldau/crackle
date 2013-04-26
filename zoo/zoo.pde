@@ -939,7 +939,7 @@ void draw() {
 
   if (ON_INTRO) {
     frameRate(30); //29.97 maybe but not dealing with that
-    image(OPENING_MOVIE, 0, 0);
+    image(OPENING_MOVIE, 0, 0, 960, 540);
     if (OPENING_MOVIE.time() >= 10) {
       ON_INTRO = false;
     }
@@ -954,7 +954,7 @@ void draw() {
       image(COBRA_WIN_MOVIE, 0, 0);
     }
     else if (USER == "POLAR_A" || USER == "POLAR_B") {
-      image (POLAR_WIN_MOVIE, 0, 0);
+      image(POLAR_WIN_MOVIE, 0, 0);
     }
   } 
 
@@ -1016,28 +1016,6 @@ void draw() {
   }
 }
 
-
-// DEBUG section
-// This is for memory concerns; it prints out the totals to the 
-// console if called in draw()
-
-/*void printMem() {
- Runtime runtime = Runtime.getRuntime();
- NumberFormat format = NumberFormat.getInstance();
- StringBuilder sb = new StringBuilder();
- long maxMemory = runtime.maxMemory();
- long allocatedMemory = runtime.totalMemory();
- long freeMemory = runtime.freeMemory();
- sb.append("free memory: 
- " + format.format(freeMemory / 1024) + "  ");
- sb.append("allocated memory: 
- " + format.format(allocatedMemory / 1024) + "  ");
- sb.append("max memory: 
- " + format.format(maxMemory / 1024) + "  ");
- sb.append("total free memory: 
- " + format.format((freeMemory + (maxMemory - allocatedMemory)) / 1024) + "  ");
- println(sb);
- }*/
 
 // SOUNDS
 
@@ -1548,6 +1526,17 @@ boolean cursorOverJungle2() {
 
 //method for opening intro
 void movieEvent(Movie m) {
-  m.read();
+  if (m == OPENING_MOVIE) {
+    OPENING_MOVIE.read();
+  }
+  else if (m == GORILLA_WIN_MOVIE) {
+    GORILLA_WIN_MOVIE.read();
+  }
+  else if (m == POLAR_WIN_MOVIE) {
+    POLAR_WIN_MOVIE.read();
+  }
+  else if (m == COBRA_WIN_MOVIE) {
+    COBRA_WIN_MOVIE.read();
+  }
 }
 
