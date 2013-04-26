@@ -305,71 +305,71 @@ int AUDIO_LENGTH;
 void setup() {
   frameRate(12);
   background(255);
-  
+
   WIDTH = 960;
-HEIGHT = 650;
-HABITAT_HEIGHT = 540;
+  HEIGHT = 650;
+  HABITAT_HEIGHT = 540;
   size(WIDTH, HEIGHT);
-  
-  
-//width and height of scenes and total height
 
-//coordinates for start button on welcome page
-STARTXi = 400; //wrong
-STARTXf = 560; //wrong
-STARTYi = 500; //wrong
-STARTYf = 550; //wrong
 
-//coordinates for map button
-MAPXi = 780;
- MAPXf = 960;
- MAPYi = 550;
- MAPYf = 690;
+  //width and height of scenes and total height
 
-//coordinates for help button
- HELPXi = 680;
- HELPXf = 760;
- HELPYi = 550;
- HELPYf = 690;
+  //coordinates for start button on welcome page
+  STARTXi = 400; //wrong
+  STARTXf = 560; //wrong
+  STARTYi = 500; //wrong
+  STARTYf = 550; //wrong
 
-//coordinates for left arrow button
- LEFTXi = 24;
- LEFTXf = 127;
- LEFTYi = 226;
- LEFTYf = 301;
+  //coordinates for map button
+  MAPXi = 780;
+  MAPXf = 960;
+  MAPYi = 550;
+  MAPYf = 690;
 
-//coordinates for right arrow button
- RIGHTXi = 834;
- RIGHTXf = 942;
- RIGHTYi = 226;
- RIGHTYf = 301;
+  //coordinates for help button
+  HELPXi = 680;
+  HELPXf = 760;
+  HELPYi = 550;
+  HELPYf = 690;
 
-//--------------------------------------------
-//Dynamic variables 
+  //coordinates for left arrow button
+  LEFTXi = 24;
+  LEFTXf = 127;
+  LEFTYi = 226;
+  LEFTYf = 301;
 
-// if a certain screen is up
- WELCOME_SCREEN = true; // is it on the welcome screen
- ON_INTRO = false; // is it on the intro screen
- ON_MAP = false; 
- ON_GUESS = false;
- ON_WIN = false;
+  //coordinates for right arrow button
+  RIGHTXi = 834;
+  RIGHTXf = 942;
+  RIGHTYi = 226;
+  RIGHTYf = 301;
 
- HAS_ITEM = false;
+  //--------------------------------------------
+  //Dynamic variables 
 
-//is it on help
-ON_OWL = false;
+  // if a certain screen is up
+  WELCOME_SCREEN = true; // is it on the welcome screen
+  ON_INTRO = false; // is it on the intro screen
+  ON_MAP = false; 
+  ON_GUESS = false;
+  ON_WIN = false;
 
-//last habitat number
-LAST_HABITAT_NUMBER = 8;
+  HAS_ITEM = false;
 
-//is the current animal talking
- ANIMAL_TALKING = false;
- CLUE_TALKING = false;
+  //is it on help
+  ON_OWL = false;
 
-//did user make animal snore
- Z = false;
- 
- NUMZFRAMES = 13;
+  //last habitat number
+  LAST_HABITAT_NUMBER = 8;
+
+  //is the current animal talking
+  ANIMAL_TALKING = false;
+  CLUE_TALKING = false;
+
+  //did user make animal snore
+  Z = false;
+
+  NUMZFRAMES = 13;
 
   //elements for scenes
   TRASH_IMAGE= loadImage("data/elements/trash.png");
@@ -651,51 +651,51 @@ void initializeAudio() {
 
 void initializeHelpAudioAndImages() {
   if (USER == "GORILLA_A") {
-    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);  //("oscar/owl_help_0.mp3", 512);
-    LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);  //("oscar/owl_help_2.mp3", 512);
-    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);  //("oscar/owl_help_3.mp3", 512);
-    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512); //("oscar/owl_help_4.mp3", 512);
-    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512); //("oscar/owl_help_6.mp3", 512);
-    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512); //("oscar/owl_help_7.mp3", 512);
-    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512); //("oscar/owl_help_8.mp3", 512);
+    LIST_OWL_AUDIO[0] =  minim.loadSample("oscar/help_camel_0.mp3", 512);  //("oscar/owl_help_0.mp3", 512);
+    LIST_OWL_AUDIO[2] =  minim.loadSample("oscar/help_lion_2.mp3", 512);  //("oscar/owl_help_2.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("oscar/help_tiger_3.mp3", 512);  //("oscar/owl_help_3.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("oscar/help_panda_4.mp3", 512); //("oscar/owl_help_4.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("oscar/help_seal_6.mp3", 512); //("oscar/owl_help_6.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("oscar/help_elephant_7.mp3", 512); //("oscar/owl_help_7.mp3", 512);
+    LIST_OWL_AUDIO[8] =  minim.loadSample("oscar/help_sloth_8.mp3", 512); //("oscar/owl_help_8.mp3", 512);
 
     LIST_OWL_AUDIO[9] = minim.loadSample("owl_help_9_ga_trash.mp3", 512);
     LIST_HELP_IMAGES[9] = loadImage("data/oscar/help_stanley_288.png");
   }
   else if (USER == "GORILLA_B") {
-    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[0] =  minim.loadSample("oscar/help_camel_0.mp3", 512);
+    LIST_OWL_AUDIO[1] =  minim.loadSample("oscar/help_giraffe_1.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("oscar/help_tiger_3.mp3", 512);
+    LIST_OWL_AUDIO[5] =  minim.loadSample("oscar/help_penguin_5.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("oscar/help_seal_6.mp3", 512);
+    LIST_OWL_AUDIO[8] =  minim.loadSample("oscar/help_sloth_8.mp3", 512);
   }
   else if (USER == "COBRA_A") {
-    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[0] =  minim.loadSample("oscar/help_camel_0.mp3", 512);
+    LIST_OWL_AUDIO[2] =  minim.loadSample("oscar/help_lion_2.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("oscar/help_tiger_3.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("oscar/help_panda_4.mp3", 512);
+    LIST_OWL_AUDIO[5] =  minim.loadSample("oscar/help_penguin_5.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("oscar/help_elephant_7.mp3", 512);
   }
   else if (USER == "COBRA_B") {
-    LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[1] =  minim.loadSample("oscar/help_giraffe_1.mp3", 512);
+    LIST_OWL_AUDIO[2] =  minim.loadSample("oscar/help_lion_2.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("oscar/help_tiger_3.mp3", 512);
+    LIST_OWL_AUDIO[8] =  minim.loadSample("oscar/help_sloth_8.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("oscar/help_panda_4.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("oscar/help_seal_6.mp3", 512);
 
     LIST_OWL_AUDIO[10] = minim.loadSample("owl_help_10_cb_rock.mp3", 512);
     LIST_HELP_IMAGES[10] = loadImage("data/oscar/help_stanley_288.png");
   }
   else if (USER == "POLAR_A") {
-    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[0] =  minim.loadSample("oscar/help_camel_0.mp3", 512);
+    LIST_OWL_AUDIO[1] =  minim.loadSample("oscar/help_giraffe_1.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("oscar/help_panda_4.mp3", 512);
+    LIST_OWL_AUDIO[5] =  minim.loadSample("oscar/help_penguin_5.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("oscar/help_elephant_7.mp3", 512);
+    LIST_OWL_AUDIO[8] =  minim.loadSample("oscar/help_sloth_8.mp3", 512);
 
     LIST_OWL_AUDIO[11] = minim.loadSample("owl_help_11_pa_fish.mp3", 512);
     LIST_OWL_AUDIO[12] = minim.loadSample("owl_help_12_pa_vines.mp3", 512);
@@ -703,24 +703,24 @@ void initializeHelpAudioAndImages() {
     LIST_HELP_IMAGES[12] = loadImage("data/oscar/help_stanley_288.png");
   }
   else if (USER == "POLAR_B") {
-    LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[1] =  minim.loadSample("oscar/help_giraffe_1.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("oscar/help_tiger_3.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("oscar/help_panda_4.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("oscar/help_elephant_7.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("oscar/help_seal_6.mp3", 512);
+    LIST_OWL_AUDIO[5] =  minim.loadSample("oscar/help_penguin_5.mp3", 512);
   }
   else {
 
-    LIST_OWL_AUDIO[0] =  minim.loadSample("CAMEL_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[1] =  minim.loadSample("GIRAFFE_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[2] =  minim.loadSample("LION_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[3] =  minim.loadSample("TIGER_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[4] =  minim.loadSample("PANDA_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[5] =  minim.loadSample("PENGUIN_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[6] =  minim.loadSample("SEAL_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[7] =  minim.loadSample("ELEPHANT_DUMMY.mp3", 512);
-    LIST_OWL_AUDIO[8] =  minim.loadSample("SLOTH_DUMMY.mp3", 512);
+    LIST_OWL_AUDIO[0] =  minim.loadSample("oscar/help_camel_0.mp3", 512);
+    LIST_OWL_AUDIO[1] =  minim.loadSample("oscar/help_giraffe_1.mp3", 512);
+    LIST_OWL_AUDIO[2] =  minim.loadSample("oscar/help_lion_2.mp3", 512);
+    LIST_OWL_AUDIO[3] =  minim.loadSample("oscar/help_tiger_3.mp3", 512);
+    LIST_OWL_AUDIO[4] =  minim.loadSample("oscar/help_panda_4.mp3", 512);
+    LIST_OWL_AUDIO[5] =  minim.loadSample("oscar/help_penguin_5.mp3", 512);
+    LIST_OWL_AUDIO[6] =  minim.loadSample("oscar/help_seal_6.mp3", 512);
+    LIST_OWL_AUDIO[7] =  minim.loadSample("oscar/help_elephant_7.mp3", 512);
+    LIST_OWL_AUDIO[8] =  minim.loadSample("oscar/help_sloth_8.mp3", 512);
 
     /*LIST_OWL_AUDIO[0] =  minim.loadSample("owl_help_0.mp3", 512);
      LIST_OWL_AUDIO[1] =  minim.loadSample("owl_help_1.mp3", 512);
@@ -936,7 +936,7 @@ void draw() {
   if (ON_WIN) {
     WIN.doWin();
   }
-  
+
   else if (CLUE_TALKING && 
     (CURRENT_TIME - CLUE_TALKING_START_TIME >= AUDIO_LENGTH)) {
     CLUE_TALKING = false;
@@ -1128,7 +1128,13 @@ void drawCursor() {
   } 
 
   else if (ANIMAL_TALKING || ON_OWL || ON_INTRO || CLUE_TALKING) {
-    cursor(ARROW);
+    if (ON_GUESS && WIN.cursorOverGuessOption())
+    {
+      cursor(HAND);
+    } 
+    else {
+      cursor(ARROW);
+    }
   }
 
   else if (ON_GUESS) {
@@ -1308,7 +1314,7 @@ void mousePressedWelcomeScreen() {
 void mousePressed() {
   if (ON_WIN) {
     minim.stop();
-    setup(); //restart 
+    setup(); //restart
   }
   //if welcome screen is up 
   if (WELCOME_SCREEN) { 
