@@ -986,6 +986,7 @@ void draw() {
 
   //to display the correct animal for current habitat
   else if (ON_GUESS) {
+    pauseAll();
   }
 
   //makes owl stay up as long as audio plays
