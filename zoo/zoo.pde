@@ -1338,8 +1338,10 @@ void mousePressedWelcomeScreen() {
 
 // if mouse is pressed, do this stuff 
 void mousePressed() {
+  if (ON_WIN) 
+  { }
   //if welcome screen is up 
-  if (WELCOME_SCREEN) { 
+  else if (WELCOME_SCREEN) { 
     mousePressedWelcomeScreen();
   }
   else if (ON_INTRO) {
