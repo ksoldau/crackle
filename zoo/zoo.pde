@@ -951,7 +951,7 @@ void draw() {
       image(GORILLA_WIN_MOVIE, 0, 0, 960, 540);
     }
     else if (USER == "COBRA_A" || USER == "COBRA_B") {
-      image(COBRA_WIN_MOVIE, 0, , 960, 540);
+      image(COBRA_WIN_MOVIE, 0, 0, 960, 540);
     }
     else if (USER == "POLAR_A" || USER == "POLAR_B") {
       image(POLAR_WIN_MOVIE, 0, 0, 960, 540);
