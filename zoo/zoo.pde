@@ -1338,10 +1338,6 @@ void mousePressedWelcomeScreen() {
 
 // if mouse is pressed, do this stuff 
 void mousePressed() {
-  if (ON_WIN) {
-    minim.stop();
-    setup(); //restart
-  }
   //if welcome screen is up 
   if (WELCOME_SCREEN) { 
     mousePressedWelcomeScreen();
