@@ -157,7 +157,8 @@ class Jungle2 extends Habitat {
       playCurrentTalk();
     }
     else if ((USER == "COBRA_B") && (JUNGLE2_STATE == 2) && cursorOverRock()) {
-      rockx = rockx - 100; //move the rock
+      rocky = 490; //move the rock
+      rocky = 510;
       JUNGLE2_STATE ++; //update state
       ANIMAL_TALKING = true;
       ANIMAL_TALKING_START_TIME = millis(); // saves time when pressed on animal
