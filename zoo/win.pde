@@ -73,6 +73,18 @@ class Win {
   //displays the winning screen
   void doWin() {
     image(win_image, 0, 0);
+    /* 
+    if (USER == "GORILLA_A" || USER == "GORILLA_B") {
+        GORILLA_WIN_MOVIE.loop();
+    }
+    else if (USER == "COBRA_A" || USER == "COBRA_B") {
+      COBRA_WIN_MOVIE.loop();
+    }
+    else if (USER == "POLAR_A" || USER == "POLAR_B") {
+      POLAR_WIN_MOVIE.loop();
+    }
+
+    */
   }
 
   //determines if a mouse pressed on animal in the habitat
@@ -97,7 +109,6 @@ class Win {
     if (cursorOverCorrect()) {
       ON_GUESS = false;
       ON_WIN = true;
-      //doWin();
     }
     else if (cursorOverGuessOption()) { //and not correct option
     TRY_AGAIN_AUDIO.trigger();

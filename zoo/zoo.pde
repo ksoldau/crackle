@@ -266,6 +266,12 @@ boolean Z;
 //the opening sequence
 Movie OPENING_MOVIE;
 
+//final movie scenes
+Movie GORILLA_WIN_MOVIE;
+Movie COBRA_WIN_MOVIE;
+Movie POLAR_WIN_MOVIE;
+
+
 //------------------------------------------
 //setting up who the user is
 String USER; // which animal the user is can be 
@@ -404,9 +410,15 @@ void setup() {
 
 
 
-  // making all the background objects
+  //intro 
   INTRO = new Intro();
   OPENING_MOVIE = new Movie(this, "opening.mov");
+  
+  //final winning movies DO THIS WHEN AL'S DONE
+  /*GORILLA_WIN_MOVIE = new Movie(this, "<<name>>.mov");
+  COBRA_WIN_MOVIE = new Movie(this, "<<name>>.mov");
+  POLAR_WIN_MOVIE = new Movie(this, "<<name>>.mov");
+  */
 
   // randomly chooses which animal and which 
   // iteration of that animal the user will play
@@ -926,12 +938,26 @@ void draw() {
   drawCursor();
 
   if (ON_INTRO) {
-    frameRate(30);
+    frameRate(30); //29.97 maybe but not dealing with that
     image(OPENING_MOVIE, 0, 0);
     if (OPENING_MOVIE.time() >= 10) {
       ON_INTRO = false;
     }
   }
+  
+  /* do this on win stuff instead when al's done
+  if (ON_WIN) {
+    frameRate(30);
+    if (USER == "GORILLA_A" || USER == "GORILLA_B") {
+      image(GORILLA_WIN_MOVIE, 0, 0);
+    }
+    else if (USER == "COBRA_A" || USER == "COBRA_B") {
+      image(COBRA_WIN_MOVIE, 0, 0);
+    }
+    else if (USER == "POLAR_A" || USER == "POLAR_B") {
+      image (POLAR_WIN_MOVIE, 0, 0);
+    }
+  } */
 
   if (ON_WIN) {
     WIN.doWin();
