@@ -21,8 +21,8 @@ class Jungle2 extends Habitat {
   int trash3_x = 600;
   int trash3_y = 375;
 
-  int rockx = 800;
-  int rocky = 100;
+  int rockx = 460;
+  int rocky = 75;
 
   //if POLAR_A
   boolean vines_cut = false;
@@ -50,7 +50,6 @@ class Jungle2 extends Habitat {
   void display() {
     image(this.background, 0, 0);
     displayAnimal();
-
     if (USER == "GORILLA_A") {
       displayTrash();
     }

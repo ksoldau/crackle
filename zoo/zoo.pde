@@ -1152,9 +1152,16 @@ void drawCursor() {
       cursor(ARROW);
     }
   } 
+  
   else if (ON_GUESS) {
     if (WIN.cursorOverGuessOption()) {
       cursor(HAND);
+    }
+    if (NAV.cursorOverClue()) {
+      cursor(HAND);
+    }
+    else {
+      cursor(ARROW);
     }
   }
 
@@ -1163,18 +1170,6 @@ void drawCursor() {
     {
       cursor(HAND);
     } 
-    else {
-      cursor(ARROW);
-    }
-  }
-
-  else if (ON_GUESS) {
-    if (WIN.cursorOverGuessOption()) {
-      cursor(HAND);
-    }
-    if (NAV.cursorOverClue()) {
-      cursor(HAND);
-    }
     else {
       cursor(ARROW);
     }
